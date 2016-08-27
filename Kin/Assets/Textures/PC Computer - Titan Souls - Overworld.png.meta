@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 2c010611cfbd5d348bc00b891f5d2f5c
-timeCreated: 1472306989
+timeCreated: 1472312640
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: PC Computer - Titan Souls - Overworld_0
+    21300002: PC Computer - Titan Souls - Overworld_1
+    21300004: PC Computer - Titan Souls - Overworld_2
+    21300006: PC Computer - Titan Souls - Overworld_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -62,12 +65,51 @@ TextureImporter:
       name: PC Computer - Titan Souls - Overworld_0
       rect:
         serializedVersion: 2
-        x: 2979
-        y: 532
-        width: 7
-        height: 34
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PC Computer - Titan Souls - Overworld_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PC Computer - Titan Souls - Overworld_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PC Computer - Titan Souls - Overworld_3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
