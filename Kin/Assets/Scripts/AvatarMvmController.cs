@@ -9,6 +9,8 @@ public class AvatarMvmController : MonoBehaviour {
     {
         var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 		gameObject.GetComponent<Animator>().SetBool("Moving", move.magnitude > 0);
+		gameObject.GetComponent<Animator>().SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+		gameObject.GetComponent<Animator>().SetFloat("Vertical", Input.GetAxis("Vertical"));
         transform.position += move * speed * Time.deltaTime;
     }
 }
