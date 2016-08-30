@@ -1,0 +1,395 @@
+fileFormatVersion: 2
+guid: 07d58c229d8ccf44e94d85d45363fb67
+timeCreated: 1472565784
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_0
+    21300002: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_1
+    21300004: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_2
+    21300006: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_3
+    21300008: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_4
+    21300010: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_5
+    21300012: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_6
+    21300014: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_7
+    21300016: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_8
+    21300018: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_9
+    21300020: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_10
+    21300022: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_11
+    21300024: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_12
+    21300026: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_13
+    21300028: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_14
+    21300030: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_15
+    21300032: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_16
+    21300034: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_17
+    21300036: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_18
+    21300038: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_19
+    21300040: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_20
+    21300042: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_21
+    21300044: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_22
+    21300046: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_23
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_0
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 419
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_1
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 420
+        width: 13
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_2
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 419
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 400
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_4
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 400
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_5
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 373
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_6
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 366
+        width: 13
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_7
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 373
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 127
+        width: 120
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_9
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 124
+        width: 131
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_10
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 234
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_11
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 238
+        width: 52
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_12
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 234
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_13
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 158
+        width: 112
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_14
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 158
+        width: 112
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_15
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 99
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_16
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 99
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_17
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 98
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_18
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 98
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_19
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 98
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_20
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 98
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_21
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 50
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_22
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 22
+        width: 52
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kirby_fc_sword_sprite__read_description__by_kspriter95-d6z1sea_23
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 50
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
