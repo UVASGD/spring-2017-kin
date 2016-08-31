@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" nextobjectid="1">
  <tileset firstgid="1" name="Titan Souls 1" tilewidth="16" tileheight="16" tilecount="4096" columns="64">
-  <image source="GitHub/Kin/Kin/Assets/Resources/Sprites/Untitled3.png" width="1024" height="1024"/>
+  <image source="../../Untitled3.png" width="1024" height="1024"/>
  </tileset>
  <tileset firstgid="4097" name="Titan Souls 2" tilewidth="16" tileheight="16" tilecount="4096" columns="64">
-  <image source="GitHub/Kin/Kin/Assets/Resources/Sprites/Untitled4.png" width="1024" height="1024"/>
+  <image source="../../Untitled4.png" width="1024" height="1024"/>
  </tileset>
  <layer name="Stone" width="40" height="40">
   <data encoding="csv">
