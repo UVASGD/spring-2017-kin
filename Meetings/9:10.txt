@@ -21,7 +21,7 @@ Agenda:
             D. Writing - write the world
 
 	    E. Programming - split into teams by passion and need
-	       		   - start creating combat system
+	       		   - start creating combat system & controller support
 			   - start thinkin' about AI
 			   - create time
 			   - UI sliders, calendar, level screen
