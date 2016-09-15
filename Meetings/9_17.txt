@@ -1,0 +1,13 @@
+AGENDA 9_17
+
+1. Make sure everyone understands how to clone, branch, commit, and merge (oops)
+2. Make sure Programmers get comfortable with Unity (Jackson will help with this)
+	-but also see the Tutorial links in the Resources folder of the repo.
+3. Split into teams and get cracking :)
+
+AI - something tangible and start creating the base class
+Systems - figure out and implement hitboxes, and start work on the level-up controller
+UI - intro to UI, create sliders for health and stamina (pending art), and begni work on the main menu scene (Resume, New, Load, and Credits)
+Design - finish planning out the world and with the aid of controllers, pick a good feeling controller scheme
+Art - create basic avatar movement sprites and, hopefully attack sprites
+Music -  get everyone on the same page regarding sounds, to make sure everyone has gone over the asset list, and to divide those between each person.
