@@ -5,10 +5,10 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.UI;
 
-public class SaveContoller : MonoBehaviour {
+public class SaveController : MonoBehaviour {
     //on enable on disable for autosave
 
-    public static SaveContoller s_instance;
+    public static SaveController s_instance;
 
     public float health;
     public float stamina;
