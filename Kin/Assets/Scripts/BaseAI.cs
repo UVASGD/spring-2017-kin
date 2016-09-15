@@ -7,7 +7,7 @@ public class BaseAI : MonoBehaviour {
 	// commented. In some ways, it makes the code harder to read at a glance, but easier to understand overall.
 
 	/// <summary>
-	/// AI states. Fill in with more states in the future.
+	/// AI states. Fill in with more states in the future, please.
 	/// </summary>
 	protected enum AIStates {
 		IdleState,
