@@ -45,3 +45,20 @@ Systems Plan
 3) Day/Night and Weather
 
 	Stuff
+	
+	
+Controls
+
+Arrow = Movement
+
+X = Attack
+
+Circle = Roll
+
+Square = Interact
+
+Triangle = Use
+
+Start/Middle = Pause
+
+R1/L1 = switch through consumables
