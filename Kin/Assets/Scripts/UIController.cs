@@ -33,9 +33,29 @@ public class SliderController : MonoBehaviour {
         stamina.value = val;
     }
 
+    int getStamina()
+    {
+        return (int)stamina.value;
+    }
+
+    int getHealth()
+    {
+        return (int)health.value;
+    }
+
     void setHealth(int val)
     {
 
         health.value = val;
+    }
+    
+    void setClock(int time)
+    {
+        print("No clock yet. ¯\_(ツ)_/¯");
+    }
+
+    void getClock()
+    {
+        print("No clock yet.¯\_(ツ)_/¯");
     }
 }
