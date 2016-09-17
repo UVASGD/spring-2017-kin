@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class SliderController : MonoBehaviour {
+public class UIController : MonoBehaviour {
 
     public Slider health;
     public Slider stamina;
