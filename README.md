@@ -7,40 +7,40 @@ Systems Plan
 
 1) Combat
 
-  hitboxes
+	hitboxes
   
-  numbers
+	numbers
   
-  animation?
+	animation?
   
-  FUTURE: draw off Level Up, [health and stamina determined by Level Up]
+	FUTURE: draw off Level Up, [health and stamina determined by Level Up]
   
-  OnDeath
+	OnDeath
   
 2a) Time
 
-  just keeping track of days
+	just keeping track of days
   
-  timedelta
+	timedelta
   
-  literally just time
+	literally just time
   
 2b) Level Up
 
-  level controller
+	level controller
   
-  stats
+	stats
   
-  4 stats for Player
+	4 stats for Player
   
-  4 stats for Order
+	4 stats for Order
   
-  Getters and Setters
+	Getters and Setters
   
-  XP/Lumee/Luminescence/Spend Time
+	XP/Lumee/Luminescence/Spend Time
   
-  Singleton Class 
+	Singleton Class 
   
 3) Day/Night and Weather
 
-  Stuff
+	Stuff
