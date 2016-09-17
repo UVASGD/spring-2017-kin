@@ -51,11 +51,23 @@ public class SliderController : MonoBehaviour {
     
     void setClock(int time)
     {
-        print("No clock yet. ¯\_(ツ)_/¯");
+        print(@"No clock yet. ¯\_(ツ)_/¯");
     }
 
-    void getClock()
+    int getClock()
     {
-        print("No clock yet.¯\_(ツ)_/¯");
+        print(@"No clock yet.¯\_(ツ)_/¯");
+        return 0;
+    }
+
+    void setBossHealth()
+    {
+        print(@"No boss health yet.¯\_(ツ)_/¯");
+    }
+
+    int getBossHealth()
+    {
+        print(@"No boss health yet.¯\_(ツ)_/¯");
+        return 0;
     }
 }
