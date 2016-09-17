@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour {
 	void Update () {
         this.gameObject.transform.position = Vector3.Lerp(getLerpA(), 
             StaticMethods.ChangeZ(playerChar.transform.position, this.gameObject.transform.position.z), 
-            vTot(playerChar.GetComponent<Rigidbody2D>().velocity.magnitude));
+            /*vTot(playerChar.GetComponent<Rigidbody2D>().velocity.magnitude)*/1);
 	}
 
     float vTot (float v)
