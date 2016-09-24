@@ -18,56 +18,56 @@ public class UIController : MonoBehaviour {
 	    
 	}
 
-    void setMaxHealth(int maxHealth)
+    public void setMaxHealth(int maxHealth)
     {
         health.maxValue = maxHealth;
     }
 
-    void setMaxStamina(int maxStam)
+    public void setMaxStamina(int maxStam)
     {
         stamina.maxValue = maxStam;
     }
 
-    void setStamina(int val)
+    public void setStamina(int val)
     {
         stamina.value = val;
     }
 
-    int getStamina()
+    public int getStamina()
     {
         return (int)stamina.value;
     }
 
-    int getHealth()
+    public int getHealth()
     {
         return (int)health.value;
     }
 
-    void setHealth(int val)
+    public void setHealth(int val)
     {
 
         health.value = val;
     }
-    
-    void setClock(int time)
+
+    public void setClock(int time)
     {
-        print(@"No clock yet. ¯\_(ツ)_/¯");
+        Debug.Log(@"No clock yet. ¯\_(ツ)_/¯");
     }
 
-    int getClock()
+    public int getClock()
     {
-        print(@"No clock yet.¯\_(ツ)_/¯");
+        Debug.Log(@"No clock yet.¯\_(ツ)_/¯");
         return 0;
     }
 
-    void setBossHealth()
+    public void setBossHealth()
     {
-        print(@"No boss health yet.¯\_(ツ)_/¯");
+        Debug.Log(@"No boss health yet.¯\_(ツ)_/¯");
     }
 
-    int getBossHealth()
+    public int getBossHealth()
     {
-        print(@"No boss health yet.¯\_(ツ)_/¯");
+        Debug.Log(@"No boss health yet.¯\_(ツ)_/¯");
         return 0;
     }
 }
