@@ -7,6 +7,10 @@ public class SystemsController : MonoBehaviour {
 	public PolygonCollider2D Forward1;
 	public PolygonCollider2D WalkingRight1;
 
+	private UIController UICont;
+	private TempGameController TempCont;
+	private SaveController SaveCont;
+
 
 	private PolygonCollider2D[] colliders;
 	private PolygonCollider2D coll;
@@ -35,21 +39,25 @@ public class SystemsController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		Debug.Log("Collider hit something!");
-		col.GetComponent<Collider2D> ().enabled = false;
+		int h = UICont.getHealth();
+		UICont.setHealth(h - 1);
+		SaveCont.health = SaveCont.health - 1;
+		//col.GetComponent<Collider2D> ().enabled = false;
 	}
 
 	void OnTriggerExit2D(Collider2D col)
 	{
 		Debug.Log ("Collider left something!");
-		col.GetComponent<Collider2D> ().enabled = true;
-		coll.enabled = true;
+		//col.GetComponent<Collider2D> ().enabled = true;
+		//coll.enabled = true;
 	}
 
+	/*
 	void OnTriggerStay2D(Collider2D col)
 	{
 		Debug.Log ("Collider is staying in something!");
-		col.GetComponent<Collider2D> ().enabled = false;
-	}
+		//col.GetComponent<Collider2D> ().enabled = false;
+	}*/
 
 	// Update is called once per frame
 	void Update () {
