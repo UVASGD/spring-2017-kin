@@ -6,9 +6,12 @@ public class AvatarMvmController : MonoBehaviour {
     public float speed = 1.5f;
     AudioSource audio;
 
+	Rigidbody2D rb;
+
     void Start()
     {
         audio = GetComponent<AudioSource>();
+		rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -17,8 +20,8 @@ public class AvatarMvmController : MonoBehaviour {
 		gameObject.GetComponent<Animator>().SetBool("Moving", move.magnitude > 0);
 		gameObject.GetComponent<Animator>().SetFloat("Horizontal", Input.GetAxis("Horizontal"));
 		gameObject.GetComponent<Animator>().SetFloat("Vertical", Input.GetAxis("Vertical"));
-		gameObject.GetComponent<Rigidbody2D> ().velocity = move * speed;
-		Debug.Log (gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude);
+        //transform.position += move * speed * Time.deltaTime;
+		rb.velocity = ((Vector2) move) * speed;
     }
 
     public void playWalkSound()
