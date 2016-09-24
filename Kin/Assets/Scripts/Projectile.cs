@@ -26,8 +26,9 @@ public class Projectile : MonoBehaviour {
 		Debug.Log ("in trigger");
 		if (obj.tag == "Player") {
 			//deal damage
+			Destroy(gameObject);
 		}
-		Destroy(gameObject);
+
 	}
 		
 }
