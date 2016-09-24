@@ -8,6 +8,9 @@ public class BaseAI : MonoBehaviour {
 
 	/// <summary>
 	/// AI states. Fill in with more states in the future, please.
+	/// Idle: not detected player
+	/// Detected: detected player
+	/// 
 	/// </summary>
 	protected enum AIStates {
 		IdleState,
@@ -32,12 +35,12 @@ public class BaseAI : MonoBehaviour {
 	/// <summary>
 	/// The speed at which the AI moves.
 	/// </summary>
-	public float speed;
+	public float speed = 1.0f;
 
 	/// <summary>
 	/// The Rigidbody which controls the movement of the AI.
 	/// </summary>
-	Rigidbody2D rb;
+	protected Rigidbody2D rb;
 
 
 	/** One thing to keep in mind; Start and Update are meant to be overridden, but you should still call base.Start()
@@ -47,7 +50,7 @@ public class BaseAI : MonoBehaviour {
 	// This method is run right about when the object is created. It should be where you intialize variables and other
 	// things that may depend on certain objects being available.
 	// It's also a good place to throw errors, like I have done here.
-	protected void Start() {
+	protected virtual void Start() {
 		// This is the syntax for getting components from GameObjects. Remember the parenthesis.
 		rb = gameObject.GetComponent<Rigidbody2D>();
 
@@ -65,7 +68,7 @@ public class BaseAI : MonoBehaviour {
 	}
 
 
-	protected void Update() {
+	protected virtual void Update() {
 		if (curState == AIStates.DetectedState) {
 			// Do stuff as if the player was detected.
 		} else if (curState == AIStates.IdleState) {

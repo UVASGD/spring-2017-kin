@@ -12,9 +12,9 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        this.gameObject.transform.position = Vector3.Lerp(getLerpA(), 
-            StaticMethods.ChangeZ(playerChar.transform.position, this.gameObject.transform.position.z), 
-            vTot(playerChar.GetComponent<Rigidbody2D>().velocity.magnitude));
+		this.gameObject.transform.position = Vector3.Lerp (getLerpA (), 
+			StaticMethods.ChangeZ (playerChar.transform.position, this.gameObject.transform.position.z), 1);
+            //vTot(playerChar.GetComponent<Rigidbody2D>().velocity.magnitude));
 	}
 
     float vTot (float v)
