@@ -5,8 +5,9 @@ using System.Collections;
 public class BaseMinionAI : BaseAI {
 
 	//Ai Damage Values
-	float projectileDamage;
+	float projectileSpeed;
 	float meleeDamage;
+
 	//Pause between minion attacks
 	float attackMeleeDelay;
 	float fireProjDelay;
@@ -25,6 +26,7 @@ public class BaseMinionAI : BaseAI {
 	protected override void Start () {
 		onCd = false;
 		curCd = 0.0f;
+		projectileSpeed = 1.0f;
 		Debug.Log ("in sub start");
 		base.rb = gameObject.GetComponent<Rigidbody2D> ();
 		curstate = BaseAI.AIStates.DetectedState;
@@ -39,7 +41,7 @@ public class BaseMinionAI : BaseAI {
 			Debug.Log ("Calling move");
 			MoveTowardsTarget ();
 			if (!onCd) {
-				fireProj ();
+				fireProj (projectileSpeed);
 				curCd = .5f;
 				onCd = true;
 			} else {
@@ -51,14 +53,17 @@ public class BaseMinionAI : BaseAI {
 		}
 	}
 
-	protected void fireProj()
+	protected void fireProj(float projSpeed)
 	{
 		Vector2 loc = new Vector2(targetObject.transform.position.x,targetObject.transform.position.y);
 		GameObject newProj = (GameObject) GameObject.Instantiate (Resources.Load ("Prefabs/MinionProj", typeof(GameObject)), gameObject.transform.position, Quaternion.identity);
-		newProj.GetComponent<Rigidbody2D> ().velocity = (targetObject.transform.position - gameObject.transform.position).normalized * 1f;
-		Debug.Log (newProj.transform.position);
+		newProj.GetComponent<Rigidbody2D> ().velocity = (targetObject.transform.position - gameObject.transform.position).normalized * projSpeed;
+		//Debug.Log (newProj.transform.position);
 
 
+	}
+
+	protected void attackMelee(){
 	}
 
 
