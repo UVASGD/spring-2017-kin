@@ -21,10 +21,13 @@ public class Projectile : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter(Collider obj)
+	void OnTriggerEnter2D(Collider2D obj)
 	{
+		Debug.Log ("in trigger");
 		if (obj.tag == "Player") {
 			//deal damage
 		}
+		Destroy(gameObject);
 	}
+		
 }
