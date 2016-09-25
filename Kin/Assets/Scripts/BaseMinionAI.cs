@@ -10,6 +10,9 @@ public class BaseMinionAI : MonoBehaviour {
 	float fireProjDelay; //Delay between proj attacks
 	bool rangedOnCd; //Is ranged attack on cooldown
 	float projectileRange; //Decay range for projectile decay
+	float fireRadius; //Ideal firing range
+	bool isRanged; //Is ranged minion
+
 
 	float meleeDamage; //Melee attack damage
 	float attackMeleeDelay; //Pause between minion attacks
@@ -39,6 +42,8 @@ public class BaseMinionAI : MonoBehaviour {
 		if (targetObject == null) {
 			Debug.LogError("AI has no target. AI name is " + gameObject.name + "!");
 		}
+
+		fireRadius = .8f;
 		//Initialize melee/ranged attack timers
 		rangedOnCd = false;
 		rangedCurrCd = 0.0f;
@@ -46,9 +51,11 @@ public class BaseMinionAI : MonoBehaviour {
 		meleeOnCd = false;
 		meleeCurrCd = 0.0f;
 
+
 		//Set initial state
 		//detected for testing, will normally be idle until awarenessRadius is reached
 		curState = AIStates.DetectedState;
+		isRanged = true;
 		//prefab = AssetDatabase.LoadAssetAtPath("Assets/prefabs.MinionProj", typeof(GameObject));
 
 	
@@ -61,18 +68,38 @@ public class BaseMinionAI : MonoBehaviour {
 		//Eventually will attacktype based on minion type
 		//If minions will be limited to one type of attack we can remove redundant Cd variables
 		if (curState == AIStates.DetectedState) {
-			MoveTowardsTarget ();
-			//Fire and set to cooldown
-			if (!rangedOnCd) {
-				fireProj (projectileSpeed);
-				rangedCurrCd = .5f;
-				rangedOnCd = true;
-			} else { //Decrease remaining cooldown
-				rangedCurrCd -= Time.deltaTime;
-				if (rangedCurrCd <= 0.0f)
-					rangedOnCd = false;
+			//Determine if ranged attacker
+			if (isRanged) {
+				//Check distance to player, move towards if beyond a certain radius, fire in the middle, away if too close
+				float distanceToPlayer = Vector2.Distance ((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
+				if (distanceToPlayer > fireRadius + .1f)
+					MoveTowardsTarget ();
+				else if (distanceToPlayer < fireRadius + .1f && distanceToPlayer > fireRadius - .1f) {
+					rb.velocity = Vector2.zero;
+					//Fire and set to cooldown
+					if (!rangedOnCd) {
+						fireProj (projectileSpeed);
+						rangedCurrCd = .5f;
+						rangedOnCd = true;
+					} else { //Decrease remaining cooldown
+						rangedCurrCd -= Time.deltaTime;
+						if (rangedCurrCd <= 0.0f)
+							rangedOnCd = false;
+					}
+				} else {
+					MoveAwayFromTarget ();
+					//Fire and set to cooldown
+					if (!rangedOnCd) {
+						fireProj (projectileSpeed);
+						rangedCurrCd = .5f;
+						rangedOnCd = true;
+					} else { //Decrease remaining cooldown
+						rangedCurrCd -= Time.deltaTime;
+						if (rangedCurrCd <= 0.0f)
+							rangedOnCd = false;
+					}
+				}
 			}
-	
 		}
 	}
 	//Fires projectile at player loc based on parameter speed
@@ -92,6 +119,11 @@ public class BaseMinionAI : MonoBehaviour {
 	//Move linearly towards target
 	protected void MoveTowardsTarget() {
 		rb.velocity = ((Vector2)(targetObject.transform.position - gameObject.transform.position)).normalized * speed;
+	}
+
+	protected void  MoveAwayFromTarget(){
+		Debug.Log ("in moveaway");
+		rb.velocity = ((Vector2)(gameObject.transform.position - targetObject.transform.position)).normalized * speed;
 	}
 
 

@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour {
 
 	void Start () {
 		//Initialize distance, range and pos
-		range = 2.0f;
+		range = 1.0f;
 		distTravelled = 0.0f;
 		previous = (Vector2) transform.position;
 	
@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour {
 	void Update () {
 		distTravelled += Vector2.Distance (((Vector2) transform.position), previous);
 		previous = (Vector2) transform.position;
-		Debug.Log (distTravelled);
+		//Debug.Log (distTravelled);
 		if (distTravelled >= range)
 			Destroy (gameObject);
 	
