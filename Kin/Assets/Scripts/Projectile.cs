@@ -3,31 +3,41 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour {
 
-	public float speed = 5.0f;
-	//Range at which proj will decay
-	public float range = 500.0f;
-	public float damage;
-	private float distTravelled;
 
-	// Use this for initialization
+	public float range; //Range at which proj will decay
+	private float distTravelled; //Total distance travelled
+	Vector2 previous;//Location last frame
+
+	public float damage; //Damage on hit
+
 	void Start () {
+		//Initialize distance, range and pos
+		range = 2.0f;
+		distTravelled = 0.0f;
+		previous = (Vector2) transform.position;
 	
 	}
 	
-	// Update is called once per frame
+	//Handle projectile should decay
 	void Update () {
-		//if (distTravelled >= range)
-			//Destroy (gameObject);
+		distTravelled += Vector2.Distance (((Vector2) transform.position), previous);
+		previous = (Vector2) transform.position;
+		Debug.Log (distTravelled);
+		if (distTravelled >= range)
+			Destroy (gameObject);
 	
 	}
 
+	//Handle player collisions
 	void OnTriggerEnter2D(Collider2D obj)
 	{
 		Debug.Log ("in trigger");
 		if (obj.tag == "Player") {
 			//deal damage
-			Destroy(gameObject);
-		}
+			Destroy (gameObject);
+		}// else if (obj.tag == "Terrain") {
+		//Destroy (gameObject);
+		//} 
 
 	}
 		
