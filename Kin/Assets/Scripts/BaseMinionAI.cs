@@ -11,7 +11,7 @@ public class BaseMinionAI : MonoBehaviour {
 	bool rangedOnCd; //Is ranged attack on cooldown
 	float projectileRange; //Decay range for projectile decay
 	float fireRadius; //Ideal firing range
-	bool isRanged; //Is ranged minion
+	public bool isRanged; //Is ranged minion
 
 
 	float meleeDamage; //Melee attack damage
@@ -30,7 +30,7 @@ public class BaseMinionAI : MonoBehaviour {
 		IdleState,
 		DetectedState
 	}
-	AIStates curState; //Current AI behavior state
+	protected AIStates curState; //Current AI behavior state
 
 
 	protected void Start () {
