@@ -4,16 +4,6 @@ using System.Collections;
 
 public class BaseMinionAI : MonoBehaviour {
 
-
-
-
-
-	float meleeDamage; //Melee attack damage
-	float attackMeleeDelay; //Pause between minion attacks
-	float attackRange; //Range to melee attack from
-	bool meleeOnCd; //Is melee attack on cooldown
-	float meleeCurrCd; //Remaining cooldown for melee attack
-
 	public float awarenessRadius; //Range to change idle->detected
 	public GameObject targetObject; //Player target
 	public float speed = 1.0f; //Movement speed
@@ -38,24 +28,15 @@ public class BaseMinionAI : MonoBehaviour {
 			Debug.LogError("AI has no target. AI name is " + gameObject.name + "!");
 		}
 
-
-		meleeOnCd = false;
-		meleeCurrCd = 0.0f;
-
-
 		//Set initial state
 		//detected for testing, will normally be idle until awarenessRadius is reached
 		curState = AIStates.DetectedState;
 
 		//prefab = AssetDatabase.LoadAssetAtPath("Assets/prefabs.MinionProj", typeof(GameObject));
-
-	
 	}
 	
 	// Update is called once per frame
 	protected void Update () {
-
-
 	}
 
 	//Attack in arc based on circlecast
@@ -71,7 +52,4 @@ public class BaseMinionAI : MonoBehaviour {
 		Debug.Log ("in moveaway");
 		rb.velocity = ((Vector2)(gameObject.transform.position - targetObject.transform.position)).normalized * speed;
 	}
-
-
-
 }
