@@ -16,12 +16,12 @@ public class MainMenuController : MonoBehaviour {
 	}
 
     public void ResumeGame() {
-        //SceneManager.LoadScene("Main");
+        SaveController.s_instance.Load();
+        SceneManager.LoadScene("Game UI");
     }
 
     public void NewGame() {
-        //Uncomment after the build settings have been changed
-        //SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Game UI");
     }
 
     public void Options() {
