@@ -62,3 +62,12 @@ Triangle = Use
 Start/Middle = Pause
 
 R1/L1 = switch through consumables
+
+
+Level Up Change Idea
+
+Will only show progress, summary of stat, where to go
+
+Leveling up the mechanism requires going to the monastery
+
+For balancing there will be different levels (i.e. overall level)
