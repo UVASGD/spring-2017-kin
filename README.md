@@ -21,7 +21,7 @@ Under the current constitution of Student Game Developers at the University of V
   
 	FUTURE: draw off Level Up, [health and stamina determined by Level Up]
   
-	OnDeath
+	OnDeath (reset stats, etc./Call the UI Element/Timing/Mostly comments atm)
   
 ####2a) Time
 
