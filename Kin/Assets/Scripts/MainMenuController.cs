@@ -13,28 +13,24 @@ public class MainMenuController : MonoBehaviour {
 	
 	}
 
-    void ResumeGame() {
+    public void ResumeGame() {
 
     }
 
-    void NewGame() {
+    public void NewGame() {
 
     }
 
-    void LoadGame() {
+    public void Options() {
 
     }
 
-    void Options() {
+    public void Credits() {
 
     }
 
-    void Credits() {
-
-    }
-
-    void Quit() {
-
+    public void Quit() {
+        Application.Quit();
     }
 
 }
