@@ -12,4 +12,29 @@ public class MainMenuController : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void ResumeGame() {
+
+    }
+
+    void NewGame() {
+
+    }
+
+    void LoadGame() {
+
+    }
+
+    void Options() {
+
+    }
+
+    void Credits() {
+
+    }
+
+    void Quit() {
+
+    }
+
 }
