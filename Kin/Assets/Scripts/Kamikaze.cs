@@ -4,6 +4,7 @@ using System.Collections;
 
 public class Kamikaze : BaseMinionAI
 {
+    
     float explodeRadius; //radius where kamikaze stops and explodes
     bool isExploding;
     float explodeDelay;  //time delay between stopping and exploding
@@ -24,12 +25,12 @@ public class Kamikaze : BaseMinionAI
 
         this.isRanged = false;
 
-        curState = AIStates.DetectedState;
+        curState = AIStates.IdleState;
 
         explodeRadius = .2f;
         timeToExplode = 0.0f;
         explodeDelay = .8f;
-
+        awarenessRadius = 1.0f;
     }
 
     protected new void Update()
@@ -54,6 +55,11 @@ public class Kamikaze : BaseMinionAI
                     timeToExplode += Time.deltaTime;
                 }
             }
+        }
+        else
+        {
+            if (distanceToPlayer < awarenessRadius)
+                curState = AIStates.DetectedState;
         }
     }
 }
