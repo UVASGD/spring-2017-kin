@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using UnityEditor.SceneManagement;
 
 public class MainMenuController : MonoBehaviour {
 
@@ -14,11 +16,12 @@ public class MainMenuController : MonoBehaviour {
 	}
 
     public void ResumeGame() {
-
+        //SceneManager.LoadScene("Main");
     }
 
     public void NewGame() {
-
+        //Uncomment after the build settings have been changed
+        //SceneManager.LoadScene("Main");
     }
 
     public void Options() {
