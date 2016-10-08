@@ -22,7 +22,8 @@ public class BaseMinionAI : MonoBehaviour {
 	//Set of AI behavior states
 	protected enum AIStates {
 		IdleState,
-		DetectedState
+		DetectedState,
+		PatrolState
 	}
 	protected AIStates curState; //Current AI behavior state
 
