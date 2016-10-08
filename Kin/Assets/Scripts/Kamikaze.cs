@@ -23,8 +23,6 @@ public class Kamikaze : BaseMinionAI
             Debug.LogError("AI has no target. AI name is " + gameObject.name + "!");
         }
 
-        this.isRanged = false;
-
         curState = AIStates.IdleState;
 
         explodeRadius = .2f;
