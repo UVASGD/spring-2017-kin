@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Kamikaze.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
+    <Compile Include="Assets\Scripts\RangedMinion.cs" />
     <Compile Include="Assets\Scripts\SaveController.cs" />
     <Compile Include="Assets\Scripts\StaticMethods.cs" />
     <Compile Include="Assets\Scripts\SystemsController.cs" />
