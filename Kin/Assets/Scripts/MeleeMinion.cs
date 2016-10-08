@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MeleeMinion : BaseMinionAI
 {
@@ -60,7 +61,7 @@ public class MeleeMinion : BaseMinionAI
     void attackInRadius(float direction,float angleOfAttack,float radius)
     {
         Collider2D[] everythingInRange = Physics2D.OverlapCircleAll(rb.transform.position, radius);
-        ArrayList matches = new ArrayList();
+        List<GameObject> matches = new List<GameObject>();
         for(int i = 0; i < everythingInRange.Length; i++)
         {
             Vector2 objPosition = everythingInRange[i].GetComponent<Rigidbody2D>().transform.position;
