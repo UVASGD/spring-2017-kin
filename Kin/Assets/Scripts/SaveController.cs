@@ -55,47 +55,58 @@ public class SaveController : MonoBehaviour {
         GUI.Label(new Rect(10, 100, 100, 30), "Stamina: " + stamina);
         if(GUI.Button(new Rect(10, 130, 100, 30), "Save"))
         {
-            Save();
+            Save("", false);
         }
         if(GUI.Button(new Rect(10, 160, 100, 30), "Load"))
         {
-            Load();
+            Load("", false);
         }
     }
 
-    public void Save()
+	public void Save(String fileNumber, bool autosave)
     {
+		if (autosave) {
+			fileNumber = "autosave" + fileNumber;
+		}
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/saveInfo.dat");
+        FileStream file = File.Create(Application.persistentDataPath + "/saveInfo" + fileNumber + ".dat");
         SaveData data = WriteToData();
         bf.Serialize(file, data);
         file.Close();
     }
 
-    public void Load()
+	public void Load(String fileNumber, bool autosave)
     {
-        if(File.Exists(Application.persistentDataPath + "/saveInfo.dat"))
+		if (autosave) {
+			fileNumber = "autosave" + fileNumber;
+		}
+		if(File.Exists(Application.persistentDataPath + "/saveInfo" + fileNumber + ".dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/saveInfo.dat",
+			FileStream file = File.Open(Application.persistentDataPath + "/saveInfo" + fileNumber + ".dat",
                 FileMode.Open);
             SaveData data = (SaveData) bf.Deserialize(file);
             file.Close();
 
-            health = data.health;
-            stamina = data.stamina;
-            healthLvlP = data.healthLvlP;
-            healthLvlO = data.healthLvlO;
-            stamLvlP = data.stamLvlP;
-            stamLvlO = data.stamLvlO;
-            strLvlP = data.strLvlP;
-            strLvlO = data.strLvlO;
-            wisLvlP = data.wisLvlP;
-            wisLvlO = data.wisLvlO;
-            day = data.day;
-            time = data.time;
+			WriteFromData (data);
         }
     }
+
+	private void WriteFromData(SaveData data)
+	{
+		health = data.health;
+		stamina = data.stamina;
+		healthLvlP = data.healthLvlP;
+		healthLvlO = data.healthLvlO;
+		stamLvlP = data.stamLvlP;
+		stamLvlO = data.stamLvlO;
+		strLvlP = data.strLvlP;
+		strLvlO = data.strLvlO;
+		wisLvlP = data.wisLvlP;
+		wisLvlO = data.wisLvlO;
+		day = data.day;
+		time = data.time;
+	}
 
     private SaveData WriteToData ()
     {
