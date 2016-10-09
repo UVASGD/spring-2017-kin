@@ -17,16 +17,19 @@ public class AvatarMvmController : MonoBehaviour {
     }
 
     void Update()
-	{
-		Animator animator = gameObject.GetComponent<Animator> ();
-		var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-		if(!animator.GetBool("Dead")) rb.velocity = ((Vector2) move) * speed;
+    {
+        var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+		gameObject.GetComponent<Animator>().SetBool("Moving", move.magnitude > 0);
+		gameObject.GetComponent<Animator>().SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+		gameObject.GetComponent<Animator>().SetFloat("Vertical", Input.GetAxis("Vertical"));
+        //transform.position += move * speed * Time.deltaTime;
+		rb.velocity = ((Vector2) move) * speed;
 
         // Save Vector2 of last movement
-        //if (!(System.Math.Abs(move.x) < 0.01f && System.Math.Abs(move.y) < 0.01f))
-        //{
-        //    lastMove = move;
-        //}
+        if (!(System.Math.Abs(move.x) < 0.01f && System.Math.Abs(move.y) < 0.01f))
+        {
+            lastMove = move;
+        }
     }
 
     public void playWalkSound()
