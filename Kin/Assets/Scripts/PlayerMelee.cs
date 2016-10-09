@@ -4,10 +4,10 @@ using System.Collections;
 public class PlayerMelee : MonoBehaviour {
 
     // Attack hitboxes for 4 directions
-    public Collider2D rightAttackBox;
-    public Collider2D leftAttackBox;
-    public Collider2D upperAttackBox;
-    public Collider2D lowerAttackBox;
+    public GameObject rightAttackBox;
+	public GameObject leftAttackBox;
+	public GameObject upperAttackBox;
+	public GameObject lowerAttackBox;
 
     private bool facingRight;
     private bool facingLeft;
@@ -18,15 +18,15 @@ public class PlayerMelee : MonoBehaviour {
     private float attackTimer = 0;
     // How long hitbox is enabled
     public float attackCoolDown = 0.2f;
-    public KeyCode attackKey = KeyCode.Z;
+    public KeyCode attackKey;
 
 
     void Awake()
     {
-        rightAttackBox.enabled = false;
-        leftAttackBox.enabled = false;
-        upperAttackBox.enabled = false;
-        lowerAttackBox.enabled = false;
+		rightAttackBox.SetActive(false);
+		leftAttackBox.SetActive(false);
+		upperAttackBox.SetActive(false);
+		lowerAttackBox.SetActive(false);
 
         // Assuming player starts out facing forward
         facingRight = false;
@@ -82,25 +82,25 @@ public class PlayerMelee : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(attackKey) && !attacking)
+        if (Input.GetButtonDown("Attack") && !attacking)
         {
             attacking = true;
             attackTimer = attackCoolDown; // Start timer
             if (facingRight)
             {
-                rightAttackBox.enabled = true;
+				rightAttackBox.SetActive (true);
             }
             else if (facingLeft)
             {
-                leftAttackBox.enabled = true;
+				leftAttackBox.SetActive (true);
             }
             else if (facingUp)
             {
-                upperAttackBox.enabled = true;
+				upperAttackBox.SetActive (true);
             }
             else if (facingDown)
             {
-                lowerAttackBox.enabled = true;
+				lowerAttackBox.SetActive (true);
             }
         }
 
@@ -113,10 +113,10 @@ public class PlayerMelee : MonoBehaviour {
             else
             {
                 attacking = false;
-                rightAttackBox.enabled = false;
-                leftAttackBox.enabled = false;
-                upperAttackBox.enabled = false;
-                lowerAttackBox.enabled = false;
+				rightAttackBox.SetActive (false);
+				leftAttackBox.SetActive (false);
+				upperAttackBox.SetActive (false);
+				lowerAttackBox.SetActive (false);
             }
         }
 
