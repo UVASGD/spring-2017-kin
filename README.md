@@ -13,30 +13,39 @@ Under the current constitution of Student Game Developers at the University of V
 
 ####1) Combat
 
-	hitboxes [DONE, Laura: implemented combat]
+	hitboxes
   
-	numbers [WAITING: need information from Design to set]
+	numbers
   
-	animation [DONE (kind of), Reid: waiting on sprites for animation]
+	animation?
   
-	HealthController (OnDeath = reset stats, etc./Call the UI Element/Timing/Mostly comments atm) [DONE?, Laura]
-	
-	FUTURE: draw off Level Up, (health and stamina determined by Level Up)
+	FUTURE: draw off Level Up, [health and stamina determined by Level Up]
+  
+	OnDeath (reset stats, etc./Call the UI Element/Timing/Mostly comments atm)
   
 ####2a) Time
 
-	just keeping track of days, timedelta, literally just time [IN PROGRESS/Skylar, Lauren, Kathy]
-
+	just keeping track of days
+  
+	timedelta
+  
+	literally just time
   
 ####2b) Level Up
 
-	level controller [TODO/Reid?]
+	level controller
   
-	stats (4 stats for Player, 4 stat for Order, Getters and Setters)[IN PROGRESS/Nathan, Paul]
+	stats
+  
+	4 stats for Player
+  
+	4 stats for Order
+  
+	Getters and Setters
   
 	XP/Lumee/Luminescence/Spend Time
   
-	Singleton Class [TODO/Laura]
+	Singleton Class 
   
 ####3) Day/Night and Weather
 
