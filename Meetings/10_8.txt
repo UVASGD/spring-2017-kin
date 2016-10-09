@@ -1,0 +1,10 @@
+MSE is on November 5th, less than a month away
+We have Aseprite (art already knows) but it's open to ere'body
+Break into teams--
+
+UI - main menu, start stat canvas!
+Systems - Hitboxes, combat, combo -this needs to get finished, Jackson will work with you all.
+AI - meet again with Design as necessary, flesh out minions, start implementing the beginnings of a boss if time permits
+Design - Talk out combos, talk out level up system, hopefully an intro to Tiled, rediscussion of items and health
+Art - main character art really needs to get done, also --as usual-- tiles, structurs, and boss stuff :)
+Audio - hopefully some main track protoypes and begin finalizing combat-related sound effects.

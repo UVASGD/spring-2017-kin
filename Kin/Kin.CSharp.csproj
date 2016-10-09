@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\AvatarMvmController.cs" />
     <Compile Include="Assets\Scripts\BaseAI.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\PlayerMelee.cs" />
     <Compile Include="Assets\Scripts\SaveController.cs" />
     <Compile Include="Assets\Scripts\StaticMethods.cs" />
     <Compile Include="Assets\Scripts\TempGameController.cs" />
