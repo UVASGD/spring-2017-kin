@@ -8,6 +8,8 @@ public class AvatarMvmController : MonoBehaviour {
 
 	Rigidbody2D rb;
 
+    public Vector2 lastMove = new Vector2(0, 0);
+
     void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -23,6 +25,12 @@ public class AvatarMvmController : MonoBehaviour {
 		gameObject.GetComponent<Animator>().SetFloat("Vertical", Input.GetAxis("Vertical"));
         //transform.position += move * speed * Time.deltaTime;
 		rb.velocity = ((Vector2) move) * speed;
+
+        // Save Vector2 of last movement
+        if (!(System.Math.Abs(move.x) < 0.01f && System.Math.Abs(move.y) < 0.01f))
+        {
+            lastMove = move;
+        }
     }
 
     public void playWalkSound()
