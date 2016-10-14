@@ -8,6 +8,7 @@ public class AnimationControl : MonoBehaviour {
 	Rigidbody2D rb;
 	SpriteRenderer sr;
 	Vector2 lastMove;
+	Animator animator;
 
 	/// <summary> ability to face 4 directions	/// </summary>
 	public bool MultiDirectional = false;
@@ -21,8 +22,11 @@ public class AnimationControl : MonoBehaviour {
 	};
 
 	void Start () {
+		animator = gameObject.GetComponent<Animator> ();
 		sr = gameObject.GetComponent<SpriteRenderer> ();
 		rb = gameObject.GetComponent<Rigidbody2D>();
+
+		animator.logWarnings = false;
 		switch (InitialDirection) {
 		case Direction.Up:
 			lastMove = MultiDirectional ? new Vector2 (0, 1) : new Vector2 (-1, 0);
@@ -40,7 +44,6 @@ public class AnimationControl : MonoBehaviour {
 	}
 
 	void Update () {
-		Animator animator = gameObject.GetComponent<Animator> ();
 		int direction = updateDirection ();
 
 		var move = rb.velocity;
