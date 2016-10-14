@@ -58,20 +58,25 @@ public class MeleeMinion : BaseMinionAI
         }
     }
 
+    private GameObject[] ObjectsInAttackArea(float direction, float angleOfAttack, float attackRadius)
+    {
+  		Collider2D[] allCollidersInRadius = Physics2D.OverlapCircleAll (rb.transform.position, attackRadius);
+  		List<GameObject> matches = new List<GameObject> ();
+  		for (int i = 0; i < allCollidersInRadius.Length; i++) {
+  			float theta = Mathf.Atan2 (allCollidersInRadius [i].transform.position.x - rb.transform.position.x, allCollidersInRadius [i].transform.position.y - rb.transform.position.y);
+  			if (theta > direction - (angleOfAttack / 2) && theta < direction + (angleOfAttack / 2)) {
+  				matches.Add (allCollidersInRadius [i].gameObject);
+  			}
+  		}
+  		return matches.ToArray();
+  	}
+
     void attackInRadius(float direction,float angleOfAttack,float radius)
     {
-        Collider2D[] everythingInRange = Physics2D.OverlapCircleAll(rb.transform.position, radius);
-        List<GameObject> matches = new List<GameObject>();
-        for(int i = 0; i < everythingInRange.Length; i++)
-        {
-            Vector2 objPosition = everythingInRange[i].GetComponent<Rigidbody2D>().transform.position;
-            float angleToObject = (Mathf.Atan2(objPosition.y - rb.position.y, objPosition.x - rb.position.x) + 2*Mathf.PI) % 2*Mathf.PI;
-            if (angleToObject > direction - (angleOfAttack / 2) && angleToObject < direction + (angleOfAttack / 2)) //We can check tag of the object to avoid friendly fire if deisred here
-            {
-                matches.Add(everythingInRange[i].gameObject);
-            }
-        }
+        GameObject[] thingsToAttack = ObjectsInAttackArea(direction,angleOfAttack,radius);
         //Attack Everything In This List
-
+        for(int i = 0; i < thingsToAttack.length; i++){
+          //attack(thingsToAttack[i]);
+        }
     }
 }
