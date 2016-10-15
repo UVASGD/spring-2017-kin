@@ -33,8 +33,9 @@ public class Projectile : MonoBehaviour {
 	{
 		Debug.Log ("in trigger");
 		if (obj.tag == "Player") {
-			//deal damage
 			Destroy (gameObject);
+			//deals damage
+			obj.gameObject.GetComponent<PlayerHealth> ().TakeDamage ((int)damage);
 		}// else if (obj.tag == "Terrain") {
 		//Destroy (gameObject);
 		//} 
