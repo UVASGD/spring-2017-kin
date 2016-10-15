@@ -5,8 +5,7 @@ using System.Collections.Generic;
 
 public class MeleeMinion : BaseMinionAI
 {
-    float meleeDamage; //Melee attack damage
-    float attackMeleeDelay; //Pause between minion attacks
+    public float meleeDamage; //Melee attack damage
     float attackRange; //Range to melee attack from
     bool meleeOnCd; //Is melee attack on cooldown
     float meleeCurrCd; //Remaining cooldown for melee attack
@@ -25,7 +24,8 @@ public class MeleeMinion : BaseMinionAI
         }
 
         curState = AIStates.IdleState;
-
+		meleeOnCd = false;
+		attackRange = .3f;
         awarenessRadius = 1.0f;
     }
 
@@ -35,21 +35,20 @@ public class MeleeMinion : BaseMinionAI
 
         if (curState == AIStates.DetectedState)
         {
-            if (distanceToPlayer < attackRange)
-            {
-                if(!meleeOnCd)
-                {
-                    //attack
-                    meleeCurrCd = .5f;
-                    meleeOnCd = true;
-                }
-                else
-                {
-                    meleeCurrCd -= Time.deltaTime;
-                    if (meleeCurrCd <= 0.0f)
-                        meleeOnCd = false;
-                }
-            }
+			if (distanceToPlayer < attackRange) {
+				if (!meleeOnCd) {
+					//attack
+					//Need to choose 1 of 4 major directions to face and then call attack
+					meleeCurrCd = .5f;
+					meleeOnCd = true;
+				} else {
+					meleeCurrCd -= Time.deltaTime;
+					if (meleeCurrCd <= 0.0f)
+						meleeOnCd = false;
+				}
+			} else {
+				MoveTowardsTarget ();
+			}
         }
         else
         {
@@ -63,7 +62,7 @@ public class MeleeMinion : BaseMinionAI
   		Collider2D[] allCollidersInRadius = Physics2D.OverlapCircleAll (rb.transform.position, attackRadius);
   		List<GameObject> matches = new List<GameObject> ();
   		for (int i = 0; i < allCollidersInRadius.Length; i++) {
-  			float theta = Mathf.Atan2 (allCollidersInRadius [i].transform.position.x - rb.transform.position.x, allCollidersInRadius [i].transform.position.y - rb.transform.position.y);
+			float theta = Mathf.Rad2Deg * Mathf.Atan2 (allCollidersInRadius [i].transform.position.x - rb.transform.position.x, allCollidersInRadius [i].transform.position.y - rb.transform.position.y);
   			if (theta > direction - (angleOfAttack / 2) && theta < direction + (angleOfAttack / 2)) {
   				matches.Add (allCollidersInRadius [i].gameObject);
   			}
@@ -76,7 +75,10 @@ public class MeleeMinion : BaseMinionAI
         GameObject[] thingsToAttack = ObjectsInAttackArea(direction,angleOfAttack,radius);
         //Attack Everything In This List
         for(int i = 0; i < thingsToAttack.Length; i++){
-          //attack(thingsToAttack[i]);
+			if (thingsToAttack[i].tag == "Player")
+			{
+				targetObject.GetComponent<PlayerHealth> ().TakeDamage (meleeDamage);
+			}
         }
     }
 }
