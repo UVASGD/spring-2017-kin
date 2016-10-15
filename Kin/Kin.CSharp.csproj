@@ -70,7 +70,9 @@
     <Compile Include="Assets\Scripts\BaseAI.cs" />
     <Compile Include="Assets\Scripts\BaseMinionAI.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\EmptyClass.cs" />
     <Compile Include="Assets\Scripts\Kamikaze.cs" />
+    <Compile Include="Assets\Scripts\MeleeMinion.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\RangedMinion.cs" />
     <Compile Include="Assets\Scripts\SaveController.cs" />
