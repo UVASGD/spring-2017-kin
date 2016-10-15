@@ -8,18 +8,42 @@ public class AnimationControl : MonoBehaviour {
 	Rigidbody2D rb;
 	SpriteRenderer sr;
 	Vector2 lastMove;
+	Animator animator;
 
+	/// <summary> ability to face 4 directions	/// </summary>
 	public bool MultiDirectional = false;
+	/// <summary> direction to face upon spawn	/// </summary>
+	public Direction InitialDirection = Direction.Right;
+	public enum Direction {
+		Up,
+		Left,
+		Right,
+		Down
+	};
 
-	// Use this for initialization
 	void Start () {
+		animator = gameObject.GetComponent<Animator> ();
 		sr = gameObject.GetComponent<SpriteRenderer> ();
 		rb = gameObject.GetComponent<Rigidbody2D>();
+
+		animator.logWarnings = false;
+		switch (InitialDirection) {
+		case Direction.Up:
+			lastMove = MultiDirectional ? new Vector2 (0, 1) : new Vector2 (-1, 0);
+			break;
+		case Direction.Left:
+			lastMove = new Vector2 (-1, 0);
+			break;
+		case Direction.Down:
+			lastMove = MultiDirectional ? new Vector2 (0, -1) : new Vector2 (1, 0);
+			break;
+		case Direction.Right:
+			lastMove = new Vector2 (1, 0);
+			break;
+		}
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
-		Animator animator = gameObject.GetComponent<Animator> ();
 		int direction = updateDirection ();
 
 		var move = rb.velocity;
@@ -35,7 +59,10 @@ public class AnimationControl : MonoBehaviour {
 		}
 	}
 
-	// controls animation based off direction of last velocity
+	/// <summary>
+	/// controls animation based off direction of last saved velocity
+	/// </summary>
+	/// <returns>The direction.</returns>
 	int updateDirection(){
 		float angle = 360*Mathf.Atan2(lastMove.x,lastMove.y)/(2*Mathf.PI);
 		int direction = 0; bool facingRight = true;
