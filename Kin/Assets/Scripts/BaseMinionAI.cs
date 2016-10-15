@@ -9,13 +9,12 @@ public class BaseMinionAI : MonoBehaviour {
 	public GameObject targetObject; //Player target
 	public float speed = 1.0f; //Movement speed
 	protected Rigidbody2D rb; //Minion Rigidbody
-	public bool meleeOnCd;
-	public float meleeCurrCd;
 
 	//Set of AI behavior states
 	protected enum AIStates {
 		IdleState,
-		DetectedState
+		DetectedState,
+		PatrolState
 	}
 	protected AIStates curState; //Current AI behavior state
 
@@ -30,9 +29,6 @@ public class BaseMinionAI : MonoBehaviour {
 			Debug.LogError("AI has no target. AI name is " + gameObject.name + "!");
 		}
 
-
-		meleeOnCd = false;
-		meleeCurrCd = 0.0f;
 
 
 
@@ -50,11 +46,6 @@ public class BaseMinionAI : MonoBehaviour {
 
 
 	}
-
-	//Attack in arc based on circlecast
-	protected void attackMelee(){
-	}
-
 	//Move linearly towards target
 	protected void MoveTowardsTarget() {
 		rb.velocity = ((Vector2)(targetObject.transform.position - gameObject.transform.position)).normalized * speed;
