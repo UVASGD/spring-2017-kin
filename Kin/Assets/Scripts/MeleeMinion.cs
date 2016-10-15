@@ -75,7 +75,7 @@ public class MeleeMinion : BaseMinionAI
     {
         GameObject[] thingsToAttack = ObjectsInAttackArea(direction,angleOfAttack,radius);
         //Attack Everything In This List
-        for(int i = 0; i < thingsToAttack.length; i++){
+        for(int i = 0; i < thingsToAttack.Length; i++){
           //attack(thingsToAttack[i]);
         }
     }

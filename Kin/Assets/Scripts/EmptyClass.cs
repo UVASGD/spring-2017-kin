@@ -1,5 +1,5 @@
 ﻿using System;
-
+using UnityEngine;
 public class EmptyClass : Kamikaze
 {
 
@@ -20,15 +20,15 @@ public class EmptyClass : Kamikaze
 			Debug.LogError("AI has no target. AI name is " + gameObject.name + "!");
 		}
 
-		this.isRanged = false;
+		//this.isRanged = false;
 
 		curState = AIStates.IdleState;
 		float[] positions = new float[2];
-		explodeRadius = .2f;
-		timeToExplode = 0.0f;
-		explodeDelay = .8f;
+		//explodeRadius = .2f;
+		//timeToExplode = 0.0f;
+		//explodeDelay = .8f;
 		awarenessRadius = 1.0f;
-		wanderRad = 2.0f;
+		//wanderRad = 2.0f;
 	}
 
 
@@ -37,7 +37,7 @@ public class EmptyClass : Kamikaze
 
 	}
 
-
+	/*
 	@Override
 	Update()
 	{
@@ -66,4 +66,5 @@ public class EmptyClass : Kamikaze
 				curState = AIStates.DetectedState;
 		}
 	}
+	*/
 }
