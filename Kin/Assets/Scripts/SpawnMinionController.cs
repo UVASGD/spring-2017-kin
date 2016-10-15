@@ -12,12 +12,12 @@ public class SpawnMinionController : MonoBehaviour {
 	
 	}
 
-	void spawnMinion(){
+	void spawnMinion(string minionType){
 		int angle = ((int) Random.Range (0.0f, 360.0f));
 		var rot = Quaternion.Euler (0, 0, angle);
 		var position = rot * ((new Vector2 (1, 0)) * Random.Range (0.0f, 1.0f));
 
-		GameObject newMinion= (GameObject) GameObject.Instantiate (Resources.Load ("Prefabs/RangedMinion", typeof(GameObject)), gameObject.transform.position + position, Quaternion.identity);
+		GameObject newMinion= (GameObject) GameObject.Instantiate (Resources.Load ("Prefabs/" + minionType, typeof(GameObject)), gameObject.transform.position + position, Quaternion.identity);
 		newMinion.GetComponent<RangedMinion> ().targetObject = player;
 	}
 	
