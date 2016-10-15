@@ -7,7 +7,7 @@ public class AnimationControl : MonoBehaviour {
 
 	Rigidbody2D rb;
 	SpriteRenderer sr;
-	Vector2 lastMove;
+	public Vector2 lastMove;
 	Animator animator;
 
 	/// <summary> ability to face 4 directions	/// </summary>
