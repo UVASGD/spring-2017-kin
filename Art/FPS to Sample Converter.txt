@@ -1,0 +1,4 @@
+Link to gif to sample converter graph:
+https://www.desmos.com/calculator/iaxstat2dl
+
+Use this to implement animations in Unity
