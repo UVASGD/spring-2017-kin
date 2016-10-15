@@ -5,19 +5,12 @@ using System.Collections;
 public class BaseMinionAI : MonoBehaviour {
 
 
-
-
-
-	float meleeDamage; //Melee attack damage
-	float attackMeleeDelay; //Pause between minion attacks
-	float attackRange; //Range to melee attack from
-	bool meleeOnCd; //Is melee attack on cooldown
-	float meleeCurrCd; //Remaining cooldown for melee attack
-
 	public float awarenessRadius; //Range to change idle->detected
 	public GameObject targetObject; //Player target
 	public float speed = 1.0f; //Movement speed
 	protected Rigidbody2D rb; //Minion Rigidbody
+	public bool meleeOnCd;
+	public float meleeCurrCd;
 
 	//Set of AI behavior states
 	protected enum AIStates {
