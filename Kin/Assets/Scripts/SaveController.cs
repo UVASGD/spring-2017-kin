@@ -10,8 +10,10 @@ public class SaveController : MonoBehaviour {
 
     public static SaveController s_instance;
 
-    public float health;
     public float stamina;
+
+	public PlayerHealth playerHealthController;
+	public float health;
 
     public int healthLvlP;
     public int healthLvlO;
@@ -43,14 +45,16 @@ public class SaveController : MonoBehaviour {
 	
     void OnGUI()
     {
-        GUI.Label(new Rect(10, 10, 100, 20), "Health: " + health);
+		GUI.Label(new Rect(10, 10, 100, 20), "Health: " + PlayerHealth.s_instance.currentHealth);
         if (GUI.Button(new Rect(10, 40, 100, 30), "Health Up"))
         {
-            health++;
+			PlayerHealth.s_instance.currentHealth++;
+			health = PlayerHealth.s_instance.currentHealth;
         }
         if (GUI.Button(new Rect(10, 70, 100, 30), "Health down"))
         {
-            health--;
+			PlayerHealth.s_instance.currentHealth--;
+			health = PlayerHealth.s_instance.currentHealth;
         }
         GUI.Label(new Rect(10, 100, 100, 30), "Stamina: " + stamina);
         if(GUI.Button(new Rect(10, 130, 100, 30), "Save"))
@@ -111,7 +115,7 @@ public class SaveController : MonoBehaviour {
     private SaveData WriteToData ()
     {
         SaveData data = new SaveData();
-        data.health = health;
+		data.health = PlayerHealth.s_instance.currentHealth;
         data.stamina = stamina;
         data.healthLvlP = healthLvlP;
         data.healthLvlO = healthLvlO;
