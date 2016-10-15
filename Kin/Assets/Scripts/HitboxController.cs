@@ -6,8 +6,15 @@ public class HitboxController : MonoBehaviour {
 	public bool hitbox = true;
 
 	//All of the sprites for the animation
-	public PolygonCollider2D Up1;
-	public PolygonCollider2D Right1;
+
+	//Idle_Down Sprites
+	public PolygonCollider2D Character_0;
+	public PolygonCollider2D Character_1;
+	public PolygonCollider2D Character_2;
+	public PolygonCollider2D Character_3;
+	public PolygonCollider2D Character_4;
+	public PolygonCollider2D Character_5;
+
 
 	//Array of colliders for animation to switch from
 	private PolygonCollider2D[] allHitboxes;
@@ -17,15 +24,19 @@ public class HitboxController : MonoBehaviour {
 	//All the available hitboxes
 	public enum hitBoxes
 	{
-		Up1,
-		Right1,
+		Character_0,
+		Character_1,
+		Character_2,
+		Character_3,
+		Character_4,
+		Character_5,
 		clear // special case to remove all boxes
 	}
 
 
 	// Use this for initialization
 	void Start () {
-		allHitboxes = new PolygonCollider2D[]{Up1,Right1};
+		allHitboxes = new PolygonCollider2D[]{Character_0,Character_1,Character_2,Character_3,Character_4,Character_5};
 
 		//Create the collider
 		curHitbox = gameObject.AddComponent<PolygonCollider2D>();
