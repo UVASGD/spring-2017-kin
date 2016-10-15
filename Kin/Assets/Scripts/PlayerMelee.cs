@@ -47,7 +47,7 @@ public class PlayerMelee : MonoBehaviour {
         if (lastMove.x == 0) // If last movement in y direction
         {
             if (lastMove.y < 0) {
-                Debug.Log("DOWN");
+                //Debug.Log("DOWN");
                 facingRight = false;
                 facingLeft = false;
                 facingUp = false;
@@ -55,7 +55,7 @@ public class PlayerMelee : MonoBehaviour {
             }
             else if (lastMove.y > 0)
             {
-                Debug.Log("UP");
+                //Debug.Log("UP");
                 facingRight = false;
                 facingLeft = false;
                 facingUp = true;
@@ -66,7 +66,7 @@ public class PlayerMelee : MonoBehaviour {
         {
             if (lastMove.x < 0)
             {
-                Debug.Log("LEFT");
+                //Debug.Log("LEFT");
                 facingRight = false;
                 facingLeft = true;
                 facingUp = false;
@@ -74,7 +74,7 @@ public class PlayerMelee : MonoBehaviour {
             }
             else if (lastMove.x > 0)
             {
-                Debug.Log("RIGHT");
+                //Debug.Log("RIGHT");
                 facingRight = true;
                 facingLeft = false;
                 facingUp = false;

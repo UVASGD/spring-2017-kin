@@ -37,7 +37,7 @@ public class MeleeMinion : BaseMinionAI
         {
 			if (distanceToPlayer < attackRange) {
 				if (!meleeOnCd) {
-					//attack
+					attackInRadius (targetObject.transform.position.x > rb.transform.position.x, attackRange);
 					//Need to choose 1 of 4 major directions to face and then call attack
 					meleeCurrCd = .5f;
 					meleeOnCd = true;
@@ -57,28 +57,28 @@ public class MeleeMinion : BaseMinionAI
         }
     }
 
-    private GameObject[] ObjectsInAttackArea(boolean direction /* false==left, true==right */, float attackRadius)
+    private GameObject[] ObjectsInAttackArea(bool direction /* false==left, true==right */, float attackRadius)
     {
   		Collider2D[] allCollidersInRadius = Physics2D.OverlapCircleAll (rb.transform.position, attackRadius);
   		List<GameObject> matches = new List<GameObject> ();
   		for (int i = 0; i < allCollidersInRadius.Length; i++) {
-			int xDifference = allCollidersInRadius [i].attachedRigidbody.transform.position.x - rb.transform.position.x;
+			float xDifference = allCollidersInRadius [i].attachedRigidbody.transform.position.x - rb.transform.position.x;
 			if (direction) { //Right Side
 				if (xDifference >= 0) {
-					matches.Add (allCollidersInRadius [i]);
+					matches.Add (allCollidersInRadius [i].gameObject);
 				}
 			} else { //Left Side
 				if (xDifference <= 0) {
-					matches.Add (allCollidersInRadius [i]);
+					matches.Add (allCollidersInRadius [i].gameObject);
 				}
 			}
   		}
   		return matches.ToArray();
   	}
 
-    void attackInRadius(float direction,float angleOfAttack,float radius)
+    void attackInRadius(bool direction, float radius)
     {
-        GameObject[] thingsToAttack = ObjectsInAttackArea(direction,angleOfAttack,radius);
+        GameObject[] thingsToAttack = ObjectsInAttackArea(direction,radius);
         //Attack Everything In This List
         for(int i = 0; i < thingsToAttack.Length; i++){
 			if (thingsToAttack[i].tag == "Player")
