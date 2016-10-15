@@ -21,15 +21,7 @@ public class TempGameController : MonoBehaviour {
 	void Update () {
         ui.setHealth((int)save.health);
         ui.setStamina((int)save.stamina);
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            print("toggling options");
-            toggleOptionsPanel();
-        }
 	}
 
-    public void toggleOptionsPanel()
-    {
-        options.enabled = !options.enabled;
-    }
+    
 }
