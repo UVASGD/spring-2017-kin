@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour {
 	private float distTravelled; //Total distance travelled
 	Vector2 previous;//Location last frame
 
-	public float damage; //Damage on hit
+	public int  damage; //Damage on hit
 
 	void Start () {
 		//Initialize distance, range and pos
@@ -35,7 +35,7 @@ public class Projectile : MonoBehaviour {
 		if (obj.tag == "Player") {
 			Destroy (gameObject);
 			//deals damage
-			obj.gameObject.GetComponent<PlayerHealth> ().TakeDamage ((int)damage);
+			obj.gameObject.GetComponent<PlayerHealth> ().TakeDamage (damage);
 		}// else if (obj.tag == "Terrain") {
 		//Destroy (gameObject);
 		//} 
