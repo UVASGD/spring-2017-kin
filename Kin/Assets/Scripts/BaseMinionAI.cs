@@ -42,6 +42,7 @@ public class BaseMinionAI : MonoBehaviour {
 		meleeCurrCd = 0.0f;
 
 
+
 		//Set initial state
 		//detected for testing, will normally be idle until awarenessRadius is reached
 		curState = AIStates.DetectedState;
@@ -52,7 +53,7 @@ public class BaseMinionAI : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	protected void Update () {
+	protected virtual void Update () {
 
 
 	}

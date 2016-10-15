@@ -25,17 +25,20 @@ public class RangedMinion : BaseMinionAI {
 
 	// Use this for initialization
 	void Start () {
+		base.Start ();
 		fireRadius = .8f;
 		//Initialize melee/ranged attack timers
 		rangedOnCd = false;
 		rangedCurrCd = 0.0f;
 		projectileSpeed = 1.0f;
 		isRanged = true;
+		Debug.Log ("Sub start");
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
+
+	 protected override void Update () {
 		//If aggressive, attack player
 		//Eventually will attacktype based on minion type
 		//If minions will be limited to one type of attack we can remove redundant Cd variables
