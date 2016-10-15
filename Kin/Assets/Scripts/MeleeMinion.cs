@@ -57,15 +57,21 @@ public class MeleeMinion : BaseMinionAI
         }
     }
 
-    private GameObject[] ObjectsInAttackArea(float direction, float angleOfAttack, float attackRadius)
+    private GameObject[] ObjectsInAttackArea(boolean direction /* false==left, true==right */, float attackRadius)
     {
   		Collider2D[] allCollidersInRadius = Physics2D.OverlapCircleAll (rb.transform.position, attackRadius);
   		List<GameObject> matches = new List<GameObject> ();
   		for (int i = 0; i < allCollidersInRadius.Length; i++) {
-			float theta = Mathf.Rad2Deg * Mathf.Atan2 (allCollidersInRadius [i].transform.position.x - rb.transform.position.x, allCollidersInRadius [i].transform.position.y - rb.transform.position.y);
-  			if (theta > direction - (angleOfAttack / 2) && theta < direction + (angleOfAttack / 2)) {
-  				matches.Add (allCollidersInRadius [i].gameObject);
-  			}
+			int xDifference = allCollidersInRadius [i].attachedRigidbody.transform.position.x - rb.transform.position.x;
+			if (direction) { //Right Side
+				if (xDifference >= 0) {
+					matches.Add (allCollidersInRadius [i]);
+				}
+			} else { //Left Side
+				if (xDifference <= 0) {
+					matches.Add (allCollidersInRadius [i]);
+				}
+			}
   		}
   		return matches.ToArray();
   	}
