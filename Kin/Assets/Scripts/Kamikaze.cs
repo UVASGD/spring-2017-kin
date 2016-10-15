@@ -9,6 +9,7 @@ public class Kamikaze : BaseMinionAI
     bool isExploding;
     float explodeDelay;  //time delay between stopping and exploding
     float timeToExplode; //buildup to the explosion
+	public int explodeDamage;
 
     protected new void Start()
     {
@@ -46,8 +47,13 @@ public class Kamikaze : BaseMinionAI
                 MoveTowardsTarget();
             else
             { 
-                if(timeToExplode > explodeDelay)
-                    Destroy(gameObject);
+				if (timeToExplode > explodeDelay) {
+					if (distanceToPlayer < explodeRadius) {
+						targetObject.GetComponent<PlayerHealth> ().TakeDamage (explodeDamage);
+					}
+					
+					Destroy (gameObject);
+				}
                 else
                 {
                     timeToExplode += Time.deltaTime;

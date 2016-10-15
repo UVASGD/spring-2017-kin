@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class MeleeMinion : BaseMinionAI
 {
-    public float meleeDamage; //Melee attack damage
+    public int meleeDamage; //Melee attack damage
     float attackRange; //Range to melee attack from
     bool meleeOnCd; //Is melee attack on cooldown
     float meleeCurrCd; //Remaining cooldown for melee attack
