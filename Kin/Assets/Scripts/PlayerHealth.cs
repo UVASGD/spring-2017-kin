@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour {
     // public AudioClip damageClip;
     // public AudioClip deathClip;
     bool isDead;
-    float restartTimer;
+    float restartTimer = 0;
 
     AvatarMvmController playerMvmController;
     // Reference to animator for death animation
@@ -39,7 +39,7 @@ public class PlayerHealth : MonoBehaviour {
     void Death()
     {
         isDead = true;
-        //anim.SetTrigger("Die");
+        anim.SetBool("Dying", true);
         // Play death audio clip
         playerMvmController.enabled = false;
         // Go to UI Screen
@@ -47,6 +47,11 @@ public class PlayerHealth : MonoBehaviour {
 
     void Update()
     {
+        // For Testing
+        //if (Input.GetKeyDown(KeyCode.Y))
+        //{
+        //    TakeDamage(30);
+        //}
         // Timer set up so you can do something once they've been dead a certain amount of time
         if (isDead) {
             restartTimer += Time.deltaTime;
@@ -54,6 +59,8 @@ public class PlayerHealth : MonoBehaviour {
         if (restartTimer >= restartDelay)
         {
             isDead = false;
+            restartTimer = 0;
+            anim.SetBool("Dying", false);
             // Move character?
             // Go back to scene?
         }
