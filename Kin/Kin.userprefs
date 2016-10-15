@@ -8,7 +8,7 @@
       <File FileName="Assets\Scripts\SystemsController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\AvatarMvmController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\StatController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\AnimationControl.cs" Line="60" Column="58" />
+      <File FileName="Assets\Scripts\AnimationControl.cs" Line="25" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
