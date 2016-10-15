@@ -1,0 +1,7 @@
+Break into teams
+UI - finish sliders and make main menu
+Audio - split up sounds and get to work
+Art - split up art and get to work
+System - combat combat combat
+Design - talk shit out
+AI - get those minions minioning
