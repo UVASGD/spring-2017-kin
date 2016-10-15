@@ -6,6 +6,7 @@ public class UIController : MonoBehaviour {
 
     public Slider health;
     public Slider stamina;
+    public Canvas optionsCanvas;
     // Add clock
     // Add Boss Health
 	
@@ -15,8 +16,12 @@ public class UIController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    
-	}
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            toggleOptionsCanvas();
+        }
+
+    }
 
     public void setMaxHealth(int maxHealth)
     {
@@ -69,5 +74,10 @@ public class UIController : MonoBehaviour {
     {
         Debug.Log(@"No boss health yet.¯\_(ツ)_/¯");
         return 0;
+    }
+
+    public void toggleOptionsCanvas()
+    {
+        optionsCanvas.enabled = !optionsCanvas.enabled;
     }
 }
