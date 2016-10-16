@@ -1,12 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AvatarMvmController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerHealth.cs">
     <Files>
-      <File FileName="Assets\Scripts\BaseAI.cs" Line="52" Column="47" />
-      <File FileName="Assets\Scripts\SaveController.cs" Line="8" Column="28" />
-      <File FileName="Assets\Scripts\StaticMethods.cs" Line="52" Column="54" />
-      <File FileName="Assets\Scripts\AvatarMvmController.cs" Line="21" Column="74" />
-      <File FileName="Assets\Scripts\CameraController.cs" Line="16" Column="100" />
+      <File FileName="Assets/Scripts/AvatarMvmController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AnimationControl.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerMelee.cs" Line="44" Column="84" />
+      <File FileName="Assets/Scripts/CameraController.cs" Line="27" Column="1" />
+      <File FileName="Assets/Scripts/PlayerHealth.cs" Line="21" Column="50" />
+      <File FileName="Assets/Scripts/SaveController.cs" Line="15" Column="45" />
+      <File FileName="Assets/Scripts/TempGameController.cs" Line="16" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
