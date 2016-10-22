@@ -28,11 +28,20 @@ public class KamikazeAnimationController : MonoBehaviour {
 		updateDirection ();
 		if (dying) {
 			animator.SetBool ("Dying", true);
+			dying = false;
+		}else if (!dying && animator.GetCurrentAnimatorStateInfo (0).IsTag ("Dying")) {
+			animator.SetBool ("Dying", false);
 		}
+		//Debug.Log ("charging" + !charging);
+		//Debug.Log("in charge" + animator.GetCurrentAnimatorStateInfo (0).IsTag ("Charge"));
 
 		if (charging) {
 			animator.SetBool ("Charging", true);
-		}
+			charging = false;
+		} //else{ //if (!charging && animator.GetCurrentAnimatorStateInfo (0).IsTag ("Charge")) {
+			//animator.SetBool ("Charging", false);
+			//Debug.Log ("set bool false");
+		//}
 
 		if (recoiling) {
 			animator.SetBool ("Recoiling", true);

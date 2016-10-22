@@ -10,6 +10,8 @@ public class Kamikaze : BaseMinionAI
     float explodeDelay;  //time delay between stopping and exploding
     float timeToExplode; //buildup to the explosion
 	public int explodeDamage;
+	float decayTime;
+	bool exploded;
 
     protected new void Start()
     {
@@ -30,8 +32,10 @@ public class Kamikaze : BaseMinionAI
 
         explodeRadius = .4f;
         timeToExplode = 0.0f;
-        explodeDelay = 1.0f;
+        explodeDelay = .9f;
         awarenessRadius = 1.0f;
+		decayTime = 10.0f;
+		exploded = false;
 
     }
 
@@ -59,10 +63,15 @@ public class Kamikaze : BaseMinionAI
                     if (distanceToPlayer < explodeRadius)
                     {
                         //Debug.Log("Hurt");
-                        targetObject.GetComponent<PlayerHealth>().TakeDamage(explodeDamage);
+						if (!exploded) {
+							targetObject.GetComponent<PlayerHealth> ().TakeDamage (explodeDamage);
+							exploded = true;
+						}
                     }
                     //Debug.Log("Explode");
-                    Destroy(gameObject);
+					timeToExplode+= Time.deltaTime;
+					if (timeToExplode > decayTime)
+                   		Destroy(gameObject);
                 }
                 else
                 {
