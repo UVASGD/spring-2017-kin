@@ -1,9 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AvatarMvmController.cs">
+    <Files>
+      <File FileName="Assets\Scripts\SaveController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LevelUpController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\KamikazeAnimationController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AvatarMvmController.cs" Line="25" Column="1" />
+=======
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SystemsScripts/TimeController.cs">
     <Files>
       <File FileName="Assets/Scripts/CoreScripts/SaveController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/SystemsScripts/TimeController.cs" Line="33" Column="13" />
+>>>>>>> master
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
