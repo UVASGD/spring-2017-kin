@@ -30,7 +30,7 @@ public class TimeController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		timeLeft = dayLength;
-		kin = 1 + dayMod;
+		kin = 1 + Mathf.Abs(dayMod);
 
 		CalculateCalendar ();
 	}
@@ -52,7 +52,7 @@ public class TimeController : MonoBehaviour {
 	/// </summary>
 	/// <param name="byNum">By number.</param>
 	private void ProgressDay(int byNum) {
-		kin += byNum;
+		kin += Mathf.Abs(byNum);
 		CalculateCalendar ();
 	}
 
