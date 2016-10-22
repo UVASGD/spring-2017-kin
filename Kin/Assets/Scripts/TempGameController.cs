@@ -5,21 +5,19 @@ using System.Collections;
 public class TempGameController : MonoBehaviour {
 
     public Canvas canv;
-	public GameObject save;
-    private SaveController saveCont;
+	public GameObject Player;
     private UIController ui;
 
 	// Use this for initialization
 	void Start () {
-		saveCont = save.GetComponent<SaveController>();
         ui = canv.GetComponent<UIController>();
-        ui.setMaxHealth((int)saveCont.health);
-        ui.setMaxStamina((int)saveCont.stamina);
+		ui.setMaxHealth((int)Player.GetComponent<PlayerHealth>().maxHealth);
+		ui.setMaxStamina((int)Player.GetComponent<PlayerStamina>().maxStamina);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        ui.setHealth((int)saveCont.health);
-        ui.setStamina((int)saveCont.stamina);
+		ui.setHealth((int)Player.GetComponent<PlayerHealth>().currentHealth);
+		ui.setStamina((int)Player.GetComponent<PlayerStamina>().currentStamina);
 	}
 }
