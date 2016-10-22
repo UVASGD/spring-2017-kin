@@ -34,6 +34,7 @@ public class Kamikaze : BaseMinionAI
         awarenessRadius = 1.0f;
 
         explodeDamage = 1;
+        speed = 1.2f;
     }
 
     protected new void Update()

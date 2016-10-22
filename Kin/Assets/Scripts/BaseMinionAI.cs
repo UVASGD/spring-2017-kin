@@ -7,6 +7,7 @@ public class BaseMinionAI : MonoBehaviour {
 	public float awarenessRadius; //Range to change idle->detected
 	public GameObject targetObject; //Player target
 	public float speed = 1.0f; //Movement speed
+    public float patrolSpeed = 0.5f; //Patroling Speed
 	protected Rigidbody2D rb; //Minion Rigidbody
 
     int currIndex; //the index of the point the minion is currently heading toward
@@ -112,6 +113,6 @@ public class BaseMinionAI : MonoBehaviour {
     //Move linearly towards target
     protected void MoveTowardsPosition(Vector2 pos)
     {
-        rb.velocity = (pos - (Vector2)gameObject.transform.position).normalized * speed;
+        rb.velocity = (pos - (Vector2)gameObject.transform.position).normalized * patrolSpeed;
     }
 }
