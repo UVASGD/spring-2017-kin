@@ -2,32 +2,67 @@
 using System.Collections;
 
 public class TimeController : MonoBehaviour {
-	public float timeLeft;
+	public float dayLength = 420.0f;
+	private float timeLeft;
+	public ulong dayMod = 0;
 
-	public float day = 1;
-	//Text text;
+	/// <summary>
+	/// The day.
+	/// </summary>
+	private long kin;
+	/// <summary>
+	/// 20 kin.
+	/// </summary>
+	private int uinal;
+	/// <summary>
+	/// 18 uinal.
+	/// </summary>
+	private int tun;
+	/// <summary>
+	/// 20 tun.
+	/// </summary>
+	private int katun;
+	/// <summary>
+	/// 20 katun; at 13 the game ends
+	/// </summary>
+	private int baktun;
 
 	// Use this for initialization
 	void Start () {
-		timeLeft = 420.0f;
+		timeLeft = dayLength;
+		kin = 1 + dayMod;
+
+		CalculateCalendar ();
 	}
 
 	void Update(){
-		UpdatebyTime ();
-	}
-
-	// Update is called once per frame
-	private void UpdatebyTime () {
 		timeLeft -= Time.deltaTime;
-		Debug.Log (timeLeft);
-		if(timeLeft < 0)
+		if(timeLeft <= 0)
 		{
-			day += 1;
-			timeLeft = 420.0f;
+			ProgressDay (1);
+			timeLeft = dayLength;
 		}
-		if (day == 12) {
+		if (kin >= 1872000 || baktun >= 13) {
 			//game ends
 		}
+	}
 
+	/// <summary>
+	/// Progresses the day.
+	/// </summary>
+	/// <param name="byNum">By number.</param>
+	private void ProgressDay(uint byNum) {
+		kin += byNum;
+		CalculateCalendar ();
+	}
+
+	/// <summary>
+	/// Calculates the calendar.
+	/// </summary>
+	private void CalculateCalendar(){
+		uinal = kin % 20;
+		tun = uinal % 18;
+		katun = tun % 20;
+		baktun = katun % 20;
 	}
 }
