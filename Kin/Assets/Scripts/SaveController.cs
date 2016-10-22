@@ -12,8 +12,7 @@ public class SaveController : MonoBehaviour {
 
     public float stamina;
 
-	public PlayerHealth playerHealthController;
-	public float health;
+	public GameObject Player;
 
     public int healthLvlP;
     public int healthLvlO;
@@ -45,16 +44,14 @@ public class SaveController : MonoBehaviour {
 	
     void OnGUI()
     {
-		GUI.Label(new Rect(10, 10, 100, 20), "Health: " + PlayerHealth.s_instance.currentHealth);
+		GUI.Label(new Rect(10, 10, 100, 20), "Health: " + Player.GetComponent<PlayerHealth>().currentHealth);
         if (GUI.Button(new Rect(10, 40, 100, 30), "Health Up"))
         {
-			PlayerHealth.s_instance.currentHealth++;
-			health = PlayerHealth.s_instance.currentHealth;
+			Player.GetComponent<PlayerHealth>().currentHealth++;
         }
         if (GUI.Button(new Rect(10, 70, 100, 30), "Health down"))
         {
-			PlayerHealth.s_instance.currentHealth--;
-			health = PlayerHealth.s_instance.currentHealth;
+			Player.GetComponent<PlayerHealth>().currentHealth--;
         }
         GUI.Label(new Rect(10, 100, 100, 30), "Stamina: " + stamina);
         if(GUI.Button(new Rect(10, 130, 100, 30), "Save"))
@@ -98,7 +95,7 @@ public class SaveController : MonoBehaviour {
 
 	private void WriteFromData(SaveData data)
 	{
-		health = data.health;
+		Player.GetComponent<PlayerHealth>().currentHealth = data.health;
 		stamina = data.stamina;
 		healthLvlP = data.healthLvlP;
 		healthLvlO = data.healthLvlO;
@@ -115,7 +112,7 @@ public class SaveController : MonoBehaviour {
     private SaveData WriteToData ()
     {
         SaveData data = new SaveData();
-		data.health = PlayerHealth.s_instance.currentHealth;
+		data.health = Player.GetComponent<PlayerHealth>().currentHealth;
         data.stamina = stamina;
         data.healthLvlP = healthLvlP;
         data.healthLvlO = healthLvlO;
