@@ -11,13 +11,13 @@ public class TempGameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         ui = canv.GetComponent<UIController>();
-		ui.setMaxHealth((int)Player.GetComponent<PlayerHealth>().maxHealth);
+		ui.setMaxHealth((int)Player.GetComponent<PlayerHealth>().getMaxHealth());
 		ui.setMaxStamina((int)Player.GetComponent<PlayerStamina>().maxStamina);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		ui.setHealth((int)Player.GetComponent<PlayerHealth>().currentHealth);
+		ui.setHealth((int)Player.GetComponent<PlayerHealth>().getCurrentHealth());
 		ui.setStamina((int)Player.GetComponent<PlayerStamina>().currentStamina);
 	}
 }
