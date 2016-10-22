@@ -12,6 +12,7 @@ public class MeleeMinion : BaseMinionAI
 
     protected new void Start()
     {
+        base.Start();
         //Establish rigid body for minion
         rb = gameObject.GetComponent<Rigidbody2D>();
         if (rb == null)
@@ -52,6 +53,7 @@ public class MeleeMinion : BaseMinionAI
         }
         else
         {
+            Patrol();
             if (distanceToPlayer < awarenessRadius)
                 curState = AIStates.DetectedState;
         }

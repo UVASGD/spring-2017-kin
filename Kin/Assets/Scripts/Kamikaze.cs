@@ -37,6 +37,8 @@ public class Kamikaze : BaseMinionAI
 		decayTime = 10.0f;
 		exploded = false;
 
+        explodeDamage = 1;
+        speed = 1.2f;
     }
 
     protected new void Update()
