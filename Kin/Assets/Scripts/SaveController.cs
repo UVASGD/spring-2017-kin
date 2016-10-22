@@ -9,19 +9,7 @@ public class SaveController : MonoBehaviour {
     //on enable on disable for autosave
 
     public static SaveController s_instance;
-
-    public float stamina;
-
 	public GameObject Player;
-
-    public int healthLvlP;
-    public int healthLvlO;
-    public int stamLvlP;    //stamina
-    public int stamLvlO;
-    public int strLvlP;     //strength
-    public int strLvlO;
-    public int wisLvlP;     //wisdom
-    public int wisLvlO;
 
     public long day;
     public float time;
@@ -53,7 +41,7 @@ public class SaveController : MonoBehaviour {
         {
 			Player.GetComponent<PlayerHealth>().currentHealth--;
         }
-        GUI.Label(new Rect(10, 100, 100, 30), "Stamina: " + stamina);
+		GUI.Label(new Rect(10, 100, 100, 30), "Stamina: " + Player.GetComponent<PlayerStamina>().currentStamina);
         if(GUI.Button(new Rect(10, 130, 100, 30), "Save"))
         {
             Save("", false);
@@ -96,15 +84,15 @@ public class SaveController : MonoBehaviour {
 	private void WriteFromData(SaveData data)
 	{
 		Player.GetComponent<PlayerHealth>().currentHealth = data.health;
-		stamina = data.stamina;
-		healthLvlP = data.healthLvlP;
-		healthLvlO = data.healthLvlO;
-		stamLvlP = data.stamLvlP;
-		stamLvlO = data.stamLvlO;
-		strLvlP = data.strLvlP;
-		strLvlO = data.strLvlO;
-		wisLvlP = data.wisLvlP;
-		wisLvlO = data.wisLvlO;
+		Player.GetComponent<PlayerStamina>().currentStamina = data.stamina;
+		Player.GetComponent<StatController>().setHealth(data.healthLvlP);
+		Player.GetComponent<StatController>().setHealthOrder(data.healthLvlO);
+		Player.GetComponent<StatController>().setStamina(data.stamLvlP);
+		Player.GetComponent<StatController>().setStaminaOrder(data.stamLvlO);
+		Player.GetComponent<StatController>().setStrength(data.strLvlP);
+		Player.GetComponent<StatController>().setStrengthOrder(data.strLvlO);
+		Player.GetComponent<StatController>().setWisdom(data.wisLvlP);
+		Player.GetComponent<StatController>().setWisdomOrder(data.wisLvlO);
 		day = data.day;
 		time = data.time;
 	}
@@ -113,15 +101,15 @@ public class SaveController : MonoBehaviour {
     {
         SaveData data = new SaveData();
 		data.health = Player.GetComponent<PlayerHealth>().currentHealth;
-        data.stamina = stamina;
-        data.healthLvlP = healthLvlP;
-        data.healthLvlO = healthLvlO;
-        data.stamLvlP = stamLvlP;
-        data.stamLvlO = stamLvlO;
-        data.strLvlP = strLvlP;
-        data.strLvlO = strLvlO;
-        data.wisLvlP = wisLvlP;
-        data.wisLvlO = wisLvlO;
+		data.stamina = Player.GetComponent<PlayerStamina>().currentStamina;
+		data.healthLvlP = Player.GetComponent<StatController>().getHealth();
+		data.healthLvlO = Player.GetComponent<StatController>().getHealthOrder();
+		data.stamLvlP = Player.GetComponent<StatController>().getStamina();
+		data.stamLvlO = Player.GetComponent<StatController>().getStaminaOrder();
+		data.strLvlP = Player.GetComponent<StatController>().getStrength();
+		data.strLvlO = Player.GetComponent<StatController>().getStrengthOrder();
+		data.wisLvlP = Player.GetComponent<StatController>().getWisdom();
+		data.wisLvlO = Player.GetComponent<StatController>().getWisdomOrder();
         data.day = day;
         data.time = time;
 
