@@ -16,34 +16,36 @@ public class LevelUpController : MonoBehaviour {
 	//getters
 	int getPlayerLevel()
 	{
-		return playerLevel;
+		//return playerLevel;
+		return 0;
 	}
 
 	int getOrderLevel()
 	{
-		return orderLevel;
+		//return orderLevel;
+		return 0;
 	}
 
 	//setters
 	void setPlayerLevel(int inputPlayerLevel)
 	{
-		playerLevel = inputPlayerLevel;
+		//playerLevel = inputPlayerLevel;
 	}
 
 	void setOrderLevel(int inputOrderLevel)
 	{
-		orderLevel = inputOrderLevel;
+		//orderLevel = inputOrderLevel;
 	}
 
 
 	//level up
 	void playerLevelUp()
 	{
-		playerLevel++;
+		//playerLevel++;
 	}
 
 	void orderLeveUp()
 	{
-		orderLevel++;
+		//orderLevel++;
 	}
 }
