@@ -34,4 +34,6 @@ ehthumbs.db
 [Tt]humbs.db
 [Dd]esktop.ini
 
-Kin/Assembly-CSharp.csproj
+*.userprefs
+*.csproj
+*.sln
