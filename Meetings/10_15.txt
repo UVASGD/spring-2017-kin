@@ -1,0 +1,22 @@
+Systems
+	Controller Support
+	Hitboxes
+	LevelUpController
+AI
+	3TypesofMinions
+	Integrating Art into the minions
+	Patrolling
+UI
+	Main Menu
+	Anims
+Art
+	Interiors
+	Last Kind of Minion
+	Main Character L/R
+Audio
+	Sound Effects
+	Crunching the Jams
+Design
+	Character Design and Dialogue
+	Day to Level curves
+	Flesh out bosses

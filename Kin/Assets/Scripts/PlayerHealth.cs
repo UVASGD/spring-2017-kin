@@ -4,14 +4,16 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour {
     // Main Health Controller
 
-    public int maxHealth = 100; // Get maxHealth from Stat Controller
-    public int currentHealth;
+	public static PlayerHealth s_instance;
+
+    public float maxHealth = 100; // Get maxHealth from Stat Controller
+    public float currentHealth;
     public float restartDelay = 5f;
     // Put damage audio here if we have that
     // public AudioClip damageClip;
     // public AudioClip deathClip;
     bool isDead;
-    float restartTimer;
+    float restartTimer = 0;
 
     AvatarMvmController playerMvmController;
     // Reference to animator for death animation
@@ -21,10 +23,19 @@ public class PlayerHealth : MonoBehaviour {
     
 
 	void Awake() {
-        anim = GetComponent<Animator>();
-        playerAudio = GetComponent<AudioSource>();
-        playerMvmController = GetComponent<AvatarMvmController>();
-        currentHealth = maxHealth;
+		if (s_instance == null)
+		{
+			DontDestroyOnLoad(gameObject); // save object on scene mvm
+			s_instance = this;
+			anim = GetComponent<Animator>();
+			playerAudio = GetComponent<AudioSource>();
+			playerMvmController = GetComponent<AvatarMvmController>();
+			currentHealth = maxHealth;
+		}
+		else if (s_instance != this)
+		{
+			Destroy(gameObject);
+		}
 	}
 	
 	public void TakeDamage(int amount)
@@ -39,7 +50,7 @@ public class PlayerHealth : MonoBehaviour {
     void Death()
     {
         isDead = true;
-        //anim.SetTrigger("Die");
+        anim.SetBool("Dying", true);
         // Play death audio clip
         playerMvmController.enabled = false;
         // Go to UI Screen
@@ -47,6 +58,11 @@ public class PlayerHealth : MonoBehaviour {
 
     void Update()
     {
+        // For Testing
+        //if (Input.GetKeyDown(KeyCode.Y))
+        //{
+        //    TakeDamage(30);
+        //}
         // Timer set up so you can do something once they've been dead a certain amount of time
         if (isDead) {
             restartTimer += Time.deltaTime;
@@ -54,6 +70,8 @@ public class PlayerHealth : MonoBehaviour {
         if (restartTimer >= restartDelay)
         {
             isDead = false;
+            restartTimer = 0;
+            anim.SetBool("Dying", false);
             // Move character?
             // Go back to scene?
         }
