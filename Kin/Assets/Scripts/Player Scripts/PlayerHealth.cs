@@ -3,8 +3,8 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
     // Main Health Controller
-    public float maxHealth = 100; // Get maxHealth from Stat Controller
-    public float currentHealth;
+    private int maxHealth; 
+    private int currentHealth;
     public float restartDelay = 5f;
 	float restartTimer;
     // Put damage audio here if we have that
@@ -18,10 +18,17 @@ public class PlayerHealth : MonoBehaviour {
     // Reference to audio source for damage audio
     AudioSource playerAudio;
 
-	void Start(){
+    void Awake()
+    {
+        maxHealth = 100;
+    }
+
+	void Start()
+    {
 		anim = GetComponent<Animator>();
 		playerAudio = GetComponent<AudioSource>();
 		playerMvmController = GetComponent<AvatarMvmController>();
+        maxHealth = GetComponent<StatController>().getHealth();
 		currentHealth = maxHealth;
 	}
 	
@@ -43,9 +50,30 @@ public class PlayerHealth : MonoBehaviour {
         // Go to UI Screen
     }
 
+    public void setMaxHealth(int max)
+    {
+        this.maxHealth = max;
+    }
+
+    public void setCurrentHealth(int current)
+    {
+        this.currentHealth = current;
+    }
+
+    public int getMaxHealth()
+    {
+        return this.maxHealth;
+    }
+
+    public int getCurrentHealth()
+    {
+        return this.currentHealth;
+    }
+
     void Update()
     {
         // For Testing
+        //Debug.Log("Max: " + maxHealth + ", Current: " + currentHealth);
         //if (Input.GetKeyDown(KeyCode.Y))
         //{
         //    TakeDamage(30);
