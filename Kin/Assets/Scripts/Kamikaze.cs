@@ -13,6 +13,8 @@ public class Kamikaze : BaseMinionAI
 
     protected new void Start()
     {
+        base.Start();
+
         //Establish rigid body for minion
         rb = gameObject.GetComponent<Rigidbody2D>();
         if (rb == null)
@@ -24,12 +26,14 @@ public class Kamikaze : BaseMinionAI
             Debug.LogError("AI has no target. AI name is " + gameObject.name + "!");
         }
 
-        curState = AIStates.IdleState;
+        curState = AIStates.PatrolState;
 
-        explodeRadius = .2f;
+        explodeRadius = .4f;
         timeToExplode = 0.0f;
-        explodeDelay = .8f;
+        explodeDelay = .5f;
         awarenessRadius = 1.0f;
+
+        explodeDamage = 1;
     }
 
     protected new void Update()
@@ -38,22 +42,28 @@ public class Kamikaze : BaseMinionAI
 
         if (curState == AIStates.DetectedState)
         {
-            if (distanceToPlayer < explodeRadius)
-            {
-                isExploding = true;
-                rb.velocity = Vector2.zero;
-            }
             if (!isExploding)
-                MoveTowardsTarget();
+            {
+                if (distanceToPlayer < explodeRadius)
+                {
+                    isExploding = true;
+                    rb.velocity = Vector2.zero;
+                }
+                else
+                    MoveTowardsTarget();
+            }
             else
-            { 
-				if (timeToExplode > explodeDelay) {
-					if (distanceToPlayer < explodeRadius) {
-						targetObject.GetComponent<PlayerHealth> ().TakeDamage (explodeDamage);
-					}
-					
-					Destroy (gameObject);
-				}
+            {
+                if (timeToExplode > explodeDelay)
+                {
+                    if (distanceToPlayer < explodeRadius)
+                    {
+                        //Debug.Log("Hurt");
+                        targetObject.GetComponent<PlayerHealth>().TakeDamage(explodeDamage);
+                    }
+                    //Debug.Log("Explode");
+                    Destroy(gameObject);
+                }
                 else
                 {
                     timeToExplode += Time.deltaTime;
@@ -62,6 +72,7 @@ public class Kamikaze : BaseMinionAI
         }
         else
         {
+            Patrol();
             if (distanceToPlayer < awarenessRadius)
                 curState = AIStates.DetectedState;
         }
