@@ -32,14 +32,14 @@ public class SaveController : MonoBehaviour {
 	
     void OnGUI()
     {
-		GUI.Label(new Rect(10, 10, 100, 20), "Health: " + Player.GetComponent<PlayerHealth>().currentHealth);
+		GUI.Label(new Rect(10, 10, 100, 20), "Health: " + Player.GetComponent<PlayerHealth>().getCurrentHealth());
         if (GUI.Button(new Rect(10, 40, 100, 30), "Health Up"))
         {
-			Player.GetComponent<PlayerHealth>().currentHealth++;
+            Player.GetComponent<PlayerHealth>().setCurrentHealth(Player.GetComponent<PlayerHealth>().getCurrentHealth() + 1);
         }
         if (GUI.Button(new Rect(10, 70, 100, 30), "Health down"))
         {
-			Player.GetComponent<PlayerHealth>().currentHealth--;
+            Player.GetComponent<PlayerHealth>().setCurrentHealth(Player.GetComponent<PlayerHealth>().getCurrentHealth() - 1);
         }
 		GUI.Label(new Rect(10, 100, 100, 30), "Stamina: " + Player.GetComponent<PlayerStamina>().currentStamina);
         if(GUI.Button(new Rect(10, 130, 100, 30), "Save"))
@@ -83,7 +83,7 @@ public class SaveController : MonoBehaviour {
 
 	private void WriteFromData(SaveData data)
 	{
-		Player.GetComponent<PlayerHealth>().currentHealth = data.health;
+		Player.GetComponent<PlayerHealth>().setCurrentHealth(data.health);
 		Player.GetComponent<PlayerStamina>().currentStamina = data.stamina;
 		Player.GetComponent<StatController>().setHealth(data.healthLvlP);
 		Player.GetComponent<StatController>().setHealthOrder(data.healthLvlO);
@@ -100,7 +100,7 @@ public class SaveController : MonoBehaviour {
     private SaveData WriteToData ()
     {
         SaveData data = new SaveData();
-		data.health = Player.GetComponent<PlayerHealth>().currentHealth;
+		data.health = Player.GetComponent<PlayerHealth>().getCurrentHealth();
 		data.stamina = Player.GetComponent<PlayerStamina>().currentStamina;
 		data.healthLvlP = Player.GetComponent<StatController>().getHealth();
 		data.healthLvlO = Player.GetComponent<StatController>().getHealthOrder();
@@ -120,7 +120,7 @@ public class SaveController : MonoBehaviour {
 [Serializable]
 class SaveData 
 {
-    public float health;
+    public int health;
     public float stamina;
 
     public int healthLvlP;
