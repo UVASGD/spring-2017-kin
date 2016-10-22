@@ -4,12 +4,12 @@ using System.Collections;
 public class TimeController : MonoBehaviour {
 	public float dayLength = 420.0f;
 	private float timeLeft;
-	public ulong dayMod = 0;
+	public int dayMod = 0;
 
 	/// <summary>
 	/// The day.
 	/// </summary>
-	private long kin;
+	private int kin;
 	/// <summary>
 	/// 20 kin.
 	/// </summary>
@@ -51,7 +51,7 @@ public class TimeController : MonoBehaviour {
 	/// Progresses the day.
 	/// </summary>
 	/// <param name="byNum">By number.</param>
-	private void ProgressDay(uint byNum) {
+	private void ProgressDay(int byNum) {
 		kin += byNum;
 		CalculateCalendar ();
 	}
