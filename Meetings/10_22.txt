@@ -1,0 +1,15 @@
+MSE is still on November 5th, getting closer all the time.
+
+GAME JAM (Jackson is probably dead [inside and out], Zach is probably a beast and feels fine, talk to him)
+
+UI - Continue work on main menu, get the animation on logo working, stat canvas work
+
+Systems - Work on combat, deal damage to AI minions.
+
+AI - Continue polishing those minions, recover from the branch disease
+
+Design - Continue working on dialogue, finish up level up design (systems is starting to work on it)
+
+Art - Continue main character art, would like tiles to get done soon so we can have something to show in the MSE. We don't want to use any assets taken from another game in our MSE project. Also, we will need a ranged minion (with projectile).
+
+Audio - Continue working on sounds, this is not as big of a rush as the other teams but a continuing of the current pace would be good.
