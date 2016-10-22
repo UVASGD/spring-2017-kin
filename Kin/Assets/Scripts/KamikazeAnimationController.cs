@@ -3,7 +3,7 @@ using System.Collections;
 
 [RequireComponent (typeof(SpriteRenderer))]
 [RequireComponent (typeof(Rigidbody2D))]
-public class KamikazeAnimationControl : MonoBehaviour {
+public class KamikazeAnimationController : MonoBehaviour {
 
 	Rigidbody2D rb;
 	SpriteRenderer sr;
@@ -24,7 +24,8 @@ public class KamikazeAnimationControl : MonoBehaviour {
 	}
 
 	void Update () {
-		int direction = updateDirection ();
+
+		updateDirection ();
 		if (dying) {
 			animator.SetBool ("Dying", true);
 		}

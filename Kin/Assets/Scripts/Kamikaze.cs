@@ -30,10 +30,9 @@ public class Kamikaze : BaseMinionAI
 
         explodeRadius = .4f;
         timeToExplode = 0.0f;
-        explodeDelay = .5f;
+        explodeDelay = 1.0f;
         awarenessRadius = 1.0f;
 
-        explodeDamage = 1;
     }
 
     protected new void Update()
@@ -47,6 +46,7 @@ public class Kamikaze : BaseMinionAI
                 if (distanceToPlayer < explodeRadius)
                 {
                     isExploding = true;
+					gameObject.GetComponent<KamikazeAnimationController> ().charging = true;
                     rb.velocity = Vector2.zero;
                 }
                 else
