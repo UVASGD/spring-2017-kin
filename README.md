@@ -100,3 +100,59 @@ Will only show progress, summary of stat, where to go
 Leveling up the mechanism requires going to the monastery
 
 For balancing there will be different levels (i.e. overall level)
+
+
+
+
+using UnityEngine;
+using System.Collections;
+
+public class levelupController : MonoBehaviour {
+    public int playerLevel = 1;
+    public int orderLevel = 1;
+
+	// Use this for initialization
+	void Start () {
+	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
+
+    //getters
+    int getPlayerLevel()
+    {
+        return playerLevel;
+    }
+
+    int getOrderLevel()
+    {
+        return orderLevel;
+    }
+
+    //setters
+    void setPlayerLevel(int inputPlayerLevel)
+    {
+        playerLevel = inputPlayerLevel;
+    }
+
+    void setOrderLevel(int inputOrderLevel)
+    {
+        orderLevel = inputOrderLevel;
+    }
+
+
+    //level up
+    void playerLevelUp()
+    {
+        playerLevel++;
+    }
+
+    void orderLeveUp()
+    {
+        orderLevel++;
+    }
+}
+
