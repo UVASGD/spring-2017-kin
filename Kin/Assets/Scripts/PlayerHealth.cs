@@ -3,39 +3,26 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
     // Main Health Controller
-
-	public static PlayerHealth s_instance;
-
     public float maxHealth = 100; // Get maxHealth from Stat Controller
     public float currentHealth;
     public float restartDelay = 5f;
+	float restartTimer;
     // Put damage audio here if we have that
     // public AudioClip damageClip;
     // public AudioClip deathClip;
     bool isDead;
-    float restartTimer = 0;
 
     AvatarMvmController playerMvmController;
     // Reference to animator for death animation
     Animator anim;
     // Reference to audio source for damage audio
     AudioSource playerAudio;
-    
 
-	void Awake() {
-		if (s_instance == null)
-		{
-			DontDestroyOnLoad(gameObject); // save object on scene mvm
-			s_instance = this;
-			anim = GetComponent<Animator>();
-			playerAudio = GetComponent<AudioSource>();
-			playerMvmController = GetComponent<AvatarMvmController>();
-			currentHealth = maxHealth;
-		}
-		else if (s_instance != this)
-		{
-			Destroy(gameObject);
-		}
+	void Start(){
+		anim = GetComponent<Animator>();
+		playerAudio = GetComponent<AudioSource>();
+		playerMvmController = GetComponent<AvatarMvmController>();
+		currentHealth = maxHealth;
 	}
 	
 	public void TakeDamage(int amount)
