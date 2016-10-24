@@ -58,6 +58,10 @@ public class TimeController : MonoBehaviour {
 		}
 	}
 
+	public float getDayLength() {
+		return dayLength;
+	}
+
 	/// <summary>
 	/// Progresses the day.
 	/// </summary>
