@@ -55,7 +55,7 @@ public class DayNightController : MonoBehaviour
 	/// <summary>
 	/// The scene ambient color used for full daylight. 
 	/// </summary>
-    private Color fullLight = new Color(253.0f / 255.0f, 248.0f / 255.0f, 223.0f / 255.0f);
+    private Color fullLight = new Color(255.0f / 255.0f, 255.0f / 255.0f, 255.0f / 255.0f);
 
 	/// <summary>
 	/// The scene ambient color used for full night.  
@@ -65,7 +65,7 @@ public class DayNightController : MonoBehaviour
 	/// <summary>
 	/// The scene fog color to use at dawn and dusk. 
 	/// </summary>
-    private Color dawnDuskFog = new Color(133.0f / 255.0f, 124.0f / 255.0f, 102.0f / 255.0f);
+    private Color dawnDuskFog = new Color(133.0f / 255.0f, 124.0f / 255.0f, 200.0f / 255.0f);
 
 	/// <summary>
 	/// The scene fog color to use during the day. 
@@ -269,7 +269,7 @@ public class DayNightController : MonoBehaviour
         }
 
         //transform.Rotate(Vector3.up * ((Time.deltaTime / dayCycleLength) * 360.0f), Space.Self);  
-        //transform.RotateAround(rotation.position, Vector3.forward, ((Time.deltaTime / dayCycleLength) * 360.0f));
+        transform.RotateAround(rotation.position, Vector3.forward, ((Time.deltaTime / dayCycleLength) * 360.0f));
     }
 		
 	/// <summary>
