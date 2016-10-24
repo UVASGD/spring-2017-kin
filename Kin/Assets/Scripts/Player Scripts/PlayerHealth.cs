@@ -20,7 +20,12 @@ public class PlayerHealth : MonoBehaviour {
 
     void Awake()
     {
-        maxHealth = 100;
+        maxHealth = GetComponent<StatController>().getHealth(); 
+        /*if you want the ui controller to get this value, 
+         * you need to set it here, not in start. 
+         * Start is too late, and this is fine because start 
+         * will only ever get called once whereas we will wnat 
+         * max health to change as level increases*/
     }
 
 	void Start()
@@ -28,7 +33,6 @@ public class PlayerHealth : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		playerAudio = GetComponent<AudioSource>();
 		playerMvmController = GetComponent<AvatarMvmController>();
-        maxHealth = GetComponent<StatController>().getHealth();
 		currentHealth = maxHealth;
 	}
 	
