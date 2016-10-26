@@ -5,11 +5,11 @@ It will an incredibly important work meeting today, so expect a lot of work to g
 
 LONG VERSIONS
 
-Art -- Hopefully we have the left and right animations for the player at this point. I'm also hoping we have come very basic animations for at least one of the trainers so we can put that in the game. If both of those exist, then perfect and let's focus our work on adding tiles to the tileset and finishing building exteriors until MSE. If those are not done, ASAP please. Especially the left and right anims, and Systems simply cannot continue work on combat without them.
+Art -- Hopefully we have the left and right animations for the player at this point. I'm also hoping we have come very basic animations for at least one of the trainers so we can put that in the game. If both of those exist, then perfect and let's focus our work on adding tiles to the tileset and custom UI until MSE. If those are not done, ASAP please. Especially the left and right anims, and Systems simply cannot continue work on combat without them. The building art can wait for now.
 
 Audio -- I'm very pleased with the sound effects that exist so far. I want to make sure they all make their way into the Audio folder in the repo today. This is a must. After that, I am officially baring all additional work on FX until we have a number of overworld tracks. Put it on the back burner and lets work on music today.
 
-Design -- Any dialogue or on-death quotes your people have by now needs to be in my hands today so we can approve them to be in the game where possible by the MSE. I assume the level curves are ready to go, so lets get them to Reid so he can get them in. Now we need to determine what each level means in terms of actual ability. Not what does level 2 health mean, but what does level 2 mean compared to level 3, so we can adjust the specific base values that effect these curves. Robert, you're good at this but I want you to delegate it to two or so people if possible so you can be availiable to Systems and AI. We also need to determine the passage of time as a function of death. This can be a constant (or a random around a constant), but I think probably some minimal negative slope curve is best so as not to overpunish the player for subsequnt deaths; maybe the curve resets on level up or boss kill. Something like that. Again, please delegate. As for the writes, idk wtf to do with them today, so I'm taking suggestions.
+Design -- Any dialogue or on-death quotes your people have by now needs to be in my hands today so we can approve them to be in the game where possible by the MSE. I assume the level curves are ready to go, so lets get them to Reid so he can get them in. Now we need to determine what each level means in terms of actual ability. Not what does level 2 health mean, but what does level 2 mean compared to level 3, so we can adjust the specific base values that effect these curves. Robert, you're good at this but I want you to delegate it to two or so people if possible so you can be available to Systems and AI. We also need to determine the passage of time as a function of death. This can be a constant (or a random around a constant), but I think probably some minimal negative slope curve is best so as not to over-punish the player for subsequent deaths; maybe the curve resets on level up or boss kill. Something like that. Again, please delegate. As for the writes, idk wtf to do with them today, so I'm taking suggestions.
 
 UI -- The main menu must work today. With that done, let's finish up the stat viewer and get to work on the calendar wheel UI element. For now, let's go over the dimensions of the object and use placeholder art for the glyphs. Sidenote: the sliders seem a little small sometimes. Do they not scale with screen res?
 
@@ -23,7 +23,7 @@ Art
 *L and R anims
 *Some trainer anims
 *tileset expansion
-*architeture
+*UI art (buttons and sliders)
 
 Audio
 *get FX in repo, and no more for now
@@ -33,7 +33,7 @@ Design
 *get day-cost-for-level curves to Systems
 *devise day-cost-for-death curves/lines
 *devise level value comparisons, do these grow linearly, exponentially, etc...
-*be available to work with Reid adn Trad
+*be available to work with Reid and Trad
 *give writers something
 
 UI
