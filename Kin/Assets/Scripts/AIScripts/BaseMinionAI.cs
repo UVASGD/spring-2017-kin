@@ -19,8 +19,6 @@ public class BaseMinionAI : MonoBehaviour {
     float timePause, currWait; //to have the minion pause at the point before going to the next one
     bool isWaiting; //whether the minion is currently waiting
 
-    public int health;
-
     //Set of AI behavior states
     protected enum AIStates {
 		IdleState,
@@ -31,6 +29,7 @@ public class BaseMinionAI : MonoBehaviour {
 
 
 	protected void Start () {
+        targetObject = GameObject.Find("Player");
         startPos = gameObject.transform.position;
         //Establish rigid body for minion
         rb = gameObject.GetComponent<Rigidbody2D>(); 
@@ -82,7 +81,7 @@ public class BaseMinionAI : MonoBehaviour {
 	}
 
 	protected void  MoveAwayFromTarget(){
-		Debug.Log ("in moveaway");
+		//Debug.Log ("in moveaway");
 		rb.velocity = ((Vector2)(gameObject.transform.position - targetObject.transform.position)).normalized * speed;
 	}
 

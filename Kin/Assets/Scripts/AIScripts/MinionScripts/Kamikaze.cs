@@ -53,7 +53,7 @@ public class Kamikaze : BaseMinionAI
                 {
                     isExploding = true;
 					gameObject.GetComponent<KamikazeAnimationController> ().charging = true;
-                    rb.velocity = Vector2.zero;
+                    gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 }
                 else
                     MoveTowardsTarget();

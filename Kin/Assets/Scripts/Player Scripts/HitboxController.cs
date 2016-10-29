@@ -92,7 +92,7 @@ public class HitboxController : MonoBehaviour {
 	// On Trigger event for collider
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		Debug.Log("Collider hit something!");
+		//Debug.Log("Collider hit something!");
 	}
 
 	// Update is called once per frame
@@ -105,9 +105,9 @@ public class HitboxController : MonoBehaviour {
 	{
 		if(hb != hitBoxes.clear)
 		{
-			Debug.Log("Changing hitbox!");
+			//Debug.Log("Changing hitbox!");
 			curHitbox.SetPath(0, allHitboxes[(int)hb].GetPath(0));
-			Debug.Log ("value is " + hb);
+			//Debug.Log ("value is " + hb);
 			return;
 		}
 		curHitbox.pathCount = 0;
