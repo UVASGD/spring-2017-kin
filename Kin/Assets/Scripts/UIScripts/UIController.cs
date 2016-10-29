@@ -6,7 +6,7 @@ public class UIController : MonoBehaviour {
 
     public Slider health;
     public Slider stamina;
-    public Canvas statsMenu;
+    public GameObject statsMenu;
     // Add clock
     // Add Boss Health
 	
@@ -78,6 +78,6 @@ public class UIController : MonoBehaviour {
 
     public void toggleStatsMenu()
     {
-        statsMenu.enabled = !statsMenu.enabled;
+        statsMenu.SetActive(!statsMenu.activeSelf);
     }
 }
