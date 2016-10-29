@@ -1,8 +1,8 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
+﻿<Properties StartupItem="Kin.CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player Scripts/AnimationControl.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player Scripts/AnimationControl.cs" Line="103" Column="25" />
+      <File FileName="Assets/Scripts/Player Scripts/AnimationControl.cs" Line="53" Column="1" />
       <File FileName="Assets/Scripts/Player Scripts/AvatarMvmController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Player Scripts/PlayerMelee.cs" Line="44" Column="46" />
       <File FileName="Assets/Scripts/Player Scripts/PlayerHealth.cs" Line="15" Column="24" />

@@ -50,8 +50,6 @@ public class AnimationControl : MonoBehaviour {
 		int direction = updateDirection ();
 		updateRoll ();
 
-		timer += Time.deltaTime;
-
 		var move = rb.velocity;
 		// include check if animator has each parameter
 		animator.SetBool ("Dead", animator.GetCurrentAnimatorStateInfo (0).IsTag ("Dead"));
