@@ -16,7 +16,7 @@ public class MainMenuController : MonoBehaviour {
 	}
 
     public void ResumeGame() {
-        SaveController.s_instance.Load("",false);
+        PreLoader.Instance.preLoad("", false);
         SceneManager.LoadScene("Game UI");
     }
 
