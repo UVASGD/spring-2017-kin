@@ -55,27 +55,27 @@ public class DayNightController : MonoBehaviour
 	/// <summary>
 	/// The scene ambient color used for full daylight. 
 	/// </summary>
-    private Color fullLight = new Color(255.0f / 255.0f, 255.0f / 255.0f, 255.0f / 255.0f);
+	public Color fullLight;// = new Color(255.0f / 255.0f, 255.0f / 255.0f, 255.0f / 255.0f);
 
 	/// <summary>
 	/// The scene ambient color used for full night.  
 	/// </summary>
-    private Color fullDark = new Color(80.0f / 255.0f, 80.0f / 255.0f, 90.0f / 255.0f);
+	public Color fullDark; //= new Color(80.0f / 255.0f, 80.0f / 255.0f, 90.0f / 255.0f);
 
 	/// <summary>
 	/// The scene fog color to use at dawn and dusk. 
 	/// </summary>
-    private Color dawnDuskFog = new Color(133.0f / 255.0f, 124.0f / 255.0f, 200.0f / 255.0f);
+	public Color dawnDuskFog;// = new Color(133.0f / 255.0f, 124.0f / 255.0f, 200.0f / 255.0f);
 
 	/// <summary>
 	/// The scene fog color to use during the day. 
 	/// </summary>
-    private Color dayFog = new Color(180.0f / 255.0f, 208.0f / 255.0f, 209.0f / 255.0f);
+	public Color dayFog;// = new Color(180.0f / 255.0f, 208.0f / 255.0f, 209.0f / 255.0f);
 
 	/// <summary>
 	/// The scene fog color to use at night.  
 	/// </summary>
-    private Color nightFog = new Color(12.0f / 255.0f, 15.0f / 255.0f, 91.0f / 255.0f);
+	public Color nightFog;// = new Color(12.0f / 255.0f, 15.0f / 255.0f, 91.0f / 255.0f);
 
 	/// <summary>
 	/// The calculated time at which dawn occurs based on 1/4 of dayCycleLength. 
