@@ -6,7 +6,7 @@ public class UIController : MonoBehaviour {
 
     public Slider health;
     public Slider stamina;
-    public Canvas optionsCanvas;
+    public Canvas statsMenu;
     // Add clock
     // Add Boss Health
 	
@@ -18,7 +18,7 @@ public class UIController : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            toggleOptionsCanvas();
+            toggleStatsMenu();
         }
 
     }
@@ -76,8 +76,8 @@ public class UIController : MonoBehaviour {
         return 0;
     }
 
-    public void toggleOptionsCanvas()
+    public void toggleStatsMenu()
     {
-        optionsCanvas.enabled = !optionsCanvas.enabled;
+        statsMenu.enabled = !statsMenu.enabled;
     }
 }
