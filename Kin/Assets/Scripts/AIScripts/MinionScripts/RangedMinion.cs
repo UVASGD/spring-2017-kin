@@ -19,8 +19,6 @@ public class RangedMinion : BaseMinionAI {
 		GameObject newProj = (GameObject) GameObject.Instantiate (Resources.Load ("Prefabs/MinionProj", typeof(GameObject)), gameObject.transform.position, Quaternion.identity);
 		newProj.GetComponent<Rigidbody2D> ().velocity = (targetObject.transform.position - gameObject.transform.position).normalized * projSpeed;
 		//Debug.Log (newProj.transform.position);
-
-
 	}
 
 	// Use this for initialization
@@ -33,20 +31,22 @@ public class RangedMinion : BaseMinionAI {
 		projectileSpeed = 1.0f;
 		isRanged = true;
 		Debug.Log ("Sub start");
-	
-	}
+
+        awarenessRadius = 1.0f;
+        curState = AIStates.PatrolState;
+    }
 	
 	// Update is called once per frame
 
 	 protected override void Update () {
-		//If aggressive, attack player
-		//Eventually will attacktype based on minion type
-		//If minions will be limited to one type of attack we can remove redundant Cd variables
-		if (curState == AIStates.DetectedState) {
+        //If aggressive, attack player
+        //Eventually will attacktype based on minion type
+        //If minions will be limited to one type of attack we can remove redundant Cd variables
+        float distanceToPlayer = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
+        if (curState == AIStates.DetectedState) {
 			//Determine if ranged attacker
 			if (isRanged) {
 				//Check distance to player, move towards if beyond a certain radius, fire in the middle, away if too close
-				float distanceToPlayer = Vector2.Distance ((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
 				if (distanceToPlayer > fireRadius + .1f)
 					MoveTowardsTarget ();
 				else if (distanceToPlayer < fireRadius + .1f && distanceToPlayer > fireRadius - .1f) {
@@ -76,6 +76,11 @@ public class RangedMinion : BaseMinionAI {
 				}
 			}
 		}
-	
+        else
+        {
+            Patrol();
+            if (distanceToPlayer < awarenessRadius)
+                curState = AIStates.DetectedState;
+        }
 	}
 }
