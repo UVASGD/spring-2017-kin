@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AvatarMvmController : MonoBehaviour {
 
-    public float speed = 1.5f;
+    public float speed;
     AudioSource audio;
 
 	Rigidbody2D rb;
