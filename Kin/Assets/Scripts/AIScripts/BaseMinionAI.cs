@@ -29,6 +29,7 @@ public class BaseMinionAI : MonoBehaviour {
 
 
 	protected void Start () {
+        targetObject = GameObject.Find("Player");
         startPos = gameObject.transform.position;
         //Establish rigid body for minion
         rb = gameObject.GetComponent<Rigidbody2D>(); 
@@ -80,7 +81,7 @@ public class BaseMinionAI : MonoBehaviour {
 	}
 
 	protected void  MoveAwayFromTarget(){
-		Debug.Log ("in moveaway");
+		//Debug.Log ("in moveaway");
 		rb.velocity = ((Vector2)(gameObject.transform.position - targetObject.transform.position)).normalized * speed;
 	}
 
