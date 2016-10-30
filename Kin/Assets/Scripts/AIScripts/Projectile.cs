@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour {
 	//Handle player collisions
 	void OnTriggerEnter2D(Collider2D obj)
 	{
-		Debug.Log ("in trigger");
+		//Debug.Log ("in trigger");
 		if (obj.tag == "Player") {
 			Destroy (gameObject);
 			//deals damage
