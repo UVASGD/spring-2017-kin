@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scenes/TestScenes/Art/Art_Testing_Ekis.unity
+  isLoaded: 1
+  isActive: 1
