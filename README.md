@@ -58,17 +58,12 @@ ATTACH TO: HUDController Prefab
 USES: ??
   
 #### TODO
-
-	Integrate Player to Enemy Combat
 	
-	Day and Night Cycle
+	Weather (Skeleton, Waiting on Stuff)
 	
-	Weather
+	Get Left-Right Animation Hitboxes (Need Hitbox Integration)
 	
-	Get Left-Right Animation Hitboxes
-	
-	Rolls and Attack Animation
-	
+	Attack Animation (TODO)
 	
 ##Controls
 
