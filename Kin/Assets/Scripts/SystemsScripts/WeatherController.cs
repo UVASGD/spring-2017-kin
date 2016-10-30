@@ -44,7 +44,7 @@ public class WeatherController : MonoBehaviour {
     //deciding which weather 
     void Weather()
     {
-        //switch layers
+        /*switch layers
         if (randomWeather == 0)
         {
             //sun
@@ -57,8 +57,13 @@ public class WeatherController : MonoBehaviour {
         {
             //rain
             GUI.Button(new Rect(Screen.width - 100, 20, 100, 26), randomWeather.ToString() + timeOfDay.ToString());
-        }
+        }*/
 
+    }
+
+    void OnGUI()
+    {
+        GUI.Button(new Rect(Screen.width - 100, 20, 100, 26), randomWeather.ToString() + timeOfDay.ToString());
     }
 
     //deciding which time of day
