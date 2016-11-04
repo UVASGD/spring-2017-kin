@@ -11,6 +11,8 @@ public class AnimationControl : MonoBehaviour {
 	Animator animator;
 
 	private bool isRolling;
+	private bool isAttacking;
+
 
 	/// <summary> ability to face 4 directions	/// </summary>
 	public bool MultiDirectional = false;
@@ -49,6 +51,7 @@ public class AnimationControl : MonoBehaviour {
 	void Update () {
 		int direction = updateDirection ();
 		updateRoll ();
+		updateAttack ();
 
 		var move = rb.velocity;
 		// include check if animator has each parameter
@@ -96,7 +99,18 @@ public class AnimationControl : MonoBehaviour {
 		}
 	}
 
+	public void updateAttack(){
+		if (Input.GetButtonDown ("Attack") && !isAttacking) {
+			animator.SetBool ("Attacking", true);
+		}
+	}
+
+
 	public void setRolling(bool roll) {
 		isRolling = roll;
+	}
+
+	public void setAttacking(bool attack) {
+		isAttacking = attack;
 	}
 }
