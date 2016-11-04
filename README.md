@@ -7,41 +7,63 @@ Under the current constitution of Student Game Developers at the University of V
 
 # Kin
 
-##Systems Plan
+## Future Ideas
 
-1 Big Controller per System
+Adding the ability to allocate points in stats at very start of game (i.e. start off with 5/5/5/5, given 20 points to put in)
 
-####1) Combat
+##Systems Layout
 
-	hitboxes [DONE, Laura: implemented combat]
+HitboxController.cs = Holds all of the hitboxes for each player animations, and cycles through them based off of the animation controller.
+ATTACH TO: Player
+USES: ??
+
+PlayerMelee.cs = The players UDLR (Up/Down/Left/Right) *attack* hitboxes.
+ATTACH TO: Player Prefab
+USES: ??
+
+AvatarMvmController.cs = Simple script in charge of the Animation Controller and player movement (kind of, mostly for speed?).
+ATTACH TO: Player Prefab
+USES: ??
+
+PlayerHealth.cs = In charge of the *CURRENT* Health of the player and in charge of taking damage, also checks for death.
+ATTACH TO: Player Prefab
+USES: ??
+
+StatController.cs = Simple Getters and Setters for *CURRENT* Stats of player, will integrate into LevelUpController.
+ATTACH TO: Player Prefab
+USES: ??
+
+AnimationControl.cs = More complicated controller for the animation and movement of the player.
+ATTACH TO: Player Prefab
+USES: ??
+
+CameraController.cs = Gets position of the player and tracks them.
+ATTACH TO: Main Camera
+USES: ??
+
+SaveController.cs = Able to save and load stats into serializables, updates the GUI?.
+ATTACH TO: SaveController Prefab
+USES: ??
+
+TimeController.cs = Keeps track of game time (in days).
+ATTACH TO: ??
+USES: ??
+
+UIController.cs = Sets the UI elements for the player health and stamina.
+ATTACH TO: HUD Prefab
+USES: ??
+
+TempGameController.cs = Also used for setting UI elements?? 
+ATTACH TO: HUDController Prefab
+USES: ??
   
-	numbers [WAITING: need information from Design to set]
-  
-	animation [DONE (kind of), Reid: waiting on sprites for animation]
-  
-	HealthController (OnDeath = reset stats, etc./Call the UI Element/Timing/Mostly comments atm) [DONE?, Laura]
+#### TODO
 	
-	FUTURE: draw off Level Up, (health and stamina determined by Level Up)
-  
-####2a) Time
-
-	just keeping track of days, timedelta, literally just time [IN PROGRESS/Skylar, Lauren, Kathy]
-
-  
-####2b) Level Up
-
-	level controller [TODO/Reid?]
-  
-	stats (4 stats for Player, 4 stat for Order, Getters and Setters)[IN PROGRESS/Nathan, Paul]
-  
-	XP/Lumee/Luminescence/Spend Time
-  
-	Singleton Class [TODO/Laura]
-  
-####3) Day/Night and Weather
-
-	Stuff
+	Weather (Skeleton, Waiting on Stuff)
 	
+	Get Left-Right Animation Hitboxes (Need Hitbox Integration)
+	
+	Attack Animation (TODO)
 	
 ##Controls
 
@@ -67,3 +89,4 @@ Will only show progress, summary of stat, where to go
 Leveling up the mechanism requires going to the monastery
 
 For balancing there will be different levels (i.e. overall level)
+
