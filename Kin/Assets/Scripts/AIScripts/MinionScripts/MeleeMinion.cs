@@ -28,8 +28,7 @@ public class MeleeMinion : BaseMinionAI
 		meleeOnCd = false;
 		attackRange = .3f;
         awarenessRadius = 1.0f;
-
-        meleeDamage = 1;
+	
     }
 
     protected new void Update()
@@ -88,7 +87,8 @@ public class MeleeMinion : BaseMinionAI
         for(int i = 0; i < thingsToAttack.Length; i++){
 			if (thingsToAttack[i].tag == "Player")
 			{
-                //Debug.Log("Damage");
+                Debug.Log("Damage");
+				gameObject.GetComponent<MeleeMinionAnimationController> ().attacking = true;
 				targetObject.GetComponent<PlayerHealth> ().TakeDamage (meleeDamage);
 			}
         }
