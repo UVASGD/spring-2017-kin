@@ -1,6 +1,12 @@
 fileFormatVersion: 2
-guid: 394d811b1e327f94c9cdc15f4b1423c8
+<<<<<<< HEAD:Kin/Assets/Scenes/TestScenes/AI/AI-Trad.unity.meta
+guid: 06a39d9368662514e82803d99cba1158
 timeCreated: 1472221240
+=======
+guid: 3d8e7e20c3367482eb6deb478715f9e7
+folderAsset: yes
+timeCreated: 1477166611
+>>>>>>> master:Kin/Assets/Scripts/AIScripts.meta
 licenseType: Free
 DefaultImporter:
   userData: 
