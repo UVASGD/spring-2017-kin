@@ -65,14 +65,12 @@ public class Kamikaze : BaseMinionAI
             {
                 if (timeToExplode > explodeDelay)
                 {
-                    if (distanceToPlayer < explodeRadius)
-                    {
                         //Debug.Log("Hurt");
 						if (!exploded) {
-							targetObject.GetComponent<PlayerHealth> ().TakeDamage (explodeDamage);
+							if (distanceToPlayer < explodeRadius)
+								targetObject.GetComponent<PlayerHealth> ().TakeDamage (explodeDamage);
 							exploded = true;
 						}
-                    }
                     //Debug.Log("Explode");
 					timeToExplode+= Time.deltaTime;
 					if (timeToExplode > decayTime)
