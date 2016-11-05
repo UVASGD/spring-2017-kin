@@ -8,6 +8,7 @@ public class MeleeMinion : BaseMinionAI
     public int meleeDamage; //Melee attack damage
     float attackRange; //Range to melee attack from
     bool meleeOnCd; //Is melee attack on cooldown
+	bool dealtDamage;
     float meleeCurrCd; //Remaining cooldown for melee attack
 
     protected new void Start()
@@ -28,6 +29,7 @@ public class MeleeMinion : BaseMinionAI
 		meleeOnCd = false;
 		attackRange = .3f;
         awarenessRadius = 1.0f;
+		dealtDamage = false;
 	
     }
 
@@ -39,15 +41,23 @@ public class MeleeMinion : BaseMinionAI
         {
 			if (distanceToPlayer < attackRange) {
 				if (!meleeOnCd) {
-					attackInRadius (targetObject.transform.position.x > rb.transform.position.x, attackRange);
 					//Need to choose 1 of 4 major directions to face and then call attack
-					meleeCurrCd = .5f;
+					meleeCurrCd = 1.2f;
 					meleeOnCd = true;
+					dealtDamage = false;
+					gameObject.GetComponent<MeleeMinionAnimationController> ().attacking = true;
 				} else {
 					meleeCurrCd -= Time.deltaTime;
-					if (meleeCurrCd <= 0.0f)
+					if (meleeCurrCd <= 0.0f) {
 						meleeOnCd = false;
+					}
+					if (meleeCurrCd <= 0.5f && !dealtDamage) {
+						attackInRadius (targetObject.transform.position.x > rb.transform.position.x, attackRange);
+						dealtDamage = true;
+
+					}
 				}
+
 			} else {
 				MoveTowardsTarget ();
 			}
@@ -88,7 +98,7 @@ public class MeleeMinion : BaseMinionAI
 			if (thingsToAttack[i].tag == "Player")
 			{
                 Debug.Log("Damage");
-				gameObject.GetComponent<MeleeMinionAnimationController> ().attacking = true;
+
 				targetObject.GetComponent<PlayerHealth> ().TakeDamage (meleeDamage);
 			}
         }
