@@ -10,6 +10,12 @@ public class AnimationControl : MonoBehaviour {
 	public Vector2 lastMove;
 	Animator animator;
 
+	float timer;
+
+	private bool isRolling;
+
+	HitboxController hbCont;
+
 	/// <summary> ability to face 4 directions	/// </summary>
 	public bool MultiDirectional = false;
 	/// <summary> direction to face upon spawn	/// </summary>
@@ -25,6 +31,9 @@ public class AnimationControl : MonoBehaviour {
 		animator = gameObject.GetComponent<Animator> ();
 		sr = gameObject.GetComponent<SpriteRenderer> ();
 		rb = gameObject.GetComponent<Rigidbody2D>();
+		isRolling = false;
+
+		timer = 0.00f;
 
 		animator.logWarnings = false;
 		switch (InitialDirection) {
@@ -45,12 +54,33 @@ public class AnimationControl : MonoBehaviour {
 
 	void Update () {
 		int direction = updateDirection ();
+		updateRoll ();
+
+		timer += Time.deltaTime;
 
 		var move = rb.velocity;
 		// include check if animator has each parameter
 		animator.SetBool ("Dead", animator.GetCurrentAnimatorStateInfo (0).IsTag ("Dead"));
+
+
 		animator.SetBool("Moving", move.magnitude > 0);
+
+
 		animator.SetFloat("Direction", direction);
+		/*
+		if (animator.GetBool ("Rolling") && timer >= 3.0f) {
+			animator.SetBool ("Rolling", false);
+			animator.SetBool("Moving", move.magnitude > 0);
+			timer = 0.00f;
+		} else if (!animator.GetBool ("Rolling")) {
+			if (Input.GetButtonDown ("Roll")) {
+				animator.SetBool ("Rolling", true);
+				animator.SetBool ("Moving", false);
+			}
+			animator.SetBool("Moving", move.magnitude > 0);
+		} */
+
+
 
 		// Save Vector2 of last movement
 		if (!(System.Math.Abs(move.x) < 0.01f && System.Math.Abs(move.y) < 0.01f))
@@ -83,5 +113,17 @@ public class AnimationControl : MonoBehaviour {
 
 		sr.flipX = !facingRight;
 		return direction;
+	}
+
+	public void updateRoll(){
+		if (Input.GetButtonDown ("Roll") && !isRolling) {
+			animator.SetBool ("Rolling", true);
+			gameObject.GetComponent<PolygonCollider2D> ().enabled = false;
+			//animator.SetBool ("Moving", false);
+		}
+	}
+
+	public void setRolling(bool roll) {
+		isRolling = roll;
 	}
 }
