@@ -30,11 +30,10 @@ public class SaveController : MonoBehaviour {
 
     void Start()
     {
-		if (PreLoader.Instance != null) {
-			if (PreLoader.Instance.resume) {
-				Load (PreLoader.Instance.fileNumber, PreLoader.Instance.autosave);
-			}
-		}
+        if (PreLoader.Instance.resume)
+        {
+            Load(PreLoader.Instance.fileNumber, PreLoader.Instance.autosave);
+        }
     }
 	
     void OnGUI()
