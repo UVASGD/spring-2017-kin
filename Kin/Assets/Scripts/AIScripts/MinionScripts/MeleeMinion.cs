@@ -39,7 +39,7 @@ public class MeleeMinion : BaseMinionAI
 
         if (curState == AIStates.DetectedState)
         {
-			if (distanceToPlayer < attackRange) {
+			if (distanceToPlayer < attackRange || meleeOnCd) {
 				if (!meleeOnCd) {
 					//Need to choose 1 of 4 major directions to face and then call attack
 					meleeCurrCd = 1.2f;
@@ -52,7 +52,8 @@ public class MeleeMinion : BaseMinionAI
 						meleeOnCd = false;
 					}
 					if (meleeCurrCd <= 0.5f && !dealtDamage) {
-						attackInRadius (targetObject.transform.position.x > rb.transform.position.x, attackRange);
+						if (distanceToPlayer < attackRange)
+							attackInRadius (targetObject.transform.position.x > rb.transform.position.x, attackRange);
 						dealtDamage = true;
 
 					}
