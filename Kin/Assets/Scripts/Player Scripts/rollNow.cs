@@ -3,12 +3,13 @@ using System.Collections;
 
 public class rollNow : StateMachineBehaviour {
 
-	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-		animator.gameObject.GetComponent<AnimationControl>().setRolling(true);
-		animator.gameObject.GetComponent<AvatarMvmController> ().speed = 2.13f;
-		animator.gameObject.GetComponent<PolygonCollider2D> ().enabled = false;
-	}
+    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        animator.gameObject.GetComponent<AnimationControl>().setRolling(true);
+        animator.gameObject.GetComponent<AvatarMvmController>().speed = 2.13f;
+        animator.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        animator.gameObject.GetComponent<PlayerStamina>().TakeDamage(400);
+    }
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	//override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
