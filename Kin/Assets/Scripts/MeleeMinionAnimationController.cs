@@ -34,7 +34,7 @@ public class MeleeMinionAnimationController : MonoBehaviour
 			animator.SetBool ("Dying", false);
 		}
 		if (attacking) {
-			animator.SetBool ("Attack2", true);
+			animator.SetTrigger ("Attack2");
 			attacking = false;
 		}
 	}
