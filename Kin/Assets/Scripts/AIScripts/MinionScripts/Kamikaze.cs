@@ -38,13 +38,21 @@ public class Kamikaze : BaseMinionAI
 		decayTime = 10.0f;
 		exploded = false;
         speed = 1.2f;
+		dying = false;
     }
 
     protected new void Update()
     {
         float distanceToPlayer = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
+
+
+		if (dying) {
+			return;
+		}
+
 		if (gameObject.GetComponent<EnemyHealth> ().getHp () <= 0) {
 			death ();
+			dying = true;
 		}
 
         if (curState == AIStates.DetectedState)
