@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlaySound : MonoBehaviour {
+public class FXHandler : MonoBehaviour {
 
-	public string name;
-	public AudioSource aud;
+	private AudioSource aud;
 	private AudioClip right_dirt;
 	private AudioClip left_dirt;
 	private AudioClip right_grass;
@@ -12,6 +11,7 @@ public class PlaySound : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		aud = gameObject.AddComponent<AudioSource>();
 		right_dirt = Resources.Load ("Sounds/Player_FX/Footsteps_Dirt_Right") as AudioClip;
 		left_dirt = Resources.Load("Sounds/Player_FX/Footsteps_Dirt_Left") as AudioClip;
 		right_grass = Resources.Load("Sounds/Player_FX/Footsteps_Grass_Right") as AudioClip;
