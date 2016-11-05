@@ -3,12 +3,31 @@ using System.Collections;
 
 public class PlayerStamina : MonoBehaviour {
 
-	public float maxStamina; 
-	public float currentStamina;
-    private float staminaRegen = .15f;
+	private int maxStamina; 
+	private int currentStamina;
+    private int staminaRegen = 3;
     bool hasStamina;
-    float resetLevel = 30;
+    float resetLevel = 300;
     
+    public int getMaxStamina()
+    {
+        return maxStamina;
+    }
+    
+    public int getCurrentStamina()
+    {
+        return currentStamina;
+    }
+
+    public void setMaxStamina(int max)
+    {
+        maxStamina = max;
+    }
+
+    public void setCurrentStamina(int current)
+    {
+        currentStamina = current;
+    }
 
     void Awake()
     {
@@ -21,7 +40,7 @@ public class PlayerStamina : MonoBehaviour {
 		currentStamina = maxStamina;
 	}
 
-	public void TakeDamage(float amount)
+	public void TakeDamage(int amount)
     {
 		currentStamina -= amount;
         if (currentStamina <= 0)
@@ -49,7 +68,7 @@ public class PlayerStamina : MonoBehaviour {
         //print("hasStamina: " + hasStamina + " Stamina: " + currentStamina);
         //if (Input.GetKeyDown(KeyCode.Y))
         //{
-        //    TakeDamage(30);
+        //    TakeDamage(300);
         //}
         if (currentStamina >= resetLevel)
         {
