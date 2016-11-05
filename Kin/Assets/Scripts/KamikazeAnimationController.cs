@@ -53,7 +53,7 @@ public class KamikazeAnimationController : MonoBehaviour {
 
 
 
-		var move = rb.velocity;
+		Vector2 move = rb.velocity;
 		// include check if animator has each parameter
 		//if dying has completed - switch bool to dead
 		animator.SetBool ("Dead", animator.GetCurrentAnimatorStateInfo (0).IsTag ("Dead"));

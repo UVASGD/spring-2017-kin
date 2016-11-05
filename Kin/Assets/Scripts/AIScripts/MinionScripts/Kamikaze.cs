@@ -36,8 +36,6 @@ public class Kamikaze : BaseMinionAI
         awarenessRadius = 1.0f;
 		decayTime = 10.0f;
 		exploded = false;
-
-        explodeDamage = 1;
         speed = 1.2f;
     }
 
@@ -53,7 +51,7 @@ public class Kamikaze : BaseMinionAI
                 {
                     isExploding = true;
 					gameObject.GetComponent<KamikazeAnimationController> ().charging = true;
-                    rb.velocity = Vector2.zero;
+                    gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 }
                 else
                     MoveTowardsTarget();

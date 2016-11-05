@@ -20,6 +20,7 @@ public class PlayerMelee : MonoBehaviour {
     public float attackCoolDown = 0.2f;
     public KeyCode attackKey;
 
+    public int damage = 20;
 
     void Awake()
     {
@@ -27,6 +28,11 @@ public class PlayerMelee : MonoBehaviour {
 		leftAttackBox.SetActive(false);
 		upperAttackBox.SetActive(false);
 		lowerAttackBox.SetActive(false);
+
+        rightAttackBox.GetComponent<MeleeAttackHitBox>().setDamage(damage);
+        leftAttackBox.GetComponent<MeleeAttackHitBox>().setDamage(damage);
+        upperAttackBox.GetComponent<MeleeAttackHitBox>().setDamage(damage);
+        lowerAttackBox.GetComponent<MeleeAttackHitBox>().setDamage(damage);
 
         // Assuming player starts out facing forward
         facingRight = false;
@@ -109,6 +115,7 @@ public class PlayerMelee : MonoBehaviour {
             if (attackTimer > 0)
             {
                 attackTimer -= Time.deltaTime;
+
             }
             else
             {
