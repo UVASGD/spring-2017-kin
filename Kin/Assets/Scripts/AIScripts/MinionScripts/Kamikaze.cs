@@ -12,6 +12,7 @@ public class Kamikaze : BaseMinionAI
 	public int explodeDamage;
 	float decayTime;
 	bool exploded;
+	bool dying;
 
     protected new void Start()
     {
@@ -42,6 +43,9 @@ public class Kamikaze : BaseMinionAI
     protected new void Update()
     {
         float distanceToPlayer = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
+		if (gameObject.GetComponent<EnemyHealth> ().getHp () <= 0) {
+			death ();
+		}
 
         if (curState == AIStates.DetectedState)
         {
@@ -89,6 +93,12 @@ public class Kamikaze : BaseMinionAI
                 curState = AIStates.DetectedState;
         }
     }
+
+	void death()
+	{
+		gameObject.GetComponent<KamikazeAnimationController> ().dying = true;
+		dying = true;
+	}
 
 	public void makeNoise(/*string sound*/){
 		//AudioClip clip = Resources.Load ("Sounds/Attack SFX/"+sound) as AudioClip;
