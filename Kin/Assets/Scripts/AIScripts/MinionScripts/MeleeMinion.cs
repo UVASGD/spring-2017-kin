@@ -58,7 +58,7 @@ public class MeleeMinion : BaseMinionAI
 					}
 				}
 
-			} else {
+			} else if(!meleeOnCd) {
 				MoveTowardsTarget ();
 			}
         }
