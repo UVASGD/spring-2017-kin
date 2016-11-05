@@ -44,8 +44,13 @@ public class BaseGodAI : MonoBehaviour {
         //prefab = AssetDatabase.LoadAssetAtPath("Assets/prefabs.MinionProj", typeof(GameObject));
     }
 
-    // Update is called once per frame
     protected virtual void Update()
+    {
+
+    }
+
+    // Update is called once per frame
+    protected virtual void Spawn()
     {
         if (!spawnOnCd)
         {
