@@ -12,6 +12,7 @@ public class FXHandler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		aud = gameObject.AddComponent<AudioSource>();
+		aud.volume = 0.4f;
 		right_dirt = Resources.Load ("Sounds/Player_FX/Footsteps_Dirt_Right") as AudioClip;
 		left_dirt = Resources.Load("Sounds/Player_FX/Footsteps_Dirt_Left") as AudioClip;
 		right_grass = Resources.Load("Sounds/Player_FX/Footsteps_Grass_Right") as AudioClip;
