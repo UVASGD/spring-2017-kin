@@ -6,8 +6,8 @@ public class PlayerStamina : MonoBehaviour {
 	private int maxStamina; 
 	private int currentStamina;
     private int staminaRegen = 3;
-    bool hasStamina;
-    float resetLevel = 300;
+    public bool hasStamina;
+    float resetLevel = 500;
     
     public int getMaxStamina()
     {
