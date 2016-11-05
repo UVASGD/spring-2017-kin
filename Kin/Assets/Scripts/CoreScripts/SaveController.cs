@@ -28,7 +28,13 @@ public class SaveController : MonoBehaviour {
         }
     }
 
-    void Update() { }
+    void Start()
+    {
+        if (PreLoader.Instance.resume)
+        {
+            Load(PreLoader.Instance.fileNumber, PreLoader.Instance.autosave);
+        }
+    }
 	
     void OnGUI()
     {

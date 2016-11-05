@@ -36,8 +36,6 @@ public class Kamikaze : BaseMinionAI
         awarenessRadius = 1.0f;
 		decayTime = 10.0f;
 		exploded = false;
-
-        explodeDamage = 1;
         speed = 1.2f;
     }
 
@@ -88,4 +86,9 @@ public class Kamikaze : BaseMinionAI
                 curState = AIStates.DetectedState;
         }
     }
+
+	public void makeNoise(/*string sound*/){
+		//AudioClip clip = Resources.Load ("Sounds/Attack SFX/"+sound) as AudioClip;
+		GetComponent<AudioSource>().Play();
+	}
 }
