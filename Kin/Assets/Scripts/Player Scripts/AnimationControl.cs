@@ -75,7 +75,7 @@ public class AnimationControl : MonoBehaviour {
 		int direction = 0; bool facingRight = true;
 		// simplify angle to an integer from 0 to 2
 		if (MultiDirectional) { // can face four directions
-			if (angle >= -45 && angle < 45)
+			if (angle >= -45 && angle <= 45)
 				direction = 2;  // facing up
 		else if ((angle > 45 && angle <= 135) || ((angle < -45 && angle >= -135))) {
 				direction = 1;

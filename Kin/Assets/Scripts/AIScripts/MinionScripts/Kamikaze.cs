@@ -86,4 +86,9 @@ public class Kamikaze : BaseMinionAI
                 curState = AIStates.DetectedState;
         }
     }
+
+	public void makeNoise(/*string sound*/){
+		//AudioClip clip = Resources.Load ("Sounds/Attack SFX/"+sound) as AudioClip;
+		GetComponent<AudioSource>().Play();
+	}
 }

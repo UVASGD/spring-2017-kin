@@ -88,4 +88,8 @@ public class MusicController : MonoBehaviour {
 			aud.Play ();
 		}
 	}
+
+	public AudioSource getAudio(){
+		return aud;
+	}
 }
