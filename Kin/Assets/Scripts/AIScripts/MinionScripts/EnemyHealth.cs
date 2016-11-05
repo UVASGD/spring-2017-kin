@@ -18,18 +18,16 @@ public class EnemyHealth:MonoBehaviour
         currentHealth -= amount;
         Debug.Log("Took Damage");
         // Play damage audio clip
-        if (currentHealth <= 0 && !isDead)
-        {
-            Death();
-        }
+       // if (currentHealth <= 0 && !isDead)
+        //{
+          //  Death();
+        //}
     }
 
-    void Death()
-    {
-        isDead = true;
-        //gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-        Destroy(gameObject);
-        //anim.SetBool("Dying", true);
-        //play visual + audio death
-    }
+	public int getHp()
+	{
+		return currentHealth;
+	}
+
+
 }

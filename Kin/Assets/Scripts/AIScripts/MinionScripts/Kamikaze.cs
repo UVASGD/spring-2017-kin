@@ -36,8 +36,6 @@ public class Kamikaze : BaseMinionAI
         awarenessRadius = 1.0f;
 		decayTime = 10.0f;
 		exploded = false;
-
-        explodeDamage = 1;
         speed = 1.2f;
     }
 
