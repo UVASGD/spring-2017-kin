@@ -78,6 +78,8 @@ public class UIController : MonoBehaviour {
 
     public void toggleStatsMenu()
     {
-        statsMenu.SetActive(!statsMenu.activeSelf);
+		if (statsMenu) {
+			statsMenu.SetActive (!statsMenu.activeSelf);
+		}
     }
 }
