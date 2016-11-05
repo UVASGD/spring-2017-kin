@@ -12,6 +12,8 @@ public class Memetacular : MonoBehaviour {
 	float waxOff=0, totWax;
 	Rigidbody2D robotnik;
 	public float donutsPerSecond = 1;
+	bool dying;
+	float despawn = 0.0f;
 
 	public enum Meme{
 		YOLO, oneDoesNot, pepe
@@ -25,73 +27,87 @@ public class Memetacular : MonoBehaviour {
 		friedChicken = gameObject.GetComponent<SpriteRenderer> ();
 		totWax = Random.Range (5f, 10f);
 		robotnik = GetComponent<Rigidbody2D>();
+		dying = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (gameObject.GetComponent<EnemyHealth>().getHp() <= 0) {
+			dying = true;
+
+			death ();
+		}
 		//isDank ();
-		Vector2 weed = new Vector2 (player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
-		waxOff += Time.deltaTime;
-		switch (dank) {
-		case Meme.YOLO:
-			robotnik.velocity = Vector2.zero;
-			if (weed.magnitude <= 2) {
-				// eat donuts now
-				dank = Meme.oneDoesNot;
-			} else {
+		if (!dying) {
+			Vector2 weed = new Vector2 (player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
+			waxOff += Time.deltaTime;
+			switch (dank) {
+			case Meme.YOLO:
+				robotnik.velocity = Vector2.zero;
+				if (weed.magnitude <= 2) {
+					// eat donuts now
+					dank = Meme.oneDoesNot;
+				} else {
+					if (waxOff >= totWax) {
+						waxOff = 0;
+						totWax = Random.Range (5f, 10f);
+						friedChicken.flipX = !friedChicken.flipX;
+					}
+				}
+				break;
+			case Meme.oneDoesNot:
+				isDank (weed);
 				if (waxOff >= totWax) {
 					waxOff = 0;
-					totWax = Random.Range (5f, 10f);
-					friedChicken.flipX = !friedChicken.flipX;
+					totWax = Random.Range (2f, 3f);
+
+					int lapidot = (int)Random.Range (1f, 41f);
+					if (lapidot <= 10) {
+						eatDelicious ();
+						squirrel.SetBool ("Attack1", true);
+					} else if (lapidot <= 20) {		
+						eatDelicious ();			
+						squirrel.SetBool ("Release", true);
+						squirrel.SetBool ("Invisible", true);
+						dank = Meme.pepe;
+					} else if (lapidot <= 30) {
+						eatDelicious ();
+						squirrel.SetBool ("Attack2", true);
+					} else {
+						eatDelicious ();
+						squirrel.SetBool ("Attack3", true);
+					} 
 				}
-			}
-			break;
-		case Meme.oneDoesNot:
-			isDank (weed);
-			if (waxOff >= totWax) {
-				waxOff = 0;
-				totWax = Random.Range (2f, 3f);
+				break;
+			case Meme.pepe:
+				isDank (weed);
+				if (waxOff >= totWax) {
+					waxOff = 0;
+					totWax = Random.Range (2f, 3f);
 
-				int lapidot = (int)Random.Range (1f, 41f);
-				if (lapidot <= 10) {
-					eatDelicious ();
-					squirrel.SetBool ("Attack1", true);
-				} else if (lapidot <= 20) {		
-					eatDelicious ();			
-					squirrel.SetBool ("Release", true);
-					squirrel.SetBool ("Invisible", true);
-					dank = Meme.pepe;
-				} else if (lapidot <= 30) {
-					eatDelicious ();
-					squirrel.SetBool ("Attack2", true);
-				} else {
-					eatDelicious ();
-					squirrel.SetBool ("Attack3", true);
-				} 
+					int racistBassist = (int)Random.Range (1f, 31f);
+					if (racistBassist <= 15) {
+						eatDelicious ();
+						squirrel.SetBool ("Attack1", true);
+					} else {		
+						eatDelicious ();			
+						squirrel.SetBool ("Invisible", false);
+						squirrel.SetBool ("Choke", true);
+						dank = Meme.oneDoesNot;
+					} 
+				}
+				break;
 			}
-			break;
-		case Meme.pepe:
-			isDank (weed);
-			if (waxOff >= totWax) {
-				waxOff = 0;
-				totWax = Random.Range (2f, 3f);
 
-				int racistBassist = (int)Random.Range (1f, 31f);
-				if (racistBassist <= 15) {
-					eatDelicious ();
-					squirrel.SetBool ("Attack1", true);
-				} else {		
-					eatDelicious ();			
-					squirrel.SetBool ("Invisible", false);
-					squirrel.SetBool ("Choke", true);
-					dank = Meme.oneDoesNot;
-				} 
+			if (weed.magnitude >= 5)
+				dank = Meme.YOLO;
+		} else {
+			despawn += Time.deltaTime;
+			if (despawn >= 5) {
+				Destroy (gameObject);
 			}
-			break;
+
 		}
-
-		if (weed.magnitude >= 5)
-			dank = Meme.YOLO;
 	}
 
 	private void isDank(Vector2 weed){
@@ -111,4 +127,12 @@ public class Memetacular : MonoBehaviour {
 		//AudioClip clip = Resources.Load ("Sounds/Attack SFX/"+sound) as AudioClip;
 		GetComponent<AudioSource>().Play();
 	}
+
+	public void death()
+	{
+		squirrel.SetBool ("Dying",true);
+		gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
+
+	}
+	
 }
