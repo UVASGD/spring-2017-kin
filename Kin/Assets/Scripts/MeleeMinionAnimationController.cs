@@ -25,18 +25,32 @@ public class MeleeMinionAnimationController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		lastMove = rb.velocity;
+		if (!dying)
+			updateDirection ();
+		//last nonzero move
+		lastMove = rb.velocity.magnitude == 0 ? lastMove : rb.velocity;
 		animator.SetBool ("Moving", lastMove.magnitude > 0);
 		if (dying) {
 			animator.SetBool ("Dying", true);
+			gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
 			dying = false;
+			Destroy(gameObject.GetComponent<MeleeMinionAnimationController>());
 		} else if (animator.GetCurrentAnimatorStateInfo (0).IsTag ("Dying")) {
-			animator.SetBool ("Dying", false);
+			//animator.SetBool ("Dying", false);
+			Debug.Log("In dying");
 		}
-		if (attacking) {
+		else if (attacking) {
 			animator.SetTrigger ("Attack2");
 			attacking = false;
 		}
+	}
+
+	void updateDirection(){
+		bool facingRight = true;
+		if (lastMove.x <= 0)
+			facingRight = false;  
+
+		sr.flipX = !facingRight;
 	}
 }
 
