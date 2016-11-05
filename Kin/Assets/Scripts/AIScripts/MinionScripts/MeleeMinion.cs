@@ -52,8 +52,9 @@ public class MeleeMinion : BaseMinionAI
 						meleeOnCd = false;
 					}
 					if (meleeCurrCd <= 0.5f && !dealtDamage) {
-						if (distanceToPlayer < attackRange)
+						if (distanceToPlayer < attackRange) {
 							attackInRadius (targetObject.transform.position.x > rb.transform.position.x, attackRange);
+						}
 						dealtDamage = true;
 
 					}
@@ -98,9 +99,7 @@ public class MeleeMinion : BaseMinionAI
         for(int i = 0; i < thingsToAttack.Length; i++){
 			if (thingsToAttack[i].tag == "Player")
 			{
-                Debug.Log("Damage");
-
-				targetObject.GetComponent<PlayerHealth> ().TakeDamage (meleeDamage);
+					targetObject.GetComponent<PlayerHealth> ().TakeDamage (meleeDamage);
 			}
         }
     }
