@@ -6,12 +6,17 @@ using System.Collections.Generic;
 public class MeleeMinion : BaseMinionAI
 {
     public int meleeDamage; //Melee attack damage
-    float attackRange; //Range to melee attack from
+    public float attackRange; //Range to melee attack from
     bool meleeOnCd; //Is melee attack on cooldown
+	bool dealtDamage;
     float meleeCurrCd; //Remaining cooldown for melee attack
+	float despawnTimer;
+	bool dying;
 
     protected new void Start()
     {
+		despawnTimer = 0.0f;
+		dying = false;
         base.Start();
         //Establish rigid body for minion
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -26,44 +31,63 @@ public class MeleeMinion : BaseMinionAI
 
         curState = AIStates.IdleState;
 		meleeOnCd = false;
-		attackRange = .3f;
         awarenessRadius = 1.0f;
-
-        meleeDamage = 1;
+		dealtDamage = false;
+	
     }
 
     protected new void Update()
     {
-        float distanceToPlayer = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
 
-        if (curState == AIStates.DetectedState)
-        {
-			if (distanceToPlayer < attackRange) {
-				if (!meleeOnCd) {
-					attackInRadius (targetObject.transform.position.x > rb.transform.position.x, attackRange);
-					//Need to choose 1 of 4 major directions to face and then call attack
-					meleeCurrCd = .5f;
-					meleeOnCd = true;
-				} else {
-					meleeCurrCd -= Time.deltaTime;
-					if (meleeCurrCd <= 0.0f)
-						meleeOnCd = false;
+        float distanceToPlayer = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
+		if (!dying) {
+			if (curState == AIStates.DetectedState) {
+				if (distanceToPlayer < attackRange || meleeOnCd) {
+					if (!meleeOnCd) {
+						//Need to choose 1 of 4 major directions to face and then call attack
+						meleeCurrCd = 1.2f;
+						meleeOnCd = true;
+						dealtDamage = false;
+						gameObject.GetComponent<MeleeMinionAnimationController> ().attacking = true;
+						gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
+					} else {
+						meleeCurrCd -= Time.deltaTime;
+						if (meleeCurrCd <= 0.0f) {
+							meleeOnCd = false;
+							gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeRotation;
+						}
+						if (meleeCurrCd <= 0.5f && !dealtDamage) {
+							if (distanceToPlayer < attackRange) {
+								attackInRadius (targetObject.transform.position.x > rb.transform.position.x, attackRange);
+							}
+							dealtDamage = true;
+
+
+						}
+					}
+
+				} else if (!meleeOnCd) {
+					MoveTowardsTarget ();
 				}
 			} else {
-				MoveTowardsTarget ();
+				Patrol ();
+				if (distanceToPlayer < awarenessRadius)
+					curState = AIStates.DetectedState;
 			}
-        }
-        else
-        {
-            Patrol();
-            if (distanceToPlayer < awarenessRadius)
-                curState = AIStates.DetectedState;
-        }
+			if (gameObject.GetComponent<EnemyHealth> ().getHp () <= 0)
+				death ();
+		}
+		if (dying) {
+			if (despawnTimer >= 10.0f)
+				Destroy (gameObject);
+			else
+				despawnTimer += Time.deltaTime;
+		}
     }
 
     private GameObject[] ObjectsInAttackArea(bool direction /* false==left, true==right */, float attackRadius)
     {
-  		Collider2D[] allCollidersInRadius = Physics2D.OverlapCircleAll (rb.transform.position, attackRadius);
+  		Collider2D[] allCollidersInRadius = Physics2D.OverlapCircleAll (rb.transform.position, attackRadius*1.2f);
   		List<GameObject> matches = new List<GameObject> ();
   		for (int i = 0; i < allCollidersInRadius.Length; i++) {
 			float xDifference = allCollidersInRadius [i].attachedRigidbody.transform.position.x - rb.transform.position.x;
@@ -88,9 +112,15 @@ public class MeleeMinion : BaseMinionAI
         for(int i = 0; i < thingsToAttack.Length; i++){
 			if (thingsToAttack[i].tag == "Player")
 			{
-                //Debug.Log("Damage");
-				targetObject.GetComponent<PlayerHealth> ().TakeDamage (meleeDamage);
+				Debug.Log ("attacking");
+					targetObject.GetComponent<PlayerHealth> ().TakeDamage (meleeDamage);
 			}
         }
     }
+
+	void death()
+	{
+		gameObject.GetComponent<MeleeMinionAnimationController> ().dying = true;
+		dying = true;
+	}
 }

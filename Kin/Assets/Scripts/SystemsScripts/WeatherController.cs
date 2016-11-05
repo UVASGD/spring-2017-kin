@@ -10,12 +10,21 @@ public class WeatherController : MonoBehaviour {
     public float cloudy = 2.0f;
     public float test = 0.0f;
     public float layer;
-    
+    public int weatherPeriod = 3;
+
+    public GameObject puddle;
+    public GameObject cloud;
+    public GameObject sun;
+
+    bool generate = true;
+    bool set = false;
+
     void Initialize ()
     {
-        randomWeather = Random.Range(0, 2);
+        randomWeather = Random.Range(0, 3);
         timeOfDay = Random.Range(1, 24);
         weatherDuration = Random.Range(2, 8);
+        
         Timing();
     }
 
@@ -27,16 +36,16 @@ public class WeatherController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    //reset random weather for different days
-        
-        if (this.gameObject.GetComponent<DayNightController>().worldTimeHour == 4.0f)
+        //reset random weather every weatherPeriod hours
+        if (this.gameObject.GetComponent<DayNightController>().worldTimeHour % weatherPeriod == 0 && !set)
         {
             Initialize();
             test = 1.0f;
+            set = true;
             
-        } else
+        } else if (this.gameObject.GetComponent<DayNightController>().worldTimeHour % weatherPeriod != 0 && set)
         {
-               
+            set = false;
         }
        
 	}
@@ -44,20 +53,46 @@ public class WeatherController : MonoBehaviour {
     //deciding which weather 
     void Weather()
     {
-        /*switch layers
+        //switch layers
         if (randomWeather == 0)
         {
             //sun
-            GUI.Button(new Rect(Screen.width - 100, 20, 100, 26), randomWeather.ToString() + timeOfDay.ToString());
+            //GUI.Button(new Rect(Screen.width - 100, 20, 100, 26), randomWeather.ToString() + timeOfDay.ToString());
+            if (generate)
+            {
+                for (int i = 0; i < 30; i++)
+                {
+                    Instantiate(sun, new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0), Quaternion.identity);
+                }
+                generate = false;
+            }
         } else if (randomWeather == 1)
         {
             //cloudy
-            GUI.Button(new Rect(Screen.width - 100, 20, 100, 26), randomWeather.ToString() + timeOfDay.ToString());
-        } else if (randomWeather == 2)
+            //GUI.Button(new Rect(Screen.width - 100, 20, 100, 26), randomWeather.ToString() + timeOfDay.ToString());
+            if (generate)
+            {
+                for (int i = 0; i < 30; i++)
+                {
+                    Instantiate(cloud, new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0), Quaternion.identity);
+                }
+                generate = false;
+            }
+        }
+        else if (randomWeather == 2)
         {
             //rain
-            GUI.Button(new Rect(Screen.width - 100, 20, 100, 26), randomWeather.ToString() + timeOfDay.ToString());
-        }*/
+            //GUI.Button(new Rect(Screen.width - 100, 20, 100, 26), randomWeather.ToString() + timeOfDay.ToString());
+            if (generate)
+            {
+                for (int i = 0; i < 30; i++)
+                {
+                    Instantiate(puddle, new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0), Quaternion.identity);
+                }
+                generate = false;
+            }
+
+        }
 
     }
 
@@ -69,9 +104,13 @@ public class WeatherController : MonoBehaviour {
     //deciding which time of day
     void Timing()
     {
-        if (timeOfDay == this.gameObject.GetComponent<DayNightController>().worldTimeHour)
+        //if (timeOfDay == this.gameObject.GetComponent<DayNightController>().worldTimeHour)
+        // Destroy all previous weather objects before making new ones
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("weather"))
         {
-            Weather();
+            Destroy(g);
         }
+        Weather();
+        generate = true;
     }
 }
