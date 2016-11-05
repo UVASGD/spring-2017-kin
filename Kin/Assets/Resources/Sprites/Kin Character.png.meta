@@ -2,7 +2,7 @@ fileFormatVersion: 2
 guid: ab57779361341e445a416023b4a6fc8e
 labels:
 - Character
-timeCreated: 1478304334
+timeCreated: 1478304792
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -31,25 +31,25 @@ TextureImporter:
     21300044: Kin Character_27
     21300046: Kin Character_28
     21300048: Kin Character_55
-    21300050: Kin Character_56a
+    21300050: Kin Character_56
     21300052: Kin Character_57
-    21300054: Kin Character_58a
+    21300054: Kin Character_58
     21300056: Kin Character_16
     21300058: Kin Character_81
     21300060: Kin Character_21
     21300062: Kin Character_22
     21300064: Kin Character_23
-    21300066: Kin Character_56a
+    21300066: Kin Character_56
     21300068: Kin Character_24
-    21300070: Kin Character_58a
+    21300070: Kin Character_58
     21300072: Kin Character_12
     21300074: Kin Character_112
     21300076: Kin Character_17
     21300078: Kin Character_18
     21300080: Kin Character_19
-    21300082: Kin Character_56a
+    21300082: Kin Character_56
     21300084: Kin Character_32
-    21300086: Kin Character_58a
+    21300086: Kin Character_58
     21300088: Kin Character_59a
     21300090: 121211
     21300092: 2
@@ -163,6 +163,9 @@ TextureImporter:
     21300308: Kin Character_124
     21300310: Kin Character_125
     21300312: Kin Character_126
+    21300314: NA_2
+    21300316: NA_1
+    21300318: NA_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -750,7 +753,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kin Character_56a
+      name: Kin Character_56
       rect:
         serializedVersion: 2
         x: 400
@@ -776,7 +779,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kin Character_58a
+      name: Kin Character_58
       rect:
         serializedVersion: 2
         x: 560
@@ -789,7 +792,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kin Character_59a
+      name: Kin Character_59
       rect:
         serializedVersion: 2
         x: 640
@@ -945,11 +948,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kin Character_56
+      name: NA_2
       rect:
         serializedVersion: 2
-        x: 640
-        y: 624
+        x: 862
+        y: 221
         width: 80
         height: 80
       alignment: 0
@@ -971,11 +974,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kin Character_58
+      name: NA_1
       rect:
         serializedVersion: 2
-        x: 800
-        y: 624
+        x: 695
+        y: 230
         width: 80
         height: 80
       alignment: 0
@@ -984,11 +987,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kin Character_59
+      name: NA_3
       rect:
         serializedVersion: 2
-        x: 880
-        y: 624
+        x: 1016
+        y: 244
         width: 80
         height: 80
       alignment: 0
