@@ -45,6 +45,11 @@ public class Kamikaze : BaseMinionAI
 
         if (curState == AIStates.DetectedState)
         {
+            if (distanceToPlayer >= awarenessRadius)
+            {
+                curState = AIStates.IdleState;
+                return;
+            }
             if (!isExploding)
             {
                 if (distanceToPlayer < explodeRadius)
