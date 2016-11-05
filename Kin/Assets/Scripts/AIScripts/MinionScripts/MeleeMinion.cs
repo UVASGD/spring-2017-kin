@@ -66,8 +66,6 @@ public class MeleeMinion : BaseMinionAI
 								attackInRadius (targetObject.transform.position.x > rb.transform.position.x, attackRange);
 							}
 							dealtDamage = true;
-
-
 						}
 					}
 
