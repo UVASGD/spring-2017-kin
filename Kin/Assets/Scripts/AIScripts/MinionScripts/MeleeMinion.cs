@@ -45,6 +45,8 @@ public class MeleeMinion : BaseMinionAI
                 if (distanceToPlayer >= awarenessRadius)
                 {
                     curState = AIStates.IdleState;
+					gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.None;
+					gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeRotation;
                     return;
                 }
                 if (distanceToPlayer < attackRange || meleeOnCd) {
@@ -71,7 +73,7 @@ public class MeleeMinion : BaseMinionAI
 						}
 					}
 
-				} else if (!meleeOnCd) {
+				} else if (!meleeOnCd && curState == AIStates.DetectedState) {
 					MoveTowardsTarget ();
 				}
 			} else {
