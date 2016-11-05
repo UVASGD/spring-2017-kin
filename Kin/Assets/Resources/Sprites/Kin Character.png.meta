@@ -2,7 +2,7 @@ fileFormatVersion: 2
 guid: ab57779361341e445a416023b4a6fc8e
 labels:
 - Character
-timeCreated: 1476539014
+timeCreated: 1478304792
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -18,102 +18,158 @@ TextureImporter:
     21300018: Kin Character_9
     21300020: Kin Character_10
     21300022: Kin Character_11
-    21300024: Kin Character_12
-    21300026: Kin Character_13
-    21300028: Kin Character_14
-    21300030: Kin Character_15
-    21300032: Kin Character_16
-    21300034: Kin Character_17
-    21300036: Kin Character_18
-    21300038: Kin Character_19
-    21300040: Kin Character_20
-    21300042: Kin Character_21
-    21300044: Kin Character_22
-    21300046: Kin Character_23
-    21300048: Kin Character_24
-    21300050: Kin Character_25
-    21300052: Kin Character_26
-    21300054: Kin Character_27
-    21300056: Kin Character_28
-    21300058: Kin Character_29
-    21300060: Kin Character_30
-    21300062: Kin Character_31
-    21300064: Kin Character_32
-    21300066: Kin Character_33
-    21300068: Kin Character_34
-    21300070: Kin Character_35
-    21300072: Kin Character_36
-    21300074: Kin Character_37
-    21300076: Kin Character_38
-    21300078: Kin Character_39
-    21300080: Kin Character_40
-    21300082: Kin Character_41
-    21300084: Kin Character_42
-    21300086: Kin Character_43
-    21300088: Kin Character_44
-    21300090: Kin Character_45
-    21300092: Kin Character_46
-    21300094: Kin Character_47
-    21300096: Kin Character_48
-    21300098: Kin Character_49
-    21300100: Kin Character_50
-    21300102: Kin Character_51
-    21300104: Kin Character_52
-    21300106: Kin Character_53
-    21300108: Kin Character_54
-    21300110: Kin Character_55
+    21300024: Kin Character_20
+    21300026: Kin Character_52
+    21300028: Kin Character_53
+    21300030: Kin Character_54
+    21300032: Kin Character_36
+    21300034: Kin Character_37
+    21300036: Kin Character_38
+    21300038: Kin Character_39
+    21300040: Kin Character_25
+    21300042: Kin Character_26
+    21300044: Kin Character_27
+    21300046: Kin Character_28
+    21300048: Kin Character_55
+    21300050: Kin Character_56
+    21300052: Kin Character_57
+    21300054: Kin Character_58
+    21300056: Kin Character_16
+    21300058: Kin Character_81
+    21300060: Kin Character_21
+    21300062: Kin Character_22
+    21300064: Kin Character_23
+    21300066: Kin Character_56
+    21300068: Kin Character_24
+    21300070: Kin Character_58
+    21300072: Kin Character_12
+    21300074: Kin Character_112
+    21300076: Kin Character_17
+    21300078: Kin Character_18
+    21300080: Kin Character_19
+    21300082: Kin Character_56
+    21300084: Kin Character_32
+    21300086: Kin Character_58
+    21300088: Kin Character_59a
+    21300090: 121211
+    21300092: 2
+    21300094: 3
+    21300096: asdbagsdag
+    21300098: aasdfsdafdsafdasg
+    21300100: afcavoiweoiew
+    21300102: iiojiojwe
+    21300104: iweoijoijwef
+    21300106: Kin Character_13
+    21300108: Kin Character_14
+    21300110: Kin Character_15
     21300112: Kin Character_56
-    21300114: Kin Character_57
+    21300114: Kin Character_40
     21300116: Kin Character_58
     21300118: Kin Character_59
-    21300120: Kin Character_60
-    21300122: Kin Character_61
-    21300124: Kin Character_62
-    21300126: Kin Character_63
-    21300128: Kin Character_64
-    21300130: Kin Character_65
-    21300132: Kin Character_66
-    21300134: Kin Character_67
-    21300136: Kin Character_68
-    21300138: Kin Character_69
-    21300140: Kin Character_70
-    21300142: Kin Character_71
-    21300144: Kin Character_72
-    21300146: Kin Character_73
-    21300148: Kin Character_74
-    21300150: Kin Character_75
-    21300152: Kin Character_76
-    21300154: Kin Character_77
-    21300156: Kin Character_78
-    21300158: Kin Character_79
-    21300160: Kin Character_80
-    21300162: Kin Character_81
-    21300164: Kin Character_82
-    21300166: Kin Character_83
-    21300168: Kin Character_84
-    21300170: Kin Character_85
-    21300172: Kin Character_86
-    21300174: Kin Character_87
-    21300176: Kin Character_88
-    21300178: Kin Character_89
-    21300180: Kin Character_90
-    21300182: Kin Character_91
-    21300184: Kin Character_92
-    21300186: Kin Character_93
-    21300188: Kin Character_94
-    21300190: Kin Character_95
-    21300192: Kin Character_96
-    21300194: Kin Character_97
-    21300196: Kin Character_98
-    21300198: Kin Character_99
-    21300200: Kin Character_100
-    21300202: Kin Character_101
-    21300204: Kin Character_102
-    21300206: Kin Character_103
+    21300120: oijwoiefjijoewfijowef
+    21300122: iwefiojwef
+    21300124: jiowefiojiojwffew
+    21300126: ijwfeiojwfeijo
+    21300128: Kin Character_47
+    21300130: Kin Character_48
+    21300132: Kin Character_50
+    21300134: Kin Character_49
+    21300136: Kin Character_51
+    21300138: Kin Character_63
+    21300140: Kin Character_64
+    21300142: Kin Character_65
+    21300144: Kin Character_41
+    21300146: Kin Character_42
+    21300148: Kin Character_76
+    21300150: Kin Character_82
+    21300152: Kin Character_83
+    21300154: Kin Character_96
+    21300156: Kin Character_97
+    21300158: Kin Character_98
+    21300160: Kin Character_99
+    21300162: Kin Character_100
+    21300164: Kin Character_101
+    21300166: Kin Character_102
+    21300168: Kin Character_43
+    21300170: Kin Character_59a
+    21300172: Kin Character_84
+    21300174: Kin Character_85
+    21300176: Kin Character_86
+    21300178: Kin Character_108
+    21300180: Kin Character_110
+    21300182: Kin Character_109
+    21300184: Kin Character_111
+    21300186: 4
+    21300188: 5
+    21300190: 6
+    21300192: 7
+    21300194: 8
+    21300196: 9
+    21300198: Kin Character_93
+    21300200: Kin Character_94
+    21300202: Kin Character_29
+    21300204: Kin Character_30
+    21300206: Kin Character_105
+    21300208: 165
+    21300210: 16
+    21300212: Kin Character_113
+    21300214: Kin Character_114
+    21300216: Kin Character_66
+    21300218: Kin Character_67
+    21300220: Kin Character_68
+    21300222: Kin Character_69
+    21300224: Kin Character_70
+    21300226: Kin Character_72
+    21300228: Kin Character_73
+    21300230: Kin Character_74
+    21300232: Kin Character_75
+    21300234: Kin Character_103
+    21300236: Kin Character_104
+    21300238: Kin Character_115
+    21300240: Kin Character_116
+    21300242: Kin Character_117
+    21300244: Kin Character_118
+    21300246: Kin Character_119
+    21300248: Kin Character_120
+    21300250: Kin Character_121
+    21300252: c
+    21300254: b
+    21300256: a
+    21300258: Kin Character_33
+    21300260: Kin Character_34
+    21300262: Kin Character_35
+    21300264: Kin Character_60
+    21300266: Kin Character_61
+    21300268: Kin Character_62
+    21300270: Kin Character_77
+    21300272: Kin Character_78
+    21300274: Kin Character_79
+    21300276: Kin Character_80
+    21300278: Kin Character_87
+    21300280: Kin Character_88
+    21300282: Kin Character_89
+    21300284: Kin Character_90
+    21300286: Kin Character_91
+    21300288: Kin Character_92
+    21300290: Kin Character_95
+    21300292: Kin Character_106
+    21300294: Kin Character_107
+    21300296: Kin Character_31
+    21300298: Kin Character_44
+    21300300: Kin Character_45
+    21300302: Kin Character_46
+    21300304: Kin Character_122
+    21300306: Kin Character_123
+    21300308: Kin Character_124
+    21300310: Kin Character_125
+    21300312: Kin Character_126
+    21300314: NA_2
+    21300316: NA_1
+    21300318: NA_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -172,7 +228,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -185,7 +241,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -198,7 +254,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -211,7 +267,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -224,7 +280,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -237,7 +293,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -250,7 +306,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -263,7 +319,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -276,7 +332,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -289,7 +345,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -302,7 +358,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -315,176 +371,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 864
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_13
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 864
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_14
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 864
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_15
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 864
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_16
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 864
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_17
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 864
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_18
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 864
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_19
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 864
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_20
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 864
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_21
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 864
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_22
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 864
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_23
-      rect:
-        serializedVersion: 2
-        x: 880
-        y: 864
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_24
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 784
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -492,12 +379,12 @@ TextureImporter:
       name: Kin Character_25
       rect:
         serializedVersion: 2
-        x: 80
-        y: 784
+        x: 0
+        y: 864
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -505,12 +392,12 @@ TextureImporter:
       name: Kin Character_26
       rect:
         serializedVersion: 2
-        x: 160
-        y: 784
+        x: 80
+        y: 864
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -518,12 +405,12 @@ TextureImporter:
       name: Kin Character_27
       rect:
         serializedVersion: 2
-        x: 240
-        y: 784
+        x: 160
+        y: 864
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -531,51 +418,116 @@ TextureImporter:
       name: Kin Character_28
       rect:
         serializedVersion: 2
-        x: 320
-        y: 784
+        x: 240
+        y: 864
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kin Character_29
+      name: Kin Character_12
       rect:
         serializedVersion: 2
-        x: 400
-        y: 784
+        x: 960
+        y: 944
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kin Character_30
+      name: Kin Character_13
       rect:
         serializedVersion: 2
-        x: 480
-        y: 784
+        x: 1040
+        y: 944
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kin Character_31
+      name: Kin Character_14
       rect:
         serializedVersion: 2
-        x: 560
-        y: 784
+        x: 1120
+        y: 944
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_15
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_16
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_17
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_18
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_19
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -583,12 +535,12 @@ TextureImporter:
       name: Kin Character_32
       rect:
         serializedVersion: 2
-        x: 640
+        x: 0
         y: 784
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -596,12 +548,12 @@ TextureImporter:
       name: Kin Character_33
       rect:
         serializedVersion: 2
-        x: 720
+        x: 80
         y: 784
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -609,12 +561,12 @@ TextureImporter:
       name: Kin Character_34
       rect:
         serializedVersion: 2
-        x: 800
+        x: 160
         y: 784
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -622,12 +574,12 @@ TextureImporter:
       name: Kin Character_35
       rect:
         serializedVersion: 2
-        x: 880
+        x: 240
         y: 784
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -635,12 +587,12 @@ TextureImporter:
       name: Kin Character_36
       rect:
         serializedVersion: 2
-        x: 0
-        y: 704
+        x: 320
+        y: 784
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -648,12 +600,12 @@ TextureImporter:
       name: Kin Character_37
       rect:
         serializedVersion: 2
-        x: 80
-        y: 704
+        x: 400
+        y: 784
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -661,12 +613,12 @@ TextureImporter:
       name: Kin Character_38
       rect:
         serializedVersion: 2
-        x: 160
-        y: 704
+        x: 480
+        y: 784
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -674,12 +626,12 @@ TextureImporter:
       name: Kin Character_39
       rect:
         serializedVersion: 2
-        x: 240
-        y: 704
+        x: 560
+        y: 784
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -687,12 +639,12 @@ TextureImporter:
       name: Kin Character_40
       rect:
         serializedVersion: 2
-        x: 320
-        y: 704
+        x: 640
+        y: 784
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -700,12 +652,12 @@ TextureImporter:
       name: Kin Character_41
       rect:
         serializedVersion: 2
-        x: 400
-        y: 704
+        x: 720
+        y: 784
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -713,12 +665,12 @@ TextureImporter:
       name: Kin Character_42
       rect:
         serializedVersion: 2
-        x: 480
-        y: 704
+        x: 800
+        y: 784
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -726,116 +678,25 @@ TextureImporter:
       name: Kin Character_43
       rect:
         serializedVersion: 2
-        x: 560
-        y: 704
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_44
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 704
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_45
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 704
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_46
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 704
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_47
-      rect:
-        serializedVersion: 2
         x: 880
-        y: 704
+        y: 784
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kin Character_48
+      name: Kin Character_20
       rect:
         serializedVersion: 2
-        x: 0
-        y: 624
+        x: 1600
+        y: 944
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_49
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 624
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_50
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 624
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_51
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 624
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -843,12 +704,12 @@ TextureImporter:
       name: Kin Character_52
       rect:
         serializedVersion: 2
-        x: 320
-        y: 624
+        x: 80
+        y: 704
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -856,12 +717,12 @@ TextureImporter:
       name: Kin Character_53
       rect:
         serializedVersion: 2
-        x: 400
-        y: 624
+        x: 160
+        y: 704
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -869,12 +730,12 @@ TextureImporter:
       name: Kin Character_54
       rect:
         serializedVersion: 2
-        x: 480
-        y: 624
+        x: 240
+        y: 704
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -882,12 +743,12 @@ TextureImporter:
       name: Kin Character_55
       rect:
         serializedVersion: 2
-        x: 560
-        y: 624
+        x: 320
+        y: 704
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -895,12 +756,12 @@ TextureImporter:
       name: Kin Character_56
       rect:
         serializedVersion: 2
-        x: 640
-        y: 624
+        x: 400
+        y: 704
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -908,12 +769,12 @@ TextureImporter:
       name: Kin Character_57
       rect:
         serializedVersion: 2
-        x: 720
-        y: 624
+        x: 480
+        y: 704
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -921,12 +782,12 @@ TextureImporter:
       name: Kin Character_58
       rect:
         serializedVersion: 2
-        x: 800
-        y: 624
+        x: 560
+        y: 702
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -934,12 +795,12 @@ TextureImporter:
       name: Kin Character_59
       rect:
         serializedVersion: 2
-        x: 880
-        y: 624
+        x: 640
+        y: 704
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -947,12 +808,12 @@ TextureImporter:
       name: Kin Character_60
       rect:
         serializedVersion: 2
-        x: 0
-        y: 544
+        x: 720
+        y: 704
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -960,12 +821,12 @@ TextureImporter:
       name: Kin Character_61
       rect:
         serializedVersion: 2
-        x: 80
-        y: 544
+        x: 800
+        y: 704
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -973,194 +834,12 @@ TextureImporter:
       name: Kin Character_62
       rect:
         serializedVersion: 2
-        x: 160
-        y: 544
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_63
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 544
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_64
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 544
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_65
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 544
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_66
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 544
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_67
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 544
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_68
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 544
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_69
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 544
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_70
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 544
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_71
-      rect:
-        serializedVersion: 2
         x: 880
-        y: 544
+        y: 704
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_72
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 464
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_73
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 464
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_74
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 464
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_75
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 464
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Kin Character_76
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 464
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1168,12 +847,12 @@ TextureImporter:
       name: Kin Character_77
       rect:
         serializedVersion: 2
-        x: 400
-        y: 464
+        x: 0
+        y: 624
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1181,12 +860,12 @@ TextureImporter:
       name: Kin Character_78
       rect:
         serializedVersion: 2
-        x: 480
-        y: 464
+        x: 80
+        y: 624
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1194,12 +873,12 @@ TextureImporter:
       name: Kin Character_79
       rect:
         serializedVersion: 2
-        x: 560
-        y: 464
+        x: 160
+        y: 624
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1207,12 +886,12 @@ TextureImporter:
       name: Kin Character_80
       rect:
         serializedVersion: 2
-        x: 640
-        y: 464
+        x: 240
+        y: 624
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1220,38 +899,103 @@ TextureImporter:
       name: Kin Character_81
       rect:
         serializedVersion: 2
-        x: 720
-        y: 464
+        x: 320
+        y: 624
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kin Character_82
+      name: Kin Character_21
       rect:
         serializedVersion: 2
-        x: 800
-        y: 464
+        x: 1680
+        y: 944
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kin Character_83
+      name: Kin Character_22
       rect:
         serializedVersion: 2
-        x: 880
-        y: 464
+        x: 1760
+        y: 944
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_23
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NA_2
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 221
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_24
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NA_1
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 230
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NA_3
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 244
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1260,11 +1004,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 384
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1273,11 +1017,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 384
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1286,11 +1030,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 384
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1299,11 +1043,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 240
-        y: 384
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1312,11 +1056,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 384
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1325,11 +1069,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 400
-        y: 384
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1338,11 +1082,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 384
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1351,11 +1095,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 560
-        y: 384
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1364,11 +1108,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 384
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1377,11 +1121,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 720
-        y: 384
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1390,11 +1134,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 800
-        y: 384
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1403,11 +1147,479 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 880
-        y: 384
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_29
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 864
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_30
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 864
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_105
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_106
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_107
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_108
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_109
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_110
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_111
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_112
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_113
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_114
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_31
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 864
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_44
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_45
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_46
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_47
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_48
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_50
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_49
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_51
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_63
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_64
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_65
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_66
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_67
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_68
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_69
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_70
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_72
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_73
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_74
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_75
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_76
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_82
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 624
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_83
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 624
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1415,12 +1627,12 @@ TextureImporter:
       name: Kin Character_96
       rect:
         serializedVersion: 2
-        x: 0
-        y: 304
+        x: 960
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1428,12 +1640,12 @@ TextureImporter:
       name: Kin Character_97
       rect:
         serializedVersion: 2
-        x: 80
-        y: 304
+        x: 1038
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1441,12 +1653,12 @@ TextureImporter:
       name: Kin Character_98
       rect:
         serializedVersion: 2
-        x: 160
-        y: 304
+        x: 1120
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1454,12 +1666,12 @@ TextureImporter:
       name: Kin Character_99
       rect:
         serializedVersion: 2
-        x: 240
-        y: 304
+        x: 1200
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1467,12 +1679,12 @@ TextureImporter:
       name: Kin Character_100
       rect:
         serializedVersion: 2
-        x: 320
-        y: 304
+        x: 1280
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1480,12 +1692,12 @@ TextureImporter:
       name: Kin Character_101
       rect:
         serializedVersion: 2
-        x: 400
-        y: 304
+        x: 1360
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1493,12 +1705,12 @@ TextureImporter:
       name: Kin Character_102
       rect:
         serializedVersion: 2
-        x: 480
-        y: 304
+        x: 1440
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -1506,12 +1718,181 @@ TextureImporter:
       name: Kin Character_103
       rect:
         serializedVersion: 2
-        x: 560
-        y: 304
+        x: 1520
+        y: 544
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_104
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 544
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_115
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_116
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_117
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_118
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_119
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_120
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_121
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_122
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_123
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_124
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_125
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_126
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

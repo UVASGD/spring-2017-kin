@@ -10,6 +10,10 @@ public class AnimationControl : MonoBehaviour {
 	public Vector2 lastMove;
 	Animator animator;
 
+	private bool isRolling;
+	private bool isAttacking;
+
+
 	/// <summary> ability to face 4 directions	/// </summary>
 	public bool MultiDirectional = false;
 	/// <summary> direction to face upon spawn	/// </summary>
@@ -25,6 +29,7 @@ public class AnimationControl : MonoBehaviour {
 		animator = gameObject.GetComponent<Animator> ();
 		sr = gameObject.GetComponent<SpriteRenderer> ();
 		rb = gameObject.GetComponent<Rigidbody2D>();
+		isRolling = false;
 
 		animator.logWarnings = false;
 		switch (InitialDirection) {
@@ -45,6 +50,8 @@ public class AnimationControl : MonoBehaviour {
 
 	void Update () {
 		int direction = updateDirection ();
+		updateRoll ();
+		updateAttack ();
 
 		var move = rb.velocity;
 		// include check if animator has each parameter
@@ -83,5 +90,27 @@ public class AnimationControl : MonoBehaviour {
 
 		sr.flipX = !facingRight;
 		return direction;
+	}
+
+	public void updateRoll(){
+		if (Input.GetButtonDown ("Roll") && !isRolling) {
+			animator.SetBool ("Rolling", true);
+			gameObject.GetComponent<PolygonCollider2D> ().enabled = false;
+		}
+	}
+
+	public void updateAttack(){
+		if (Input.GetButtonDown ("Attack") && !isAttacking) {
+			animator.SetBool ("Attacking", true);
+		}
+	}
+
+
+	public void setRolling(bool roll) {
+		isRolling = roll;
+	}
+
+	public void setAttacking(bool attack) {
+		isAttacking = attack;
 	}
 }
