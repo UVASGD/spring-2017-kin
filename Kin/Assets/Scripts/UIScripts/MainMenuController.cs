@@ -17,11 +17,11 @@ public class MainMenuController : MonoBehaviour {
 
     public void ResumeGame() {
         PreLoader.Instance.preLoad("", false);
-        SceneManager.LoadScene("Game UI");
+        SceneManager.LoadScene("Main");
     }
 
     public void NewGame() {
-        SceneManager.LoadScene("Game UI");
+        SceneManager.LoadScene("Main");
     }
 
     public void Options() {
