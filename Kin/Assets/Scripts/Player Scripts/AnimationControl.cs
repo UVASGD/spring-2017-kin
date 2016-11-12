@@ -94,14 +94,20 @@ public class AnimationControl : MonoBehaviour {
 
 	public void updateRoll(){
 		if (Input.GetButtonDown ("Roll") && !isRolling) {
-			animator.SetBool ("Rolling", true);
-			gameObject.GetComponent<PolygonCollider2D> ().enabled = false;
-		}
+            if (gameObject.GetComponent<PlayerStamina>().hasStamina)
+            {
+                animator.SetBool("Rolling", true);
+                gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+            }
+        }
 	}
 
 	public void updateAttack(){
 		if (Input.GetButtonDown ("Attack") && !isAttacking) {
-			animator.SetBool ("Attacking", true);
+            if (gameObject.GetComponent<PlayerStamina>().hasStamina)
+            {
+                animator.SetBool("Attacking", true);
+            }
 		}
 	}
 
