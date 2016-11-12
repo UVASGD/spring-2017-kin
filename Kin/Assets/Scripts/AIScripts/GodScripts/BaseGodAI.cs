@@ -15,7 +15,7 @@ public class BaseGodAI : MonoBehaviour {
 
 
 
-    protected void Start()
+	protected virtual void Start()
     {
         targetObject = GameObject.Find("Player");
         //Establish rigid body for minion
