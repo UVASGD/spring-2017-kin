@@ -12,12 +12,14 @@ public class MeleeMinion : BaseMinionAI
     float meleeCurrCd; //Remaining cooldown for melee attack
 	float despawnTimer;
 	bool dying;
+	RigidbodyConstraints2D origConstraints;
 
     protected new void Start()
     {
 		despawnTimer = 0.0f;
 		dying = false;
         base.Start();
+
         //Establish rigid body for minion
         rb = gameObject.GetComponent<Rigidbody2D>();
         if (rb == null)
@@ -28,8 +30,8 @@ public class MeleeMinion : BaseMinionAI
         {
             Debug.LogError("AI has no target. AI name is " + gameObject.name + "!");
         }
-
-        curState = AIStates.IdleState;
+		origConstraints = gameObject.GetComponent<Rigidbody2D> ().constraints;
+		curState = AIStates.PatrolState;
 		meleeOnCd = false;
         awarenessRadius = 1.0f;
 		dealtDamage = false;
@@ -37,56 +39,47 @@ public class MeleeMinion : BaseMinionAI
     }
 
     protected new void Update()
-    {
-
-        float distanceToPlayer = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
+	{
+		float distanceToPlayer = Vector2.Distance ((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
 		if (!dying) {
 			if (curState == AIStates.DetectedState) {
-                if (distanceToPlayer >= awarenessRadius)
-                {
-                    curState = AIStates.IdleState;
-                    return;
-                }
-                if (distanceToPlayer < attackRange || meleeOnCd) {
-					if (!meleeOnCd) {
-						//Need to choose 1 of 4 major directions to face and then call attack
-						meleeCurrCd = 1.2f;
-						meleeOnCd = true;
-						dealtDamage = false;
-						gameObject.GetComponent<MeleeMinionAnimationController>().attacking = true;
-						gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
-					} else {
-						meleeCurrCd -= Time.deltaTime;
-						if (meleeCurrCd <= 0.0f) {
-							meleeOnCd = false;
-							gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeRotation;
-						}
-						if (meleeCurrCd <= 0.5f && !dealtDamage) {
-							if (distanceToPlayer < attackRange) {
-								attackInRadius (targetObject.transform.position.x > rb.transform.position.x, attackRange);
-							}
-							dealtDamage = true;
-						}
-					}
-
-				} else if (!meleeOnCd && curState == AIStates.DetectedState) {
+				if (distanceToPlayer < attackRange && !meleeOnCd) {
+					meleeCurrCd = 1.2f;
+					meleeOnCd = true;
+					dealtDamage = false;
+					gameObject.GetComponent<MeleeMinionAnimationController> ().attacking = true;
+					gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
+				} else if (!meleeOnCd && distanceToPlayer < awarenessRadius) {
 					MoveTowardsTarget ();
+				} else {
+					curState = AIStates.PatrolState;
+					rb.velocity = Vector2.zero;
 				}
-			} else {
+			}
+			if (curState == AIStates.PatrolState) {
 				Patrol ();
 				if (distanceToPlayer < awarenessRadius)
 					curState = AIStates.DetectedState;
 			}
+			meleeCurrCd -= Time.deltaTime;
+			if (meleeCurrCd <= 0.0f) {
+				meleeOnCd = false;
+				gameObject.GetComponent<Rigidbody2D> ().constraints = origConstraints;
+			} else if (meleeCurrCd <= 0.5f && !dealtDamage) {
+				attackInRadius (targetObject.transform.position.x > rb.transform.position.x, attackRange);
+				dealtDamage = true;
+			}
 			if (gameObject.GetComponent<EnemyHealth> ().getHp () <= 0)
 				death ();
-		}
-		if (dying) {
+
+		} else {
 			if (despawnTimer >= 10.0f)
 				Destroy (gameObject);
 			else
 				despawnTimer += Time.deltaTime;
 		}
-    }
+
+	}
 
     private GameObject[] ObjectsInAttackArea(bool direction /* false==left, true==right */, float attackRadius)
     {
