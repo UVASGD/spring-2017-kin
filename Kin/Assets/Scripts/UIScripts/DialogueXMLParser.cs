@@ -24,8 +24,13 @@ public class DialogueXMLParser : MonoBehaviour {
 			XmlNodeList diaList = node.ChildNodes;
 			foreach (XmlNode childNode in diaList) {
 				if (childNode.Name == label) {
-					int randNum = Random.Range(0, childNode.ChildNodes.Count);
-					return childNode.ChildNodes[randNum].InnerText;
+					int num;
+					if (childNode.Attributes["flag"] && childNode.Attributes["flag"].Value == "random")
+						num = Random.Range(0, childNode.ChildNodes.Count);
+					else {
+						num = 0; // TODO: Figure this out later.
+					}
+					return childNode.ChildNodes[num].InnerText;
 				}
 			}
 		}
