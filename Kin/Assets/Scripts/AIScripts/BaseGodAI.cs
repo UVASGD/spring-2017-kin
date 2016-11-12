@@ -13,14 +13,6 @@ public class BaseGodAI : MonoBehaviour {
     protected float spawnCurrCd;
     public float spawnCd;
 
-    //Set of AI behavior states
-    protected enum AIStates
-    {
-        AggressiveState, DefensiveState, SuicidalState, IdleState
-    }
-    protected AIStates curState; //Current AI behavior state
-
-
     protected void Start()
     {
         targetObject = GameObject.Find("Player");
@@ -36,10 +28,6 @@ public class BaseGodAI : MonoBehaviour {
         }
 
         spawnOnCd = true;
-
-        //Set initial state
-        //detected for testing, will normally be idle until awarenessRadius is reached
-        curState = AIStates.IdleState;
 
         //prefab = AssetDatabase.LoadAssetAtPath("Assets/prefabs.MinionProj", typeof(GameObject));
     }
