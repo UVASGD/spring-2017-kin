@@ -49,6 +49,8 @@ public class AnimationControl : MonoBehaviour {
 	}
 
 	void Update () {
+		Debug.Log (isRolling);
+		Debug.Log(animator.GetBool("Rolling"));
 		int direction = updateDirection ();
 		updateRoll ();
 		updateAttack ();
@@ -93,7 +95,7 @@ public class AnimationControl : MonoBehaviour {
 	}
 
 	public void updateRoll(){
-		if (Input.GetButtonDown ("Roll") && !isRolling) {
+		if (Input.GetButtonDown ("Roll") && !isRolling && rb.velocity != Vector2.zero) {
 			animator.SetBool ("Rolling", true);
 			gameObject.GetComponent<PolygonCollider2D> ().enabled = false;
 		}
