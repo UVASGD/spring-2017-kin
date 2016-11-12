@@ -69,7 +69,6 @@ public class Memetacular : MonoBehaviour {
 						eatDelicious ();			
 						squirrel.SetBool ("Release", true);
 						squirrel.SetBool ("Invisible", true);
-						gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 						dank = Meme.pepe;
 					} else if (lapidot <= 30) {
 						eatDelicious ();
@@ -93,7 +92,6 @@ public class Memetacular : MonoBehaviour {
 					} else {		
 						eatDelicious ();			
 						squirrel.SetBool ("Invisible", false);
-						gameObject.GetComponent<BoxCollider2D> ().enabled = true;
 						squirrel.SetBool ("Choke", true);
 						dank = Meme.oneDoesNot;
 					} 
@@ -104,10 +102,10 @@ public class Memetacular : MonoBehaviour {
 			if (weed.magnitude >= 5)
 				dank = Meme.YOLO;
 		} else {
-			//despawn += Time.deltaTime;
-			//if (despawn >= 5) {
+			despawn += Time.deltaTime;
+			if (despawn >= 5) {
 				Destroy (gameObject);
-			//}
+			}
 
 		}
 	}
