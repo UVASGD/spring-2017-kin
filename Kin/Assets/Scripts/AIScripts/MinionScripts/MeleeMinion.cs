@@ -40,9 +40,6 @@ public class MeleeMinion : BaseMinionAI
 
     protected new void Update()
 	{
-		Debug.Log (curState);
-		Debug.Log (gameObject.GetComponent<Rigidbody2D> ().constraints);
-		Debug.Log (rb.velocity);
 		float distanceToPlayer = Vector2.Distance ((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
 		if (!dying) {
 			if (curState == AIStates.DetectedState) {
