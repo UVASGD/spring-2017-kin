@@ -28,7 +28,7 @@ public class DialogueSpawnController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Y)) {
-			Debug.Log(parser.RequestDialogue("Wisdom Trainer", "Init"));
+			Debug.Log(parser.RequestDialogue("Wisdom Trainer", "Init", 0));
 		}
 	}
 }

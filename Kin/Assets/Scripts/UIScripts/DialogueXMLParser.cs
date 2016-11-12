@@ -18,17 +18,19 @@ public class DialogueXMLParser : MonoBehaviour {
 
 	}
 
-	public string RequestDialogue(string person, string label) {
+	public string RequestDialogue(string person, string label, int index) {
 		XmlNodeList personList = xmlDoc.GetElementsByTagName(person);
 		foreach (XmlNode node in personList) {
 			XmlNodeList diaList = node.ChildNodes;
 			foreach (XmlNode childNode in diaList) {
 				if (childNode.Name == label) {
-					int num;
+					int num = 0;
 					if (childNode.Attributes["flag"] && childNode.Attributes["flag"].Value == "random")
 						num = Random.Range(0, childNode.ChildNodes.Count);
-					else {
-						num = 0; // TODO: Figure this out later.
+					else if (childNode.Attributes["flag"] && childNode.Attributes["flag"].Value == "ordered"){
+						num = index; // TODO: Figure this out later.
+					} else {
+						num = 0;
 					}
 					return childNode.ChildNodes[num].InnerText;
 				}
