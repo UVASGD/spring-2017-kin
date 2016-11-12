@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class RangedMinion : BaseMinionAI {
@@ -90,8 +90,13 @@ public class RangedMinion : BaseMinionAI {
         //If minions will be limited to one type of attack we can remove redundant Cd variables
         float distanceToPlayer = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
         if (curState == AIStates.DetectedState) {
-		//Check distance to player, move towards if beyond a certain radius, fire in the middle, away if too close
-		if (distanceToPlayer > fireRadius + .1f)
+            if(distanceToPlayer >= awarenessRadius)
+            {
+                curState = AIStates.IdleState;
+                return;
+            }
+            //Check distance to player, move towards if beyond a certain radius, fire in the middle, away if too close
+            if (distanceToPlayer > fireRadius + .1f)
 			MoveTowardsTarget ();
 		else if (distanceToPlayer < fireRadius + .1f && distanceToPlayer > fireRadius - .1f) {
 			rb.velocity = Vector2.zero;
