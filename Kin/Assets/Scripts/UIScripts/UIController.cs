@@ -6,12 +6,15 @@ public class UIController : MonoBehaviour {
 
     public Slider health;
     public Slider stamina;
+    private Slider bossHealthSlider;
+    public GameObject bossHealth;
     public GameObject statsMenu;
+    public Text bossName;
     // Add clock
     // Add Boss Health
 	
 	void Start () {
-	    
+        bossHealthSlider = bossHealth.GetComponent<Slider>();
 	}
 	
 	// Update is called once per frame
@@ -54,6 +57,15 @@ public class UIController : MonoBehaviour {
         health.value = val;
     }
 
+    public void setBossName(string name)
+    {
+        bossName.text = name;
+    }
+
+    public string getBossName()
+    {
+        return bossName.text;
+    }
     public void setClock(int time)
     {
         Debug.Log(@"No clock yet. ¯\_(ツ)_/¯");
@@ -65,15 +77,24 @@ public class UIController : MonoBehaviour {
         return 0;
     }
 
-    public void setBossHealth()
+    public void setBossHealth(int val)
     {
-        Debug.Log(@"No boss health yet.¯\_(ツ)_/¯");
+        bossHealthSlider.value = val;
     }
 
     public int getBossHealth()
     {
-        Debug.Log(@"No boss health yet.¯\_(ツ)_/¯");
-        return 0;
+        return (int)bossHealthSlider.value;
+    }
+
+    public void setBossMax(int val)
+    {
+        bossHealthSlider.maxValue = val;
+    }
+
+    public int getBossMax()
+    {
+        return (int)bossHealthSlider.maxValue;
     }
 
     public void toggleStatsMenu()
