@@ -40,7 +40,12 @@ public class PlayerHealth : MonoBehaviour {
     {
         currentHealth -= amount;
         // Play damage audio clip
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+        }
         if (currentHealth <= 0 && !isDead) {
+            currentHealth = 0;
             Death();
         }
     }

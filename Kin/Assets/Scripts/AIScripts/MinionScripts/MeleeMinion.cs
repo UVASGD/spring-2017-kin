@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -42,13 +42,18 @@ public class MeleeMinion : BaseMinionAI
         float distanceToPlayer = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
 		if (!dying) {
 			if (curState == AIStates.DetectedState) {
-				if (distanceToPlayer < attackRange || meleeOnCd) {
+                if (distanceToPlayer >= awarenessRadius)
+                {
+                    curState = AIStates.IdleState;
+                    return;
+                }
+                if (distanceToPlayer < attackRange || meleeOnCd) {
 					if (!meleeOnCd) {
 						//Need to choose 1 of 4 major directions to face and then call attack
 						meleeCurrCd = 1.2f;
 						meleeOnCd = true;
 						dealtDamage = false;
-						gameObject.GetComponent<MeleeMinionAnimationController> ().attacking = true;
+						gameObject.GetComponent<MeleeMinionAnimationController>().attacking = true;
 						gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
 					} else {
 						meleeCurrCd -= Time.deltaTime;
@@ -61,12 +66,10 @@ public class MeleeMinion : BaseMinionAI
 								attackInRadius (targetObject.transform.position.x > rb.transform.position.x, attackRange);
 							}
 							dealtDamage = true;
-
-
 						}
 					}
 
-				} else if (!meleeOnCd) {
+				} else if (!meleeOnCd && curState == AIStates.DetectedState) {
 					MoveTowardsTarget ();
 				}
 			} else {
