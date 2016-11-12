@@ -26,10 +26,10 @@ public class Geyser : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//Stuff we always gotta do
+		age += Time.deltaTime;
+
 		switch (currState) {
-		default:
-			//Stuff we always gotta do
-			age += Time.deltaTime;
 		case States.tell:
 			//Stuff we do during the "tell" phase before damage
 			if (age > delay) {
@@ -57,6 +57,8 @@ public class Geyser : MonoBehaviour {
 		case States.fade:
 			//Stuff we do while fading
 			//is there anything to do here? the world may never know
+			break;
+		default:
 			break;
 		}
 	}
