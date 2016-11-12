@@ -93,7 +93,7 @@ public class AnimationControl : MonoBehaviour {
 	}
 
 	public void updateRoll(){
-		if (Input.GetButtonDown ("Roll") && !isRolling) {
+		if (Input.GetButtonDown ("Roll") && !isRolling && rb.velocity != Vector2.zero) {
             if (gameObject.GetComponent<PlayerStamina>().hasStamina)
             {
                 animator.SetBool("Rolling", true);
