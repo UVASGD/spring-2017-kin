@@ -9,7 +9,7 @@ public class DialogueXMLParser : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		xmlDoc = new XmlDocument();
-		TextAsset textAsset = (TextAsset) Resources.Load("XML/MyXMLFile");  
+		TextAsset textAsset = (TextAsset) Resources.Load("XML/Duologue");  
 		xmlDoc.LoadXml ( textAsset.text );
 	}
 
@@ -25,9 +25,9 @@ public class DialogueXMLParser : MonoBehaviour {
 			foreach (XmlNode childNode in diaList) {
 				if (childNode.Name == label) {
 					int num = 0;
-					if (childNode.Attributes["flag"] && childNode.Attributes["flag"].Value == "random")
+					if (childNode.Attributes["flag"] != null && childNode.Attributes["flag"].Value == "random")
 						num = Random.Range(0, childNode.ChildNodes.Count);
-					else if (childNode.Attributes["flag"] && childNode.Attributes["flag"].Value == "ordered"){
+					else if (childNode.Attributes["flag"] != null && childNode.Attributes["flag"].Value == "ordered"){
 						num = index; // TODO: Figure this out later.
 					} else {
 						num = 0;
