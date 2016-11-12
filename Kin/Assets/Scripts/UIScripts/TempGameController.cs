@@ -7,7 +7,6 @@ public class TempGameController : MonoBehaviour {
 	public GameObject Player;
     public Camera cam;
     public UIController ui;
-    public int bossSearchRadius = 1;
     private GameObject[] bosses;
     private Plane[] planes;
 
