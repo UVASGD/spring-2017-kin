@@ -15,30 +15,21 @@ public class DialogueSpawnController : MonoBehaviour {
 	string dialogueString;
 	string curDiaStr;
 
-	public enum PersonType {
-
-	}
-
-	public PersonType person;
-
 	DialogueXMLParser parser;
 	public GameObject xmlParser;
 
 	bool interacted = false;
+	bool initialized = false;
+	bool finished = true;
 
 	public GameObject speaker;
 
 	// Use this for initialization
 	void Start () {
-		parser = xmlParser.GetComponent<DialogueXMLParser>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Y)) {
-			dialogueString = parser.RequestDialogue("HealthTrainer", "Init", 0);
-			Debug.Log(dialogueString);
-		}
 		if (dialogueString != null && dialogueString.Length > 0) {
 			if (writeTimer < writeSpeed) {
 				writeTimer += Time.deltaTime;
@@ -47,8 +38,11 @@ public class DialogueSpawnController : MonoBehaviour {
 				curDiaStr = dialogueString.Substring(0, curLength);
 				writeTimer = (curDiaStr.EndsWith(".") ? periodMult * -writeSpeed : 0);
 				diaTextBox.GetComponent<Text>().text = curDiaStr;
+				finished = false;
+			} else {
+				finished = true;
 			}
-			if (Input.GetKeyDown(KeyCode.U)) {
+			if (Input.GetKeyDown(KeyCode.Space)) {
 				curLength = dialogueString.Length;
 				curDiaStr = dialogueString.Substring(0, curLength);
 				diaTextBox.GetComponent<Text>().text = curDiaStr;
@@ -59,5 +53,23 @@ public class DialogueSpawnController : MonoBehaviour {
 
 	public string GetCurrentString() {
 		return curDiaStr;
+	}
+
+	public void Initialize() {
+		parser = xmlParser.GetComponent<DialogueXMLParser>();
+		initialized = true;
+	}
+
+	public bool GetInit() {
+		return initialized;
+	}
+
+	public bool GetFinished() {
+		return finished;
+	}
+
+	public void UpdateWithNewDia(string person, string label, int index) {
+		dialogueString = parser.RequestDialogue(person, label, index);
+		curLength = 0;
 	}
 }
