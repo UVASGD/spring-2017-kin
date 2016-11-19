@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 73677c2bfe9f3314393d78624e965c6c
-timeCreated: 1475950481
+timeCreated: 1479586358
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -28,6 +28,38 @@ TextureImporter:
     21300042: Shaman_21
     21300044: Shaman_22
     21300046: Shaman_23
+    21300048: Shaman_24
+    21300050: Shaman_25
+    21300052: Shaman_26
+    21300054: Shaman_27
+    21300056: Shaman_28
+    21300058: Shaman_29
+    21300060: Shaman_30
+    21300062: Shaman_31
+    21300064: Shaman_32
+    21300066: Shaman_33
+    21300068: Shaman_34
+    21300070: Shaman_35
+    21300072: Shaman_36
+    21300074: Shaman_37
+    21300076: Shaman_38
+    21300078: Shaman_39
+    21300080: Shaman_40
+    21300082: Shaman_41
+    21300084: Shaman_42
+    21300086: Shaman_43
+    21300088: Shaman_44
+    21300090: Shaman_45
+    21300092: Shaman_46
+    21300094: Shaman_47
+    21300096: Shaman_48
+    21300098: Shaman_49
+    21300100: Shaman_50
+    21300102: Shaman_51
+    21300104: Shaman_52
+    21300106: Shaman_53
+    21300108: Shaman_54
+    21300110: Shaman_55
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -86,8 +118,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
-        width: 64
+        y: 448
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -98,9 +130,9 @@ TextureImporter:
       name: Shaman_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
-        width: 64
+        x: 72
+        y: 448
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -111,9 +143,9 @@ TextureImporter:
       name: Shaman_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
-        width: 64
+        x: 144
+        y: 448
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,9 +156,9 @@ TextureImporter:
       name: Shaman_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
-        width: 64
+        x: 216
+        y: 448
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -137,9 +169,9 @@ TextureImporter:
       name: Shaman_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 192
-        width: 64
+        x: 288
+        y: 448
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -150,9 +182,9 @@ TextureImporter:
       name: Shaman_5
       rect:
         serializedVersion: 2
-        x: 320
-        y: 192
-        width: 64
+        x: 360
+        y: 448
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -163,9 +195,9 @@ TextureImporter:
       name: Shaman_6
       rect:
         serializedVersion: 2
-        x: 384
-        y: 192
-        width: 64
+        x: 432
+        y: 448
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -176,9 +208,9 @@ TextureImporter:
       name: Shaman_7
       rect:
         serializedVersion: 2
-        x: 448
-        y: 192
-        width: 64
+        x: 504
+        y: 448
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -189,9 +221,9 @@ TextureImporter:
       name: Shaman_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
+        x: 576
+        y: 448
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -202,9 +234,9 @@ TextureImporter:
       name: Shaman_9
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
+        x: 648
+        y: 448
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -215,9 +247,9 @@ TextureImporter:
       name: Shaman_10
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
+        x: 720
+        y: 448
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -228,9 +260,9 @@ TextureImporter:
       name: Shaman_11
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
-        width: 64
+        x: 792
+        y: 448
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -241,9 +273,9 @@ TextureImporter:
       name: Shaman_12
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
-        width: 64
+        x: 864
+        y: 448
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -254,9 +286,9 @@ TextureImporter:
       name: Shaman_13
       rect:
         serializedVersion: 2
-        x: 320
-        y: 128
-        width: 64
+        x: 936
+        y: 448
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -267,9 +299,9 @@ TextureImporter:
       name: Shaman_14
       rect:
         serializedVersion: 2
-        x: 384
-        y: 128
-        width: 64
+        x: 0
+        y: 384
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -280,9 +312,9 @@ TextureImporter:
       name: Shaman_15
       rect:
         serializedVersion: 2
-        x: 448
-        y: 128
-        width: 64
+        x: 72
+        y: 384
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -293,9 +325,9 @@ TextureImporter:
       name: Shaman_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
+        x: 144
+        y: 384
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -306,9 +338,9 @@ TextureImporter:
       name: Shaman_17
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
+        x: 216
+        y: 384
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -319,9 +351,9 @@ TextureImporter:
       name: Shaman_18
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
+        x: 288
+        y: 384
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -332,9 +364,9 @@ TextureImporter:
       name: Shaman_19
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
-        width: 64
+        x: 360
+        y: 384
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -345,9 +377,9 @@ TextureImporter:
       name: Shaman_20
       rect:
         serializedVersion: 2
-        x: 256
-        y: 64
-        width: 64
+        x: 432
+        y: 384
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -358,9 +390,9 @@ TextureImporter:
       name: Shaman_21
       rect:
         serializedVersion: 2
-        x: 320
-        y: 64
-        width: 64
+        x: 504
+        y: 384
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -371,9 +403,9 @@ TextureImporter:
       name: Shaman_22
       rect:
         serializedVersion: 2
-        x: 384
-        y: 64
-        width: 64
+        x: 576
+        y: 384
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -384,9 +416,425 @@ TextureImporter:
       name: Shaman_23
       rect:
         serializedVersion: 2
-        x: 448
-        y: 64
-        width: 64
+        x: 648
+        y: 384
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_24
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 384
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_25
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 384
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_26
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 384
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_27
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 384
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_29
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 320
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_30
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 320
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_31
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 320
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_32
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 320
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_33
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 320
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_34
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 320
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_35
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 320
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_36
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 320
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_37
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 320
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_38
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 320
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_39
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 320
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_40
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 320
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_41
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 320
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_43
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 256
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_44
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 256
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_45
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 256
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_46
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 256
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_47
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 256
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_48
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 256
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_49
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 256
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_50
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 256
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_51
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 256
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_52
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 256
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_53
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 256
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_54
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 256
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Shaman_55
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 256
+        width: 72
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
