@@ -20,12 +20,8 @@ public class DialogueXMLParser : MonoBehaviour {
 	}
 
 	public string RequestDialogue(string person, string label, int index) {
-		Debug.Log("Requested");
-		Debug.Log(person);
 		XmlNodeList personList = xmlDoc.GetElementsByTagName(person);
-		Debug.Log(personList.Count);
 		foreach (XmlNode node in personList) {
-			Debug.Log("Node");
 			XmlNodeList diaList = node.ChildNodes;
 			foreach (XmlNode childNode in diaList) {
 				if (childNode.Name == label) {
@@ -37,7 +33,6 @@ public class DialogueXMLParser : MonoBehaviour {
 						Debug.Log(num);
 					} else {
 						num = 0;
-						Debug.Log("No flag");
 					}
 					return childNode.ChildNodes[num].Attributes["dialogue"].Value;
 				}
