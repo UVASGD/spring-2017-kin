@@ -37,7 +37,7 @@ public class DialogueBox : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (dialogue.activeInHierarchy) {
-			if (Input.GetButtonDown("Activate")) 
+			if (Input.GetButtonDown("Interact")) 
 				dialogue.SetActive(false);
 			if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) > decayRange) 
 				dialogue.SetActive(false);
@@ -49,7 +49,7 @@ public class DialogueBox : MonoBehaviour {
 				indicator.SetActive(false);
 
 			if (indicator.activeInHierarchy) {
-				if (Input.GetButtonDown("Activate")) {
+				if (Input.GetButtonDown("Interact")) {
 					dialogue.SetActive(true);
 					indicator.SetActive(false);
 				}
