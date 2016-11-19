@@ -24,20 +24,37 @@ public class HitboxController : MonoBehaviour {
 	public PolygonCollider2D Character_14;
 
 	//Idle_Up Sprites
-	public PolygonCollider2D Character_29;
-	public PolygonCollider2D Character_30;
-	public PolygonCollider2D Character_31;
-	public PolygonCollider2D Character_32;
-	public PolygonCollider2D Character_33;
-	public PolygonCollider2D Character_34;
+	public PolygonCollider2D Character_76;
+	public PolygonCollider2D Character_77;
+	public PolygonCollider2D Character_78;
+	public PolygonCollider2D Character_79;
+	public PolygonCollider2D Character_80;
+	public PolygonCollider2D Character_81;
 
 	//Walk_Up Sprites
-	public PolygonCollider2D Character_38;
-	public PolygonCollider2D Character_39;
-	public PolygonCollider2D Character_40;
-	public PolygonCollider2D Character_41;
-	public PolygonCollider2D Character_42;
-	public PolygonCollider2D Character_43;
+	public PolygonCollider2D Character_85;
+	public PolygonCollider2D Character_86;
+	public PolygonCollider2D Character_87;
+	public PolygonCollider2D Character_88;
+	public PolygonCollider2D Character_89;
+	public PolygonCollider2D Character_90;
+
+	//Idle_Side Sprites
+	public PolygonCollider2D Character_152;
+	public PolygonCollider2D Character_153;
+	public PolygonCollider2D Character_154;
+	public PolygonCollider2D Character_155;
+	public PolygonCollider2D Character_156;
+	public PolygonCollider2D Character_157;
+
+	//Walk_Side Sprites
+	public PolygonCollider2D Character_161;
+	public PolygonCollider2D Character_162;
+	public PolygonCollider2D Character_163;
+	public PolygonCollider2D Character_164;
+	public PolygonCollider2D Character_165;
+	public PolygonCollider2D Character_166;
+
 
 	//Array of colliders for animation to switch from
 	private PolygonCollider2D[] allHitboxes;
@@ -59,18 +76,30 @@ public class HitboxController : MonoBehaviour {
 		Character_12,
 		Character_13,
 		Character_14,
-		Character_29,
-		Character_30,
-		Character_31,
-		Character_32,
-		Character_33,
-		Character_34,
-		Character_38,
-		Character_39,
-		Character_40,
-		Character_41,
-		Character_42,
-		Character_43,
+		Character_76,
+		Character_77,
+		Character_78,
+		Character_79,
+		Character_80,
+		Character_81,
+		Character_85,
+		Character_86,
+		Character_87,
+		Character_88,
+		Character_89,
+		Character_90,
+		Character_152,
+		Character_153,
+		Character_154,
+		Character_155,
+		Character_156,
+		Character_157,
+		Character_161,
+		Character_162,
+		Character_163,
+		Character_164,
+		Character_165,
+		Character_166,
 		clear // special case to remove all boxes
 	}
 
@@ -80,8 +109,10 @@ public class HitboxController : MonoBehaviour {
 		allHitboxes = new PolygonCollider2D[]{
 			Character_0,Character_1,Character_2,Character_3,Character_4,Character_5,
 			Character_9,Character_10,Character_11,Character_12,Character_13,Character_14,
-			Character_29,Character_30,Character_31,Character_32,Character_33,Character_34,
-			Character_38,Character_39,Character_40,Character_41,Character_42,Character_43};
+			Character_76,Character_77,Character_78,Character_79,Character_80,Character_81,
+			Character_85,Character_86,Character_87,Character_88,Character_89,Character_90,
+			Character_152,Character_153,Character_154,Character_155,Character_156,Character_157,
+			Character_161,Character_162,Character_163,Character_164,Character_165,Character_166};
 
 		//Create the collider
 		curHitbox = gameObject.AddComponent<PolygonCollider2D>();
