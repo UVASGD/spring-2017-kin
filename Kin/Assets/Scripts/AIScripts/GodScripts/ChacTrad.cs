@@ -16,7 +16,7 @@ public class ChacTrad : BaseGodAI {
 	// Update is called once per frame
 	protected override void Update () {
 		if (!boltOnCd) {
-			fireBolt (2);
+			fireBolt (Random.Range(1,4));
 			boltOnCd = true;
 			fireBoltCd = 1.0f;
 		} else {
