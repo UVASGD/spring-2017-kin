@@ -70,7 +70,7 @@ public class AnimationControl : MonoBehaviour {
 	/// controls animation based off direction of last saved velocity
 	/// </summary>
 	/// <returns>The direction.</returns>
-	int updateDirection(){
+	public int updateDirection(){
 		float angle = 360*Mathf.Atan2(lastMove.x,lastMove.y)/(2*Mathf.PI);
 		int direction = 0; bool facingRight = true;
 		// simplify angle to an integer from 0 to 2
