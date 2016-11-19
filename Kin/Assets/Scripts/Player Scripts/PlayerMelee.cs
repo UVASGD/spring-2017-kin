@@ -88,7 +88,7 @@ public class PlayerMelee : MonoBehaviour {
             }
         }
 
-        if (Input.GetButtonDown("Attack") && !attacking)
+        if (Input.GetButtonDown("Attack") && !attacking && GetComponent<PlayerStamina>().hasStamina)
         {
             attacking = true;
             attackTimer = attackCoolDown; // Start timer
