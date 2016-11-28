@@ -134,6 +134,8 @@ public class HitboxController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		// NOTE: this is a TERRIBLE way to program, just saying
+		// pls fix so this doesn't break (if it hasn't already)
 		allHitboxes = new PolygonCollider2D[]{
 			Character_0,Character_1,Character_2,Character_3,Character_4,Character_5,
 			Character_9,Character_10,Character_11,Character_12,Character_13,Character_14,
