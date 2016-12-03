@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour {
     // Put damage audio here if we have that
     // public AudioClip damageClip;
     // public AudioClip deathClip;
-    bool isDead;
+    bool isDead = false;
 
     AvatarMvmController playerMvmController;
     // Reference to animator for death animation
@@ -38,21 +38,28 @@ public class PlayerHealth : MonoBehaviour {
 	
 	public void TakeDamage(int amount)
     {
+        if (!anim.GetBool("Rolling"))
+        {
         currentHealth -= amount;
         // Play damage audio clip
-        if (currentHealth < 0)
-        {
-            currentHealth = 0;
         }
         if (currentHealth <= 0 && !isDead) {
             currentHealth = 0;
             Death();
         }
+        else
+        {
+            if (currentHealth < 0)
+            {
+                currentHealth = 0;
+            }
+        }
+
     }
 
     void Death()
     {
-        isDead = true;
+        //isDead = true;
         anim.SetBool("Dying", true);
         // Play death audio clip
         playerMvmController.enabled = false;
@@ -83,10 +90,10 @@ public class PlayerHealth : MonoBehaviour {
     {
         // For Testing
         //Debug.Log("Max: " + maxHealth + ", Current: " + currentHealth);
-        //if (Input.GetKeyDown(KeyCode.Y))
-        //{
-        //    TakeDamage(30);
-        //}
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            TakeDamage(60);
+        }
         // Timer set up so you can do something once they've been dead a certain amount of time
         if (isDead) {
             restartTimer += Time.deltaTime;
