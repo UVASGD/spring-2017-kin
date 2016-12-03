@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 933f0c3d8c2fca4499fd33c48a7eba9f
-timeCreated: 1475951838
+timeCreated: 1480350462
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -42,6 +42,16 @@ TextureImporter:
     21300070: Kamikaze minion_35
     21300072: Kamikaze minion_36
     21300074: Kamikaze minion_37
+    21300076: Kamikaze minion_38
+    21300078: Kamikaze minion_39
+    21300080: Kamikaze minion_40
+    21300082: Kamikaze minion_41
+    21300084: Kamikaze minion_42
+    21300086: Kamikaze minion_43
+    21300088: Kamikaze minion_44
+    21300090: Kamikaze minion_45
+    21300092: Kamikaze minion_46
+    21300094: Kamikaze minion_47
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -100,11 +110,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
-        width: 32
+        y: 448
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -112,12 +122,12 @@ TextureImporter:
       name: Kamikaze minion_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 256
-        width: 32
+        x: 64
+        y: 448
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -125,12 +135,12 @@ TextureImporter:
       name: Kamikaze minion_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 256
-        width: 32
+        x: 128
+        y: 448
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -138,12 +148,12 @@ TextureImporter:
       name: Kamikaze minion_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 256
-        width: 32
+        x: 192
+        y: 448
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -151,12 +161,12 @@ TextureImporter:
       name: Kamikaze minion_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 256
-        width: 32
+        x: 256
+        y: 448
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -164,12 +174,12 @@ TextureImporter:
       name: Kamikaze minion_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 256
-        width: 32
+        x: 320
+        y: 448
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -177,12 +187,12 @@ TextureImporter:
       name: Kamikaze minion_6
       rect:
         serializedVersion: 2
-        x: 192
-        y: 256
-        width: 32
+        x: 384
+        y: 448
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -190,12 +200,12 @@ TextureImporter:
       name: Kamikaze minion_7
       rect:
         serializedVersion: 2
-        x: 224
-        y: 256
-        width: 32
+        x: 448
+        y: 448
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -204,11 +214,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
-        width: 32
+        y: 384
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -216,12 +226,12 @@ TextureImporter:
       name: Kamikaze minion_9
       rect:
         serializedVersion: 2
-        x: 32
-        y: 192
-        width: 32
+        x: 64
+        y: 384
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -229,12 +239,12 @@ TextureImporter:
       name: Kamikaze minion_10
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
-        width: 32
+        x: 128
+        y: 384
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -242,12 +252,12 @@ TextureImporter:
       name: Kamikaze minion_11
       rect:
         serializedVersion: 2
-        x: 96
-        y: 192
-        width: 32
+        x: 192
+        y: 384
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -255,12 +265,12 @@ TextureImporter:
       name: Kamikaze minion_12
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
-        width: 32
+        x: 256
+        y: 384
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -268,12 +278,12 @@ TextureImporter:
       name: Kamikaze minion_13
       rect:
         serializedVersion: 2
-        x: 160
-        y: 192
-        width: 32
+        x: 320
+        y: 384
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -281,12 +291,12 @@ TextureImporter:
       name: Kamikaze minion_14
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
-        width: 32
+        x: 384
+        y: 384
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -294,12 +304,12 @@ TextureImporter:
       name: Kamikaze minion_15
       rect:
         serializedVersion: 2
-        x: 224
-        y: 192
-        width: 32
+        x: 448
+        y: 384
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -308,11 +318,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
-        width: 32
+        y: 320
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -320,12 +330,12 @@ TextureImporter:
       name: Kamikaze minion_17
       rect:
         serializedVersion: 2
-        x: 32
-        y: 128
-        width: 32
+        x: 64
+        y: 320
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -333,12 +343,12 @@ TextureImporter:
       name: Kamikaze minion_18
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
-        width: 32
+        x: 128
+        y: 320
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -346,12 +356,12 @@ TextureImporter:
       name: Kamikaze minion_19
       rect:
         serializedVersion: 2
-        x: 96
-        y: 128
-        width: 32
+        x: 192
+        y: 320
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -359,12 +369,12 @@ TextureImporter:
       name: Kamikaze minion_20
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
-        width: 32
+        x: 256
+        y: 320
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -372,12 +382,12 @@ TextureImporter:
       name: Kamikaze minion_21
       rect:
         serializedVersion: 2
-        x: 160
-        y: 128
-        width: 32
+        x: 320
+        y: 320
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -385,12 +395,12 @@ TextureImporter:
       name: Kamikaze minion_22
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
-        width: 32
+        x: 384
+        y: 320
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -398,12 +408,12 @@ TextureImporter:
       name: Kamikaze minion_23
       rect:
         serializedVersion: 2
-        x: 224
-        y: 128
-        width: 32
+        x: 448
+        y: 320
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -412,11 +422,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 32
+        y: 256
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -424,12 +434,12 @@ TextureImporter:
       name: Kamikaze minion_25
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
+        x: 64
+        y: 256
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -437,12 +447,12 @@ TextureImporter:
       name: Kamikaze minion_26
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
+        x: 128
+        y: 256
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -450,12 +460,12 @@ TextureImporter:
       name: Kamikaze minion_27
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
+        x: 192
+        y: 256
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -463,12 +473,12 @@ TextureImporter:
       name: Kamikaze minion_28
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
-        width: 32
+        x: 256
+        y: 256
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -476,12 +486,12 @@ TextureImporter:
       name: Kamikaze minion_29
       rect:
         serializedVersion: 2
-        x: 160
-        y: 64
-        width: 32
+        x: 320
+        y: 256
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -489,12 +499,12 @@ TextureImporter:
       name: Kamikaze minion_30
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
-        width: 32
+        x: 384
+        y: 256
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -502,12 +512,12 @@ TextureImporter:
       name: Kamikaze minion_31
       rect:
         serializedVersion: 2
-        x: 224
-        y: 64
-        width: 32
+        x: 448
+        y: 256
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -516,11 +526,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
+        y: 192
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -528,12 +538,12 @@ TextureImporter:
       name: Kamikaze minion_33
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
+        x: 64
+        y: 192
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -541,12 +551,12 @@ TextureImporter:
       name: Kamikaze minion_34
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
+        x: 128
+        y: 192
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -554,12 +564,12 @@ TextureImporter:
       name: Kamikaze minion_35
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
+        x: 192
+        y: 192
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -567,12 +577,12 @@ TextureImporter:
       name: Kamikaze minion_36
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
+        x: 256
+        y: 192
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -580,12 +590,142 @@ TextureImporter:
       name: Kamikaze minion_37
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
+        x: 320
+        y: 192
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kamikaze minion_38
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kamikaze minion_39
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kamikaze minion_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kamikaze minion_41
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kamikaze minion_42
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kamikaze minion_43
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kamikaze minion_44
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kamikaze minion_45
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kamikaze minion_46
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kamikaze minion_47
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
