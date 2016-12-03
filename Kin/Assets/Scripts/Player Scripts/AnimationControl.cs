@@ -12,6 +12,7 @@ public class AnimationControl : MonoBehaviour {
 
 	private bool isRolling;
 	private bool isAttacking;
+    private bool isRecoiling;
 
 
 	/// <summary> ability to face 4 directions	/// </summary>
@@ -119,4 +120,14 @@ public class AnimationControl : MonoBehaviour {
 	public void setAttacking(bool attack) {
 		isAttacking = attack;
 	}
+
+    public void setRecoiling(bool recoil)
+    {
+        isRecoiling = recoil;
+    }
+
+    public bool getRecoiling()
+    {
+        return isRecoiling;
+    }
 }
