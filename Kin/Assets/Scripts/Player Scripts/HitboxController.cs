@@ -172,11 +172,9 @@ public class HitboxController : MonoBehaviour {
 			bool isFlipped = gameObject.GetComponent<SpriteRenderer>().flipX;
 			if (isFlipped) {
 				string newhb = hb.ToString().Replace ("R", "L");
-				Debug.Log ("new hitbox is " + newhb);
 				hitBoxes flippedhb = (hitBoxes) System.Enum.Parse( typeof( hitBoxes ), newhb );
 				curHitbox.SetPath(0, allHitboxes[(int)flippedhb].GetPath(0));
 			} else {
-				Debug.Log ("hitbox is " + hb);
 				curHitbox.SetPath(0, allHitboxes[(int)hb].GetPath(0));
 				//Debug.Log ("value is " + hb);
 			} 
