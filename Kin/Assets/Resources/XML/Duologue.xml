@@ -1,115 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- New XML document created with EditiX XML Editor (http://www.editix.com) at Sat Nov 12 15:14:39 EST 2016 -->
-<Trainer>
-	<StaminaTrainer>
-		<Init>
-			<one dialogue="Welcome, I am Luther, the Trainer of Stamina. Should you hone your Stamina, you will become capable of achieving more with your body and blade. Shall we work together?">
-				<response a="Yes" b="Not today"></response>
-			</one>
-		</Init>
+<Characters>
+	<Trainer>
+		<StaminaTrainer>
+			<Init>
+				<one dialogue="Welcome, I am Luther, the Trainer of Stamina. Should you hone your Stamina, you will become capable of achieving more with your body and blade. Shall we work together?">
+					<response a="Yes" b="Not today"/>
+				</one>
+			</Init>
+			<Greetings flag="random">
+				<one dialogue="You awoke me from a dream; I had been reincarnated into the very tree I am sleeping upon. How quaint! Sorry, are you here for training?">
+					<response a="Yes" b="Not today"/>
+				</one>
+				<two dialogue="I thought I saw Jesus in my toast once. Turned out it was Jim Caviezel! Anyway, do you want to train?">
+					<response a="Yes" b="Not today"/>
+				</two>
+				<three dialogue="Last night I dreamt I was flying through the clouds. Look at them, you’d think they taste good! Let me tell you, they don’t. Regardless, do you require training?">
+					<response a="Yes" b="Not today"/>
+				</three>
+				<four dialogue="I was thinking the other day, if the Earth is a sphere, are people on the bottom upside down? Checkmate, round-Earthers. Do you need some training this day?">
+					<response a="Yes" b="Not today"/>
+				</four>
+				<five dialogue="Here for training? Or perhaps something more… conversational...">
+					<response a="Yes" b="Not Today"/>
+				</five>
+				<six dialogue="Do you require training on this excellent day?">
+					<response a="Yes" b="Not today"/>
+				</six>
+			</Greetings>
+			<Train flag="random">
+				<one dialogue="Excellent! To train is to transcend your self!"/>
+				<two/>
+				<three/>
+				<four/>
+				<five/>
+			</Train>
+		</StaminaTrainer>
+		<WisdomTrainer>
+			<Init>
+				<one dialogue="Welcome, I am Thomas, the Trainer of Wisdom. Increasing your Wisdom enhances your perceptions, translation skills, and your understanding of the world. Of course, Wisdom can be its own reward.  Shall we work together?">
+					<response a="Yes" b="Not today"/>
+				</one>
+			</Init>
+			<Greetings flag="random">
+				<one dialogue="To one who has faith, no explanation is necessary. To one without faith, no explanation is possible. Would you like training?">
+					<response a="Yes" b="Not today"/>
+				</one>
+				<two dialogue="What it must be like to be a caterpillar. A perfect symbol of our savior and the promise of eternal life. They must die, but they rise again in glory as a butterfly. In a way, training is like a metamorphosis. Would you like some?">
+					<response a="Yes" b="Not today"/>
+				</two>
+				<three dialogue="Don’t pay heed to that...insane trainer. The plants here are useful and can heal you. You can also craft them into potions, which are much more potent. Anyway, do you require training?">
+					<response a="Yes" b="Not today"/>
+				</three>
+				<four dialogue="More training is always beneficial, my child. Do you desire some?">
+					<response a="Yes" b="Not today"/>
+				</four>
+			</Greetings>
+			<Train flag="random">
+				<one dialogue="Wonderful! Training is an invstment in your future child. Let's get started."/>
+				<two/>
+				<three/>
+				<four/>
+				<five/>
+			</Train>
+		</WisdomTrainer>
+		<StrengthTrainer>
+			<Init>
+				<one dialogue="Hello, I’m Adelito, the Strength Trainer. Your Strength determines how hard you hit! The more you train, the easier it will be to strike down our enemies in battle. Let's train together!">
+					<response a="Yes" b="Not today"/>
+				</one>
+			</Init>
+			<Greetings flag="random">
+				<one dialogue="In the Old Testament, God drowned the entire world because humans were so...wretched! Now that’s my kind of God."/>
+				<two dialogue="You here for some training? You better be, I don’t have time for lollygaggers.">
+					<response a="Yes" b="Not today"/>
+				</two>
+				<three/>
+			</Greetings>
+			<Train>
+				<one/>
+				<two/>
+				<three/>
+				<four/>
+				<five/>
+			</Train>
+		</StrengthTrainer>
+		<HealthTrainer>
+			<Init>
+				<one dialogue="Hello, I am Valerio, the Health Trainer. A deep pool of Health is beneficial as you face trials in these foreign lands. Let's meditate together.">
+					<response a="Yes" b="Not today"/>
+				</one>
+			</Init>
+			<Greetings flag="random">
+				<one dialogue="I advise you against eating any of the plants in these godforsaken lands. They’re poisonous and will kill you. I do, however, advise you train with me.">
+					<response a="Yes" b="Not today"/>
+				</one>
+				<two dialogue="You must go and purge this land of its demonic forces in the name of the Savior! Training with me will assist you in doing so.">
+					<response a="Yes" b="Not today"/>
+				</two>
+				<three dialogue="This new music they have here in this land...safeguard your ears. It is of the Devil’s will! Train some with me to resist its siren call!">
+					<response a="Yes" b="Not today"/>
+				</three>
+				<four dialogue="Some training, perhaps? Quite important.">
+					<response a="Yes" b="Not today"/>
+				</four>
+			</Greetings>
+			<Train flag="random">
+				<one dialoue="Oh good! Its very important that you train with me!">
+					<response a="Yes" b="Not today"/>
+				</one>
+				<two/>
+				<three/>
+				<four/>
+				<five/>
+			</Train>
+		</HealthTrainer>
+	</Trainer>
+	<Monks>
+		<MonkLeader>
+			<Greeting flag="random">
+				<one dialogue="When you choose to train, you may increase your own skills or that of your lineage."/>
+				<two dialogue="To train is like planting a tiny mustard seed which shall grow into a mighty plant."/>
+				<three dialogue="In the name of God, we must cleanse this pagan soil!"/>
+				<four dialogue="“Be watchful, and strengthen the things which remain, that are ready to die: for I have not found thy works perfect before God.” We must press on! God wills it!."/>
+				<five dialogue="Deus Vult!"/>
+				<six dialogue="“And I saw when the Lamb opened one of the seals, and I heard, as it were the noise of thunder, one of the four beasts saying, Come and see.” Thats from Revelation. Our Lord telling us of the coming destruction!"/>
+				<seven dialogue="“And I looked, and behold a pale horse: and his name that sat on him was Death, and Hell followed with him.”"/>
+				<eight dialogue="The Lord sayeth: “For the great day of his wrath is come; and who shall be able to stand?” No one shall. We shall be victorious."/>
+				<nine dialogue="“And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years.” These natives follow a serpent God! Do not let your gaurd down, these entities are servants of Lucifer himself!"/>
+				<ten dialogue= "For the Lord sayeth to us: “I am Alpha and Omega, the beginning and the end, the first and the last.”"/>
+			</Greeting>
+		</MonkLeader>
+	</Monks>
+	<Villagers>
 		<Greetings flag="random">
-			<one>
-			</one>
-			<two>
-			</two>
-			<three>
-			</three>
+			<one "No one expected the Spanish to travel here and inquire about our gods. How odd!"/>
+			<two "Greetings, stranger."/>
+			<three "Fine day."/>
+			<four ""
+"
+"
 		</Greetings>
-		<Train>
-			<one>
-			</one>
-			<two>
-			</two>
-			<three>
-			</three>
-			<four>
-			</four>
-			<five>
-			</five>
-		</Train>
-	</StaminaTrainer>
-	<WisdomTrainer>
-		<Init>
-			<one dialogue="Welcome, I am Thomas, the Trainer of Wisdom. Increasing your Wisdom enhances your perceptions, translation skills, and your understanding of the world. Of course, Wisdom can be its own reward.  Shall we work together?">
-				<response a="Yes" b="Not today">
-				</response>
-			</one>
-		</Init>
-		<Greetings flag="random">
-			<one dialogue = "To one who has faith, no explanation is necessary. To one without faith, no explanation is possible.">
-			</one>
-			<two dialogue = "Hello 2 boi!">
-			</two>
-			<three dialogue = "Three boi!">
-			</three>
-		</Greetings>
-		<Train>
-			<one>
-			</one>
-			<two>
-			</two>
-			<three>
-			</three>
-			<four>
-			</four>
-			<five>
-			</five>
-		</Train>
-	</WisdomTrainer>
-	<StrengthTrainer>
-		<Init>
-			<one dialogue="Hello, I’m Adelita, the Strength Trainer. Your Strength determines how hard you hit! The more you train, the easier it will be to strike down our enemies in battle. Let's train together">
-				<response a="Yes" b="Not today">
-				</response>
-			</one>
-		</Init>
-		<Greetings flag="random">
-			<one>
-			</one>
-			<two>
-			</two>
-			<three>
-			</three>
-		</Greetings>
-		<Train>
-			<one>
-			</one>
-			<two>
-			</two>
-			<three>
-			</three>
-			<four>
-			</four>
-			<five>
-			</five>
-		</Train>
-	</StrengthTrainer>
-	<HealthTrainer>
-		<Init>
-			<one dialogue="Hello, I am Valerio, the Health Trainer. A deep pool of Health is beneficial as you face trials in these foreign lands. Let's meditate together.">
-				<response a="Yes" b="Not today">
-				</response>
-			</one>
-		</Init>
-		<Greetings flag="random">
-			<one>
-			</one>
-			<two>
-			</two>
-			<three>
-			</three>
-		</Greetings>
-		<Train>
-			<one>
-			</one>
-			<two>
-			</two>
-			<three>
-			</three>
-			<four>
-			</four>
-			<five>
-			</five>
-		</Train>
-	</HealthTrainer>
-</Trainer>
+	</Villagers>
+</Characters>
