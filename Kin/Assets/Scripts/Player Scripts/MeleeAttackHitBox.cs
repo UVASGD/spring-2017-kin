@@ -8,7 +8,7 @@ public class MeleeAttackHitBox:MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         //Debug.Log("meme");
-        if (col.gameObject.tag == "enemy")
+        if (col.gameObject.tag == "enemy" || col.gameObject.tag == "Boss")
         {
             //Debug.Log("Collided");
             col.gameObject.GetComponent<EnemyHealth>().takeDamage(damage);
