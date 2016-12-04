@@ -1,0 +1,39 @@
+	Important Dates:
+		  Crunch Night
+		  	 Tuesday, December 6th
+			 6:30PM -> Whenever 
+		  	 Olsson 005
+		  	 Wayside Chicken Catering
+		  Semester End Expo
+		  	 Wednesday, December 7th
+		  	 All club members welcome at 1:00 for Presentations
+			 All friends welcome at 2:00 for Game Playing
+			 THIS ROOM (The Gallery)
+			 Subway Catering, chips, and soda pop
+
+	12/3
+		ART
+			Left and Right attack anims
+			Stelae
+			Chac
+			Corn-Whatever
+		AUDIO
+			(probably no one will be here today)
+		DESIGN
+			****More boss fleshing out - Quaztlecoatl
+			Boss Barks
+			Put dialogue in
+			make placeholder sprites for wheat, corn,--crops and foliage and anything else
+		AI
+			Add art that Julian made for Chac
+			Corn-Whatever
+			Hunt Goddess
+		SYSTEMS
+			Flipping hitboxes
+			"Get-hit" animation
+			Double check xbox stuff
+			move forward on attack if moving -_-
+		UI
+			Credits
+			Custom art for sliders
+			   

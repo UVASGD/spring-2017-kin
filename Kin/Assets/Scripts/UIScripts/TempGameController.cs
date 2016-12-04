@@ -39,17 +39,20 @@ public class TempGameController : MonoBehaviour {
         //planes[1].normal = planes[1].normal + Vector3.right * bossSearchOffset;
         //planes[2].normal = planes[2].normal + Vector3.up * bossSearchOffset;
         //planes[3].normal = planes[3].normal + Vector3.down * bossSearchOffset;
-        foreach (GameObject boss in bosses)
+        if (bosses.Length > 0)
         {
-            dist = Vector3.Distance(boss.transform.position, Player.transform.position);
-            if(dist < minDist)
+            foreach (GameObject boss in bosses)
             {
-                minDist = dist;
-                nearestBoss = boss;
+                dist = Vector3.Distance(boss.transform.position, Player.transform.position);
+                if (dist < minDist)
+                {
+                    minDist = dist;
+                    nearestBoss = boss;
+                }
             }
+            collider = nearestBoss.GetComponent<BoxCollider2D>();
+            bossNearby = GeometryUtility.TestPlanesAABB(planes, collider.bounds);
         }
-        collider = nearestBoss.GetComponent<BoxCollider2D>();
-        bossNearby = GeometryUtility.TestPlanesAABB(planes,collider.bounds);
         ui.bossHealth.SetActive(bossNearby);
         ui.bossName.enabled = bossNearby;
         if (bossNearby)
