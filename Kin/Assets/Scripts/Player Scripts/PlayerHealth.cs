@@ -30,20 +30,22 @@ public class PlayerHealth : MonoBehaviour {
 
 	void Start()
     {
-		anim = GetComponent<Animator>();
-		playerAudio = GetComponent<AudioSource>();
-		playerMvmController = GetComponent<AvatarMvmController>();
-		currentHealth = maxHealth;
-	}
-	
-	public void TakeDamage(int amount)
+        anim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
+        playerMvmController = GetComponent<AvatarMvmController>();
+        currentHealth = maxHealth;
+    }
+
+    public void TakeDamage(int amount)
     {
-        if (!anim.GetBool("Rolling"))
+        if (!anim.GetBool("Rolling") && !anim.GetBool("Recoiling"))
         {
-        currentHealth -= amount;
-        // Play damage audio clip
+            currentHealth -= amount;
+            anim.SetBool("Recoiling", true);
+            // Play damage audio clip
         }
-        if (currentHealth <= 0 && !isDead) {
+        if (currentHealth <= 0 && !isDead)
+        {
             currentHealth = 0;
             Death();
         }
@@ -90,6 +92,7 @@ public class PlayerHealth : MonoBehaviour {
     {
         // For Testing
         //Debug.Log("Max: " + maxHealth + ", Current: " + currentHealth);
+        //Debug.Log("Recoiling " + anim.GetBool("Recoiling"));
         if (Input.GetKeyDown(KeyCode.Y))
         {
             TakeDamage(60);
