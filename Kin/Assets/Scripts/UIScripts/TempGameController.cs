@@ -32,7 +32,7 @@ public class TempGameController : MonoBehaviour {
         BoxCollider2D collider;
         float minDist = Mathf.Infinity;
         float dist;
-        bool bossNearby = true;
+        bool bossNearby = false;
 
         // 0 is left, 1 is right, 2 is down, 3 is up 
         //planes[0].normal = planes[0].normal + Vector3.left * bossSearchOffset;
