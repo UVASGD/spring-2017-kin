@@ -66,6 +66,7 @@ public class PlayerHealth : MonoBehaviour {
         // Play death audio clip
         playerMvmController.enabled = false;
         // Go to UI Screen
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition; // Make sure to unfreeze before undying...
     }
 
     public void setMaxHealth(int max)
