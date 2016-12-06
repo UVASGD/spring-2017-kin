@@ -11,7 +11,7 @@ public class LayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		layeringObjectList = GameObject.FindGameObjectsWithTag("Layered");
+		UpdateList ();
 	}
 	
 	// Update is called once per frame
@@ -25,5 +25,10 @@ public class LayerController : MonoBehaviour {
 				// Behind player
 			}
 		}
+	}
+
+	void UpdateList() {
+		layeringObjectList = new List<GameObject> ();
+		//GameObject.FindObjectsOfType<LayerParameter> ();
 	}
 }
