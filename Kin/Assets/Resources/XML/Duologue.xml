@@ -2,7 +2,7 @@
 <!-- New XML document created with EditiX XML Editor (http://www.editix.com) at Sat Nov 12 15:14:39 EST 2016 -->
 <Characters>
 	<Trainer>
-		<StaminaTrainer>
+		<StaminaTrainer name="Luther">
 			<Init>
 				<one dialogue="Welcome, I am Luther, the Trainer of Stamina. Should you hone your Stamina, you will become capable of achieving more with your body and blade. Shall we work together?">
 					<response a="Yes" b="Not today"/>
@@ -36,7 +36,7 @@
 				<five/>
 			</Train>
 		</StaminaTrainer>
-		<WisdomTrainer>
+		<WisdomTrainer name="Thomas">
 			<Init>
 				<one dialogue="Welcome, I am Thomas, the Trainer of Wisdom. Increasing your Wisdom enhances your perceptions, translation skills, and your understanding of the world. Of course, Wisdom can be its own reward.  Shall we work together?">
 					<response a="Yes" b="Not today"/>
@@ -64,7 +64,7 @@
 				<five/>
 			</Train>
 		</WisdomTrainer>
-		<StrengthTrainer>
+		<StrengthTrainer name="Adelito">
 			<Init>
 				<one dialogue="Hello, I’m Adelito, the Strength Trainer. Your Strength determines how hard you hit! The more you train, the easier it will be to strike down our enemies in battle. Let's train together!">
 					<response a="Yes" b="Not today"/>
@@ -89,7 +89,7 @@
 				<five/>
 			</Train>
 		</StrengthTrainer>
-		<HealthTrainer>
+		<HealthTrainer name="Valerio">
 			<Init>
 				<one dialogue="Hello, I am Valerio, the Health Trainer. A deep pool of Health is beneficial as you face trials in these foreign lands. Let's meditate together.">
 					<response a="Yes" b="Not today"/>
@@ -119,7 +119,7 @@
 		</HealthTrainer>
 	</Trainer>
 	<Monks>
-		<MonkLeader>
+		<MonkLeader name="Monk">
 			<MaizeDeath>
 				<one dialogue="“And there came out of the smoke locusts upon the earth: and unto them was given power, as the scorpions of the earth have power.”"/>
 				<two dialogue= "“And I looked, and behold a pale horse: and his name that sat on him was Death, and Hell followed with him.”"/>
@@ -143,7 +143,7 @@
 			</Greeting>
 		</MonkLeader>
 	</Monks>
-	<Villagers>
+	<Villagers name="Villager">
 		<MaizeDeath>
 			<one dialogue= "Our harvest has failed! You foreigners have brought doom upon us! Go back from where you came!" />
 			<two dialogue= "Without our harvest, we are doomed!" />
@@ -164,7 +164,7 @@
 			<two dialogue= "Greetings, stranger."/>
 			<three dialogue= "Fine day."/>
 			<four dialogue= "You should go see our maize fields. The maize god, Centeotl, watches over our fields and ensures a good harvest."/>
-			<five dialogue= "There’s a volcano far to the south of the village. It’s truly a beautiful sight to see."/> 
+			<five dialogue= "There’s a volcano far to the south of the village. It’s truly a beautiful sight to see."/>
 			<six dialogue= "Have you seen that large structure in the middle of the region? It’s a temple to Chaac, the god of directions, rain, and thunder." />
 			<seven dialogue= "The temple to the northwest is a great place to watch lunar eclipses, when they occur" />
 		</Greetings>

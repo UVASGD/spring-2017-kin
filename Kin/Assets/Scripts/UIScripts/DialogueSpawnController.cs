@@ -7,12 +7,15 @@ public class DialogueSpawnController : MonoBehaviour {
 	public float writeSpeed;
 	public int periodMult;
 
+	public GameObject diaNameBox;
 	public GameObject diaTextBox;
+	public GameObject soundCreator;
 
 	float writeTimer;
 	int curLength = 0;
 
 	string dialogueString;
+	string dialogueName;
 	string curDiaStr;
 
 	DialogueXMLParser parser;
@@ -26,6 +29,7 @@ public class DialogueSpawnController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		diaNameBox.GetComponent<Text>().text = dialogueName;
 	}
 	
 	// Update is called once per frame
@@ -38,6 +42,9 @@ public class DialogueSpawnController : MonoBehaviour {
 				curDiaStr = dialogueString.Substring(0, curLength);
 				writeTimer = (curDiaStr.EndsWith(".") ? periodMult * -writeSpeed : 0);
 				diaTextBox.GetComponent<Text>().text = curDiaStr;
+				if (Random.Range(0.0f, 1.0f) > 0.3) {
+					soundCreator.GetComponent<AudioSource>().Play();
+				}
 				finished = false;
 			} else {
 				finished = true;
@@ -56,6 +63,7 @@ public class DialogueSpawnController : MonoBehaviour {
 	}
 
 	public void Initialize() {
+		Debug.Log("Parser Initialize");
 		parser = xmlParser.GetComponent<DialogueXMLParser>();
 		initialized = true;
 	}
@@ -69,7 +77,14 @@ public class DialogueSpawnController : MonoBehaviour {
 	}
 
 	public void UpdateWithNewDia(string person, string label, int index) {
+		if (parser == null) {
+			Debug.Log("Parser is null");
+		}
 		dialogueString = parser.RequestDialogue(person, label, index);
 		curLength = 0;
+	}
+
+	public void UpdateWithNewName(string person, string label) {
+		dialogueName = parser.RequestName(person, label);
 	}
 }
