@@ -10,6 +10,7 @@ public class AnimationControl : MonoBehaviour {
 	public Vector2 lastMove;
 	Animator animator;
 
+    public float jump = 0.2f;
 	private bool isRolling;
 	private bool isAttacking;
     private bool isRecoiling;
@@ -95,19 +96,24 @@ public class AnimationControl : MonoBehaviour {
 
 	public void updateRoll(){
 		if (Input.GetButtonDown ("Roll") && !isRolling && rb.velocity != Vector2.zero) {
-            if (gameObject.GetComponent<PlayerStamina>().hasStamina)
+            if (canRoll()) 
             {
                 animator.SetBool("Rolling", true);
-                gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+                // If you want to turn the collider during roll
+                //gameObject.GetComponent<PolygonCollider2D>().enabled = false;
             }
         }
 	}
 
 	public void updateAttack(){
 		if (Input.GetButtonDown ("Attack") && !isAttacking) {
-            if (gameObject.GetComponent<PlayerStamina>().hasStamina)
+            if (canAttack())
             {
                 animator.SetBool("Attacking", true);
+                if (animator.GetBool("Moving"))
+                {
+                    GetComponent<Transform>().position += new Vector3(GetComponent<Rigidbody2D>().velocity.x*jump, GetComponent<Rigidbody2D>().velocity.y*jump, 0);
+                }
             }
 		}
 	}
@@ -129,5 +135,15 @@ public class AnimationControl : MonoBehaviour {
     public bool getRecoiling()
     {
         return isRecoiling;
+    }
+
+    bool canRoll()
+    {
+        return animator.GetBool("Moving") && !animator.GetBool("Attacking") && gameObject.GetComponent<PlayerStamina>().hasStamina;
+    }
+
+    bool canAttack()
+    {
+        return !animator.GetBool("Rolling") && gameObject.GetComponent<PlayerStamina>().hasStamina; 
     }
 }
