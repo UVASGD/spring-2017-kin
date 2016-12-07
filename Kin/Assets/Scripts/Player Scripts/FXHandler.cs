@@ -12,6 +12,7 @@ public class FXHandler : MonoBehaviour {
 	private AudioClip roll;
 
 	private List<AudioClip> atkLows;
+	private List<AudioClip> hurtSounds;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,10 @@ public class FXHandler : MonoBehaviour {
 			atkLows.Add (Resources.Load ("Sounds/Attack SFX/Attack Low " + i) as AudioClip);
 		}
 
+		hurtSounds = new List<AudioClip> ();
+		for (int i = 1; i < 6; i++) {
+			hurtSounds.Add (Resources.Load ("Sounds/Player_FX/Hurt Brian " + i) as AudioClip);
+		}
 	}
 
 	// Update is called once per frame
@@ -65,9 +70,14 @@ public class FXHandler : MonoBehaviour {
 	}
 
 	public void playAtkLow(){
-		int i = (int)Random.Range (0, 4);
-		Debug.Log (i);
+		int i = (int)Random.Range (0, atkLows.Count);
 		aud.clip = atkLows [i];
+		playSound ();
+	}
+
+	public void playHurt(){
+		int i = (int)Random.Range (0, hurtSounds.Count);
+		aud.clip = hurtSounds [i];
 		playSound ();
 	}
 
