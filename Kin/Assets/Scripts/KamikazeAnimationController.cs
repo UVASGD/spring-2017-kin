@@ -11,8 +11,8 @@ public class KamikazeAnimationController : MonoBehaviour {
 	Animator animator;
 
 	public bool recoiling;
-	public bool dying;
 	public bool charging;
+	public bool killed;
 
 	void Start () {
 		animator = gameObject.GetComponent<Animator> ();
@@ -26,10 +26,11 @@ public class KamikazeAnimationController : MonoBehaviour {
 	void Update () {
 
 		updateDirection ();
-		if (dying) {
+		if (killed) {
 			animator.SetBool ("Dying", true);
-			dying = false;
-			Destroy (gameObject.GetComponent<KamikazeAnimationController> ());
+			Debug.Log ("killed");
+			killed = false;
+			//Destroy (gameObject.GetComponent<KamikazeAnimationController> ());
 		}
 		//Debug.Log ("charging" + !charging);
 		//Debug.Log("in charge" + animator.GetCurrentAnimatorStateInfo (0).IsTag ("Charge"));
@@ -55,6 +56,8 @@ public class KamikazeAnimationController : MonoBehaviour {
 		Vector2 move = rb.velocity;
 		// include check if animator has each parameter
 		//if dying has completed - switch bool to dead
+		Debug.Log(animator.GetBool("Dead"));
+		Debug.Log (animator.GetBool ("dying"));
 		animator.SetBool ("Dead", animator.GetCurrentAnimatorStateInfo (0).IsTag ("Dead"));
 		animator.SetBool("Moving", move.magnitude > 0);
 		//animator.SetFloat("Direction", direction);
