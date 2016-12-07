@@ -8,6 +8,8 @@ public class EnemyHealth:MonoBehaviour
     int currentHealth;
     bool isDead;
 
+    public float recoilDist;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -16,6 +18,13 @@ public class EnemyHealth:MonoBehaviour
     public void takeDamage(int amount)
     {
         currentHealth -= amount;
+        recoil();
+        //Debug.Log("Took Damage");
+        // Play damage audio clip
+       // if (currentHealth <= 0 && !isDead)
+        //{
+          //  Death();
+        //}
     }
 
 	public int getHp()
@@ -23,5 +32,9 @@ public class EnemyHealth:MonoBehaviour
 		return currentHealth;
 	}
 
-
+    public void recoil()
+    {
+        Vector2 dir = ((Vector2)(gameObject.transform.position - GameObject.FindGameObjectsWithTag("Player")[0].transform.position)).normalized * recoilDist;
+        gameObject.GetComponent<Rigidbody2D>().velocity = dir;
+    }
 }
