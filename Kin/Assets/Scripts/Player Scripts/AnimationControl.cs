@@ -10,6 +10,7 @@ public class AnimationControl : MonoBehaviour {
 	public Vector2 lastMove;
 	Animator animator;
 
+    public float jump = 0.2f;
 	private bool isRolling;
 	private bool isAttacking;
     private bool isRecoiling;
@@ -109,6 +110,10 @@ public class AnimationControl : MonoBehaviour {
             if (gameObject.GetComponent<PlayerStamina>().hasStamina)
             {
                 animator.SetBool("Attacking", true);
+                if (animator.GetBool("Moving"))
+                {
+                    GetComponent<Transform>().position += new Vector3(GetComponent<Rigidbody2D>().velocity.x*jump, GetComponent<Rigidbody2D>().velocity.y*jump, 0);
+                }
             }
 		}
 	}
