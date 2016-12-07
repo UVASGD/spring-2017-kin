@@ -36,7 +36,12 @@ public class MusicController : MonoBehaviour {
 		dayTracks = new ArrayList ();
 		nightTracks = new ArrayList ();
 
-		aud = gameObject.AddComponent<AudioSource>();
+		if (gameObject.GetComponent<AudioSource> ()) {
+			aud = gameObject.GetComponent<AudioSource> ();
+		} else {
+			aud = gameObject.AddComponent<AudioSource> ();
+		}
+		aud.volume = 0.5f;
 
 		day1 = Resources.Load ("Sounds/Music/Day Music Brian 1") as AudioClip;
 		day2 = Resources.Load ("Sounds/Music/Overworld Day Christian 1") as AudioClip;
@@ -85,6 +90,7 @@ public class MusicController : MonoBehaviour {
 
 		if (!playing) {
 			playing = true;
+			aud.volume = 0.4f;
 			aud.Play ();
 		}
 	}

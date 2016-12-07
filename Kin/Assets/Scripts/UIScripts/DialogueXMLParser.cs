@@ -40,4 +40,19 @@ public class DialogueXMLParser : MonoBehaviour {
 		}
 		return null;
 	}
+
+	public string RequestName(string person, string label) {
+		XmlNodeList personList = xmlDoc.GetElementsByTagName("Characters");
+		personList = personList.Item(0).ChildNodes;
+		foreach (XmlNode type in personList) {
+			if (type.Name == person){
+				foreach (XmlNode node in type.ChildNodes){
+					if (node.Name == label) {
+						return node.Attributes["name"].Value;
+					}
+				}
+			}
+		}
+		return null;
+	}
 }
