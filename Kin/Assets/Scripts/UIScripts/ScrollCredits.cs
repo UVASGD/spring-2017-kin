@@ -5,20 +5,21 @@ public class ScrollCredits : MonoBehaviour {
 
     public float speed = 1;
     private RectTransform rTrans;
-    private float maxY;
+    //private float maskTop;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         rTrans = GetComponent<RectTransform>();
-        RectTransform pTrans = transform.parent.GetComponent<RectTransform>();
-        maxY = pTrans.rect.yMax;
+        //RectTransform pTrans = transform.parent.GetComponent<RectTransform>();
+        //maskTop = pTrans.rect.yMin;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (rTrans.rect.yMax < maxY)
+        if (rTrans.anchoredPosition.y < 10000)
         {
-            transform.position = transform.position + Vector3.up * speed;
+            rTrans.anchoredPosition = rTrans.anchoredPosition + Vector2.up * speed;
+            //Debug.Log("Moving!");
         }
 	}
 }
