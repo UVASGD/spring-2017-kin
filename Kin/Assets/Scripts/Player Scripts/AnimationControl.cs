@@ -98,7 +98,8 @@ public class AnimationControl : MonoBehaviour {
             if (gameObject.GetComponent<PlayerStamina>().hasStamina)
             {
                 animator.SetBool("Rolling", true);
-                gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+                // If you want to turn the collider during roll
+                //gameObject.GetComponent<PolygonCollider2D>().enabled = false;
             }
         }
 	}
