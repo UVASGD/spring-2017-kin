@@ -29,9 +29,9 @@ public class MeleeMinionAnimationController : MonoBehaviour
 			updateDirection ();
 		//last nonzero move
 		lastMove = rb.velocity.magnitude == 0 ? lastMove : rb.velocity;
-		animator.SetBool ("Moving", lastMove.magnitude > 0);
+		animator.SetBool ("Moving", rb.velocity.magnitude > 0);
 		if (dying) {
-			animator.SetBool ("Dying", true);
+			animator.SetTrigger ("Dying");
 			gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
 			dying = false;
 			Destroy(gameObject.GetComponent<MeleeMinionAnimationController>());
