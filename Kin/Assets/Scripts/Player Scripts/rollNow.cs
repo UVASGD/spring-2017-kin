@@ -7,7 +7,6 @@ public class rollNow : StateMachineBehaviour {
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         animator.gameObject.GetComponent<AnimationControl>().setRolling(true);
         animator.gameObject.GetComponent<AvatarMvmController>().speed = 2.13f;
-        animator.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         animator.gameObject.GetComponent<PlayerStamina>().TakeDamage(400);
     }
 
@@ -21,7 +20,6 @@ public class rollNow : StateMachineBehaviour {
 		animator.gameObject.GetComponent<AnimationControl>().setRolling(false);
 		animator.SetBool ("Rolling", false);
 		animator.gameObject.GetComponent<AvatarMvmController> ().speed = 1;
-		animator.gameObject.GetComponent<PolygonCollider2D> ().enabled = true;
 	}
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
