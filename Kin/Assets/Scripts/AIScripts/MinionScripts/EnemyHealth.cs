@@ -16,12 +16,6 @@ public class EnemyHealth:MonoBehaviour
     public void takeDamage(int amount)
     {
         currentHealth -= amount;
-        Debug.Log("Took Damage");
-        // Play damage audio clip
-       // if (currentHealth <= 0 && !isDead)
-        //{
-          //  Death();
-        //}
     }
 
 	public int getHp()
