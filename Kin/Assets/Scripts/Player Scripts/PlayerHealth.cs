@@ -18,6 +18,8 @@ public class PlayerHealth : MonoBehaviour {
     // Reference to audio source for damage audio
     AudioSource playerAudio;
 
+	public GameObject sceneCont;
+
     void Awake()
     {
         maxHealth = GetComponent<StatController>().getHealth(); 
@@ -67,6 +69,8 @@ public class PlayerHealth : MonoBehaviour {
         playerMvmController.enabled = false;
         // Go to UI Screen
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition; // Make sure to unfreeze before undying...
+
+		sceneCont.GetComponent<SceneController>().FadeToDeath();
     }
 
     public void setMaxHealth(int max)
