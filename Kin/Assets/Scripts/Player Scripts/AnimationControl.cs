@@ -96,7 +96,7 @@ public class AnimationControl : MonoBehaviour {
 
 	public void updateRoll(){
 		if (Input.GetButtonDown ("Roll") && !isRolling && rb.velocity != Vector2.zero) {
-            if (gameObject.GetComponent<PlayerStamina>().hasStamina)
+            if (canRoll()) 
             {
                 animator.SetBool("Rolling", true);
                 // If you want to turn the collider during roll
@@ -107,7 +107,7 @@ public class AnimationControl : MonoBehaviour {
 
 	public void updateAttack(){
 		if (Input.GetButtonDown ("Attack") && !isAttacking) {
-            if (gameObject.GetComponent<PlayerStamina>().hasStamina)
+            if (canAttack())
             {
                 animator.SetBool("Attacking", true);
                 if (animator.GetBool("Moving"))
@@ -135,5 +135,15 @@ public class AnimationControl : MonoBehaviour {
     public bool getRecoiling()
     {
         return isRecoiling;
+    }
+
+    bool canRoll()
+    {
+        return animator.GetBool("Moving") && !animator.GetBool("Attacking") && gameObject.GetComponent<PlayerStamina>().hasStamina;
+    }
+
+    bool canAttack()
+    {
+        return !animator.GetBool("Rolling") && gameObject.GetComponent<PlayerStamina>().hasStamina; 
     }
 }
