@@ -10,8 +10,6 @@ public class SaveController : MonoBehaviour {
 
     public static SaveController s_instance;
 	public GameObject Player;
-	public GameObject Health;
-	public GameObject Stamina;
 
     public long day;
     public float time;
@@ -41,8 +39,8 @@ public class SaveController : MonoBehaviour {
 	
     void OnGUI()
     {
-		//GUI.Label(new Rect(10, 10, 100, 20), "Health: " + Player.GetComponent<PlayerHealth>().getCurrentHealth());
-        /*if (GUI.Button(new Rect(10, 40, 100, 30), "Health Up"))
+		GUI.Label(new Rect(10, 10, 100, 20), "Health: " + Player.GetComponent<PlayerHealth>().getCurrentHealth());
+        if (GUI.Button(new Rect(10, 40, 100, 30), "Health Up"))
         {
             Player.GetComponent<PlayerHealth>().setCurrentHealth(Player.GetComponent<PlayerHealth>().getCurrentHealth() + 1);
         }
@@ -50,7 +48,7 @@ public class SaveController : MonoBehaviour {
         {
             Player.GetComponent<PlayerHealth>().setCurrentHealth(Player.GetComponent<PlayerHealth>().getCurrentHealth() - 1);
         }
-		GUI.Label(new Rect(10, 100, 100, 30), "Stamina: " + Player.GetComponent<PlayerStamina>().getCurrentStamina());*/
+		GUI.Label(new Rect(10, 100, 100, 30), "Stamina: " + Player.GetComponent<PlayerStamina>().getCurrentStamina());
         if(GUI.Button(new Rect(10, 130, 100, 30), "Save"))
         {
             Save("", false);
@@ -92,8 +90,8 @@ public class SaveController : MonoBehaviour {
 
 	private void WriteFromData(SaveData data)
 	{
-		Health.GetComponent<Slider>().value = data.health;
-		Stamina.GetComponent<Slider>().value = data.stamina;
+		Player.GetComponent<PlayerHealth>().setCurrentHealth(data.health);
+		Player.GetComponent<PlayerStamina>().setCurrentStamina(data.stamina);
 		Player.GetComponent<StatController>().setHealth(data.healthLvlP);
 		Player.GetComponent<StatController>().setHealthOrder(data.healthLvlO);
 		Player.GetComponent<StatController>().setStamina(data.stamLvlP);
@@ -109,8 +107,8 @@ public class SaveController : MonoBehaviour {
     private SaveData WriteToData ()
     {
         SaveData data = new SaveData();
-		data.health = Health.GetComponent<Slider>().value = data.health;
-		data.stamina = Stamina.GetComponent<Slider>().value = data.stamina;
+		data.health = Player.GetComponent<PlayerHealth>().getCurrentHealth();
+		data.stamina = Player.GetComponent<PlayerStamina>().getCurrentStamina();
 		data.healthLvlP = Player.GetComponent<StatController>().getHealth();
 		data.healthLvlO = Player.GetComponent<StatController>().getHealthOrder();
 		data.stamLvlP = Player.GetComponent<StatController>().getStamina();
@@ -129,8 +127,8 @@ public class SaveController : MonoBehaviour {
 [Serializable]
 class SaveData 
 {
-    public float health;
-    public float stamina;
+    public int health;
+    public int stamina;
 
     public int healthLvlP;
     public int healthLvlO;
