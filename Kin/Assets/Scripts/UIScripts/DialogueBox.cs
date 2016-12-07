@@ -32,7 +32,13 @@ public class DialogueBox : MonoBehaviour {
 	/// </summary>
 	public GameObject player;
 
-	public enum PersonType {
+	/*public enum PersonType {
+		Trainer,
+		Monks,
+		Villagers
+	}*/
+
+	public enum TrainerType {
 		WisdomTrainer,
 		HealthTrainer,
 		StaminaTrainer,
@@ -45,7 +51,7 @@ public class DialogueBox : MonoBehaviour {
 		Train
 	}
 
-	public PersonType persType;
+	public TrainerType persType;
 	public DiaType diaType;
 
 	int diaIndex = 0;
@@ -55,7 +61,7 @@ public class DialogueBox : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		spawnCont = dialogue.GetComponent<DialogueSpawnController>();
-		string[] personList = System.Enum.GetNames(typeof(PersonType));
+		string[] personList = System.Enum.GetNames(typeof(TrainerType));
 		string[] typeList = System.Enum.GetNames(typeof(DiaType));
 		diaList = new string[personList.Length + typeList.Length];
 		personList.CopyTo(diaList, 0);
@@ -80,8 +86,10 @@ public class DialogueBox : MonoBehaviour {
 				if (Input.GetButtonDown("Interact")) {
 					if (!spawnCont.GetInit())
 						spawnCont.Initialize();
-					if (spawnCont.GetFinished())
-						spawnCont.UpdateWithNewDia(diaList[(int)persType], diaList[(int)diaType + System.Enum.GetNames(typeof(PersonType)).Length], 0);
+					if (spawnCont.GetFinished()){
+						spawnCont.UpdateWithNewDia(diaList[(int)persType], diaList[(int)diaType + System.Enum.GetNames(typeof(TrainerType)).Length], 0);
+						spawnCont.UpdateWithNewName("Trainer", diaList[(int)persType]);
+					}
 					dialogue.SetActive(true);
 					indicator.SetActive(false);
 				}
