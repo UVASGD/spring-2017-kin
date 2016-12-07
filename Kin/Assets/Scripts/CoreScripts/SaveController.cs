@@ -41,11 +41,11 @@ public class SaveController : MonoBehaviour {
 	
     void OnGUI()
     {
-        if(GUI.Button(new Rect(10, 130, 100, 30), "Save"))
+        if(GUI.Button(new Rect(10, 60, 100, 30), "Save"))
         {
             Save("", false);
         }
-        if(GUI.Button(new Rect(10, 160, 100, 30), "Load"))
+        if(GUI.Button(new Rect(10, 90, 100, 30), "Load"))
         {
             Load("", false);
         }
