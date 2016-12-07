@@ -1,0 +1,232 @@
+fileFormatVersion: 2
+guid: b61a60debad56bf48a97eba4d9f06b9a
+timeCreated: 1480615078
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Lightning Bolt Large_0
+    21300002: Lightning Bolt Large_1
+    21300004: Lightning Bolt Large_2
+    21300006: Lightning Bolt Large_3
+    21300008: Lightning Bolt Large_4
+    21300010: Lightning Bolt Large_5
+    21300012: Lightning Bolt Large_6
+    21300014: Lightning Bolt Large_7
+    21300016: Lightning Bolt Large_8
+    21300018: Lightning Bolt Large_9
+    21300020: Lightning Bolt Large_10
+    21300022: Lightning Bolt Large_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -3
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lightning Bolt Large_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 316
+        width: 80
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lightning Bolt Large_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 316
+        width: 80
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lightning Bolt Large_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 316
+        width: 80
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lightning Bolt Large_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 316
+        width: 80
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lightning Bolt Large_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 316
+        width: 80
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lightning Bolt Large_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 316
+        width: 80
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lightning Bolt Large_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 80
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lightning Bolt Large_7
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 120
+        width: 80
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lightning Bolt Large_8
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 120
+        width: 80
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lightning Bolt Large_9
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 120
+        width: 80
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lightning Bolt Large_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 120
+        width: 80
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lightning Bolt Large_11
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 120
+        width: 80
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

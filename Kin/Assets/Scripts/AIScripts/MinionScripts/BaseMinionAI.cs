@@ -18,7 +18,7 @@ public class BaseMinionAI : MonoBehaviour {
     bool onWay; //whether the minion is currently moving
     float timePause, currWait; //to have the minion pause at the point before going to the next one
     bool isWaiting; //whether the minion is currently waiting
-
+   
     //Set of AI behavior states
     protected enum AIStates {
 		IdleState,

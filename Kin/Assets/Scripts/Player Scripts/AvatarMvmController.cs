@@ -20,7 +20,8 @@ public class AvatarMvmController : MonoBehaviour {
 	{
 		Animator animator = gameObject.GetComponent<Animator> ();
 		var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-		if(!animator.GetBool("Dead")) rb.velocity = ((Vector2) move) * speed;
+		if(!animator.GetBool("Dead")) rb.velocity = ((Vector2) move.normalized) * speed;
+
 
 		lastMove = gameObject.GetComponent<AnimationControl>().lastMove;
 

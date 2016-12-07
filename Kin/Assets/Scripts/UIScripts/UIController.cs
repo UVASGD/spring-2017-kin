@@ -11,7 +11,6 @@ public class UIController : MonoBehaviour {
     public GameObject statsMenu;
     public Text bossName;
     // Add clock
-    // Add Boss Health
 	
 	void Start () {
         bossHealthSlider = bossHealth.GetComponent<Slider>();
@@ -19,7 +18,7 @@ public class UIController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("Stats"))
         {
             toggleStatsMenu();
         }

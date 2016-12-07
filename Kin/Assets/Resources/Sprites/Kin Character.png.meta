@@ -2,7 +2,7 @@ fileFormatVersion: 2
 guid: ab57779361341e445a416023b4a6fc8e
 labels:
 - Character
-timeCreated: 1478314678
+timeCreated: 1480350246
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -288,6 +288,75 @@ TextureImporter:
     21300558: Kin Character_245
     21300560: Kin Character_246
     21300562: Kin Character_247
+    21300564: Kin Character_248
+    21300566: Kin Character_249
+    21300568: Kin Character_250
+    21300570: Kin Character_251
+    21300572: Kin Character_252
+    21300574: Kin Character_253
+    21300576: Kin Character_254
+    21300578: Kin Character_255
+    21300580: Kin Character_256
+    21300582: Kin Character_257
+    21300584: Kin Character_258
+    21300586: Kin Character_259
+    21300588: Kin Character_260
+    21300590: Kin Character_261
+    21300592: Kin Character_262
+    21300594: Kin Character_263
+    21300596: Kin Character_264
+    21300598: Kin Character_265
+    21300600: Kin Character_266
+    21300602: Kin Character_267
+    21300604: Kin Character_268
+    21300606: Kin Character_269
+    21300608: Kin Character_270
+    21300610: Kin Character_271
+    21300612: Kin Character_272
+    21300614: Kin Character_273
+    21300616: Kin Character_274
+    21300618: Kin Character_275
+    21300620: Kin Character_276
+    21300622: Kin Character_277
+    21300624: Kin Character_278
+    21300626: Kin Character_279
+    21300628: Kin Character_280
+    21300630: Kin Character_281
+    21300632: Kin Character_282
+    21300634: Kin Character_283
+    21300636: Kin Character_284
+    21300638: Kin Character_285
+    21300640: Kin Character_286
+    21300642: Kin Character_287
+    21300644: Kin Character_288
+    21300646: Kin Character_289
+    21300648: Kin Character_290
+    21300650: Kin Character_291
+    21300652: Kin Character_292
+    21300654: Kin Character_293
+    21300656: Kin Character_294
+    21300658: Kin Character_295
+    21300660: Kin Character_296
+    21300662: Kin Character_297
+    21300664: Kin Character_298
+    21300666: Kin Character_299
+    21300668: Kin Character_300
+    21300670: Kin Character_301
+    21300672: Kin Character_302
+    21300674: Kin Character_303
+    21300676: Kin Character_304
+    21300678: Kin Character_305
+    21300680: Kin Character_306
+    21300682: Kin Character_307
+    21300684: Kin Character_308
+    21300686: Kin Character_309
+    21300688: Kin Character_310
+    21300690: Kin Character_311
+    21300692: Kin Character_312
+    21300694: Kin Character_313
+    21300696: Kin Character_314
+    21300698: Kin Character_315
+    21300700: Kin Character_316
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -346,9 +415,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 944
-        width: 80
-        height: 80
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,10 +427,10 @@ TextureImporter:
       name: Kin Character_1
       rect:
         serializedVersion: 2
-        x: 80
-        y: 944
-        width: 80
-        height: 80
+        x: 100
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,10 +440,10 @@ TextureImporter:
       name: Kin Character_2
       rect:
         serializedVersion: 2
-        x: 160
-        y: 944
-        width: 80
-        height: 80
+        x: 200
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,10 +453,10 @@ TextureImporter:
       name: Kin Character_3
       rect:
         serializedVersion: 2
-        x: 240
-        y: 944
-        width: 80
-        height: 80
+        x: 300
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,10 +466,10 @@ TextureImporter:
       name: Kin Character_4
       rect:
         serializedVersion: 2
-        x: 320
-        y: 944
-        width: 80
-        height: 80
+        x: 400
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,10 +479,10 @@ TextureImporter:
       name: Kin Character_5
       rect:
         serializedVersion: 2
-        x: 400
-        y: 944
-        width: 80
-        height: 80
+        x: 500
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -423,10 +492,10 @@ TextureImporter:
       name: Kin Character_6
       rect:
         serializedVersion: 2
-        x: 480
-        y: 944
-        width: 80
-        height: 80
+        x: 600
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,10 +505,10 @@ TextureImporter:
       name: Kin Character_7
       rect:
         serializedVersion: 2
-        x: 560
-        y: 944
-        width: 80
-        height: 80
+        x: 700
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -449,10 +518,10 @@ TextureImporter:
       name: Kin Character_8
       rect:
         serializedVersion: 2
-        x: 640
-        y: 944
-        width: 80
-        height: 80
+        x: 800
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -462,10 +531,10 @@ TextureImporter:
       name: Kin Character_9
       rect:
         serializedVersion: 2
-        x: 720
-        y: 944
-        width: 80
-        height: 80
+        x: 900
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,10 +544,10 @@ TextureImporter:
       name: Kin Character_10
       rect:
         serializedVersion: 2
-        x: 800
-        y: 944
-        width: 80
-        height: 80
+        x: 1000
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -488,10 +557,10 @@ TextureImporter:
       name: Kin Character_11
       rect:
         serializedVersion: 2
-        x: 880
-        y: 944
-        width: 80
-        height: 80
+        x: 1100
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -501,10 +570,10 @@ TextureImporter:
       name: Kin Character_12
       rect:
         serializedVersion: 2
-        x: 960
-        y: 944
-        width: 80
-        height: 80
+        x: 1200
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -514,10 +583,10 @@ TextureImporter:
       name: Kin Character_13
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 944
-        width: 80
-        height: 80
+        x: 1300
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -527,10 +596,10 @@ TextureImporter:
       name: Kin Character_14
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 944
-        width: 80
-        height: 80
+        x: 1400
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -540,10 +609,10 @@ TextureImporter:
       name: Kin Character_15
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 944
-        width: 80
-        height: 80
+        x: 1500
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -553,10 +622,10 @@ TextureImporter:
       name: Kin Character_16
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 944
-        width: 80
-        height: 80
+        x: 1600
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -566,10 +635,10 @@ TextureImporter:
       name: Kin Character_17
       rect:
         serializedVersion: 2
-        x: 1360
-        y: 944
-        width: 80
-        height: 80
+        x: 1700
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -579,10 +648,10 @@ TextureImporter:
       name: Kin Character_18
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 944
-        width: 80
-        height: 80
+        x: 1800
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -592,10 +661,10 @@ TextureImporter:
       name: Kin Character_19
       rect:
         serializedVersion: 2
-        x: 1520
-        y: 944
-        width: 80
-        height: 80
+        x: 1900
+        y: 1948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -605,10 +674,10 @@ TextureImporter:
       name: Kin Character_20
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 944
-        width: 80
-        height: 80
+        x: 0
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -618,10 +687,10 @@ TextureImporter:
       name: Kin Character_21
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 944
-        width: 80
-        height: 80
+        x: 100
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -631,10 +700,10 @@ TextureImporter:
       name: Kin Character_22
       rect:
         serializedVersion: 2
-        x: 1760
-        y: 944
-        width: 80
-        height: 80
+        x: 200
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -644,10 +713,10 @@ TextureImporter:
       name: Kin Character_23
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 944
-        width: 80
-        height: 80
+        x: 300
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -657,10 +726,10 @@ TextureImporter:
       name: Kin Character_24
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 944
-        width: 80
-        height: 80
+        x: 400
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -670,10 +739,10 @@ TextureImporter:
       name: Kin Character_25
       rect:
         serializedVersion: 2
-        x: 0
-        y: 864
-        width: 80
-        height: 80
+        x: 500
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -683,10 +752,10 @@ TextureImporter:
       name: Kin Character_26
       rect:
         serializedVersion: 2
-        x: 80
-        y: 864
-        width: 80
-        height: 80
+        x: 600
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -696,10 +765,10 @@ TextureImporter:
       name: Kin Character_27
       rect:
         serializedVersion: 2
-        x: 160
-        y: 864
-        width: 80
-        height: 80
+        x: 700
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -709,10 +778,10 @@ TextureImporter:
       name: Kin Character_28
       rect:
         serializedVersion: 2
-        x: 240
-        y: 864
-        width: 80
-        height: 80
+        x: 800
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -722,10 +791,10 @@ TextureImporter:
       name: Kin Character_29
       rect:
         serializedVersion: 2
-        x: 320
-        y: 864
-        width: 80
-        height: 80
+        x: 900
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -735,10 +804,10 @@ TextureImporter:
       name: Kin Character_30
       rect:
         serializedVersion: 2
-        x: 400
-        y: 864
-        width: 80
-        height: 80
+        x: 1000
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -748,10 +817,10 @@ TextureImporter:
       name: Kin Character_31
       rect:
         serializedVersion: 2
-        x: 480
-        y: 864
-        width: 80
-        height: 80
+        x: 1100
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -761,10 +830,10 @@ TextureImporter:
       name: Kin Character_32
       rect:
         serializedVersion: 2
-        x: 560
-        y: 864
-        width: 80
-        height: 80
+        x: 1200
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -774,10 +843,10 @@ TextureImporter:
       name: Kin Character_33
       rect:
         serializedVersion: 2
-        x: 640
-        y: 864
-        width: 80
-        height: 80
+        x: 1300
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -787,10 +856,10 @@ TextureImporter:
       name: Kin Character_34
       rect:
         serializedVersion: 2
-        x: 720
-        y: 864
-        width: 80
-        height: 80
+        x: 1400
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -800,10 +869,10 @@ TextureImporter:
       name: Kin Character_35
       rect:
         serializedVersion: 2
-        x: 800
-        y: 864
-        width: 80
-        height: 80
+        x: 1500
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -813,10 +882,10 @@ TextureImporter:
       name: Kin Character_36
       rect:
         serializedVersion: 2
-        x: 880
-        y: 864
-        width: 80
-        height: 80
+        x: 1600
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -826,10 +895,10 @@ TextureImporter:
       name: Kin Character_37
       rect:
         serializedVersion: 2
-        x: 960
-        y: 864
-        width: 80
-        height: 80
+        x: 1700
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -839,10 +908,10 @@ TextureImporter:
       name: Kin Character_38
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 864
-        width: 80
-        height: 80
+        x: 1800
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -852,10 +921,10 @@ TextureImporter:
       name: Kin Character_39
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 864
-        width: 80
-        height: 80
+        x: 1900
+        y: 1848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -865,10 +934,10 @@ TextureImporter:
       name: Kin Character_40
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 864
-        width: 80
-        height: 80
+        x: 0
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -878,10 +947,10 @@ TextureImporter:
       name: Kin Character_41
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 864
-        width: 80
-        height: 80
+        x: 100
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -891,10 +960,10 @@ TextureImporter:
       name: Kin Character_42
       rect:
         serializedVersion: 2
-        x: 1360
-        y: 864
-        width: 80
-        height: 80
+        x: 200
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -904,10 +973,10 @@ TextureImporter:
       name: Kin Character_43
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 864
-        width: 80
-        height: 80
+        x: 300
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -917,10 +986,10 @@ TextureImporter:
       name: Kin Character_44
       rect:
         serializedVersion: 2
-        x: 1520
-        y: 864
-        width: 80
-        height: 80
+        x: 400
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -930,10 +999,10 @@ TextureImporter:
       name: Kin Character_45
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 864
-        width: 80
-        height: 80
+        x: 500
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -943,10 +1012,10 @@ TextureImporter:
       name: Kin Character_46
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 864
-        width: 80
-        height: 80
+        x: 600
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -956,10 +1025,10 @@ TextureImporter:
       name: Kin Character_47
       rect:
         serializedVersion: 2
-        x: 1760
-        y: 864
-        width: 80
-        height: 80
+        x: 700
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -969,10 +1038,10 @@ TextureImporter:
       name: Kin Character_48
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 864
-        width: 80
-        height: 80
+        x: 800
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -982,10 +1051,10 @@ TextureImporter:
       name: Kin Character_49
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 864
-        width: 80
-        height: 80
+        x: 900
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -995,10 +1064,10 @@ TextureImporter:
       name: Kin Character_50
       rect:
         serializedVersion: 2
-        x: 0
-        y: 784
-        width: 80
-        height: 80
+        x: 1000
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1008,10 +1077,10 @@ TextureImporter:
       name: Kin Character_51
       rect:
         serializedVersion: 2
-        x: 80
-        y: 784
-        width: 80
-        height: 80
+        x: 1100
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1021,10 +1090,10 @@ TextureImporter:
       name: Kin Character_52
       rect:
         serializedVersion: 2
-        x: 160
-        y: 784
-        width: 80
-        height: 80
+        x: 1200
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1034,10 +1103,10 @@ TextureImporter:
       name: Kin Character_53
       rect:
         serializedVersion: 2
-        x: 240
-        y: 784
-        width: 80
-        height: 80
+        x: 1300
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1047,10 +1116,10 @@ TextureImporter:
       name: Kin Character_54
       rect:
         serializedVersion: 2
-        x: 320
-        y: 784
-        width: 80
-        height: 80
+        x: 1400
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1060,10 +1129,10 @@ TextureImporter:
       name: Kin Character_55
       rect:
         serializedVersion: 2
-        x: 400
-        y: 784
-        width: 80
-        height: 80
+        x: 1500
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1073,10 +1142,10 @@ TextureImporter:
       name: Kin Character_56
       rect:
         serializedVersion: 2
-        x: 480
-        y: 784
-        width: 80
-        height: 80
+        x: 1600
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1086,10 +1155,10 @@ TextureImporter:
       name: Kin Character_57
       rect:
         serializedVersion: 2
-        x: 560
-        y: 784
-        width: 80
-        height: 80
+        x: 1700
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1099,10 +1168,10 @@ TextureImporter:
       name: Kin Character_58
       rect:
         serializedVersion: 2
-        x: 640
-        y: 784
-        width: 80
-        height: 80
+        x: 1800
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1112,10 +1181,10 @@ TextureImporter:
       name: Kin Character_59
       rect:
         serializedVersion: 2
-        x: 720
-        y: 784
-        width: 80
-        height: 80
+        x: 1900
+        y: 1748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1125,10 +1194,10 @@ TextureImporter:
       name: Kin Character_60
       rect:
         serializedVersion: 2
-        x: 800
-        y: 784
-        width: 80
-        height: 80
+        x: 0
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1138,10 +1207,10 @@ TextureImporter:
       name: Kin Character_61
       rect:
         serializedVersion: 2
-        x: 880
-        y: 784
-        width: 80
-        height: 80
+        x: 100
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1151,10 +1220,10 @@ TextureImporter:
       name: Kin Character_62
       rect:
         serializedVersion: 2
-        x: 960
-        y: 784
-        width: 80
-        height: 80
+        x: 200
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1164,10 +1233,10 @@ TextureImporter:
       name: Kin Character_63
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 784
-        width: 80
-        height: 80
+        x: 300
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1177,10 +1246,10 @@ TextureImporter:
       name: Kin Character_64
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 784
-        width: 80
-        height: 80
+        x: 400
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1190,10 +1259,10 @@ TextureImporter:
       name: Kin Character_65
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 784
-        width: 80
-        height: 80
+        x: 500
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1203,10 +1272,10 @@ TextureImporter:
       name: Kin Character_66
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 784
-        width: 80
-        height: 80
+        x: 600
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1216,10 +1285,10 @@ TextureImporter:
       name: Kin Character_67
       rect:
         serializedVersion: 2
-        x: 1360
-        y: 784
-        width: 80
-        height: 80
+        x: 700
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1229,10 +1298,10 @@ TextureImporter:
       name: Kin Character_68
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 784
-        width: 80
-        height: 80
+        x: 800
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1242,10 +1311,10 @@ TextureImporter:
       name: Kin Character_69
       rect:
         serializedVersion: 2
-        x: 1520
-        y: 784
-        width: 80
-        height: 80
+        x: 900
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1255,10 +1324,10 @@ TextureImporter:
       name: Kin Character_70
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 784
-        width: 80
-        height: 80
+        x: 1000
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1268,10 +1337,10 @@ TextureImporter:
       name: Kin Character_71
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 784
-        width: 80
-        height: 80
+        x: 1100
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1281,10 +1350,10 @@ TextureImporter:
       name: Kin Character_72
       rect:
         serializedVersion: 2
-        x: 1760
-        y: 784
-        width: 80
-        height: 80
+        x: 1200
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1294,10 +1363,10 @@ TextureImporter:
       name: Kin Character_73
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 784
-        width: 80
-        height: 80
+        x: 1300
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1307,10 +1376,10 @@ TextureImporter:
       name: Kin Character_74
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 784
-        width: 80
-        height: 80
+        x: 1400
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1320,10 +1389,10 @@ TextureImporter:
       name: Kin Character_75
       rect:
         serializedVersion: 2
-        x: 0
-        y: 704
-        width: 80
-        height: 80
+        x: 1500
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1333,10 +1402,10 @@ TextureImporter:
       name: Kin Character_76
       rect:
         serializedVersion: 2
-        x: 80
-        y: 704
-        width: 80
-        height: 80
+        x: 1600
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1346,10 +1415,10 @@ TextureImporter:
       name: Kin Character_77
       rect:
         serializedVersion: 2
-        x: 160
-        y: 704
-        width: 80
-        height: 80
+        x: 1700
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1359,10 +1428,10 @@ TextureImporter:
       name: Kin Character_78
       rect:
         serializedVersion: 2
-        x: 240
-        y: 704
-        width: 80
-        height: 80
+        x: 1800
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1372,10 +1441,10 @@ TextureImporter:
       name: Kin Character_79
       rect:
         serializedVersion: 2
-        x: 320
-        y: 704
-        width: 80
-        height: 80
+        x: 1900
+        y: 1648
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1385,10 +1454,10 @@ TextureImporter:
       name: Kin Character_80
       rect:
         serializedVersion: 2
-        x: 400
-        y: 704
-        width: 80
-        height: 80
+        x: 0
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1398,10 +1467,10 @@ TextureImporter:
       name: Kin Character_81
       rect:
         serializedVersion: 2
-        x: 480
-        y: 704
-        width: 80
-        height: 80
+        x: 100
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1411,10 +1480,10 @@ TextureImporter:
       name: Kin Character_82
       rect:
         serializedVersion: 2
-        x: 560
-        y: 704
-        width: 80
-        height: 80
+        x: 200
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1424,10 +1493,10 @@ TextureImporter:
       name: Kin Character_83
       rect:
         serializedVersion: 2
-        x: 640
-        y: 704
-        width: 80
-        height: 80
+        x: 300
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1437,10 +1506,10 @@ TextureImporter:
       name: Kin Character_84
       rect:
         serializedVersion: 2
-        x: 720
-        y: 704
-        width: 80
-        height: 80
+        x: 400
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1450,10 +1519,10 @@ TextureImporter:
       name: Kin Character_85
       rect:
         serializedVersion: 2
-        x: 800
-        y: 704
-        width: 80
-        height: 80
+        x: 500
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1463,10 +1532,10 @@ TextureImporter:
       name: Kin Character_86
       rect:
         serializedVersion: 2
-        x: 880
-        y: 704
-        width: 80
-        height: 80
+        x: 600
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1476,10 +1545,10 @@ TextureImporter:
       name: Kin Character_87
       rect:
         serializedVersion: 2
-        x: 960
-        y: 704
-        width: 80
-        height: 80
+        x: 700
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1489,10 +1558,10 @@ TextureImporter:
       name: Kin Character_88
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 704
-        width: 80
-        height: 80
+        x: 800
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1502,10 +1571,10 @@ TextureImporter:
       name: Kin Character_89
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 704
-        width: 80
-        height: 80
+        x: 900
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1515,10 +1584,10 @@ TextureImporter:
       name: Kin Character_90
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 704
-        width: 80
-        height: 80
+        x: 1000
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1528,10 +1597,10 @@ TextureImporter:
       name: Kin Character_91
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 704
-        width: 80
-        height: 80
+        x: 1100
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1541,10 +1610,10 @@ TextureImporter:
       name: Kin Character_92
       rect:
         serializedVersion: 2
-        x: 1360
-        y: 704
-        width: 80
-        height: 80
+        x: 1200
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1554,10 +1623,10 @@ TextureImporter:
       name: Kin Character_93
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 704
-        width: 80
-        height: 80
+        x: 1300
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1567,10 +1636,10 @@ TextureImporter:
       name: Kin Character_94
       rect:
         serializedVersion: 2
-        x: 1520
-        y: 704
-        width: 80
-        height: 80
+        x: 1400
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1580,10 +1649,10 @@ TextureImporter:
       name: Kin Character_95
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 704
-        width: 80
-        height: 80
+        x: 1500
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1593,10 +1662,10 @@ TextureImporter:
       name: Kin Character_96
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 704
-        width: 80
-        height: 80
+        x: 1600
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1606,10 +1675,10 @@ TextureImporter:
       name: Kin Character_97
       rect:
         serializedVersion: 2
-        x: 1760
-        y: 704
-        width: 80
-        height: 80
+        x: 1700
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1619,10 +1688,10 @@ TextureImporter:
       name: Kin Character_98
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 704
-        width: 80
-        height: 80
+        x: 1800
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1632,10 +1701,10 @@ TextureImporter:
       name: Kin Character_99
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 704
-        width: 80
-        height: 80
+        x: 1900
+        y: 1548
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1646,9 +1715,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 624
-        width: 80
-        height: 80
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1658,10 +1727,10 @@ TextureImporter:
       name: Kin Character_101
       rect:
         serializedVersion: 2
-        x: 80
-        y: 624
-        width: 80
-        height: 80
+        x: 100
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1671,10 +1740,10 @@ TextureImporter:
       name: Kin Character_102
       rect:
         serializedVersion: 2
-        x: 160
-        y: 624
-        width: 80
-        height: 80
+        x: 200
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1684,10 +1753,10 @@ TextureImporter:
       name: Kin Character_103
       rect:
         serializedVersion: 2
-        x: 240
-        y: 624
-        width: 80
-        height: 80
+        x: 300
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1697,10 +1766,10 @@ TextureImporter:
       name: Kin Character_104
       rect:
         serializedVersion: 2
-        x: 320
-        y: 624
-        width: 80
-        height: 80
+        x: 400
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1710,10 +1779,10 @@ TextureImporter:
       name: Kin Character_105
       rect:
         serializedVersion: 2
-        x: 400
-        y: 624
-        width: 80
-        height: 80
+        x: 500
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1723,10 +1792,10 @@ TextureImporter:
       name: Kin Character_106
       rect:
         serializedVersion: 2
-        x: 480
-        y: 624
-        width: 80
-        height: 80
+        x: 600
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1736,10 +1805,10 @@ TextureImporter:
       name: Kin Character_107
       rect:
         serializedVersion: 2
-        x: 560
-        y: 624
-        width: 80
-        height: 80
+        x: 700
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1749,10 +1818,10 @@ TextureImporter:
       name: Kin Character_108
       rect:
         serializedVersion: 2
-        x: 640
-        y: 624
-        width: 80
-        height: 80
+        x: 800
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1762,10 +1831,10 @@ TextureImporter:
       name: Kin Character_109
       rect:
         serializedVersion: 2
-        x: 720
-        y: 624
-        width: 80
-        height: 80
+        x: 900
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1775,10 +1844,10 @@ TextureImporter:
       name: Kin Character_110
       rect:
         serializedVersion: 2
-        x: 800
-        y: 624
-        width: 80
-        height: 80
+        x: 1000
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1788,10 +1857,10 @@ TextureImporter:
       name: Kin Character_111
       rect:
         serializedVersion: 2
-        x: 880
-        y: 624
-        width: 80
-        height: 80
+        x: 1100
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1801,10 +1870,10 @@ TextureImporter:
       name: Kin Character_112
       rect:
         serializedVersion: 2
-        x: 960
-        y: 624
-        width: 80
-        height: 80
+        x: 1200
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1814,10 +1883,10 @@ TextureImporter:
       name: Kin Character_113
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 624
-        width: 80
-        height: 80
+        x: 1300
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1827,10 +1896,10 @@ TextureImporter:
       name: Kin Character_114
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 624
-        width: 80
-        height: 80
+        x: 1400
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1840,10 +1909,10 @@ TextureImporter:
       name: Kin Character_115
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 624
-        width: 80
-        height: 80
+        x: 1500
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1853,10 +1922,10 @@ TextureImporter:
       name: Kin Character_116
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 624
-        width: 80
-        height: 80
+        x: 1600
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1866,10 +1935,10 @@ TextureImporter:
       name: Kin Character_117
       rect:
         serializedVersion: 2
-        x: 1360
-        y: 624
-        width: 80
-        height: 80
+        x: 1700
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1879,10 +1948,10 @@ TextureImporter:
       name: Kin Character_118
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 624
-        width: 80
-        height: 80
+        x: 1800
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1892,10 +1961,10 @@ TextureImporter:
       name: Kin Character_119
       rect:
         serializedVersion: 2
-        x: 1520
-        y: 624
-        width: 80
-        height: 80
+        x: 1900
+        y: 1448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1905,10 +1974,10 @@ TextureImporter:
       name: Kin Character_120
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 624
-        width: 80
-        height: 80
+        x: 0
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1918,10 +1987,10 @@ TextureImporter:
       name: Kin Character_121
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 624
-        width: 80
-        height: 80
+        x: 100
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1931,10 +2000,10 @@ TextureImporter:
       name: Kin Character_122
       rect:
         serializedVersion: 2
-        x: 1760
-        y: 624
-        width: 80
-        height: 80
+        x: 200
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1944,10 +2013,10 @@ TextureImporter:
       name: Kin Character_123
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 624
-        width: 80
-        height: 80
+        x: 300
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1957,10 +2026,10 @@ TextureImporter:
       name: Kin Character_124
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 624
-        width: 80
-        height: 80
+        x: 400
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1970,10 +2039,10 @@ TextureImporter:
       name: Kin Character_125
       rect:
         serializedVersion: 2
-        x: 0
-        y: 544
-        width: 80
-        height: 80
+        x: 500
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1983,10 +2052,10 @@ TextureImporter:
       name: Kin Character_126
       rect:
         serializedVersion: 2
-        x: 80
-        y: 544
-        width: 80
-        height: 80
+        x: 600
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1996,10 +2065,10 @@ TextureImporter:
       name: Kin Character_127
       rect:
         serializedVersion: 2
-        x: 160
-        y: 544
-        width: 80
-        height: 80
+        x: 700
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2009,10 +2078,10 @@ TextureImporter:
       name: Kin Character_128
       rect:
         serializedVersion: 2
-        x: 240
-        y: 544
-        width: 80
-        height: 80
+        x: 800
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2022,10 +2091,10 @@ TextureImporter:
       name: Kin Character_129
       rect:
         serializedVersion: 2
-        x: 320
-        y: 544
-        width: 80
-        height: 80
+        x: 900
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2035,10 +2104,10 @@ TextureImporter:
       name: Kin Character_130
       rect:
         serializedVersion: 2
-        x: 400
-        y: 544
-        width: 80
-        height: 80
+        x: 1000
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2048,10 +2117,10 @@ TextureImporter:
       name: Kin Character_131
       rect:
         serializedVersion: 2
-        x: 480
-        y: 544
-        width: 80
-        height: 80
+        x: 1100
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2061,10 +2130,10 @@ TextureImporter:
       name: Kin Character_132
       rect:
         serializedVersion: 2
-        x: 560
-        y: 544
-        width: 80
-        height: 80
+        x: 1200
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2074,10 +2143,10 @@ TextureImporter:
       name: Kin Character_133
       rect:
         serializedVersion: 2
-        x: 640
-        y: 544
-        width: 80
-        height: 80
+        x: 1300
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2087,10 +2156,10 @@ TextureImporter:
       name: Kin Character_134
       rect:
         serializedVersion: 2
-        x: 720
-        y: 544
-        width: 80
-        height: 80
+        x: 1400
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2100,10 +2169,10 @@ TextureImporter:
       name: Kin Character_135
       rect:
         serializedVersion: 2
-        x: 800
-        y: 544
-        width: 80
-        height: 80
+        x: 1500
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2113,10 +2182,10 @@ TextureImporter:
       name: Kin Character_136
       rect:
         serializedVersion: 2
-        x: 880
-        y: 544
-        width: 80
-        height: 80
+        x: 1600
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2126,10 +2195,10 @@ TextureImporter:
       name: Kin Character_137
       rect:
         serializedVersion: 2
-        x: 960
-        y: 544
-        width: 80
-        height: 80
+        x: 1700
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2139,10 +2208,10 @@ TextureImporter:
       name: Kin Character_138
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 544
-        width: 80
-        height: 80
+        x: 1800
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2152,10 +2221,10 @@ TextureImporter:
       name: Kin Character_139
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 544
-        width: 80
-        height: 80
+        x: 1900
+        y: 1348
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2165,10 +2234,10 @@ TextureImporter:
       name: Kin Character_140
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 544
-        width: 80
-        height: 80
+        x: 0
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2178,10 +2247,10 @@ TextureImporter:
       name: Kin Character_141
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 544
-        width: 80
-        height: 80
+        x: 100
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2191,10 +2260,10 @@ TextureImporter:
       name: Kin Character_142
       rect:
         serializedVersion: 2
-        x: 1360
-        y: 544
-        width: 80
-        height: 80
+        x: 200
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2204,10 +2273,10 @@ TextureImporter:
       name: Kin Character_143
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 544
-        width: 80
-        height: 80
+        x: 300
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2217,10 +2286,10 @@ TextureImporter:
       name: Kin Character_144
       rect:
         serializedVersion: 2
-        x: 1520
-        y: 544
-        width: 80
-        height: 80
+        x: 400
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2230,10 +2299,10 @@ TextureImporter:
       name: Kin Character_145
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 544
-        width: 80
-        height: 80
+        x: 500
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2243,10 +2312,10 @@ TextureImporter:
       name: Kin Character_146
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 544
-        width: 80
-        height: 80
+        x: 600
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2256,10 +2325,10 @@ TextureImporter:
       name: Kin Character_147
       rect:
         serializedVersion: 2
-        x: 1760
-        y: 544
-        width: 80
-        height: 80
+        x: 700
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2269,10 +2338,10 @@ TextureImporter:
       name: Kin Character_148
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 544
-        width: 80
-        height: 80
+        x: 800
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2282,10 +2351,10 @@ TextureImporter:
       name: Kin Character_149
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 544
-        width: 80
-        height: 80
+        x: 900
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2295,10 +2364,10 @@ TextureImporter:
       name: Kin Character_150
       rect:
         serializedVersion: 2
-        x: 0
-        y: 464
-        width: 80
-        height: 80
+        x: 1000
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2308,10 +2377,10 @@ TextureImporter:
       name: Kin Character_151
       rect:
         serializedVersion: 2
-        x: 80
-        y: 464
-        width: 80
-        height: 80
+        x: 1100
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2321,10 +2390,10 @@ TextureImporter:
       name: Kin Character_152
       rect:
         serializedVersion: 2
-        x: 160
-        y: 464
-        width: 80
-        height: 80
+        x: 1200
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2334,10 +2403,10 @@ TextureImporter:
       name: Kin Character_153
       rect:
         serializedVersion: 2
-        x: 240
-        y: 464
-        width: 80
-        height: 80
+        x: 1300
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2347,10 +2416,10 @@ TextureImporter:
       name: Kin Character_154
       rect:
         serializedVersion: 2
-        x: 320
-        y: 464
-        width: 80
-        height: 80
+        x: 1400
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2360,10 +2429,10 @@ TextureImporter:
       name: Kin Character_155
       rect:
         serializedVersion: 2
-        x: 400
-        y: 464
-        width: 80
-        height: 80
+        x: 1500
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2373,10 +2442,10 @@ TextureImporter:
       name: Kin Character_156
       rect:
         serializedVersion: 2
-        x: 480
-        y: 464
-        width: 80
-        height: 80
+        x: 1600
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2386,10 +2455,10 @@ TextureImporter:
       name: Kin Character_157
       rect:
         serializedVersion: 2
-        x: 560
-        y: 464
-        width: 80
-        height: 80
+        x: 1700
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2399,10 +2468,10 @@ TextureImporter:
       name: Kin Character_158
       rect:
         serializedVersion: 2
-        x: 640
-        y: 464
-        width: 80
-        height: 80
+        x: 1800
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2412,10 +2481,10 @@ TextureImporter:
       name: Kin Character_159
       rect:
         serializedVersion: 2
-        x: 720
-        y: 464
-        width: 80
-        height: 80
+        x: 1900
+        y: 1248
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2425,10 +2494,10 @@ TextureImporter:
       name: Kin Character_160
       rect:
         serializedVersion: 2
-        x: 800
-        y: 464
-        width: 80
-        height: 80
+        x: 0
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2438,10 +2507,10 @@ TextureImporter:
       name: Kin Character_161
       rect:
         serializedVersion: 2
-        x: 880
-        y: 464
-        width: 80
-        height: 80
+        x: 100
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2451,10 +2520,10 @@ TextureImporter:
       name: Kin Character_162
       rect:
         serializedVersion: 2
-        x: 960
-        y: 464
-        width: 80
-        height: 80
+        x: 200
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2464,10 +2533,10 @@ TextureImporter:
       name: Kin Character_163
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 464
-        width: 80
-        height: 80
+        x: 300
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2477,10 +2546,10 @@ TextureImporter:
       name: Kin Character_164
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 464
-        width: 80
-        height: 80
+        x: 400
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2490,10 +2559,10 @@ TextureImporter:
       name: Kin Character_165
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 464
-        width: 80
-        height: 80
+        x: 500
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2503,10 +2572,10 @@ TextureImporter:
       name: Kin Character_166
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 464
-        width: 80
-        height: 80
+        x: 600
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2516,10 +2585,10 @@ TextureImporter:
       name: Kin Character_167
       rect:
         serializedVersion: 2
-        x: 1360
-        y: 464
-        width: 80
-        height: 80
+        x: 700
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2529,10 +2598,10 @@ TextureImporter:
       name: Kin Character_168
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 464
-        width: 80
-        height: 80
+        x: 800
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2542,10 +2611,10 @@ TextureImporter:
       name: Kin Character_169
       rect:
         serializedVersion: 2
-        x: 1520
-        y: 464
-        width: 80
-        height: 80
+        x: 900
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2555,10 +2624,10 @@ TextureImporter:
       name: Kin Character_170
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 464
-        width: 80
-        height: 80
+        x: 1000
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2568,10 +2637,10 @@ TextureImporter:
       name: Kin Character_171
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 464
-        width: 80
-        height: 80
+        x: 1100
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2581,10 +2650,10 @@ TextureImporter:
       name: Kin Character_172
       rect:
         serializedVersion: 2
-        x: 1760
-        y: 464
-        width: 80
-        height: 80
+        x: 1200
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2594,10 +2663,10 @@ TextureImporter:
       name: Kin Character_173
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 464
-        width: 80
-        height: 80
+        x: 1300
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2607,10 +2676,10 @@ TextureImporter:
       name: Kin Character_174
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 464
-        width: 80
-        height: 80
+        x: 1400
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2620,10 +2689,10 @@ TextureImporter:
       name: Kin Character_175
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
-        width: 80
-        height: 80
+        x: 1500
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2633,10 +2702,10 @@ TextureImporter:
       name: Kin Character_176
       rect:
         serializedVersion: 2
-        x: 80
-        y: 384
-        width: 80
-        height: 80
+        x: 1600
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2646,10 +2715,10 @@ TextureImporter:
       name: Kin Character_177
       rect:
         serializedVersion: 2
-        x: 160
-        y: 384
-        width: 80
-        height: 80
+        x: 1700
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2659,10 +2728,10 @@ TextureImporter:
       name: Kin Character_178
       rect:
         serializedVersion: 2
-        x: 240
-        y: 384
-        width: 80
-        height: 80
+        x: 1800
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2672,10 +2741,10 @@ TextureImporter:
       name: Kin Character_179
       rect:
         serializedVersion: 2
-        x: 320
-        y: 384
-        width: 80
-        height: 80
+        x: 1900
+        y: 1148
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2685,10 +2754,10 @@ TextureImporter:
       name: Kin Character_180
       rect:
         serializedVersion: 2
-        x: 400
-        y: 384
-        width: 80
-        height: 80
+        x: 0
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2698,10 +2767,10 @@ TextureImporter:
       name: Kin Character_181
       rect:
         serializedVersion: 2
-        x: 480
-        y: 384
-        width: 80
-        height: 80
+        x: 100
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2711,10 +2780,10 @@ TextureImporter:
       name: Kin Character_182
       rect:
         serializedVersion: 2
-        x: 560
-        y: 384
-        width: 80
-        height: 80
+        x: 200
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2724,10 +2793,10 @@ TextureImporter:
       name: Kin Character_183
       rect:
         serializedVersion: 2
-        x: 640
-        y: 384
-        width: 80
-        height: 80
+        x: 300
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2737,10 +2806,10 @@ TextureImporter:
       name: Kin Character_184
       rect:
         serializedVersion: 2
-        x: 720
-        y: 384
-        width: 80
-        height: 80
+        x: 400
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2750,10 +2819,10 @@ TextureImporter:
       name: Kin Character_185
       rect:
         serializedVersion: 2
-        x: 800
-        y: 384
-        width: 80
-        height: 80
+        x: 500
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2763,10 +2832,10 @@ TextureImporter:
       name: Kin Character_186
       rect:
         serializedVersion: 2
-        x: 880
-        y: 384
-        width: 80
-        height: 80
+        x: 600
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2776,10 +2845,10 @@ TextureImporter:
       name: Kin Character_187
       rect:
         serializedVersion: 2
-        x: 960
-        y: 384
-        width: 80
-        height: 80
+        x: 700
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2789,10 +2858,10 @@ TextureImporter:
       name: Kin Character_188
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 384
-        width: 80
-        height: 80
+        x: 800
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2802,10 +2871,10 @@ TextureImporter:
       name: Kin Character_189
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 384
-        width: 80
-        height: 80
+        x: 900
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2815,10 +2884,10 @@ TextureImporter:
       name: Kin Character_190
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 384
-        width: 80
-        height: 80
+        x: 1000
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2828,10 +2897,10 @@ TextureImporter:
       name: Kin Character_191
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 384
-        width: 80
-        height: 80
+        x: 1100
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2841,10 +2910,10 @@ TextureImporter:
       name: Kin Character_192
       rect:
         serializedVersion: 2
-        x: 1360
-        y: 384
-        width: 80
-        height: 80
+        x: 1200
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2854,10 +2923,10 @@ TextureImporter:
       name: Kin Character_193
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 384
-        width: 80
-        height: 80
+        x: 1300
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2867,10 +2936,10 @@ TextureImporter:
       name: Kin Character_194
       rect:
         serializedVersion: 2
-        x: 1520
-        y: 384
-        width: 80
-        height: 80
+        x: 1400
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2880,10 +2949,10 @@ TextureImporter:
       name: Kin Character_195
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 384
-        width: 80
-        height: 80
+        x: 1500
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2893,10 +2962,10 @@ TextureImporter:
       name: Kin Character_196
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 384
-        width: 80
-        height: 80
+        x: 1600
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2906,10 +2975,10 @@ TextureImporter:
       name: Kin Character_197
       rect:
         serializedVersion: 2
-        x: 1760
-        y: 384
-        width: 80
-        height: 80
+        x: 1700
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2919,10 +2988,10 @@ TextureImporter:
       name: Kin Character_198
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 384
-        width: 80
-        height: 80
+        x: 1800
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2932,10 +3001,10 @@ TextureImporter:
       name: Kin Character_199
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 384
-        width: 80
-        height: 80
+        x: 1900
+        y: 1048
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2946,9 +3015,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 304
-        width: 80
-        height: 80
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2958,10 +3027,10 @@ TextureImporter:
       name: Kin Character_201
       rect:
         serializedVersion: 2
-        x: 80
-        y: 304
-        width: 80
-        height: 80
+        x: 100
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2971,10 +3040,10 @@ TextureImporter:
       name: Kin Character_202
       rect:
         serializedVersion: 2
-        x: 160
-        y: 304
-        width: 80
-        height: 80
+        x: 200
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2984,10 +3053,10 @@ TextureImporter:
       name: Kin Character_203
       rect:
         serializedVersion: 2
-        x: 240
-        y: 304
-        width: 80
-        height: 80
+        x: 300
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2997,10 +3066,10 @@ TextureImporter:
       name: Kin Character_204
       rect:
         serializedVersion: 2
-        x: 320
-        y: 304
-        width: 80
-        height: 80
+        x: 400
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3010,10 +3079,10 @@ TextureImporter:
       name: Kin Character_205
       rect:
         serializedVersion: 2
-        x: 400
-        y: 304
-        width: 80
-        height: 80
+        x: 500
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3023,10 +3092,10 @@ TextureImporter:
       name: Kin Character_206
       rect:
         serializedVersion: 2
-        x: 480
-        y: 304
-        width: 80
-        height: 80
+        x: 600
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3036,10 +3105,10 @@ TextureImporter:
       name: Kin Character_207
       rect:
         serializedVersion: 2
-        x: 560
-        y: 304
-        width: 80
-        height: 80
+        x: 700
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3049,10 +3118,10 @@ TextureImporter:
       name: Kin Character_208
       rect:
         serializedVersion: 2
-        x: 640
-        y: 304
-        width: 80
-        height: 80
+        x: 800
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3062,10 +3131,10 @@ TextureImporter:
       name: Kin Character_209
       rect:
         serializedVersion: 2
-        x: 720
-        y: 304
-        width: 80
-        height: 80
+        x: 900
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3075,10 +3144,10 @@ TextureImporter:
       name: Kin Character_210
       rect:
         serializedVersion: 2
-        x: 800
-        y: 304
-        width: 80
-        height: 80
+        x: 1000
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3088,10 +3157,10 @@ TextureImporter:
       name: Kin Character_211
       rect:
         serializedVersion: 2
-        x: 880
-        y: 304
-        width: 80
-        height: 80
+        x: 1100
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3101,10 +3170,10 @@ TextureImporter:
       name: Kin Character_212
       rect:
         serializedVersion: 2
-        x: 960
-        y: 304
-        width: 80
-        height: 80
+        x: 1200
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3114,10 +3183,10 @@ TextureImporter:
       name: Kin Character_213
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 304
-        width: 80
-        height: 80
+        x: 1300
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3127,10 +3196,10 @@ TextureImporter:
       name: Kin Character_214
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 304
-        width: 80
-        height: 80
+        x: 1400
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3140,10 +3209,10 @@ TextureImporter:
       name: Kin Character_215
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 304
-        width: 80
-        height: 80
+        x: 1500
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3153,10 +3222,10 @@ TextureImporter:
       name: Kin Character_216
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 304
-        width: 80
-        height: 80
+        x: 1600
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3166,10 +3235,10 @@ TextureImporter:
       name: Kin Character_217
       rect:
         serializedVersion: 2
-        x: 1360
-        y: 304
-        width: 80
-        height: 80
+        x: 1700
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3179,10 +3248,10 @@ TextureImporter:
       name: Kin Character_218
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 304
-        width: 80
-        height: 80
+        x: 1800
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3192,10 +3261,10 @@ TextureImporter:
       name: Kin Character_219
       rect:
         serializedVersion: 2
-        x: 1520
-        y: 304
-        width: 80
-        height: 80
+        x: 1900
+        y: 948
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3205,10 +3274,10 @@ TextureImporter:
       name: Kin Character_220
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 304
-        width: 80
-        height: 80
+        x: 0
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3218,10 +3287,10 @@ TextureImporter:
       name: Kin Character_221
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 304
-        width: 80
-        height: 80
+        x: 100
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3231,10 +3300,10 @@ TextureImporter:
       name: Kin Character_222
       rect:
         serializedVersion: 2
-        x: 1760
-        y: 304
-        width: 80
-        height: 80
+        x: 200
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3244,10 +3313,10 @@ TextureImporter:
       name: Kin Character_223
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 304
-        width: 80
-        height: 80
+        x: 300
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3257,10 +3326,10 @@ TextureImporter:
       name: Kin Character_224
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 304
-        width: 80
-        height: 80
+        x: 400
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3270,10 +3339,10 @@ TextureImporter:
       name: Kin Character_225
       rect:
         serializedVersion: 2
-        x: 0
-        y: 224
-        width: 80
-        height: 80
+        x: 500
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3283,10 +3352,10 @@ TextureImporter:
       name: Kin Character_226
       rect:
         serializedVersion: 2
-        x: 80
-        y: 224
-        width: 80
-        height: 80
+        x: 600
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3296,10 +3365,10 @@ TextureImporter:
       name: Kin Character_227
       rect:
         serializedVersion: 2
-        x: 160
-        y: 224
-        width: 80
-        height: 80
+        x: 700
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3309,10 +3378,10 @@ TextureImporter:
       name: Kin Character_228
       rect:
         serializedVersion: 2
-        x: 240
-        y: 224
-        width: 80
-        height: 80
+        x: 800
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3322,10 +3391,10 @@ TextureImporter:
       name: Kin Character_229
       rect:
         serializedVersion: 2
-        x: 320
-        y: 224
-        width: 80
-        height: 80
+        x: 900
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3335,10 +3404,10 @@ TextureImporter:
       name: Kin Character_230
       rect:
         serializedVersion: 2
-        x: 400
-        y: 224
-        width: 80
-        height: 80
+        x: 1000
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3348,10 +3417,10 @@ TextureImporter:
       name: Kin Character_231
       rect:
         serializedVersion: 2
-        x: 480
-        y: 224
-        width: 80
-        height: 80
+        x: 1100
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3361,10 +3430,10 @@ TextureImporter:
       name: Kin Character_232
       rect:
         serializedVersion: 2
-        x: 560
-        y: 224
-        width: 80
-        height: 80
+        x: 1200
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3374,10 +3443,10 @@ TextureImporter:
       name: Kin Character_233
       rect:
         serializedVersion: 2
-        x: 640
-        y: 224
-        width: 80
-        height: 80
+        x: 1300
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3387,10 +3456,10 @@ TextureImporter:
       name: Kin Character_234
       rect:
         serializedVersion: 2
-        x: 720
-        y: 224
-        width: 80
-        height: 80
+        x: 1400
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3400,10 +3469,10 @@ TextureImporter:
       name: Kin Character_235
       rect:
         serializedVersion: 2
-        x: 800
-        y: 224
-        width: 80
-        height: 80
+        x: 1500
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3413,10 +3482,10 @@ TextureImporter:
       name: Kin Character_236
       rect:
         serializedVersion: 2
-        x: 880
-        y: 224
-        width: 80
-        height: 80
+        x: 1600
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3426,10 +3495,10 @@ TextureImporter:
       name: Kin Character_237
       rect:
         serializedVersion: 2
-        x: 960
-        y: 224
-        width: 80
-        height: 80
+        x: 1700
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3439,10 +3508,10 @@ TextureImporter:
       name: Kin Character_238
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 224
-        width: 80
-        height: 80
+        x: 1800
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3452,10 +3521,10 @@ TextureImporter:
       name: Kin Character_239
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 224
-        width: 80
-        height: 80
+        x: 1900
+        y: 848
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3465,10 +3534,10 @@ TextureImporter:
       name: Kin Character_240
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 224
-        width: 80
-        height: 80
+        x: 0
+        y: 748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3478,10 +3547,10 @@ TextureImporter:
       name: Kin Character_241
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 224
-        width: 80
-        height: 80
+        x: 100
+        y: 748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3491,10 +3560,10 @@ TextureImporter:
       name: Kin Character_242
       rect:
         serializedVersion: 2
-        x: 1360
-        y: 224
-        width: 80
-        height: 80
+        x: 200
+        y: 748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3504,10 +3573,10 @@ TextureImporter:
       name: Kin Character_243
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 224
-        width: 80
-        height: 80
+        x: 300
+        y: 748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3517,10 +3586,10 @@ TextureImporter:
       name: Kin Character_244
       rect:
         serializedVersion: 2
-        x: 1520
-        y: 224
-        width: 80
-        height: 80
+        x: 400
+        y: 748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3530,10 +3599,10 @@ TextureImporter:
       name: Kin Character_245
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 224
-        width: 80
-        height: 80
+        x: 500
+        y: 748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3543,10 +3612,10 @@ TextureImporter:
       name: Kin Character_246
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 224
-        width: 80
-        height: 80
+        x: 600
+        y: 748
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3556,10 +3625,907 @@ TextureImporter:
       name: Kin Character_247
       rect:
         serializedVersion: 2
-        x: 1760
-        y: 224
-        width: 80
-        height: 80
+        x: 700
+        y: 748
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_248
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 748
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_249
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 748
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_250
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 748
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_251
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 748
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_252
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 748
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_253
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 748
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_254
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 748
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_255
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 748
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_256
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 748
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_257
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 748
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_258
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 748
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_259
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 748
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_260
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_261
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_262
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_263
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_264
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_265
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_266
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_267
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_268
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_269
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_270
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_271
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_272
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_273
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_274
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_275
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_276
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_277
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_278
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_279
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 648
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_280
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_281
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_282
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_283
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_284
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_285
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_286
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_287
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_288
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_289
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_290
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_291
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_292
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_293
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_294
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_295
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_296
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_297
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_298
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_299
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 548
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_300
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_301
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_302
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_303
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_304
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_305
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_306
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_307
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_308
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_309
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_310
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_311
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_312
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_313
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_314
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_315
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kin Character_316
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 448
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

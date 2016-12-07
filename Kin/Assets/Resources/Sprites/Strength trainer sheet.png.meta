@@ -1,0 +1,820 @@
+fileFormatVersion: 2
+guid: 302b8bdd0e2f4a94dbfbfb31fdc0842e
+timeCreated: 1479586874
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Strength trainer sheet_0
+    21300002: Strength trainer sheet_1
+    21300004: Strength trainer sheet_2
+    21300006: Strength trainer sheet_3
+    21300008: Strength trainer sheet_4
+    21300010: Strength trainer sheet_5
+    21300012: Strength trainer sheet_6
+    21300014: Strength trainer sheet_7
+    21300016: Strength trainer sheet_8
+    21300018: Strength trainer sheet_9
+    21300020: Strength trainer sheet_10
+    21300022: Strength trainer sheet_11
+    21300024: Strength trainer sheet_12
+    21300026: Strength trainer sheet_13
+    21300028: Strength trainer sheet_14
+    21300030: Strength trainer sheet_15
+    21300032: Strength trainer sheet_16
+    21300034: Strength trainer sheet_17
+    21300036: Strength trainer sheet_18
+    21300038: Strength trainer sheet_19
+    21300040: Strength trainer sheet_20
+    21300042: Strength trainer sheet_21
+    21300044: Strength trainer sheet_22
+    21300046: Strength trainer sheet_23
+    21300048: Strength trainer sheet_24
+    21300050: Strength trainer sheet_25
+    21300052: Strength trainer sheet_26
+    21300054: Strength trainer sheet_27
+    21300056: Strength trainer sheet_28
+    21300058: Strength trainer sheet_29
+    21300060: Strength trainer sheet_30
+    21300062: Strength trainer sheet_31
+    21300064: Strength trainer sheet_32
+    21300066: Strength trainer sheet_33
+    21300068: Strength trainer sheet_34
+    21300070: Strength trainer sheet_35
+    21300072: Strength trainer sheet_36
+    21300074: Strength trainer sheet_37
+    21300076: Strength trainer sheet_38
+    21300078: Strength trainer sheet_39
+    21300080: Strength trainer sheet_40
+    21300082: Strength trainer sheet_41
+    21300084: Strength trainer sheet_42
+    21300086: Strength trainer sheet_43
+    21300088: Strength trainer sheet_44
+    21300090: Strength trainer sheet_45
+    21300092: Strength trainer sheet_46
+    21300094: Strength trainer sheet_47
+    21300096: Strength trainer sheet_48
+    21300098: Strength trainer sheet_49
+    21300100: Strength trainer sheet_50
+    21300102: Strength trainer sheet_51
+    21300104: Strength trainer sheet_52
+    21300106: Strength trainer sheet_53
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -3
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Strength trainer sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 452
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 452
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 452
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 452
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_4
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 452
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_5
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 452
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_6
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 452
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_7
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 452
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_8
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 452
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 392
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_10
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 392
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_11
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 392
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_12
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 392
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 392
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_14
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 392
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_15
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 392
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_16
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 392
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_17
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 392
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 332
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_19
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 332
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_20
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 332
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_21
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 332
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_22
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 332
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_23
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 332
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_24
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 332
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_25
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 332
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_26
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 332
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_28
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 272
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_29
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 272
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_30
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 272
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_31
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 272
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_32
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 272
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_33
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 272
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_34
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 272
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_35
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 272
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 212
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_37
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 212
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_38
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 212
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_39
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 212
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_40
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 212
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_41
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 212
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_42
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 212
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_43
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 212
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_44
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 212
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 152
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_46
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 152
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_47
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 152
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_48
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 152
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_49
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 152
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_50
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 152
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_51
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 152
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_52
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 152
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Strength trainer sheet_53
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 152
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

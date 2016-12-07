@@ -10,13 +10,15 @@ public class PlayerHealth : MonoBehaviour {
     // Put damage audio here if we have that
     // public AudioClip damageClip;
     // public AudioClip deathClip;
-    bool isDead;
+    bool isDead = false;
 
     AvatarMvmController playerMvmController;
     // Reference to animator for death animation
     Animator anim;
     // Reference to audio source for damage audio
     AudioSource playerAudio;
+
+	public GameObject sceneCont;
 
     void Awake()
     {
@@ -30,33 +32,45 @@ public class PlayerHealth : MonoBehaviour {
 
 	void Start()
     {
-		anim = GetComponent<Animator>();
-		playerAudio = GetComponent<AudioSource>();
-		playerMvmController = GetComponent<AvatarMvmController>();
-		currentHealth = maxHealth;
-	}
-	
-	public void TakeDamage(int amount)
+        anim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
+        playerMvmController = GetComponent<AvatarMvmController>();
+        currentHealth = maxHealth;
+    }
+
+    public void TakeDamage(int amount)
     {
-        currentHealth -= amount;
-        // Play damage audio clip
-        if (currentHealth < 0)
+        if (!anim.GetBool("Rolling") && !anim.GetBool("Recoiling"))
         {
-            currentHealth = 0;
+            currentHealth -= amount;
+            anim.SetBool("Recoiling", true);
+            // Play damage audio clip
         }
-        if (currentHealth <= 0 && !isDead) {
+        if (currentHealth <= 0 && !isDead)
+        {
             currentHealth = 0;
             Death();
         }
+        else
+        {
+            if (currentHealth < 0)
+            {
+                currentHealth = 0;
+            }
+        }
+
     }
 
     void Death()
     {
-        isDead = true;
+        //isDead = true;
         anim.SetBool("Dying", true);
         // Play death audio clip
         playerMvmController.enabled = false;
         // Go to UI Screen
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition; // Make sure to unfreeze before undying...
+
+		sceneCont.GetComponent<SceneController>().FadeToDeath();
     }
 
     public void setMaxHealth(int max)
@@ -83,10 +97,11 @@ public class PlayerHealth : MonoBehaviour {
     {
         // For Testing
         //Debug.Log("Max: " + maxHealth + ", Current: " + currentHealth);
-        //if (Input.GetKeyDown(KeyCode.Y))
-        //{
-        //    TakeDamage(30);
-        //}
+        //Debug.Log("Recoiling " + anim.GetBool("Recoiling"));
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            TakeDamage(60);
+        }
         // Timer set up so you can do something once they've been dead a certain amount of time
         if (isDead) {
             restartTimer += Time.deltaTime;
