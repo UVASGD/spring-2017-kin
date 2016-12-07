@@ -11,7 +11,6 @@ public class UIController : MonoBehaviour {
     public GameObject statsMenu;
     public Text bossName;
     // Add clock
-    // Add Boss Health
 	
 	void Start () {
         bossHealthSlider = bossHealth.GetComponent<Slider>();
