@@ -4,9 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class DeathMenuController : MonoBehaviour {
 
+	public GameObject sceneCont;
+
 	// Use this for initialization
 	void Start () {
-	
+		sceneCont.GetComponent<SceneController>().FadeFromDeath();
 	}
 	
 	// Update is called once per frame
@@ -15,6 +17,7 @@ public class DeathMenuController : MonoBehaviour {
 	}
 
 	public void ResumeGame() {
+		//sceneCont.GetComponent<SceneController>().FadeToMain();
 		SceneManager.LoadScene("Main");
 	}
 
