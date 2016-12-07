@@ -1,0 +1,824 @@
+fileFormatVersion: 2
+guid: e3c3aa4ef89e7b6449f84ee001862123
+timeCreated: 1481097800
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Hordgeheg_0
+    21300002: Hordgeheg_1
+    21300004: Hordgeheg_2
+    21300006: Hordgeheg_3
+    21300008: Hordgeheg_4
+    21300010: Hordgeheg_5
+    21300012: Hordgeheg_6
+    21300014: Hordgeheg_7
+    21300016: Hordgeheg_8
+    21300018: Hordgeheg_9
+    21300020: Hordgeheg_10
+    21300022: Hordgeheg_11
+    21300024: Hordgeheg_12
+    21300026: Hordgeheg_13
+    21300028: Hordgeheg_14
+    21300030: Hordgeheg_15
+    21300032: Hordgeheg_16
+    21300034: Hordgeheg_17
+    21300036: Hordgeheg_18
+    21300038: Hordgeheg_19
+    21300040: Hordgeheg_20
+    21300042: Hordgeheg_21
+    21300044: Hordgeheg_22
+    21300046: Hordgeheg_23
+    21300048: Hordgeheg_24
+    21300050: Hordgeheg_25
+    21300052: Hordgeheg_26
+    21300054: Hordgeheg_27
+    21300056: Hordgeheg_28
+    21300058: Hordgeheg_29
+    21300060: Hordgeheg_30
+    21300062: Hordgeheg_31
+    21300064: Hordgeheg_32
+    21300066: Hordgeheg_33
+    21300068: Hordgeheg_34
+    21300070: Hordgeheg_35
+    21300072: Hordgeheg_36
+    21300074: Hordgeheg_37
+    21300076: Hordgeheg_38
+    21300078: Hordgeheg_39
+    21300080: Hordgeheg_40
+    21300082: Hordgeheg_41
+    21300084: Hordgeheg_42
+    21300086: Hordgeheg_43
+    21300088: Hordgeheg_44
+    21300090: Hordgeheg_45
+    21300092: Hordgeheg_46
+    21300094: Hordgeheg_47
+    21300096: Hordgeheg_48
+    21300098: Hordgeheg_49
+    21300100: Hordgeheg_50
+    21300102: Hordgeheg_51
+    21300104: Hordgeheg_52
+    21300106: Hordgeheg_53
+    21300108: Hordgeheg_54
+    21300110: Hordgeheg_55
+    21300112: Hordgeheg_56
+    21300114: Hordgeheg_57
+    21300116: Hordgeheg_58
+    21300118: Hordgeheg_59
+    21300120: Hordgeheg_60
+    21300122: Hordgeheg_61
+    21300124: Hordgeheg_62
+    21300126: Hordgeheg_63
+    21300128: Hordgeheg_64
+    21300130: Hordgeheg_65
+    21300132: Hordgeheg_66
+    21300134: Hordgeheg_67
+    21300136: Hordgeheg_68
+    21300138: Hordgeheg_69
+    21300140: Hordgeheg_70
+    21300142: Hordgeheg_71
+    21300144: Hordgeheg_72
+    21300146: Hordgeheg_73
+    21300148: Hordgeheg_74
+    21300150: Hordgeheg_75
+    21300152: Hordgeheg_76
+    21300154: Hordgeheg_77
+    21300156: Hordgeheg_78
+    21300158: Hordgeheg_79
+    21300160: Hordgeheg_80
+    21300162: Hordgeheg_81
+    21300164: Hordgeheg_82
+    21300166: Hordgeheg_83
+    21300168: Hordgeheg_84
+    21300170: Hordgeheg_85
+    21300172: Hordgeheg_86
+    21300174: Hordgeheg_87
+    21300176: Hordgeheg_88
+    21300178: Hordgeheg_89
+    21300180: Hordgeheg_90
+    21300182: Hordgeheg_91
+    21300184: Hordgeheg_92
+    21300186: Hordgeheg_93
+    21300188: Hordgeheg_94
+    21300190: Hordgeheg_95
+    21300192: Hordgeheg_96
+    21300194: Hordgeheg_97
+    21300196: Hordgeheg_98
+    21300198: Hordgeheg_99
+    21300200: Hordgeheg_100
+    21300202: Hordgeheg_101
+    21300204: Hordgeheg_102
+    21300206: Hordgeheg_103
+    21300208: Hordgeheg_104
+    21300210: Hordgeheg_105
+    21300212: Hordgeheg_106
+    21300214: Hordgeheg_107
+    21300216: Hordgeheg_108
+    21300218: Hordgeheg_109
+    21300220: Hordgeheg_110
+    21300222: Hordgeheg_111
+    21300224: Hordgeheg_112
+    21300226: Hordgeheg_113
+    21300228: Hordgeheg_114
+    21300230: Hordgeheg_115
+    21300232: Hordgeheg_116
+    21300234: Hordgeheg_117
+    21300236: Hordgeheg_118
+    21300238: Hordgeheg_119
+    21300240: Hordgeheg_120
+    21300242: Hordgeheg_121
+    21300244: Hordgeheg_122
+    21300246: Hordgeheg_123
+    21300248: Hordgeheg_124
+    21300250: Hordgeheg_125
+    21300252: Hordgeheg_126
+    21300254: Hordgeheg_127
+    21300256: Hordgeheg_128
+    21300258: Hordgeheg_129
+    21300260: Hordgeheg_130
+    21300262: Hordgeheg_131
+    21300264: Hordgeheg_132
+    21300266: Hordgeheg_133
+    21300268: Hordgeheg_134
+    21300270: Hordgeheg_135
+    21300272: Hordgeheg_136
+    21300274: Hordgeheg_137
+    21300276: Hordgeheg_138
+    21300278: Hordgeheg_139
+    21300280: Hordgeheg_140
+    21300282: Hordgeheg_141
+    21300284: Hordgeheg_142
+    21300286: Hordgeheg_143
+    21300288: Hordgeheg_144
+    21300290: Hordgeheg_145
+    21300292: Hordgeheg_146
+    21300294: Hordgeheg_147
+    21300296: Hordgeheg_148
+    21300298: Hordgeheg_149
+    21300300: Hordgeheg_150
+    21300302: Hordgeheg_151
+    21300304: Hordgeheg_152
+    21300306: Hordgeheg_153
+    21300308: Hordgeheg_154
+    21300310: Hordgeheg_155
+    21300312: Hordgeheg_156
+    21300314: Hordgeheg_157
+    21300316: Hordgeheg_158
+    21300318: Hordgeheg_159
+    21300320: Hordgeheg_160
+    21300322: Hordgeheg_161
+    21300324: Hordgeheg_162
+    21300326: Hordgeheg_163
+    21300328: Hordgeheg_164
+    21300330: Hordgeheg_165
+    21300332: Hordgeheg_166
+    21300334: Hordgeheg_167
+    21300336: Hordgeheg_168
+    21300338: Hordgeheg_169
+    21300340: Hordgeheg_170
+    21300342: Hordgeheg_171
+    21300344: Hordgeheg_172
+    21300346: Hordgeheg_173
+    21300348: Hordgeheg_174
+    21300350: Hordgeheg_175
+    21300352: Hordgeheg_176
+    21300354: Hordgeheg_177
+    21300356: Hordgeheg_178
+    21300358: Hordgeheg_179
+    21300360: Hordgeheg_180
+    21300362: Hordgeheg_181
+    21300364: Hordgeheg_182
+    21300366: Hordgeheg_183
+    21300368: Hordgeheg_184
+    21300370: Hordgeheg_185
+    21300372: Hordgeheg_186
+    21300374: Hordgeheg_187
+    21300376: Hordgeheg_188
+    21300378: Hordgeheg_189
+    21300380: Hordgeheg_190
+    21300382: Hordgeheg_191
+    21300384: Hordgeheg_192
+    21300386: Hordgeheg_193
+    21300388: Hordgeheg_194
+    21300390: Hordgeheg_195
+    21300392: Hordgeheg_196
+    21300394: Hordgeheg_197
+    21300396: Hordgeheg_198
+    21300398: Hordgeheg_199
+    21300400: Hordgeheg_200
+    21300402: Hordgeheg_201
+    21300404: Hordgeheg_202
+    21300406: Hordgeheg_203
+    21300408: Hordgeheg_204
+    21300410: Hordgeheg_205
+    21300412: Hordgeheg_206
+    21300414: Hordgeheg_207
+    21300416: Hordgeheg_208
+    21300418: Hordgeheg_209
+    21300420: Hordgeheg_210
+    21300422: Hordgeheg_211
+    21300424: Hordgeheg_212
+    21300426: Hordgeheg_213
+    21300428: Hordgeheg_214
+    21300430: Hordgeheg_215
+    21300432: Hordgeheg_216
+    21300434: Hordgeheg_217
+    21300436: Hordgeheg_218
+    21300438: Hordgeheg_219
+    21300440: Hordgeheg_220
+    21300442: Hordgeheg_221
+    21300444: Hordgeheg_222
+    21300446: Hordgeheg_223
+    21300448: Hordgeheg_224
+    21300450: Hordgeheg_225
+    21300452: Hordgeheg_226
+    21300454: Hordgeheg_227
+    21300456: Hordgeheg_228
+    21300458: Hordgeheg_229
+    21300460: Hordgeheg_230
+    21300462: Hordgeheg_231
+    21300464: Hordgeheg_232
+    21300466: Hordgeheg_233
+    21300468: Hordgeheg_234
+    21300470: Hordgeheg_235
+    21300472: Hordgeheg_236
+    21300474: Hordgeheg_237
+    21300476: Hordgeheg_238
+    21300478: Hordgeheg_239
+    21300480: Hordgeheg_240
+    21300482: Hordgeheg_241
+    21300484: Hordgeheg_242
+    21300486: Hordgeheg_243
+    21300488: Hordgeheg_244
+    21300490: Hordgeheg_245
+    21300492: Hordgeheg_246
+    21300494: Hordgeheg_247
+    21300496: Hordgeheg_248
+    21300498: Hordgeheg_249
+    21300500: Hordgeheg_250
+    21300502: Hordgeheg_251
+    21300504: Hordgeheg_252
+    21300506: Hordgeheg_253
+    21300508: Hordgeheg_254
+    21300510: Hordgeheg_255
+    21300512: Hordgeheg_256
+    21300514: Hordgeheg_257
+    21300516: Hordgeheg_258
+    21300518: Hordgeheg_259
+    21300520: Hordgeheg_260
+    21300522: Hordgeheg_261
+    21300524: Hordgeheg_262
+    21300526: Hordgeheg_263
+    21300528: Hordgeheg_264
+    21300530: Hordgeheg_265
+    21300532: Hordgeheg_266
+    21300534: Hordgeheg_267
+    21300536: Hordgeheg_268
+    21300538: Hordgeheg_269
+    21300540: Hordgeheg_270
+    21300542: Hordgeheg_271
+    21300544: Hordgeheg_272
+    21300546: Hordgeheg_273
+    21300548: Hordgeheg_274
+    21300550: Hordgeheg_275
+    21300552: Hordgeheg_276
+    21300554: Hordgeheg_277
+    21300556: Hordgeheg_278
+    21300558: Hordgeheg_279
+    21300560: Hordgeheg_280
+    21300562: Hordgeheg_281
+    21300564: Hordgeheg_282
+    21300566: Hordgeheg_283
+    21300568: Hordgeheg_284
+    21300570: Hordgeheg_285
+    21300572: Hordgeheg_286
+    21300574: Hordgeheg_287
+    21300576: Hordgeheg_288
+    21300578: Hordgeheg_289
+    21300580: Hordgeheg_290
+    21300582: Hordgeheg_291
+    21300584: Hordgeheg_292
+    21300586: Hordgeheg_293
+    21300588: Hordgeheg_294
+    21300590: Hordgeheg_295
+    21300592: Hordgeheg_296
+    21300594: Hordgeheg_297
+    21300596: Hordgeheg_298
+    21300598: Hordgeheg_299
+    21300600: Hordgeheg_300
+    21300602: Hordgeheg_301
+    21300604: Hordgeheg_302
+    21300606: Hordgeheg_303
+    21300608: Hordgeheg_304
+    21300610: Hordgeheg_305
+    21300612: Hordgeheg_306
+    21300614: Hordgeheg_307
+    21300616: Hordgeheg_308
+    21300618: Hordgeheg_309
+    21300620: Hordgeheg_310
+    21300622: Hordgeheg_311
+    21300624: Hordgeheg_312
+    21300626: Hordgeheg_313
+    21300628: Hordgeheg_314
+    21300630: Hordgeheg_315
+    21300632: Hordgeheg_316
+    21300634: Hordgeheg_317
+    21300636: Hordgeheg_318
+    21300638: Hordgeheg_319
+    21300640: Hordgeheg_320
+    21300642: Hordgeheg_321
+    21300644: Hordgeheg_322
+    21300646: Hordgeheg_323
+    21300648: Hordgeheg_324
+    21300650: Hordgeheg_325
+    21300652: Hordgeheg_326
+    21300654: Hordgeheg_327
+    21300656: Hordgeheg_328
+    21300658: Hordgeheg_329
+    21300660: Hordgeheg_330
+    21300662: Hordgeheg_331
+    21300664: Hordgeheg_332
+    21300666: Hordgeheg_333
+    21300668: Hordgeheg_334
+    21300670: Hordgeheg_335
+    21300672: Hordgeheg_336
+    21300674: Hordgeheg_337
+    21300676: Hordgeheg_338
+    21300678: Hordgeheg_339
+    21300680: Hordgeheg_340
+    21300682: Hordgeheg_341
+    21300684: Hordgeheg_342
+    21300686: Hordgeheg_343
+    21300688: Hordgeheg_344
+    21300690: Hordgeheg_345
+    21300692: Hordgeheg_346
+    21300694: Hordgeheg_347
+    21300696: Hordgeheg_348
+    21300698: Hordgeheg_349
+    21300700: Hordgeheg_350
+    21300702: Hordgeheg_351
+    21300704: Hordgeheg_352
+    21300706: Hordgeheg_353
+    21300708: Hordgeheg_354
+    21300710: Hordgeheg_355
+    21300712: Hordgeheg_356
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -3
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hordgeheg_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 208
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 208
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 208
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 208
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 208
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_6
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 208
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_7
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 208
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_8
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 208
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_9
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 208
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 208
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_11
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 208
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_13
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 160
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_14
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 160
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_16
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_17
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 160
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_18
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 160
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_19
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 160
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_20
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 160
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_21
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 160
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_22
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 160
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_23
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 160
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_25
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_26
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 112
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_27
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 112
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_28
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 112
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_29
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 112
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hordgeheg_30
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 112
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

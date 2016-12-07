@@ -70,6 +70,7 @@ public class DialogueBox : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (dialogue == null) return;
 		if (dialogue.activeInHierarchy) {
 			if (Input.GetButtonDown("Interact")) 
 				dialogue.SetActive(false);
