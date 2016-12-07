@@ -12,7 +12,7 @@ public class MeleeAttackHitBox:MonoBehaviour
 		Vector3 direction = col.transform.position - transform.position;
 		Debug.Log ("direction" + direction);
 		Debug.Log ("direction for " + Vector3.Dot(transform.forward, direction));
-		if (Vector3.Dot (transform.forward, direction) > 0) {
+		/*if (Vector3.Dot (transform.forward, direction) > 0) {
 			print ("Back");
 		} 
 		if (Vector3.Dot (transform.forward, direction) < 0) {
@@ -21,14 +21,14 @@ public class MeleeAttackHitBox:MonoBehaviour
 		if (Vector3.Dot (transform.forward, direction) == 0) {
 			print ("Side");
 		}
-        //Debug.Log("meme");
+        //Debug.Log("meme");*/
         if (col.gameObject.tag == "enemy" || col.gameObject.tag == "Boss")
         {
             //Debug.Log("Collided");
             col.gameObject.GetComponent<EnemyHealth>().takeDamage(damage);
 			//Get the current enemy
-			Vector3 temp = new Vector3(1.0f,0,0);
-			col.gameObject.transform.position += temp;
+			//Vector3 temp = new Vector3(1.0f,0,0);
+			//col.gameObject.transform.position += temp;
         }
     }
 
