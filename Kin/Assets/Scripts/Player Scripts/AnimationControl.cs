@@ -139,11 +139,11 @@ public class AnimationControl : MonoBehaviour {
 
     bool canRoll()
     {
-        return animator.GetBool("Moving") && !animator.GetBool("Attacking") && gameObject.GetComponent<PlayerStamina>().hasStamina;
+        return animator.GetBool("Moving") && !animator.GetBool("Attacking") && gameObject.GetComponent<PlayerStamina>().hasStamina && !animator.GetBool("Recoiling");
     }
 
     bool canAttack()
     {
-        return !animator.GetBool("Rolling") && gameObject.GetComponent<PlayerStamina>().hasStamina; 
+        return !animator.GetBool("Rolling") && gameObject.GetComponent<PlayerStamina>().hasStamina && !animator.GetBool("Recoiling"); 
     }
 }
