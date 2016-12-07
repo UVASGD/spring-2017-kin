@@ -63,6 +63,7 @@ public class DialogueSpawnController : MonoBehaviour {
 	}
 
 	public void Initialize() {
+		Debug.Log("Parser Initialize");
 		parser = xmlParser.GetComponent<DialogueXMLParser>();
 		initialized = true;
 	}
@@ -76,6 +77,9 @@ public class DialogueSpawnController : MonoBehaviour {
 	}
 
 	public void UpdateWithNewDia(string person, string label, int index) {
+		if (parser == null) {
+			Debug.Log("Parser is null");
+		}
 		dialogueString = parser.RequestDialogue(person, label, index);
 		curLength = 0;
 	}
