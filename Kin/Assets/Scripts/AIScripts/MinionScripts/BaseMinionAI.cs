@@ -18,7 +18,7 @@ public class BaseMinionAI : MonoBehaviour {
     bool onWay; //whether the minion is currently moving
     float timePause, currWait; //to have the minion pause at the point before going to the next one
     bool isWaiting; //whether the minion is currently waiting
-
+   
     //Set of AI behavior states
     protected enum AIStates {
 		IdleState,
@@ -115,11 +115,5 @@ public class BaseMinionAI : MonoBehaviour {
     protected void MoveTowardsPosition(Vector2 pos)
     {
         rb.velocity = (pos - (Vector2)gameObject.transform.position).normalized * patrolSpeed;
-    }
-
-    protected void recoil(Vector2 v)
-    {
-        rb.velocity = v;
-
     }
 }
