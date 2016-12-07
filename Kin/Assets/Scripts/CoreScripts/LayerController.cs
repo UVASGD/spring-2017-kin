@@ -20,9 +20,9 @@ public class LayerController : MonoBehaviour {
 		foreach (LayerParameter lay in layeringObjectList) {
 			GameObject obj = lay.gameObject;
 			if (obj.transform.position.y + lay.yOffset < playerY) {
-                obj.GetComponent<SpriteRenderer>().sortingLayerName = "Foreground";
+				obj.GetComponent<SpriteRenderer>().sortingLayerName = "Front_Player";
 			} else {
-                obj.GetComponent<SpriteRenderer>().sortingLayerName = "Background";
+				obj.GetComponent<SpriteRenderer>().sortingLayerName = "Behind_Player";
             }
 		}
 	}
