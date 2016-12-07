@@ -116,4 +116,10 @@ public class BaseMinionAI : MonoBehaviour {
     {
         rb.velocity = (pos - (Vector2)gameObject.transform.position).normalized * patrolSpeed;
     }
+
+    protected void recoil(Vector2 v)
+    {
+        rb.velocity = v;
+
+    }
 }
