@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class LayerController : MonoBehaviour {
 
-	List<GameObject> layeringObjectList;
+	LayerParameter[] layeringObjectList;
 	float playerY;
 
 	public GameObject player;
@@ -17,8 +17,8 @@ public class LayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		playerY = player.transform.position.y;
-		foreach (GameObject obj in layeringObjectList) {
-			
+		foreach (LayerParameter lay in layeringObjectList) {
+			GameObject obj = lay.gameObject;
 			if (obj.transform.position.y < playerY) {
 				// In front of player
 			} else {
@@ -28,7 +28,6 @@ public class LayerController : MonoBehaviour {
 	}
 
 	void UpdateList() {
-		layeringObjectList = new List<GameObject> ();
-		//GameObject.FindObjectsOfType<LayerParameter> ();
+		layeringObjectList = GameObject.FindObjectsOfType<LayerParameter> () as LayerParameter[];
 	}
 }
