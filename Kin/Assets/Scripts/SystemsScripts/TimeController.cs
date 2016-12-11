@@ -43,16 +43,6 @@ public class TimeController : MonoBehaviour {
 			timeLeft = dayLength;
 		}
 
-       // RenderSettings.ambientLight = Color.red;
-
-
-
-
-
-
-
-
-
 		if (kin >= 1872000 || baktun >= 13) {
 			//game ends
 		}
