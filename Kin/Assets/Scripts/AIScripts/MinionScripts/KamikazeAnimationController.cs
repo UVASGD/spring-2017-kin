@@ -28,7 +28,7 @@ public class KamikazeAnimationController : MonoBehaviour {
 		updateDirection ();
 		if (killed) {
 			animator.SetBool ("Dying", true);
-			Debug.Log ("killed");
+			//Debug.Log ("killed");
 			killed = false;
 			//Destroy (gameObject.GetComponent<KamikazeAnimationController> ());
 		}

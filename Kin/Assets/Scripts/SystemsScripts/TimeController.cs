@@ -2,14 +2,17 @@
 using System.Collections;
 
 public class TimeController : MonoBehaviour {
-	public float dayLength = 420.0f;
-	private float timeLeft;
-	public int dayMod = 0;
+	public float dayLength = 330.0f;
+
+	private int hour;
+	private int minute;
+
+	private DayNightController DNC;
 
 	/// <summary>
 	/// The day.
 	/// </summary>
-	private int kin;
+	public int kin;
 	/// <summary>
 	/// 20 kin.
 	/// </summary>
@@ -29,19 +32,15 @@ public class TimeController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		timeLeft = dayLength;
-		kin = 1 + Mathf.Abs(dayMod);
+		kin = 0;
 
 		CalculateCalendar ();
+		DNC = this.gameObject.GetComponent<DayNightController> ();
 	}
 
 	void Update(){
-		timeLeft -= Time.deltaTime;
-		if(timeLeft <= 0)
-		{
-			ProgressDay (1);
-			timeLeft = dayLength;
-		}
+		hour = DNC.worldTimeHour;
+		minute = DNC.minutes;
 
 		if (kin >= 1872000 || baktun >= 13) {
 			//game ends

@@ -10,8 +10,8 @@ public class MeleeAttackHitBox:MonoBehaviour
 
 
 		Vector3 direction = col.transform.position - transform.position;
-		Debug.Log ("direction" + direction);
-		Debug.Log ("direction for " + Vector3.Dot(transform.forward, direction));
+		//Debug.Log ("direction" + direction);
+		//Debug.Log ("direction for " + Vector3.Dot(transform.forward, direction));
 		/*if (Vector3.Dot (transform.forward, direction) > 0) {
 			print ("Back");
 		} 
