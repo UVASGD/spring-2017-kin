@@ -22,7 +22,7 @@ public class Nightlight : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (DNC.currentPhase.ToString ());
+		//Debug.Log (DNC.currentPhase.ToString ());
 		if (DNC.currentPhase == DayNightController.DayPhase.Dusk) {
 			if (NL.intensity < 1.00f) {
 				NL.intensity += speed;

@@ -82,6 +82,10 @@ public class DayNightController : MonoBehaviour
 	/// </summary>
     private float dawnTime;
 
+	public float getDawnTime(){
+		return dawnTime;
+	}
+
 	/// <summary>
 	/// The calculated time at which day occurs based on 1/4 of dayCycleLength.
 	/// </summary>
@@ -91,6 +95,10 @@ public class DayNightController : MonoBehaviour
 	/// The calculated time at which dusk occurs based on 1/4 of dayCycleLength. 
 	/// </summary>
     private float duskTime;
+
+	public float getDuskTime(){
+		return duskTime;
+	}
 
 	/// <summary>
 	/// The calculated time at which night occurs based on 1/4 of dayCycleLength.  
@@ -122,6 +130,12 @@ public class DayNightController : MonoBehaviour
         timePerHour = dayCycleLength / hoursPerDay;
         if (this.gameObject.GetComponent<Light>() != null)
         { lightIntensity = this.gameObject.GetComponent<Light>().intensity; }
+
+		currentCycleTime = dayCycleLength * (( dawnTimeOffset) / hoursPerDay);
+
+		if (currentCycleTime < 0) {
+			currentCycleTime = dayCycleLength + currentCycleTime;
+		}
     }
 
     /// <summary>
@@ -131,7 +145,7 @@ public class DayNightController : MonoBehaviour
     {
         dayCycleLength = 120.0f;
         hoursPerDay = 24.0f;
-        dawnTimeOffset = 3.0f;
+        dawnTimeOffset = 0.0f;
         fullLight = new Color(253.0f / 255.0f, 248.0f / 255.0f, 223.0f / 255.0f);
         fullDark = new Color(32.0f / 255.0f, 28.0f / 255.0f, 46.0f / 255.0f);
         dawnDuskFog = new Color(133.0f / 255.0f, 124.0f / 255.0f, 102.0f / 255.0f);
@@ -177,25 +191,32 @@ public class DayNightController : MonoBehaviour
         }
         else if (currentCycleTime > duskTime && currentPhase == DayPhase.Day)
         {
+			this.gameObject.GetComponent<MusicController> ().fading = true;
+			this.gameObject.GetComponent<MusicController> ().up = false;
+
             SetDusk();
         }
         else if (currentCycleTime > dayTime && currentPhase == DayPhase.Dawn)
         {
+			this.gameObject.GetComponent<TimeController> ().kin += 1;
             SetDay();
         }
         else if (currentCycleTime > dawnTime && currentCycleTime < dayTime && currentPhase == DayPhase.Night)
         {
+			this.gameObject.GetComponent<MusicController> ().fading = true;
+			this.gameObject.GetComponent<MusicController> ().up = false;
+
             SetDawn();
         }
+
+		// Update the current cycle time:  
+		currentCycleTime += Time.deltaTime;
+		currentCycleTime = currentCycleTime % dayCycleLength;
 
         // Perform standard updates:  
         UpdateWorldTime();
         UpdateDaylight();
         UpdateFog();
-
-        // Update the current cycle time:  
-        currentCycleTime += Time.deltaTime;
-        currentCycleTime = currentCycleTime % dayCycleLength;
 
     }
 		
@@ -301,6 +322,11 @@ public class DayNightController : MonoBehaviour
     {
         worldTimeHour = (int)((Mathf.Ceil((currentCycleTime / dayCycleLength) * hoursPerDay) + dawnTimeOffset) % hoursPerDay) + 1;
         minutes = (int)(Mathf.Ceil((currentCycleTime * (60 / timePerHour)) % 60));
+
+		if (worldTimeHour >= hoursPerDay) {
+			worldTimeHour = worldTimeHour - ((int)hoursPerDay);
+		}
+	
     }
 
 	/// <summary>

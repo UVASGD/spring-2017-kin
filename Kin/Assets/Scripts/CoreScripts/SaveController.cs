@@ -12,9 +12,7 @@ public class SaveController : MonoBehaviour {
 	public GameObject Player;
 	public GameObject Health;
 	public GameObject Stamina;
-
-    public long day;
-    public float time;
+	public GameObject DNH;
 
     // Use this for initialization
     void Awake()
@@ -92,8 +90,9 @@ public class SaveController : MonoBehaviour {
 		Player.GetComponent<StatController>().setStrengthOrder(data.strLvlO);
 		Player.GetComponent<StatController>().setWisdom(data.wisLvlP);
 		Player.GetComponent<StatController>().setWisdomOrder(data.wisLvlO);
-		day = data.day;
-		time = data.time;
+		DNH.GetComponent<TimeController>().kin = data.day;
+		DNH.GetComponent<DayNightController>().worldTimeHour = data.hour;
+		DNH.GetComponent<DayNightController>().minutes = data.minute;
 	}
 
     private SaveData WriteToData ()
@@ -109,8 +108,9 @@ public class SaveController : MonoBehaviour {
 		data.strLvlO = Player.GetComponent<StatController>().getStrengthOrder();
 		data.wisLvlP = Player.GetComponent<StatController>().getWisdom();
 		data.wisLvlO = Player.GetComponent<StatController>().getWisdomOrder();
-        data.day = day;
-        data.time = time;
+		data.day = DNH.GetComponent<TimeController>().kin;
+		data.hour = DNH.GetComponent<DayNightController>().worldTimeHour;
+		data.minute = DNH.GetComponent<DayNightController>().minutes;
 
         return data;
     }
@@ -131,6 +131,7 @@ class SaveData
     public int wisLvlP;     //wisdom
     public int wisLvlO;
 
-    public long day;
-    public float time;
+    public int day;
+    public int hour;
+	public int minute;
 }
