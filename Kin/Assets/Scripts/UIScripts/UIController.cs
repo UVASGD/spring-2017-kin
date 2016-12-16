@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour {
     private Slider bossHealthSlider;
     public GameObject bossHealth;
     public GameObject statsMenu;
+	public GameObject options;
     public Text bossName;
     // Add clock
 	
@@ -23,7 +24,11 @@ public class UIController : MonoBehaviour {
             toggleStatsMenu();
         }
 
+		if (Input.GetButtonDown ("Cancel")) {
+			options.GetComponent<Canvas> ().enabled = !options.GetComponent<Canvas> ().enabled;
+		}
     }
+		
 
     public void setMaxHealth(int maxHealth)
     {
