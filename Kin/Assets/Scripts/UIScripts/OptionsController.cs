@@ -89,4 +89,9 @@ public class OptionsController : MonoBehaviour {
 	public void adjustWorldFX(){
 		Mixer.SetFloat ("worldVot", WorldVolume.value);
 	}
+
+	public void quit(){
+		Application.Quit ();
+		UnityEditor.EditorApplication.isPlaying = false; //for in the editor *may need to be deleted*
+	}
 }
