@@ -4,7 +4,6 @@ using System.Collections;
 public class AvatarMvmController : MonoBehaviour {
 
     public float speed;
-    AudioSource audio;
 
 	Rigidbody2D rb;
 
@@ -12,7 +11,6 @@ public class AvatarMvmController : MonoBehaviour {
 
     void Start()
     {
-        audio = GetComponent<AudioSource>();
 		rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -22,7 +20,6 @@ public class AvatarMvmController : MonoBehaviour {
 		var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 		if(!animator.GetBool("Dead")) rb.velocity = ((Vector2) move.normalized) * speed;
 
-
 		lastMove = gameObject.GetComponent<AnimationControl>().lastMove;
 
         // Save Vector2 of last movement
@@ -30,10 +27,5 @@ public class AvatarMvmController : MonoBehaviour {
         //{
         //    lastMove = move;
         //}
-    }
-
-    public void playWalkSound()
-    {
-        audio.Play();
     }
 }

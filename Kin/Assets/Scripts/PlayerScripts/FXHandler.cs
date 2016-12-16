@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 
 public class FXHandler : MonoBehaviour {
 
@@ -14,15 +15,23 @@ public class FXHandler : MonoBehaviour {
 	private List<AudioClip> atkLows;
 	private List<AudioClip> hurtSounds;
 
+	public AudioMixerGroup AMG;
+
 	// Use this for initialization
 	void Start () {
-		aud = gameObject.AddComponent<AudioSource>();
+		if (gameObject.GetComponent<AudioSource> () == null) {
+			aud = gameObject.AddComponent<AudioSource> ();
+		} else {
+			aud = gameObject.GetComponent<AudioSource> ();
+		}
 		aud.volume = 1.0f;
 		right_dirt = Resources.Load ("Sounds/Player_FX/Footsteps_Dirt_Right") as AudioClip;
 		left_dirt = Resources.Load("Sounds/Player_FX/Footsteps_Dirt_Left") as AudioClip;
 		right_grass = Resources.Load("Sounds/Player_FX/Footsteps_Grass_Right") as AudioClip;
 		left_grass = Resources.Load("Sounds/Player_FX/Footsteps_Grass_Left") as AudioClip;
 		roll = Resources.Load("Sounds/Player_FX/Roll") as AudioClip;
+
+		aud.outputAudioMixerGroup = AMG;
 
 		atkLows = new List<AudioClip> ();
 		for (int i = 1; i < 5; i++) {

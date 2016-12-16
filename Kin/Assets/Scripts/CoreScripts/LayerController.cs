@@ -27,6 +27,9 @@ public class LayerController : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Updates the list.
+	/// </summary>
 	void UpdateList() {
 		layeringObjectList = GameObject.FindObjectsOfType<LayerParameter> () as LayerParameter[];
 	}
