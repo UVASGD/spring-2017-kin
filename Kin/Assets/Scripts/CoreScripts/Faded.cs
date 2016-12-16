@@ -18,7 +18,12 @@ public class Faded : MonoBehaviour {
 		GUI.depth = drawDepth;
 		GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), black);
 	}
-	
+
+	/// <summary>
+	/// Begins the fade for transitions.
+	/// </summary>
+	/// <returns>The fade.</returns>
+	/// <param name="dir">Dir.</param>
 	public float BeginFade(int dir) {
 		fadeDir = dir;
 		return fadeSpeed;

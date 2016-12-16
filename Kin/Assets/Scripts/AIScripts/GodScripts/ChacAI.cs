@@ -111,6 +111,11 @@ public class ChacAI : BaseGodAI
 			break;
 		}
 	}
+
+	/// <summary>
+	/// Fires a firebolt.
+	/// </summary>
+	/// <param name="type">Type.</param>
 	void fireBolt(int type){
 		GameObject newProj1, newProj2, newProj3, newProj4, newProj5, newProj6;
 		float angle = predictLocation();
@@ -149,6 +154,10 @@ public class ChacAI : BaseGodAI
 
 	}
 
+	/// <summary>
+	/// Random accuracy.
+	/// </summary>
+	/// <returns>The rand.</returns>
 	protected float accuracyRand(){
 		//Requirements for spread calculation
 		//accuracy = 0 -> spread = .5
@@ -161,6 +170,10 @@ public class ChacAI : BaseGodAI
 		return Random.value*(mxval-mnval)+mnval;
 	}
 
+	/// <summary>
+	/// Predicts the location.
+	/// </summary>
+	/// <returns>The location.</returns>
 	protected float predictLocation(){
 		float C2 = (gameObject.transform.position.x-targetObject.transform.position.x);
 		float C3 = (targetObject.transform.position.y-gameObject.transform.position.y);

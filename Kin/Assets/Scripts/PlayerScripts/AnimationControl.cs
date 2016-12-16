@@ -20,6 +20,10 @@ public class AnimationControl : MonoBehaviour {
 	public bool MultiDirectional = false;
 	/// <summary> direction to face upon spawn	/// </summary>
 	public Direction InitialDirection = Direction.Right;
+
+	/// <summary>
+	/// Direction enumeration.
+	/// </summary>
 	public enum Direction {
 		Up,
 		Left,
@@ -94,6 +98,9 @@ public class AnimationControl : MonoBehaviour {
 		return direction;
 	}
 
+	/// <summary>
+	/// Updates the roll.
+	/// </summary>
 	public void updateRoll(){
 		if (Input.GetButtonDown ("Roll") && !isRolling && rb.velocity != Vector2.zero) {
             if (canRoll()) 
@@ -105,6 +112,9 @@ public class AnimationControl : MonoBehaviour {
         }
 	}
 
+	/// <summary>
+	/// Updates the attack.
+	/// </summary>
 	public void updateAttack(){
 		if (Input.GetButtonDown ("Attack") && !isAttacking) {
             if (canAttack())

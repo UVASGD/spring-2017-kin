@@ -12,6 +12,7 @@ public class BaseGodAI : MonoBehaviour {
 	protected float spawnCurrCd;
 	public float spawnCd;
 
+
 	protected virtual void Start()
 	{
 		targetObject = GameObject.Find("Player");
@@ -36,7 +37,9 @@ public class BaseGodAI : MonoBehaviour {
 
 	}
 
-	// Update is called once per frame
+	/// <summary>
+	/// Spawn this instance.
+	/// </summary>
 	protected virtual void Spawn()
 	{
 		if (!spawnOnCd)
@@ -52,24 +55,37 @@ public class BaseGodAI : MonoBehaviour {
 				spawnOnCd = false;
 		}
 	}
-	//Move linearly towards target
+
+	/// <summary>
+	/// Moves linearly towards target.
+	/// </summary>
 	protected void MoveTowardsTarget()
 	{
 		rb.velocity = ((Vector2)(targetObject.transform.position - gameObject.transform.position)).normalized * speed;
 	}
 
+	/// <summary>
+	/// Moves linearly away from target.
+	/// </summary>
 	protected void MoveAwayFromTarget()
 	{
 		//Debug.Log ("in moveaway");
 		rb.velocity = ((Vector2)(gameObject.transform.position - targetObject.transform.position)).normalized * speed;
 	}
 
-	//Move linearly towards target
+	/// <summary>
+	/// Moves linearly towards position
+	/// </summary>
+	/// <param name="pos">Position.</param>
 	protected void MoveTowardsPosition(Vector2 pos)
 	{
 		rb.velocity = (pos - (Vector2)gameObject.transform.position).normalized;
 	}
 
+	/// <summary>
+	/// Spawns a minion.
+	/// </summary>
+	/// <param name="pos">Position.</param>
 	protected void SpawnMinion(Vector2 pos)
 	{
 		Debug.Log("Spawn");

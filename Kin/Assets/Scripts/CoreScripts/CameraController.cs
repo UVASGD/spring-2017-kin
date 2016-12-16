@@ -16,12 +16,20 @@ public class CameraController : MonoBehaviour {
             StaticMethods.ChangeZ(playerChar.transform.position, this.gameObject.transform.position.z), 
             /*vTot(playerChar.GetComponent<Rigidbody2D>().velocity.magnitude)*/1);
 	}
-
+	/// <summary>
+	/// Vs the tot.
+	/// </summary>
+	/// <returns>The tot.</returns>
+	/// <param name="v">V.</param>
     float vTot (float v)
     {
         return 1 / (v + 1);
     }
 
+	/// <summary>
+	/// Gets the lerp a for moving the camera.
+	/// </summary>
+	/// <returns>The lerp a.</returns>
     Vector3 getLerpA()
     {
         return StaticMethods.ChangeZ(playerChar.transform.position, this.gameObject.transform.position.z)
