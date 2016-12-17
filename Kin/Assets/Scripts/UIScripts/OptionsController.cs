@@ -87,7 +87,7 @@ public class OptionsController : MonoBehaviour {
 	}
 
 	public void adjustWorldFX(){
-		Mixer.SetFloat ("worldVot", WorldVolume.value);
+		Mixer.SetFloat ("worldVol", WorldVolume.value);
 	}
 
 	public void quit(){
