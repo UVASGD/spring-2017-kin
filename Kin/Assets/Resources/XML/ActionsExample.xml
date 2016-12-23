@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Cutscenes>
+  <List>
+    <!-- Each of these has a description of how to use them above their name -->
+    <!-- Actions occur in sequence -->
+
+    <!--
+    Camera Move
+      Description: This moves the camera to a location over the time specified
+      by the time attribute.
+
+      Attributes:
+        time:
+          name: Time
+          value: How long the transform takes in seconds (0 is instantaneous)
+
+      Children:
+        endpos:
+          name: End Position
+          value:
+            x: x position of final transform
+            y: y position of final transform
+            z: z position of final transform
+          Attributes:
+            size:
+              name: Camera Size
+              value: size of the camera in its final position as a float.
+    -->
+    <CamMov time="">
+      <endpos size="">
+        <x></x>
+        <y></y>
+        <z></z>
+      </endpos>
+    </CamMov>
+
+    <!--
+    Character Move
+      Description: This moves a character uniquely identified by the name
+      attribute to a location over the time specified by the time attribute.
+      Automatically plays the character's walking animation.
+
+      Attributes:
+        char:
+          name: Character
+          value: Unique name of a GameObject in Unity.
+
+        time:
+          name: Time
+          value: How long the move takes in seconds (0 is instantaneous)
+
+      Children:
+        endpos:
+          name: End Position
+          value:
+            x: x position of final transform
+            y: y position of final transform
+            z: z position of final transform
+    -->
+    <CharMov char="" time="">
+      <endpos>
+        <x></x>
+        <y></y>
+        <z></z>
+      </endpos>
+    </CharMov>
+
+    <!--
+    Dialogue
+      Description: Displays dialogue onto the screen, with the normal rules for
+      dialogue (space to advance, interact to move on)
+
+      Attributes:
+        sprite:
+          name: Character Sprite
+          value: File name of the sprite to display as character art ("" for PH)
+
+      Children:
+        dialogue:
+          name: Dialogue
+          value:
+            name: Name to display
+            str: String to display as dialogue text
+    -->
+    <Dia sprite="">
+      <dialogue>
+        <name></name>
+        <str></str>
+      </dialogue>
+    </Dia>
+
+    <!--
+    Animation
+      Description: Plays the animation specified by the anim attribute on
+      the character specified by the char attribute.
+
+      Attributes:
+        anim:
+          name: Animation
+          value: Name (in Unity) of the animation to play.
+
+        char:
+          name: Character
+          value: Unique name of a GameObject in Unity.
+    -->
+    <Anim anim="" char=""/>
+
+    <!--
+    Sound Effect
+      Description: Plays a sound effect specified by the sound attribute.
+
+      Attributes:
+        sound:
+          name: Sound File
+          value: File name of the sound to play
+          (file must be stored in Resources/Sounds)
+    -->
+    <SoundFX sound=""/>
+
+    <!--
+    Weather Effect
+      Description: Plays the specified weather effect until it is changed.
+      (Cutscene continues playing immediately afterwards)
+
+      Attributes:
+        weather:
+          name: Weather Type
+          value: Type of weather (Rain, Clear, Snow)
+    -->
+    <WeatherFX weather=""/>
+
+    <!--
+    Music Effect
+      Description: Plays a specified music track. If loop is enabled, song will
+      play until another song is specified.
+      (Cutscene continues playing immediately afterwards)
+
+      Attributes:
+        music:
+          name: Music Title
+          value: File name of the music to play. ("" to stop current music)
+          (file must be stored in Resources/Music)
+
+        loop:
+          name: Loop
+          value: True or False
+    -->
+    <MusicFX music="" loop=""/>
+
+    <!--
+    Prefab Creation
+      Description: Creates a prefabs with the various specifications.
+
+      Attributes:
+        pref:
+          name: Prefab Name
+          value: File name of the prefab to create
+          (file must be stored in Resources/Prefabs)
+
+        name:
+          name: GameObject Name
+          value: The name to give the GameObject (allows you to move it with
+          CharMov, given that this name is unique)
+
+      Children:
+        pos:
+          name: Position
+          value:
+            x: x value of the position
+            y: y value of the position
+            z: z value of the position
+          Attributes:
+            scale:
+              name: Scale
+              value: Scale of the created GameObject
+
+        OptArgs:
+          name: Optional Arguments
+          value: A list of arbitrary size, containing the arguments the prefab
+          may take upon creation. See below for argument format.
+            arg: The argument value to enter into the Prefab
+              Attributes:
+                name: Name
+                value: The name of the attribute to edit
+    -->
+    <PrefabC pref="" name="">
+      <pos scale="">
+        <x></x>
+        <y></y>
+        <z></z>
+      </pos>
+      <OptArgs>
+        <arg name=""></arg>
+      </OptArgs>
+    </PrefabC>
+
+    <!--
+    Delete
+      Description: Deletes a GameObject. Use caution with this action, as it
+      cannot be undone and may mess with a scene. There are some protections
+      in place, however. You will not be able to delete the player with this,
+      for example.
+
+      Attributes:
+        name:
+          name: GameObject Name
+          value: Unique name (in Unity) of the GameObject you wish to destroy.
+    -->
+    <Del name=""/>
+
+    <!--
+    Wait
+      Description: Waits for a specified time.
+
+      Attributes:
+        time:
+          name: Time
+          value: Time (in seconds) that will be spent waiting.
+    -->
+    <Wait time=""/>
+
+    <!--
+    Multiple Action Wrapper
+      Description: A simple way to wrap multiple actions to cause them to occur
+      simultaneously.
+
+      Usage: Place multiple actions as children of a MultiAction wrapper, and
+      they will all occur at once, instead of sequentially as normal. The
+      cutscene will move on when all actions within a MultiAction wrapper have
+      completed. A Wait action is a good way of ensuring that this wrapper has
+      a lower bound on the time it can take.
+    -->
+    <MultiAction></MultiAction>
+  </List>
+
+  <!-- Here is a list of all possible actions, for convenience's sake -->
+  <!--
+    CamMov time, endpos (x, y, z)
+    CharMov char, time, endpos (x, y, z)
+    Dia sprite, dialogue (name, str)
+    Anim anim, char
+    SoundFX sound
+    WeatherFX weather
+    MusicFX music, loop
+    PrefabC pref, name, pos (x, y, z), OptArgs (List<arg(name)>)
+    MultiAction
+  -->
+
+  <Intro>
+    <!-- This is an example of a cutscene -->
+    <CamMov time="1">
+      <endpos size="6">
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+    </CamMov>
+
+    <PrefabC pref="Villager" name="Villager_1">
+      <pos scale="1">
+        <x>10</x>
+        <y>0</y>
+        <z>0</z>
+      </pos>
+      <OptArgs></OptArgs>
+    </PrefabC>
+
+    <MultiAction>
+      <CharMov char="Villager_1" time="4">
+        <endpos>
+          <x>1</x>
+          <y>0</y>
+          <z>0</z>
+        </endpos>
+      </CharMov>
+
+      <CharMov char="player" time="1">
+        <endpos>
+          <x>0</x>
+          <y>0</y>
+          <z>0</z>
+        </endpos>
+      </CharMov>
+    </MultiAction>
+
+    <Dia sprite="villager.png">
+      <dialogue>
+        <name>Villager</name>
+        <str>Help! Our village is under attack by some evil monsters! We need
+          help immediately!</str>
+      </dialogue>
+    </Dia>
+
+    <Dia sprite="player.png">
+      <dialogue>
+        <name>European Monk</name>
+        <str>We're on our way! Try to find somewhere safe to hide while we
+          gather our forces!</str>
+      </dialogue>
+    </Dia>
+
+    <MultiAction>
+      <CharMov char="Villager_1" time="1">
+        <endpos>
+          <x>10</x>
+          <y>0</y>
+          <z>0</z>
+        </endpos>
+      </CharMov>
+
+      <CharMov char="player" time="1">
+        <endpos>
+          <x>0</x>
+          <y>-10</y>
+          <z>0</z>
+        </endpos>
+      </CharMov>
+    </MultiAction>
+
+    <Del name="Villager_1"/>
+  </Intro>
+</Cutscenes>
