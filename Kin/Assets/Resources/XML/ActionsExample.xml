@@ -25,6 +25,7 @@
             size:
               name: Camera Size
               value: size of the camera in its final position as a float.
+                    Empty string ("") or 0 will keep size the same.
     -->
     <CamMov time="">
       <endpos size="">
@@ -202,11 +203,11 @@
       for example.
 
       Attributes:
-        name:
+        char:
           name: GameObject Name
           value: Unique name (in Unity) of the GameObject you wish to destroy.
     -->
-    <Del name=""/>
+    <Del char=""/>
 
     <!--
     Wait
@@ -231,19 +232,103 @@
       a lower bound on the time it can take.
     -->
     <MultiAction></MultiAction>
+
+    <!--
+    Fade
+      Description: Fades in or out in the specified time, depending on the
+      direction specified by dir.
+
+      Attributes:
+        dir:
+          name: Direction
+          value: "in" or "out"
+            "in" fades from Black to scene
+            "out" fades from scene to Black
+
+        time:
+          name: Time
+          value: Time (in seconds) that the fade takes
+    -->
+    <Fade dir="" time=""/>
+
+    <!--
+    Object Alpha
+      Description: Changes the alpha of the object specified by the char
+      attribute to the specified alpha over the specified time.
+
+      Attributes:
+        char:
+          name: GameObject name
+          value: Unique name of a GameObject in Unity.
+
+        fAlpha:
+          name: Final Alpha
+          value: Final alpha value of the GameObject's sprite
+
+        time:
+          name: Time
+          value: Time (in seconds) the transition will take
+    -->
+    <ObjAlpha char="" fAlpha="" time=""/>
+
+    <!--
+    Camera Zoom
+      Description: Zooms the camera in place to the desired final size in the
+      specified time.
+
+      Attributes:
+        fSize:
+          name: Final Size
+          value: Final size of the camera
+
+        time:
+          name: Time
+          value: Time (in seconds) the transition will take
+    -->
+    <CamZoom fSize="" time=""/>
+
+    <!--
+    Toggle AI
+      Description: Toggles the AI. If it's on, it is turned off, and vice versa.
+    -->
+    <ToggleAI/>
+
+    <!--
+    Toggle Camera Follow
+      Description: If the camera follows the player, it will no longer do this,
+      and vice versa.
+    -->
+    <ToggleCamFol/>
+
+    <!--
+    Time Forward
+      Description: Moves time forward until the specified time of day.
+
+      Attributes:
+        time:
+          name: Time of Day
+          value: The time of day the clock will be moved to.
+    -->
+    <TimeFor time=""/>
   </List>
 
   <!-- Here is a list of all possible actions, for convenience's sake -->
   <!--
-    CamMov time, endpos (x, y, z)
-    CharMov char, time, endpos (x, y, z)
-    Dia sprite, dialogue (name, str)
-    Anim anim, char
-    SoundFX sound
-    WeatherFX weather
-    MusicFX music, loop
-    PrefabC pref, name, pos (x, y, z), OptArgs (List<arg(name)>)
+    CamMov: time, endpos (x, y, z)
+    CharMov: char, time, endpos (x, y, z)
+    Dia: sprite, dialogue (name, str)
+    Anim: anim, char
+    SoundFX: sound
+    WeatherFX: weather
+    MusicFX: music, loop
+    PrefabC: pref, name, pos (x, y, z), OptArgs (List<arg(name)>)
     MultiAction
+    Fade: dir, time
+    ObjAlpha: char, fAlpha, time
+    CamZoom: fSize, time
+    ToggleAI
+    ToggleCamFol
+    TimeFor: time
   -->
 
   <Intro>
@@ -316,6 +401,6 @@
       </CharMov>
     </MultiAction>
 
-    <Del name="Villager_1"/>
+    <Del char="Villager_1"/>
   </Intro>
 </Cutscenes>
