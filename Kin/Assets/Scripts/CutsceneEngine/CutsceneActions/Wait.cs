@@ -9,4 +9,8 @@ public class Wait : Action {
 	public Wait (float time) : base("Wait") {
 		totalTime = time;
 	}
+
+	override public void Run() {
+
+	}
 }

@@ -9,4 +9,8 @@ public class WeatherEffect : Action {
 	public WeatherEffect(string wea) : base("WeatherFX") {
 		weather = wea;
 	}
+
+	override public void Run() {
+
+	}
 }

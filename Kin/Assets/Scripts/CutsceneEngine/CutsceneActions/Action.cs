@@ -2,12 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Action {
+public abstract class Action {
 
-	protected string actionName {get;}
-	protected bool inProgress {get;}
+	protected CutsceneController cont;
+
+	protected string actionName;
+	protected bool inProgress;
 
 	public Action(string name) {
 		actionName = name;
+		cont = GameObject.Find("Cutscene Controller").GetComponent<CutsceneController>();
+	}
+
+	abstract public void Run();
+
+	public string getActionName() {
+		return actionName;
+	}
+
+	public bool isInProgress() {
+		return inProgress;
 	}
 }

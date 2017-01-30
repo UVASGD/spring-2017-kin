@@ -9,4 +9,8 @@ public class MultiAction : Action {
 	public MultiAction(List<Action> acts) : base("MultiAction") {
 		actions = acts;
 	}
+
+	override public void Run() {
+
+	}
 }

@@ -11,4 +11,8 @@ public class MusicEffect : Action {
 		musicFile = music;
 		looping = loop;
 	}
+
+	override public void Run() {
+
+	}
 }
