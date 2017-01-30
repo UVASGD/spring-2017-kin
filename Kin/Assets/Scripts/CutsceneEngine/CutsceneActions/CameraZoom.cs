@@ -9,4 +9,8 @@ public class CameraZoom : Action {
 	public CameraZoom(float size) : base("CamZoom") {
 		finalSize = size;
 	}
+
+	override public void Run() {
+
+	}
 }

@@ -7,4 +7,8 @@ public class ToggleAI : Action {
 	public ToggleAI() : base("ToggleAI") {
 
 	}
+
+	override public void Run() {
+
+	}
 }

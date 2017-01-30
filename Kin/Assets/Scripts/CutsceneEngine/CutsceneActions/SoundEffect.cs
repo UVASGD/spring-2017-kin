@@ -9,4 +9,8 @@ public class SoundEffect : Action {
 	public SoundEffect(string sound) : base("SoundFX") {
 		soundFile = sound;
 	}
+
+	override public void Run() {
+
+	}
 }

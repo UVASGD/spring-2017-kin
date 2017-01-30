@@ -2,5 +2,12 @@
 <Cutscenes>
   <!-- Look at ActionsExample.xml to find a list of all available actions,
         as well as a completed example cutscene. -->
-  
+  <CamMovTest>
+    <CamMov time="1">
+      <endpos size="6">
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+    </CamMov>
+  </CamMovTest>
 </Cutscenes>

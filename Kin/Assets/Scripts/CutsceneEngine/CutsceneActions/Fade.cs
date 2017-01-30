@@ -11,4 +11,8 @@ public class Fade : Action {
 		totalTime = time;
 		dir = direction;
 	}
+
+	override public void Run() {
+
+	}
 }
