@@ -11,7 +11,6 @@ public class DialogueXMLParser : MonoBehaviour {
 		xmlDoc = new XmlDocument();
 		TextAsset textAsset = (TextAsset) Resources.Load("XML/Duologue");  
 		xmlDoc.LoadXml ( textAsset.text );
-		Debug.Log(textAsset.text);
 	}
 
 	// Update is called once per frame
