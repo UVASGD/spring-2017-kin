@@ -11,4 +11,8 @@ public class Animation : Action {
 		animation = anim;
 		charName = character;
 	}
+
+	override public void Run() {
+
+	}
 }

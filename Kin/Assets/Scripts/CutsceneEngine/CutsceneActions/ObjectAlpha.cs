@@ -13,4 +13,8 @@ public class ObjectAlpha : Action {
 		finalAlpha = alpha;
 		totalTime = time;
 	}
+
+	override public void Run() {
+
+	}
 }

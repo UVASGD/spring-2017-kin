@@ -87,4 +87,18 @@ public class DialogueSpawnController : MonoBehaviour {
 	public void UpdateWithNewName(string person, string label) {
 		dialogueName = parser.RequestName(person, label);
 	}
+
+	public void UpdateDiaMan(string diaStr) {
+		dialogueString = diaStr;
+	}
+
+	public void UpdateNameMan(string nameStr) {
+		dialogueName = nameStr;
+	}
+
+	public void Complete() {
+		curDiaStr = dialogueString;
+		curLength = dialogueString.Length;
+		finished = true;
+	}
 }

@@ -10,4 +10,8 @@ public class TimeForward : Action {
 	public TimeForward(float time) : base("TimeFor") {
 		finalTime = time;
 	}
+
+	override public void Run() {
+
+	}
 }

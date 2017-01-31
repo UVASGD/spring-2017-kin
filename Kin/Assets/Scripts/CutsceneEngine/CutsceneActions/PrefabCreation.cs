@@ -18,4 +18,8 @@ public class PrefabCreation : Action {
 		position = pos;
 		optionalArguments = optArg;
 	}
+
+	override public void Run() {
+
+	}
 }
