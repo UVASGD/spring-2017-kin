@@ -9,4 +9,8 @@ public class Delete : Action {
 	public Delete(string character) : base("Del") {
 		charName = character;
 	}
+
+	override public void Run() {
+
+	}
 }
