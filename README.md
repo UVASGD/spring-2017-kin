@@ -7,7 +7,7 @@ Under the current constitution of Student Game Developers at the University of V
 
 # Kin
 
-## Future Ideas
+## Moving Forward
 
 Finish remaining systems
 Crafting
