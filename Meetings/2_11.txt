@@ -6,7 +6,7 @@ Hello Everyone!
    c) Go around, say your name, year, favorite meme or dream
 
 2) Logistics:
-   a) Slack? [TRAD]
+   a) Slack? - structure
    b) Github? New to Github? -- Lets learn how to:
       i) branch
       ii) publish
@@ -16,6 +16,7 @@ Hello Everyone!
    c) Unity 5.5! Let's talk about a few Unity tutorials
    d) Aseprite
    e) Tiled
+   f) Dues
 
 3) Lets break into teams, Jackson and I will come around and make sure everyone gets acquanted and has some low hanging fruit to reach for.
 
@@ -30,8 +31,10 @@ Art
 
 Design
 - get acquanted with tiled
-- start designing runes, how to balance them, how they should be unlocked, what will be required to build them (think in just experience, and then also resources)
+- how do you design a boss in a way that's not impossible to program?
+- start designing runes, how to balance them, how they should be unlocked, what will be required to build them (think in just EXP, and then also resources)
 
 Programmer
 - current basic AI structures
 - explore different AI options, don't worry about if you don't understand everything yet, these are complex
+- let's take a look at the existing systems, and lets get a system for traps working.
