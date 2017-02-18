@@ -1,11 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using UnityEngine;
+using System.Collections;
 
-namespace Assets.Scripts.PlayerScripts
+public class PlayerExperience : MonoBehaviour
 {
-    class Class1
+    //Keeps track of Player Experience
+    private long currentExp;
+
+    void Start()
     {
+        this.currentExp = 0;
+    }
+
+    public void incrementExperience(int amount)
+    {
+            currentExp += amount;
+            // Play audio clip?
+    }
+
+    public void decrementExperience(long amount)
+    {
+        if(currentExp-amount >= 0)
+        {
+            currentExp -= amount;
+            //Play audio clip?
+        }
+    }
+
+    public void setCurrentExp(long exp)
+    {
+        this.currentExp = exp;
+    }
+
+    public long getCurrentExp()
+    {
+        return this.currentExp;
     }
 }
