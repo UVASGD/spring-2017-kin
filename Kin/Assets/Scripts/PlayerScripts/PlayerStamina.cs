@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerStamina : MonoBehaviour {
 
-	private int maxStamina; 
+	public int maxStamina; 
 	private int currentStamina;
     private int staminaRegen = 3;
     public bool hasStamina;
