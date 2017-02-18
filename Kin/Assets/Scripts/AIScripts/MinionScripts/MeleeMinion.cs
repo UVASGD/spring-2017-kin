@@ -7,11 +7,13 @@ public class MeleeMinion : BaseMinionAI
 {
     public int meleeDamage; //Melee attack damage
     public float attackRange; //Range to melee attack from
+    public int experience = 200;
     bool meleeOnCd; //Is melee attack on cooldown
 	bool dealtDamage;
     float meleeCurrCd; //Remaining cooldown for melee attack
 	float despawnTimer;
 	bool dying;
+    
 
     protected new void Start()
     {
@@ -125,19 +127,6 @@ public class MeleeMinion : BaseMinionAI
 	{
 		gameObject.GetComponent<MeleeMinionAnimationController> ().dying = true;
 		dying = true;
-
-		// Grant XP Here
-
-
-		//
-
-		// Display XP Particles Here
-		GameObject part = (GameObject)(Resources.Load("Prefabs/XPParticles", typeof(GameObject)));
-		GameObject instPart = Instantiate(part, transform.position, Quaternion.identity);
-		instPart.GetComponent<ParticleEmit>().UpdateParticles();
-		instPart.GetComponent<ParticleEmit>().target = targetObject;
-		instPart.GetComponent<ParticleEmit>().XPEmit(30);
-
-		//
+        Experience(experience);
 	}
 }
