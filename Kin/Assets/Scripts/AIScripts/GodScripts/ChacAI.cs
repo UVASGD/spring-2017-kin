@@ -53,7 +53,7 @@ public class ChacAI : BaseGodAI
 		{
 		case AIStates.IdleState:
 			if (true)//some condition
-				curState = AIStates.InvincibleState;
+				curState = AIStates.MeleeState;
 			break;
 		case AIStates.InvincibleState:
 			int health = gameObject.GetComponent<EnemyHealth>().getHp();
@@ -108,7 +108,7 @@ public class ChacAI : BaseGodAI
 					meleeCd = true;
                     //fix timing as animation comes in
                     attackInRadius(targetObject.transform.position.x > rb.transform.position.x, meleeRange);
-                    gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                    //gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 }
 				else //cooldown after melee
 				{
@@ -264,12 +264,8 @@ public class ChacAI : BaseGodAI
         }
     }
 
-    void dropBoltOnPlayer()
+    void dropBoltOnPosition(Vector3 pos)
     {
-        GameObject newProj1 = (GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)), targetObject.transform.position, Quaternion.identity);
-        //wait
-        Destroy(newProj1);
+        GameObject newProj1 = (GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)), pos, Quaternion.identity);
     }
-
-
 }
