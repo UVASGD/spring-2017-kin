@@ -46,6 +46,10 @@ public class PlayerHealth : MonoBehaviour {
             anim.SetBool("Recoiling", true);
             // Play damage audio clip
         }
+        else if (anim.GetBool("Recoiling"))
+        {
+            anim.SetBool("Recoiling", false);
+        }
         if (currentHealth <= 0 && !isDead)
         {
             currentHealth = 0;
