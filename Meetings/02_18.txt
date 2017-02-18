@@ -1,0 +1,27 @@
+Alright, well this is the second time I'm writing this because emacs crashed?
+
+First things first:
+1) MSE is in 5 weeks and we're likely to miss a meeting to Spring Break!
+2) Any new members we missed last time? #memes&&dreams
+3) Jared and Laura!
+
+Okay, let's break out into our teams (Aethetics will meet later but some of them might be here)
+
+WORLD_BUILDING:
+1) let's get experience accumulating on kills and saving/loading
+2) let's get some prototype traps working today
+   a) walk over them and they trigger
+   b) some sort of visual effect (particles?)
+   c) disappear on death
+3) Do days properly increment on a change of day? (DayNightController and TimeController)
+
+AETHETICS:
+1) has everyone picks some stuff they'd like to work on over the next week?
+2) and stuff to share from last week?
+3) let's take a look at the assets sheet
+4) Brian, how're those dank jams?
+
+BOSSES:
+
+
+
