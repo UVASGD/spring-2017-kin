@@ -11,13 +11,15 @@ public class PlayerExperience : MonoBehaviour
         this.currentExp = 0;
     }
 
-    public void incrementExperience(int amount)
+    public void incrementExp(long amount)
     {
-            currentExp += amount;
-            // Play audio clip?
+        print("before: " + currentExp);
+        currentExp += amount;
+        print("after: " + currentExp);
+        // Play audio clip?
     }
 
-    public void decrementExperience(long amount)
+    public void decrementExp(long amount)
     {
         if(currentExp-amount >= 0)
         {
