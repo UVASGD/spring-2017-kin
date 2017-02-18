@@ -116,4 +116,14 @@ public class BaseMinionAI : MonoBehaviour {
     {
         rb.velocity = (pos - (Vector2)gameObject.transform.position).normalized * patrolSpeed;
     }
+
+    protected void Experience(int amount)
+    {
+        // targetObject.GetComponent<PlayerExperience>().addExperience(amount);
+        GameObject part = (GameObject)(Resources.Load("Prefabs/XPParticles", typeof(GameObject)));
+        GameObject instPart = Instantiate(part, transform.position, Quaternion.identity);
+        instPart.GetComponent<ParticleEmit>().UpdateParticles();
+        instPart.GetComponent<ParticleEmit>().target = targetObject;
+        instPart.GetComponent<ParticleEmit>().XPEmit(30);
+    }
 }
