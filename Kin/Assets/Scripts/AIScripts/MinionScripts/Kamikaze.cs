@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Kamikaze : BaseMinionAI
 {
-    
+    public int experience = 100;
     float explodeRadius; //radius where kamikaze stops and explodes
     bool isExploding;
     float explodeDelay;  //time delay between stopping and exploding
@@ -110,19 +110,7 @@ public class Kamikaze : BaseMinionAI
 	{
 		gameObject.GetComponent < KamikazeAnimationController>().killed = true;
 		dying = true;
-		// Grant XP Here
-
-
-		//
-		
-		// Display XP Particles Here
-		GameObject part = (GameObject)(Resources.Load("Prefabs/XPParticles", typeof(GameObject)));
-		GameObject instPart = Instantiate(part, transform.position, Quaternion.identity);
-		instPart.GetComponent<ParticleEmit>().UpdateParticles();
-		instPart.GetComponent<ParticleEmit>().target = targetObject;
-		instPart.GetComponent<ParticleEmit>().XPEmit(30);
-
-		//
+        Experience(experience);
 	}
 		
 

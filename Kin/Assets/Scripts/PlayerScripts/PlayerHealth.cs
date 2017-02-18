@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
     // Main Health Controller
-    private int maxHealth; 
+    public int maxHealth; 
     private int currentHealth;
     public float restartDelay = 5f;
 	float restartTimer;
