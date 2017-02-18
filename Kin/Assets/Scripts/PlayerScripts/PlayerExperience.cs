@@ -13,9 +13,7 @@ public class PlayerExperience : MonoBehaviour
 
     public void incrementExp(long amount)
     {
-        print("before: " + currentExp);
         currentExp += amount;
-        print("after: " + currentExp);
         // Play audio clip?
     }
 
