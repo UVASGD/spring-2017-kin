@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ChacAI : BaseGodAI
 {
 	public float maxInvincCd;
 	protected float invincCurrCd;
 	float meleeRange;
+    public int meleeDamage;
 	public float maxMeleeCd;
 	protected float meleeCurrCd;
 	protected bool meleeCd;
@@ -29,7 +31,18 @@ public class ChacAI : BaseGodAI
 	{
 		base.Start();
 
-		invincCurrCd = maxInvincCd;
+        //Establish rigid body for minion
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            Debug.LogError("AI has no RigidBody. AI name is " + gameObject.name + "!");
+        }
+        if (targetObject == null)
+        {
+            Debug.LogError("AI has no target. AI name is " + gameObject.name + "!");
+        }
+
+        invincCurrCd = maxInvincCd;
 
 		curState = AIStates.IdleState;
 	}
@@ -40,7 +53,7 @@ public class ChacAI : BaseGodAI
 		{
 		case AIStates.IdleState:
 			if (true)//some condition
-				curState = AIStates.InvincibleState;
+				curState = AIStates.MeleeState;
 			break;
 		case AIStates.InvincibleState:
 			int health = gameObject.GetComponent<EnemyHealth>().getHp();
@@ -93,7 +106,10 @@ public class ChacAI : BaseGodAI
 				{
 					//attack melee
 					meleeCd = true;
-				}
+                    //fix timing as animation comes in
+                    attackInRadius(targetObject.transform.position.x > rb.transform.position.x, meleeRange);
+                    //gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                }
 				else //cooldown after melee
 				{
 					if (meleeCurrCd <= 0)
@@ -198,4 +214,58 @@ public class ChacAI : BaseGodAI
 		return angle;
 	}
 
+    /// <summary>
+    /// Finds objects within the Attack Radius.
+    /// </summary>
+    /// <param name="direction">Direction.</param>
+    /// <param name="attackRadius">Attack Radius.</param>
+    private GameObject[] ObjectsInAttackArea(bool direction /* false==left, true==right */, float attackRadius)
+    {
+        Collider2D[] allCollidersInRadius = Physics2D.OverlapCircleAll(rb.transform.position, attackRadius * 1.2f);
+        List<GameObject> matches = new List<GameObject>();
+        for (int i = 0; i < allCollidersInRadius.Length; i++)
+        {
+            float xDifference = allCollidersInRadius[i].attachedRigidbody.transform.position.x - rb.transform.position.x;
+            if (direction)
+            { //Right Side
+                if (xDifference >= 0)
+                {
+                    matches.Add(allCollidersInRadius[i].gameObject);
+                }
+            }
+            else
+            { //Left Side
+                if (xDifference <= 0)
+                {
+                    matches.Add(allCollidersInRadius[i].gameObject);
+                }
+            }
+        }
+        return matches.ToArray();
+    }
+
+    /// <summary>
+    /// Attacks the target object in a certain radius.
+    /// </summary>
+    /// <param name="direction">Direction.</param>
+    /// <param name="radius">Attack Radius.</param>
+    void attackInRadius(bool direction, float radius)
+    {
+        //Debug.Log("Attacking");
+        GameObject[] thingsToAttack = ObjectsInAttackArea(direction, radius);
+        //Attack Everything In This List
+        for (int i = 0; i < thingsToAttack.Length; i++)
+        {
+            if (thingsToAttack[i].tag == "Player")
+            {
+                Debug.Log("attacking");
+                targetObject.GetComponent<PlayerHealth>().TakeDamage(meleeDamage);
+            }
+        }
+    }
+
+    void dropBoltOnPosition(Vector3 pos)
+    {
+        GameObject newProj1 = (GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)), pos, Quaternion.identity);
+    }
 }
