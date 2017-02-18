@@ -13,12 +13,10 @@ public class Traps : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
-    void OnTriggerEnter(Collider thing)
+    void OnTriggerEnter2D(Collider2D other)
     {
-
-        print("HELP I WAS STEPPED ON");
+        Debug.Log("Beep");
     }
 }
