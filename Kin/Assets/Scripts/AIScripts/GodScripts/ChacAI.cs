@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ChacAI : BaseGodAI
 {
 	public float maxInvincCd;
 	protected float invincCurrCd;
 	float meleeRange;
+    public int meleeDamage;
 	public float maxMeleeCd;
 	protected float meleeCurrCd;
 	protected bool meleeCd;
@@ -17,6 +19,8 @@ public class ChacAI : BaseGodAI
 	float accuracy = 100;
 	float boltSpeed = 2.0f;
 	const float ANGLE_THRESHOLD = Mathf.PI/4;
+    int maxHealth;
+    int stage; //determines which invinsibility stages have already happened
 
 	//Set of AI behavior states
 	protected enum AIStates
@@ -29,87 +33,130 @@ public class ChacAI : BaseGodAI
 	{
 		base.Start();
 
-		invincCurrCd = maxInvincCd;
+        //Establish rigid body for minion
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            Debug.LogError("AI has no RigidBody. AI name is " + gameObject.name + "!");
+        }
+        if (targetObject == null)
+        {
+            Debug.LogError("AI has no target. AI name is " + gameObject.name + "!");
+        }
+
+        invincCurrCd = maxInvincCd;
+
+        maxHealth = gameObject.GetComponent<EnemyHealth>().maxHealth;
+        stage = 0;
 
 		curState = AIStates.IdleState;
 	}
 
 	protected new void Update()
 	{
-		switch(curState)
+        int health = gameObject.GetComponent<EnemyHealth>().getHp();
+        switch (curState)
 		{
-		case AIStates.IdleState:
-			if (true)//some condition
-				curState = AIStates.InvincibleState;
-			break;
-		case AIStates.InvincibleState:
-			int health = gameObject.GetComponent<EnemyHealth>().getHp();
-			int maxHealth = gameObject.GetComponent<EnemyHealth>().maxHealth;
-			if(health < maxHealth/3) //final invincible phase
-			{
-				//lightning and geysers
-			}
-			else if(health < (2/3) * maxHealth) //2nd invincible phase
-			{
-				//lightning
-			}
-			else //first invincibility phase
-			{
-				//geysers
-			}
+		    case AIStates.IdleState:
+			    if (true /*some condition*/)
+                    curState = AIStates.InvincibleState;
+			    break;
+		    case AIStates.InvincibleState:
+			    if(stage == 1) //final invincible phase
+			    {
+				    //lightning and geysers
+			    }
+			    else if(stage == 0) //2nd invincible phase
+			    {
+				    //lightning
+			    }
+			    else //first invincibility phase
+			    {
+				    //geysers
+			    }
 
-			if(invincCurrCd <= 0) //change to melee attacks after some time
-			{
-				curState = AIStates.MeleeState;
-				invincCurrCd = maxInvincCd;
-				//come down and shockwave
-			}
-			else
-				invincCurrCd -= Time.deltaTime;
-			break;
-		case AIStates.MeleeState:
-			float distance = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
-			if(distance > meleeRange) //if too far for melee, then ranged attack
-			{
-				if (!rangedCd)
-				{
-					//attack ranged
-					rangedCd = true;
-				}
-				else //cooldown after shooting
-				{
-					if (rangedCurrCd <= 0)
-					{
-						rangedCurrCd = maxRangedCd;
-						rangedCd = false;
-					}
-					else
-						rangedCurrCd -= Time.deltaTime;
-				}
-			}
-			else
-			{
-				if(!meleeCd)
-				{
-					//attack melee
-					meleeCd = true;
-				}
-				else //cooldown after melee
-				{
-					if (meleeCurrCd <= 0)
-					{
-						meleeCurrCd = maxMeleeCd;
-						meleeCd = false;
-					}
-					else
-						meleeCurrCd -= Time.deltaTime;
-				}
-			}
-			break;
-		default:
-			Debug.Log("Unknown state. Something be wrong mudda poop");
-			break;
-		}
+			    if(invincCurrCd <= 0) //change to melee attacks after some time
+			    {
+				    curState = AIStates.MeleeState;
+				    invincCurrCd = maxInvincCd;
+                    gameObject.GetComponent<EnemyHealth>().setInvinc(false);
+                    //come down and shockwave
+                }
+			    else
+				    invincCurrCd -= Time.deltaTime;
+			    break;
+		    case AIStates.MeleeState:
+			    float distance = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
+			    if(distance > meleeRange) //if too far for melee, then ranged attack
+			    {
+				    if (!rangedCd) //attack ranged
+                    {
+                        int rand = Random.Range(1, 4);
+                        fireBolt(rand);
+					    rangedCd = true;
+				    }
+				    else //cooldown after shooting
+				    {
+					    if (rangedCurrCd <= 0)
+					    {
+						    rangedCurrCd = maxRangedCd;
+						    rangedCd = false;
+					    }
+					    else
+						    rangedCurrCd -= Time.deltaTime;
+				    }
+                    MoveTowardsTarget();
+			    }
+			    else
+			    {
+				    if(!meleeCd)
+				    {
+                        //fix timing as animation comes in
+                        attackInRadius(targetObject.transform.position.x > rb.transform.position.x, meleeRange);
+                        //gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                    }
+				    else //when pulling out axe
+				    {
+					    if (meleeCurrCd <= 0)
+					    {
+						    meleeCurrCd = maxMeleeCd;
+						    meleeCd = false;
+					    }
+					    else
+						    meleeCurrCd -= Time.deltaTime;
+				    }
+			    }
+
+                if (stage == 0) //for reaching second invincibility state
+                {
+                    if (health < (2 / 3) * maxHealth) //activate 2nd invincible phase
+                    {
+                        gameObject.GetComponent<EnemyHealth>().setInvinc(true);
+                        curState = AIStates.InvincibleState;
+                        stage++;
+                    }
+                }
+                else if (stage == 1) //for reaching third invincibility state
+                {
+                    if (health < (1 / 3) * maxHealth) //activate 3rd invincible phase
+                    {
+                        gameObject.GetComponent<EnemyHealth>().setInvinc(true);
+                        curState = AIStates.InvincibleState;
+                        stage++;
+                    }
+                }
+                else
+                {
+                    if(health <= 0)
+                    {
+                        //Chac be ded
+                    }
+                }
+			    break;
+		    default:
+			    Debug.Log("Unknown state. Something be wrong mudda poop");
+			    break;
+        }
 	}
 
 	/// <summary>
@@ -120,7 +167,7 @@ public class ChacAI : BaseGodAI
 		GameObject newProj1, newProj2, newProj3, newProj4, newProj5, newProj6;
 		float angle = predictLocation();
 		switch (type) {
-		case 1:
+		case 1: //Shoot out cone of projectiles
 			//Instantiate projectile from prefab Instantiate(prefab,minionposition,no rotation)
 			newProj1 = (GameObject)GameObject.Instantiate (Resources.Load ("Prefabs/MinionProj", typeof(GameObject)), gameObject.transform.position, Quaternion.identity);
 			newProj1.GetComponent<Rigidbody2D> ().velocity = new Vector2 (boltSpeed * Mathf.Cos (angle-.5f), boltSpeed * Mathf.Sin (angle-.5f));
@@ -129,11 +176,11 @@ public class ChacAI : BaseGodAI
 			newProj3 = (GameObject)GameObject.Instantiate (Resources.Load ("Prefabs/MinionProj", typeof(GameObject)), gameObject.transform.position, Quaternion.identity);
 			newProj3.GetComponent<Rigidbody2D> ().velocity = new Vector2 (boltSpeed * Mathf.Cos (angle+.5f), boltSpeed * Mathf.Sin (angle+.5f));
 			break;
-		case 2:
+		case 2: //Shoot out single projectiles
 			newProj1 = (GameObject)GameObject.Instantiate (Resources.Load ("Prefabs/MinionProj", typeof(GameObject)), gameObject.transform.position, Quaternion.identity);
 			newProj1.GetComponent<Rigidbody2D> ().velocity = new Vector2 (boltSpeed * Mathf.Cos (angle), boltSpeed * Mathf.Sin (angle));
 			break;
-		case 3:
+		case 3: //Shoot out in 180 degree arc
 			newProj1 = (GameObject)GameObject.Instantiate (Resources.Load ("Prefabs/MinionProj", typeof(GameObject)), gameObject.transform.position, Quaternion.identity);
 			newProj1.GetComponent<Rigidbody2D> ().velocity = new Vector2 (boltSpeed * Mathf.Cos (angle - 1.0f), boltSpeed * Mathf.Sin (angle - 1.0f));
 			newProj2 = (GameObject)GameObject.Instantiate (Resources.Load ("Prefabs/MinionProj", typeof(GameObject)), gameObject.transform.position, Quaternion.identity);
@@ -198,4 +245,58 @@ public class ChacAI : BaseGodAI
 		return angle;
 	}
 
+    /// <summary>
+    /// Finds objects within the Attack Radius.
+    /// </summary>
+    /// <param name="direction">Direction.</param>
+    /// <param name="attackRadius">Attack Radius.</param>
+    private GameObject[] ObjectsInAttackArea(bool direction /* false==left, true==right */, float attackRadius)
+    {
+        Collider2D[] allCollidersInRadius = Physics2D.OverlapCircleAll(rb.transform.position, attackRadius * 1.2f);
+        List<GameObject> matches = new List<GameObject>();
+        for (int i = 0; i < allCollidersInRadius.Length; i++)
+        {
+            float xDifference = allCollidersInRadius[i].attachedRigidbody.transform.position.x - rb.transform.position.x;
+            if (direction)
+            { //Right Side
+                if (xDifference >= 0)
+                {
+                    matches.Add(allCollidersInRadius[i].gameObject);
+                }
+            }
+            else
+            { //Left Side
+                if (xDifference <= 0)
+                {
+                    matches.Add(allCollidersInRadius[i].gameObject);
+                }
+            }
+        }
+        return matches.ToArray();
+    }
+
+    /// <summary>
+    /// Attacks the target object in a certain radius.
+    /// </summary>
+    /// <param name="direction">Direction.</param>
+    /// <param name="radius">Attack Radius.</param>
+    void attackInRadius(bool direction, float radius)
+    {
+        //Debug.Log("Attacking");
+        GameObject[] thingsToAttack = ObjectsInAttackArea(direction, radius);
+        //Attack Everything In This List
+        for (int i = 0; i < thingsToAttack.Length; i++)
+        {
+            if (thingsToAttack[i].tag == "Player")
+            {
+                Debug.Log("attacking");
+                targetObject.GetComponent<PlayerHealth>().TakeDamage(meleeDamage);
+            }
+        }
+    }
+
+    void dropBoltOnPosition(Vector3 pos)
+    {
+        GameObject newProj1 = (GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)), pos, Quaternion.identity);
+    }
 }
