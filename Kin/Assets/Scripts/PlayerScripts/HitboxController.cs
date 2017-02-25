@@ -149,6 +149,7 @@ public class HitboxController : MonoBehaviour {
 
 		//Create the collider
 		curHitbox = gameObject.AddComponent<PolygonCollider2D>();
+        curHitbox.isTrigger = true;
 		curHitbox.pathCount = 0; //clear auto-generated
 	}
 
