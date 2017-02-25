@@ -38,8 +38,8 @@ public class Traps : MonoBehaviour {
 		GameObject part = (GameObject)(Resources.Load ("Prefabs/TrapParticles", typeof(GameObject)));
 		GameObject instPart = Instantiate (part, transform.position, Quaternion.Euler(-90,0,0));
         instPart.GetComponent<ParticleSystem>().Emit(40);
-	
-		Destroy (gameObject);
+        GetComponent<AudioSource>().Play();
+        Destroy (gameObject);
 
 	}
 }
