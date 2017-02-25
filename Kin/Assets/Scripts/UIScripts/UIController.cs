@@ -10,11 +10,14 @@ public class UIController : MonoBehaviour {
     public GameObject bossHealth;
     public GameObject statsMenu;
 	public GameObject options;
+	public GameObject player;
     public Text bossName;
     // Add clock
 	
 	void Start () {
         bossHealthSlider = bossHealth.GetComponent<Slider>();
+		health.value = (player.GetComponent<PlayerHealth> () as PlayerHealth).maxHealth;
+		stamina.value = (player.GetComponent<PlayerStamina> () as PlayerStamina).maxStamina;
 	}
 	
 	// Update is called once per frame
@@ -32,12 +35,18 @@ public class UIController : MonoBehaviour {
 
     public void setMaxHealth(int maxHealth)
     {
-        health.maxValue = maxHealth;
+		if (health.value > maxHealth) {
+			health.value = maxHealth;
+		}
+		health.maxValue = maxHealth;
     }
 
     public void setMaxStamina(int maxStam)
     {
-        stamina.maxValue = maxStam;
+		if (stamina.value > maxStam) {
+			stamina.value = maxStam;
+		}
+		stamina.maxValue = maxStam;
     }
 
     public void setStamina(int val)
