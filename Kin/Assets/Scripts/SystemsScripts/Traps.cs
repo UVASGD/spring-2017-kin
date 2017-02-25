@@ -35,10 +35,9 @@ public class Traps : MonoBehaviour {
 			eHealth = target.GetComponent<EnemyHealth> ();
 			eHealth.takeDamage (damage);
 		}
-		GameObject part = (GameObject)(Resources.Load ("Prefabs/XPParticles", typeof(GameObject)));
-		GameObject instPart = Instantiate (part, transform.position, Quaternion.identity);
-		instPart.GetComponent<ParticleEmit> ().UpdateParticles ();
-		instPart.GetComponent<ParticleEmit>().XPEmit(30);
+		GameObject part = (GameObject)(Resources.Load ("Prefabs/TrapParticles", typeof(GameObject)));
+		GameObject instPart = Instantiate (part, transform.position, Quaternion.Euler(-90,0,0));
+        instPart.GetComponent<ParticleSystem>().Emit(40);
 	
 		Destroy (gameObject);
 
