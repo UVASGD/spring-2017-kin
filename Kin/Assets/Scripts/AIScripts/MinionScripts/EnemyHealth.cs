@@ -7,6 +7,7 @@ public class EnemyHealth:MonoBehaviour
     public int maxHealth = 100;
     int currentHealth;
     bool isDead;
+    bool isInvinc;
 
     public float recoilDist;
 
@@ -17,14 +18,22 @@ public class EnemyHealth:MonoBehaviour
     }
     public void takeDamage(int amount)
     {
-        currentHealth -= amount;
-        recoil();
+        if(!isInvinc)
+        {
+            currentHealth -= amount;
+            recoil();
+        }
         //Debug.Log("Took Damage");
         // Play damage audio clip
        // if (currentHealth <= 0 && !isDead)
         //{
           //  Death();
         //}
+    }
+
+    public void setInvinc(bool b)
+    {
+        isInvinc = b;
     }
 
 	public int getHp()

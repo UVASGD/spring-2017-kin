@@ -95,16 +95,24 @@ public class MeleeMinion : BaseMinionAI
   		Collider2D[] allCollidersInRadius = Physics2D.OverlapCircleAll (rb.transform.position, attackRadius*1.2f);
   		List<GameObject> matches = new List<GameObject> ();
   		for (int i = 0; i < allCollidersInRadius.Length; i++) {
-			float xDifference = allCollidersInRadius [i].attachedRigidbody.transform.position.x - rb.transform.position.x;
-			if (direction) { //Right Side
-				if (xDifference >= 0) {
-					matches.Add (allCollidersInRadius [i].gameObject);
-				}
-			} else { //Left Side
-				if (xDifference <= 0) {
-					matches.Add (allCollidersInRadius [i].gameObject);
-				}
-			}
+            GameObject target = allCollidersInRadius[i].gameObject;
+            if (target.tag == "Player")
+            {
+                float xDifference = target.GetComponent<Rigidbody2D>().transform.position.x - rb.transform.position.x;
+                if (direction)
+                { //Right Side
+                    if (xDifference >= 0)
+                    {
+                        matches.Add(allCollidersInRadius[i].gameObject);
+                    }
+                }
+                else { //Left Side
+                    if (xDifference <= 0)
+                    {
+                        matches.Add(allCollidersInRadius[i].gameObject);
+                    }
+                }
+            }
   		}
   		return matches.ToArray();
   	}
