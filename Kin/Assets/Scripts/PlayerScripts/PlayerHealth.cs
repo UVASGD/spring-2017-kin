@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour {
     // public AudioClip damageClip;
     // public AudioClip deathClip;
     bool isDead = false;
+	Runes runes; //Initialize Runes script
 
     AvatarMvmController playerMvmController;
     // Reference to animator for death animation
@@ -36,6 +37,7 @@ public class PlayerHealth : MonoBehaviour {
         playerAudio = GetComponent<AudioSource>();
         playerMvmController = GetComponent<AvatarMvmController>();
         currentHealth = maxHealth;
+		runes = gameObject.GetComponent<Runes>(); // Get Component of runes script
     }
 
     public void TakeDamage(int amount)
@@ -52,8 +54,14 @@ public class PlayerHealth : MonoBehaviour {
         }
         if (currentHealth <= 0 && !isDead)
         {
-            currentHealth = 0;
-            Death();
+			if (runes.ixtabRuneActivated) {
+				currentHealth = 1;
+				runes.ixtabRuneActivated = false;
+				Debug.Log (runes.ixtabRuneActivated);
+			} else {
+				currentHealth = 0;
+				Death ();
+			}
         }
         else
         {
