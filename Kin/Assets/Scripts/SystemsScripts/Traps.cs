@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Traps : MonoBehaviour {
 
-    int damage;
+    public int damage;
 
 	// Use this for initialization
 	void Start () {
 
 //        collider = gameObject.GetComponent<BoxCollider2D>();
-        damage = 10;
 //
 //		collider = gameObject.GetComponent<BoxCollider2D>();
 
