@@ -5,6 +5,7 @@ using UnityEngine;
 public class Runes : MonoBehaviour {
 
 	public bool ixtabRuneActivated;
+	// checked in PlayerHealth.cs in loop: if (currentHealth <= 0 && !isDead)
 	public bool mazeRuneActivated;
 	public bool moonRuneActivated;
 	public bool chacRuneActivated;
