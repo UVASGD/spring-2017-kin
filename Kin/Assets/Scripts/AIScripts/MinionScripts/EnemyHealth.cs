@@ -46,4 +46,36 @@ public class EnemyHealth:MonoBehaviour
         Vector2 dir = ((Vector2)(gameObject.transform.position - GameObject.FindGameObjectsWithTag("Player")[0].transform.position)).normalized * recoilDist;
         gameObject.GetComponent<Rigidbody2D>().velocity = dir;
     }
+
+    // For Lighting Chain Attack from Chac's Rune
+    public void chainDamage(int damage, int distance)
+    {
+        takeDamage(damage);
+        int jumpDistance = 20;
+        if(distance > 1)
+        {
+            //chain damage nearby enemy
+            GameObject[] nearbyEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+            GameObject nearestEnemy = null;
+            float minDist = Mathf.Infinity;
+            float dist;
+            if (nearbyEnemies.Length > 0)
+            {
+                foreach (GameObject enemy in nearbyEnemies)
+                {
+                    dist = Vector3.Distance(enemy.transform.position, this.transform.position);
+                    if (dist < minDist)
+                    {
+                        minDist = dist;
+                        nearestEnemy = enemy;
+                    }
+                }
+                
+            }
+            if(Vector3.Distance(nearestEnemy.transform.position, this.transform.position) < jumpDistance){
+                EnemyHealth nearbyHealth = nearestEnemy.GetComponent<EnemyHealth>();
+                nearbyHealth.chainDamage(damage, distance - 1);
+            }
+        }
+    }
 }
