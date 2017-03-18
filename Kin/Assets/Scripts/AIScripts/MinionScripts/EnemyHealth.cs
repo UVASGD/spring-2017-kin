@@ -8,6 +8,7 @@ public class EnemyHealth:MonoBehaviour
     int currentHealth;
     bool isDead;
     bool isInvinc;
+	public BaseAI AIsrc;
 
     public float recoilDist;
 
@@ -22,6 +23,7 @@ public class EnemyHealth:MonoBehaviour
         {
             currentHealth -= amount;
             recoil();
+			AIsrc.recoil ();
         }
         //Debug.Log("Took Damage");
         // Play damage audio clip
