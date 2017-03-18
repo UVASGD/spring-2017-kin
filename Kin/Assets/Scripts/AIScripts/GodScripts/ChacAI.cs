@@ -6,7 +6,7 @@ public class ChacAI : BaseGodAI
 {
 	public float maxInvincCd;
 	protected float invincCurrCd;
-	float meleeRange;
+	public float meleeRange;
     public int meleeDamage;
 	public float maxMeleeCd;
 	protected float meleeCurrCd;
@@ -33,21 +33,12 @@ public class ChacAI : BaseGodAI
 	{
 		base.Start();
 
-        //Establish rigid body for minion
-        rb = gameObject.GetComponent<Rigidbody2D>();
-        if (rb == null)
-        {
-            Debug.LogError("AI has no RigidBody. AI name is " + gameObject.name + "!");
-        }
-        if (targetObject == null)
-        {
-            Debug.LogError("AI has no target. AI name is " + gameObject.name + "!");
-        }
-
         invincCurrCd = maxInvincCd;
 
         maxHealth = gameObject.GetComponent<EnemyHealth>().maxHealth;
         stage = 0;
+
+        meleeCd = false;
 
 		curState = AIStates.IdleState;
 	}
@@ -59,7 +50,7 @@ public class ChacAI : BaseGodAI
 		{
 		    case AIStates.IdleState:
 			    if (true /*some condition*/)
-                    curState = AIStates.InvincibleState;
+                    curState = AIStates.MeleeState;
 			    break;
 		    case AIStates.InvincibleState:
 			    if(stage == 1) //final invincible phase
@@ -89,6 +80,7 @@ public class ChacAI : BaseGodAI
 			    float distance = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
 			    if(distance > meleeRange) //if too far for melee, then ranged attack
 			    {
+                    /*
 				    if (!rangedCd) //attack ranged
                     {
                         int rand = Random.Range(1, 4);
@@ -105,27 +97,30 @@ public class ChacAI : BaseGodAI
 					    else
 						    rangedCurrCd -= Time.deltaTime;
 				    }
-                    MoveTowardsTarget();
+                    */
+                    if(!meleeCd)
+                        MoveTowardsTarget();
 			    }
 			    else
 			    {
-				    if(!meleeCd)
-				    {
+                    if (!meleeCd)
+                    {
                         //fix timing as animation comes in
+                        meleeCd = true;
                         attackInRadius(targetObject.transform.position.x > rb.transform.position.x, meleeRange);
-                        //gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                        Debug.Log("CoolDown");
                     }
-				    else //when pulling out axe
-				    {
-					    if (meleeCurrCd <= 0)
-					    {
-						    meleeCurrCd = maxMeleeCd;
-						    meleeCd = false;
-					    }
-					    else
-						    meleeCurrCd -= Time.deltaTime;
-				    }
-			    }
+                }
+
+                meleeCurrCd -= Time.deltaTime;
+                if (meleeCurrCd <= 0.0)
+                {
+                    meleeCurrCd = maxMeleeCd;
+                    meleeCd = false;
+                    gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+                }
+                    
 
                 if (stage == 0) //for reaching second invincibility state
                 {
@@ -149,7 +144,7 @@ public class ChacAI : BaseGodAI
                 {
                     if(health <= 0)
                     {
-                        //Chac be ded
+                        gameObject.GetComponent<MeleeMinionAnimationController>().dying = true; //use shaman to test, delete later
                     }
                 }
 			    break;
@@ -254,21 +249,25 @@ public class ChacAI : BaseGodAI
     {
         Collider2D[] allCollidersInRadius = Physics2D.OverlapCircleAll(rb.transform.position, attackRadius * 1.2f);
         List<GameObject> matches = new List<GameObject>();
+        float xLoc = rb.transform.position.x;
         for (int i = 0; i < allCollidersInRadius.Length; i++)
         {
-            float xDifference = allCollidersInRadius[i].attachedRigidbody.transform.position.x - rb.transform.position.x;
-            if (direction)
-            { //Right Side
-                if (xDifference >= 0)
-                {
-                    matches.Add(allCollidersInRadius[i].gameObject);
+            if (allCollidersInRadius[i].GetComponent<Rigidbody2D>() != null) //check if object has a rigid body
+            {
+                float xDifference = allCollidersInRadius[i].attachedRigidbody.transform.position.x - xLoc;
+                if (direction)
+                { //Right Side
+                    if (xDifference >= 0)
+                    {
+                        matches.Add(allCollidersInRadius[i].gameObject);
+                    }
                 }
-            }
-            else
-            { //Left Side
-                if (xDifference <= 0)
-                {
-                    matches.Add(allCollidersInRadius[i].gameObject);
+                else
+                { //Left Side
+                    if (xDifference <= 0)
+                    {
+                        matches.Add(allCollidersInRadius[i].gameObject);
+                    }
                 }
             }
         }
@@ -290,6 +289,7 @@ public class ChacAI : BaseGodAI
             if (thingsToAttack[i].tag == "Player")
             {
                 Debug.Log("attacking");
+                gameObject.GetComponent<MeleeMinionAnimationController>().attacking = true; //using shaman to test, delete after
                 targetObject.GetComponent<PlayerHealth>().TakeDamage(meleeDamage);
             }
         }
