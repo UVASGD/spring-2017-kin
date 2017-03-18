@@ -5,6 +5,7 @@ using System.Collections;
 public class MeleeAttackHitBox:MonoBehaviour
 {
     private int damage;
+    private bool chackRuneActivated;
     void OnTriggerEnter2D(Collider2D col)
     {
 
@@ -25,7 +26,8 @@ public class MeleeAttackHitBox:MonoBehaviour
         if (col.gameObject.tag == "enemy" || col.gameObject.tag == "Boss")
         {
             //Debug.Log("Collided");
-            col.gameObject.GetComponent<EnemyHealth>().takeDamage(damage);
+            if (chackRuneActivated) col.gameObject.GetComponent<EnemyHealth>().chainDamage(damage*1000,4);
+            else col.gameObject.GetComponent<EnemyHealth>().takeDamage(damage);
 			//Get the current enemy
 			//Vector3 temp = new Vector3(1.0f,0,0);
 			//col.gameObject.transform.position += temp;
@@ -35,5 +37,10 @@ public class MeleeAttackHitBox:MonoBehaviour
     public void setDamage(int d)
     {
         damage = d;
+    }
+
+    public void setChacRune(bool r)
+    {
+        chackRuneActivated = r;
     }
 }
