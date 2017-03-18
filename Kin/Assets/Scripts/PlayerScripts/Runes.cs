@@ -25,28 +25,17 @@ public class Runes : MonoBehaviour
     public Sprite[] sunRuneSprites;
     public Sprite[] twinsRuneSprites;
 
-    public void setIxtabActive() {
-        GetComponent<PlayerHealth>().ixtabRune = true;
+    public void setIxtabActive(bool active) {
+        GetComponent<PlayerHealth>().ixtabRune = active;
     }
 
-    public void setIxtabInactive() {
-        GetComponent<PlayerHealth>().ixtabRune = false;
-    }
-
-    public void setMaizeActive() { }
-    public void setMaizeInactive() { }
-    public void setMoonActive() { }
-    public void setMoonInactive() { }
-    public void setChacActive() { }
-    public void setChacInactive() { }
-    public void setHuntActive() { }
-    public void setHuntInactive() { }
-    public void setMirrorActive() { }
-    public void setMirrorInactive() { }
-    public void setSunActive() { }
-    public void setSunInactive() { }
-    public void setTwinsActive() { }
-    public void setTwinsInactive() { }
+    public void setMaizeActive(bool active) { }
+    public void setMoonActive(bool active) { }
+    public void setChacActive(bool active) { }
+    public void setHuntActive(bool active) { }
+    public void setMirrorActive(bool active) { }
+    public void setSunActive(bool active) { }
+    public void setTwinsActive(bool active) { }
 
 
 }
