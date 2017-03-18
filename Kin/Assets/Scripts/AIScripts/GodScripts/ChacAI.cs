@@ -50,7 +50,7 @@ public class ChacAI : BaseGodAI
 		{
 		    case AIStates.IdleState:
 			    if (true /*some condition*/)
-                    curState = AIStates.MeleeState;
+                    curState = AIStates.InvincibleState;
 			    break;
 		    case AIStates.InvincibleState:
 			    if(stage == 1) //final invincible phase
@@ -59,7 +59,7 @@ public class ChacAI : BaseGodAI
 			    }
 			    else if(stage == 0) //2nd invincible phase
 			    {
-				    //lightning
+                    dropBoltOnPosition((Vector2)targetObject.transform.position);
 			    }
 			    else //first invincibility phase
 			    {
@@ -113,12 +113,16 @@ public class ChacAI : BaseGodAI
                     }
                 }
 
-                meleeCurrCd -= Time.deltaTime;
+                
                 if (meleeCurrCd <= 0.0)
                 {
                     meleeCurrCd = maxMeleeCd;
                     meleeCd = false;
                     gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+                }
+                else
+                {
+                    meleeCurrCd -= Time.deltaTime;
                 }
                     
 
