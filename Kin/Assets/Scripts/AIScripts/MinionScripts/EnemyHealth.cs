@@ -8,6 +8,7 @@ public class EnemyHealth:MonoBehaviour
     int currentHealth;
     bool isDead;
     bool isInvinc;
+    private bool alreadyArced;
 
     public float recoilDist;
 
@@ -15,6 +16,7 @@ public class EnemyHealth:MonoBehaviour
     {
         currentHealth = maxHealth;
         isDead = false;
+        alreadyArced = false;
     }
     public void takeDamage(int amount)
     {
@@ -50,32 +52,35 @@ public class EnemyHealth:MonoBehaviour
     // For Lighting Chain Attack from Chac's Rune
     public void chainDamage(int damage, int distance)
     {
+        
+        alreadyArced = true;
         takeDamage(damage);
-        int jumpDistance = 20;
-        if(distance > 1)
+        int jumpDistance = 2000;
+        if (distance > 1)
         {
-            //chain damage nearby enemy
-            GameObject[] nearbyEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-            GameObject nearestEnemy = null;
-            float minDist = Mathf.Infinity;
-            float dist;
-            if (nearbyEnemies.Length > 0)
-            {
-                foreach (GameObject enemy in nearbyEnemies)
+                //chain damage nearby enemy
+                GameObject[] nearbyEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+                GameObject nearestEnemy = null;
+                float minDist = Mathf.Infinity;
+                float dist;
+                if (nearbyEnemies.Length > 0)
                 {
-                    dist = Vector3.Distance(enemy.transform.position, this.transform.position);
-                    if (dist < minDist)
+                    foreach (GameObject enemy in nearbyEnemies)
                     {
-                        minDist = dist;
-                        nearestEnemy = enemy;
+                        dist = Vector3.Distance(enemy.transform.position, this.transform.position);
+                        if (dist < minDist && !enemy.GetComponent<EnemyHealth>().alreadyArced)
+                        {
+                            minDist = dist;
+                            nearestEnemy = enemy;
+                        }
                     }
+
                 }
-                
+                if (Vector3.Distance(nearestEnemy.transform.position, this.transform.position) < jumpDistance)
+                {
+                    nearestEnemy.GetComponent<EnemyHealth>().chainDamage(damage * 2 / 3, distance - 1);
+                }
             }
-            if(Vector3.Distance(nearestEnemy.transform.position, this.transform.position) < jumpDistance){
-                EnemyHealth nearbyHealth = nearestEnemy.GetComponent<EnemyHealth>();
-                nearbyHealth.chainDamage(damage, distance - 1);
-            }
-        }
+            
     }
 }

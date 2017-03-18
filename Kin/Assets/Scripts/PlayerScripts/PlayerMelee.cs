@@ -22,6 +22,8 @@ public class PlayerMelee : MonoBehaviour {
 
     public int damage = 20;
 
+    public bool chacRuneActivated;
+
     void Awake()
     {
 		rightAttackBox.SetActive(false);
@@ -95,18 +97,22 @@ public class PlayerMelee : MonoBehaviour {
             if (facingRight)
             {
 				rightAttackBox.SetActive (true);
+                rightAttackBox.GetComponent<MeleeAttackHitBox>().setChacRune(chacRuneActivated);
             }
             else if (facingLeft)
             {
 				leftAttackBox.SetActive (true);
+                leftAttackBox.GetComponent<MeleeAttackHitBox>().setChacRune(chacRuneActivated);
             }
             else if (facingUp)
             {
 				upperAttackBox.SetActive (true);
+                upperAttackBox.GetComponent<MeleeAttackHitBox>().setChacRune(chacRuneActivated);
             }
             else if (facingDown)
             {
 				lowerAttackBox.SetActive (true);
+                lowerAttackBox.GetComponent<MeleeAttackHitBox>().setChacRune(chacRuneActivated);
             }
         }
 
