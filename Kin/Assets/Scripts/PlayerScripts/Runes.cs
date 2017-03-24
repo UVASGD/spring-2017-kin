@@ -35,10 +35,11 @@ public class Runes : MonoBehaviour
     public void setHuntActive(bool active) { }
     public void setMirrorActive(bool active) { }
     public void setSunActive(bool active) {
-		GetComponent<MeleeAttackHitBox> ().setDamage (30);
-	}
-	public void setSunInactive(bool active){
-		GetComponent<MeleeAttackHitBox> ().setDamage (20);
+		if (active) {
+			GetComponent<MeleeAttackHitBox> ().setDamage (30);
+		} else {
+			GetComponent<MeleeAttackHitBox> ().setDamage (20);
+		}
 	}
     public void setTwinsActive(bool active) { }
 
