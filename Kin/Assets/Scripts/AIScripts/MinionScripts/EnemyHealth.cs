@@ -67,7 +67,7 @@ public class EnemyHealth:MonoBehaviour
                 {
                     foreach (GameObject enemy in nearbyEnemies)
                     {
-                        dist = Vector3.Distance(enemy.transform.position, this.transform.position);
+                        dist = Vector2.Distance(enemy.transform.position, this.transform.position);
                         if (dist < minDist && !enemy.GetComponent<EnemyHealth>().alreadyArced)
                         {
                             minDist = dist;
@@ -76,7 +76,7 @@ public class EnemyHealth:MonoBehaviour
                     }
 
                 }
-                if (Vector3.Distance(nearestEnemy.transform.position, this.transform.position) < jumpDistance)
+                if (Vector2.Distance(nearestEnemy.transform.position, this.transform.position) < jumpDistance)
                 {
                     nearestEnemy.GetComponent<EnemyHealth>().chainDamage(damage * 2 / 3, distance - 1);
                 }
