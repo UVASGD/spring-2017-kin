@@ -1,0 +1,10 @@
+Steps to importing the maps into Unity
+1. Export Map as layers (ground, wall, trees, objects)
+2. Import each layer as spritesheet into Aesprite, with grid size 2000x2000
+3. Export each layer as a sequence of png's
+4. Rename grid segments from numbers to grid location (A1, B1, A2, ...)
+5. Import grid segments into Unity, changing the interpolation to "point"
+	- is this possible to do via code?
+6. Place grid segments into Scene givien a start location (0, 0, 0)
+	- each layer should have its segments under a single gameobject
+7. Set the layering property of each segment properly
