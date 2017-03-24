@@ -14,6 +14,9 @@ public class ChacAI : BaseGodAI
 	public float maxRangedCd;
 	protected float rangedCurrCd;
 	protected bool rangedCd;
+    public float maxProjectileCd;
+    protected float projCurrCd;
+    protected bool projCd;
 	float fireBoltCd = 0;
 	bool boltOnCd = false;
 	float accuracy = 100;
@@ -39,6 +42,8 @@ public class ChacAI : BaseGodAI
         stage = 0;
 
         meleeCd = false;
+        projCd = true;
+        projCurrCd = maxProjectileCd;
 
 		curState = AIStates.IdleState;
 	}
@@ -53,28 +58,45 @@ public class ChacAI : BaseGodAI
                     curState = AIStates.InvincibleState;
 			    break;
 		    case AIStates.InvincibleState:
-			    if(stage == 1) //final invincible phase
-			    {
-				    //lightning and geysers
-			    }
-			    else if(stage == 0) //2nd invincible phase
-			    {
-                    dropBoltOnPosition((Vector2)targetObject.transform.position);
-			    }
-			    else //first invincibility phase
-			    {
-				    //geysers
-			    }
-
+                if(projCd)
+                {
+                    if (stage == 1) //final invincible phase
+                    {
+                        //lightning and geysers
+                    }
+                    else if (stage == 0) //2nd invincible phase
+                    {
+                       dropBoltOnPosition((Vector2)targetObject.transform.position);
+                    }
+                    else //first invincibility phase
+                    {
+                        //geysers
+                    }
+                    projCd = false;
+                    projCurrCd = maxProjectileCd;
+                }
+			    
+                
 			    if(invincCurrCd <= 0) //change to melee attacks after some time
 			    {
-				    curState = AIStates.MeleeState;
+				    //curState = AIStates.MeleeState;
 				    invincCurrCd = maxInvincCd;
                     gameObject.GetComponent<EnemyHealth>().setInvinc(false);
                     //come down and shockwave
                 }
 			    else
-				    invincCurrCd -= Time.deltaTime;
+                {
+                    invincCurrCd -= Time.deltaTime;
+                    if(!projCd)
+                    {
+                        if (projCurrCd <= 0)
+                            projCd = true;
+                        else
+                            projCurrCd -= Time.deltaTime;
+                    }
+                }
+				    
+                    
 			    break;
 		    case AIStates.MeleeState:
 			    float distance = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
