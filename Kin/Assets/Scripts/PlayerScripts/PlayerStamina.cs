@@ -8,6 +8,9 @@ public class PlayerStamina : MonoBehaviour {
     private int staminaRegen = 3;
     public bool hasStamina;
     float resetLevel = 500;
+    bool pauseRegen = false;
+    float pauseLength = 0.7f; // seconds it should pause for
+    float pauseTimer = 0;
     
     public int getMaxStamina()
     {
@@ -48,6 +51,7 @@ public class PlayerStamina : MonoBehaviour {
             currentStamina = 0;
             hasStamina = false;
         }
+        pauseRegen = true;
 	}
 
     void NoStamina()
@@ -57,14 +61,14 @@ public class PlayerStamina : MonoBehaviour {
 
 	void Update()
 	{
-        if (currentStamina + staminaRegen <= maxStamina)
+        if (currentStamina + staminaRegen <= maxStamina && !pauseRegen)
         {
             currentStamina += staminaRegen;
         }
-        else
+        else if (!(currentStamina + staminaRegen <= maxStamina) && !pauseRegen)
         {
             currentStamina = maxStamina;
-        }
+        } 
         //print("hasStamina: " + hasStamina + " Stamina: " + currentStamina);
         //if (Input.GetKeyDown(KeyCode.Y))
         //{
@@ -73,6 +77,15 @@ public class PlayerStamina : MonoBehaviour {
         if (currentStamina >= resetLevel)
         {
             hasStamina = true;
+        }
+        if (pauseRegen)
+        {
+            pauseTimer += Time.deltaTime;
+            if (pauseTimer > pauseLength)
+            {
+                pauseRegen = false;
+                pauseTimer = 0;
+            }
         }
     }
 }
