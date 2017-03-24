@@ -71,6 +71,13 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		}
 	}
 
+	void OnDrawGizmos() {
+		Gizmos.color = new Color(0.0f, 0.0f, 1.0f, 0.15f);
+		Gizmos.DrawSphere(gameObject.transform.position, detectRange);
+		Gizmos.color = new Color(0.0f, 0.0f, 1.0f, 0.10f);
+		Gizmos.DrawSphere(gameObject.transform.position, detectRange + 0.5f);
+	}
+
 	void BaseAI.recoil(){
 		anim.SetBool ("Recoiling", true);
 	}
