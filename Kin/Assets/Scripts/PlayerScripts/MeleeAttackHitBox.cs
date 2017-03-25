@@ -26,7 +26,7 @@ public class MeleeAttackHitBox:MonoBehaviour
         if (col.gameObject.tag == "enemy" || col.gameObject.tag == "Boss")
         {
             //Debug.Log("Collided");
-            if (chackRuneActivated) col.gameObject.GetComponent<EnemyHealth>().chainDamage(damage*1000,4);
+            if (chackRuneActivated) col.gameObject.GetComponent<EnemyHealth>().chainDamage(damage,4);
             else col.gameObject.GetComponent<EnemyHealth>().takeDamage(damage);
 			//Get the current enemy
 			//Vector3 temp = new Vector3(1.0f,0,0);

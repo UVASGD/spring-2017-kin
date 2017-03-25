@@ -52,14 +52,14 @@ public class EnemyHealth:MonoBehaviour
     // For Lighting Chain Attack from Chac's Rune
     public void chainDamage(int damage, int distance)
     {
-        
+
         alreadyArced = true;
         takeDamage(damage);
-        int jumpDistance = 2000;
+        float jumpDistance = 3;
         if (distance > 1)
         {
                 //chain damage nearby enemy
-                GameObject[] nearbyEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+                GameObject[] nearbyEnemies = GameObject.FindGameObjectsWithTag("enemy");
                 GameObject nearestEnemy = null;
                 float minDist = Mathf.Infinity;
                 float dist;
