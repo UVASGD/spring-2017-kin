@@ -86,6 +86,7 @@ public class Kamikaze : BaseMinionAI
 							if (distanceToPlayer < explodeRadius)
 								targetObject.GetComponent<PlayerHealth> ().TakeDamage (explodeDamage);
 							exploded = true;
+                        GetComponent<Collider2D>().enabled = false;
 						}
                     //Debug.Log("Explode");
 					timeToExplode+= Time.deltaTime;
