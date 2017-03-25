@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour {
     public GameObject bossHealth;
     public GameObject statsMenu;
 	public GameObject options;
+    public GameObject runesMenu;
 	public GameObject player;
     public Text bossName;
     // Add clock
@@ -26,10 +27,15 @@ public class UIController : MonoBehaviour {
         {
             toggleStatsMenu();
         }
-
-		if (Input.GetButtonDown ("Cancel")) {
+        //TODO Change Later, something that' not stats
+		if (Input.GetButtonDown ("Stats")) {
 			options.GetComponent<Canvas> ().enabled = !options.GetComponent<Canvas> ().enabled;
 		}
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            //updateRunes();
+            runesMenu.GetComponent<Canvas>().enabled = !runesMenu.GetComponent<Canvas>().enabled;
+        }
     }
 		
 
@@ -116,4 +122,6 @@ public class UIController : MonoBehaviour {
 			statsMenu.SetActive (!statsMenu.activeSelf);
 		}
     }
+
+    
 }
