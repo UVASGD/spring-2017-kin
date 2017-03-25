@@ -14,10 +14,13 @@ public class MusicController : MonoBehaviour {
 	ArrayList dayTracks;
 	AudioClip day1;
 	AudioClip day2;
+	AudioClip day3;
 
 	//night tracks
 	ArrayList nightTracks;
 	AudioClip night1;
+	AudioClip night2;
+	AudioClip night3;
 
 	//monastery
 	AudioClip monastery;
@@ -26,8 +29,8 @@ public class MusicController : MonoBehaviour {
 
 	DayNightController DNC;
 
-	float timeLeft;
-	float timer;
+	public float timeLeft;
+	public float timer;
 	public bool fading;
 	public bool up;
 	public bool isPlaying; //use me instead of the other one...
@@ -39,13 +42,18 @@ public class MusicController : MonoBehaviour {
 		dayTracks = new ArrayList ();
 		day1 = Resources.Load ("Sounds/Music/Day Music Brian 1") as AudioClip;
 		day2 = Resources.Load ("Sounds/Music/Overworld Day Christian 1") as AudioClip;
-
+		day3 = Resources.Load ("Sounds/Music/Day Music Brian 2") as AudioClip;
 		dayTracks.Add (day1);
 		dayTracks.Add (day2);
+		dayTracks.Add (day3);
 
 		nightTracks = new ArrayList ();
 		night1 = Resources.Load ("Sounds/Music/Night Music Brian 1") as AudioClip;
+		night2 = Resources.Load ("Sounds/Music/Night Music Brian 2") as AudioClip;
+		night2 = Resources.Load ("Sounds/Music/Night Music Brian 3") as AudioClip;
 		nightTracks.Add (night1);
+		nightTracks.Add (night2);
+		nightTracks.Add (night3);
 
 		monastery = Resources.Load ("Sounds/Music/Monastary Background Music Christian 1") as AudioClip;
 
@@ -69,6 +77,8 @@ public class MusicController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
+		int index = Random.Range (0, dayTracks.Count);
+		//Debug.Log (index);
 
 		if (timer > timeLeft) {
 			isPlaying = false;
@@ -79,10 +89,12 @@ public class MusicController : MonoBehaviour {
 			up = true;
 			fading = true;
 			if (state == MusicState.World) {
+				//int index = Random.Range (0, dayTracks.Count - 1);
+				//Debug.Log (index);
 				if (DNC.currentPhase == DayNightController.DayPhase.Day) {
-					aud.clip = (AudioClip)dayTracks [Random.Range (0, dayTracks.Count - 1)];
+					aud.clip = (AudioClip)dayTracks [index];
 				} else if (DNC.currentPhase == DayNightController.DayPhase.Night) {
-					aud.clip = (AudioClip)nightTracks [Random.Range (0, nightTracks.Count - 1)];
+					aud.clip = (AudioClip)nightTracks [index];
 				}
 			} else if (state == MusicState.Boss) {
 
@@ -92,8 +104,15 @@ public class MusicController : MonoBehaviour {
 				aud.clip = monastery;
 				aud.loop = true;
 			}
-			timeLeft = aud.clip.length;
+
+			if (aud != null && aud.clip != null) {
+				timeLeft = aud.clip.length;
+			} else {
+				timeLeft = 30.0f;
+			}
+
 			aud.Play ();
+			timer = 0.0f;
 			isPlaying = true;
 		}
 
