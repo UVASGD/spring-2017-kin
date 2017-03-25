@@ -30,8 +30,6 @@ public class RunesMenu : MonoBehaviour {
         else
         {
             Debug.Log("OFF");
-            Sprite hilt = hiltRune.GetComponent<Sprite>();
-            hilt = (Sprite)Resources.Load("Sprites/Runes/Rune (2).png");
         }
     }
 }
