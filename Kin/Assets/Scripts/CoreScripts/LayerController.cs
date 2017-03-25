@@ -18,6 +18,7 @@ public class LayerController : MonoBehaviour {
 	void Update () {
 		if (player != null) {
 			playerY = player.transform.position.y;
+			UpdateList();
 			foreach (LayerParameter lay in layeringObjectList) {
 				GameObject obj = lay.gameObject;
 				if (obj) {

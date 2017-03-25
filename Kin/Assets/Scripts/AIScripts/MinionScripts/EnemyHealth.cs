@@ -19,7 +19,7 @@ public class EnemyHealth:MonoBehaviour
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         isDead = false;
-	AIsrc = gameObject.GetComponent<BaseAI>();
+		AIsrc = gameObject.GetComponent<BaseAI>();
         alreadyArced = false;
     }
     public void takeDamage(int amount)

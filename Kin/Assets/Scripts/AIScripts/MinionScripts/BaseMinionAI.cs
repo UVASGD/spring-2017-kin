@@ -2,7 +2,7 @@
 //using UnityEditor;
 using System.Collections;
 
-public class BaseMinionAI : MonoBehaviour {
+public class BaseMinionAI : MonoBehaviour, BaseAI {
 
 	public float awarenessRadius; //Range to change idle->detected
 	public GameObject targetObject; //Player target
@@ -126,4 +126,8 @@ public class BaseMinionAI : MonoBehaviour {
         instPart.GetComponent<ParticleEmit>().target = targetObject;
         instPart.GetComponent<ParticleEmit>().XPEmit(30);
     }
+
+	void BaseAI.recoil(){
+		
+	}
 }
