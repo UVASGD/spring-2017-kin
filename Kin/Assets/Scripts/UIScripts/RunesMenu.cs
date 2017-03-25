@@ -30,6 +30,7 @@ public class RunesMenu : MonoBehaviour {
         else
         {
             Debug.Log("OFF");
+            //hiltRune.GetComponent<Sprite>() = (Texture2D)Resources.Load("Sprites/Runes/Rune (2).png");
         }
     }
 }
