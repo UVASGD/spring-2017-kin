@@ -9,11 +9,13 @@ public class EnemyHealth:MonoBehaviour
     bool isDead;
     bool isInvinc;
     private bool alreadyArced;
+    Animator animator;
 
     public float recoilDist;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         isDead = false;
         alreadyArced = false;
@@ -45,8 +47,9 @@ public class EnemyHealth:MonoBehaviour
 
     public void recoil()
     {
-        Vector2 dir = ((Vector2)(gameObject.transform.position - GameObject.FindGameObjectsWithTag("Player")[0].transform.position)).normalized * recoilDist;
-        gameObject.GetComponent<Rigidbody2D>().velocity = dir;
+        //Vector2 dir = ((Vector2)(gameObject.transform.position - GameObject.FindGameObjectsWithTag("Player")[0].transform.position)).normalized * recoilDist;
+        //gameObject.GetComponent<Rigidbody2D>().velocity = dir;
+        animator.SetBool("Recoiling", true);
     }
 
     // For Lighting Chain Attack from Chac's Rune
