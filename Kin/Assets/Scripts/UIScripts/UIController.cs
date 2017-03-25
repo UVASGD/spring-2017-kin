@@ -31,7 +31,7 @@ public class UIController : MonoBehaviour {
 		if (Input.GetButtonDown ("Stats")) {
 			options.GetComponent<Canvas> ().enabled = !options.GetComponent<Canvas> ().enabled;
 		}
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             //updateRunes();
             runesMenu.GetComponent<Canvas>().enabled = !runesMenu.GetComponent<Canvas>().enabled;
