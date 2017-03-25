@@ -16,7 +16,8 @@ public class Runes : MonoBehaviour
     public int mirrorRune = (int)runeModes.locked;
     public int sunRune = (int)runeModes.locked;
     public int twinsRune = (int)runeModes.locked;
-
+    //Temporary Rune-sprite cheat-sheet
+    //Ixtab - 1, Fire - 9, Chac - 10
     public Sprite[] ixtabRuneSprites;
     public Sprite[] maizeRuneSprites;
     public Sprite[] moonRuneSprites;
