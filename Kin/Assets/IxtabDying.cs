@@ -22,6 +22,7 @@ public class IxtabDying : StateMachineBehaviour {
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		ai.GetComponent<Animator>().SetBool("Dying", false);
 		ai.GetComponent<Animator>().SetBool("Dead", true);
+		ai.GetComponent<DropRune>().dropRune();
 	}
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here

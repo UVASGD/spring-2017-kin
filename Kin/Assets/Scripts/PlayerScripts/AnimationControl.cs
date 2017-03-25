@@ -120,10 +120,10 @@ public class AnimationControl : MonoBehaviour {
             if (canAttack())
             {
                 animator.SetBool("Attacking", true);
-                if (animator.GetBool("Moving"))
-                {
-                    GetComponent<Transform>().position += new Vector3(GetComponent<Rigidbody2D>().velocity.x*jump, GetComponent<Rigidbody2D>().velocity.y*jump, 0);
-                }
+                //if (animator.GetBool("Moving"))
+                //{
+                //    GetComponent<Transform>().position += new Vector3(GetComponent<Rigidbody2D>().velocity.x*jump, GetComponent<Rigidbody2D>().velocity.y*jump, 0);
+                //}
             }
 		}
 	}

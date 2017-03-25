@@ -140,8 +140,8 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 	public void spawnMinions() {
 		// Spawn %hp/10% Kamikaze
 		//9 - ((((int)(enemyHealth.getHp()/enemyHealth.maxHealth)*100)) % 10)
-		foreach(Vector2 vec in calculateAngles((int)(10 - (enemyHealth.getHp()/enemyHealth.maxHealth)/0.1))) {
-			GameObject kami = Instantiate(Resources.Load("Prefabs/Entities/Kamikaze", typeof(GameObject)) as GameObject, 
+		foreach(Vector2 vec in calculateAngles((int)(10 - (enemyHealth.getHp()/enemyHealth.maxHealth)/0.1), 1.0f)) {
+			Instantiate(Resources.Load("Prefabs/Entities/Kamikaze", typeof(GameObject)) as GameObject, 
 				vec, Quaternion.identity);
 		}
 	}
@@ -158,8 +158,8 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		if (distanceToPlayer() < attackRange) {
 			player.GetComponent<PlayerHealth>().TakeDamage((int)damageDone);
 		}
-		foreach (Vector2 vec in calculateAngles(8)) {
-			GameObject lightning = Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)) as GameObject,
+		foreach (Vector2 vec in calculateAngles(8, 0.5f)) {
+			Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)) as GameObject,
 				vec, Quaternion.identity);
 		}
 	}
@@ -176,7 +176,7 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		return Vector2.Distance (player.transform.position, this.gameObject.transform.position);
 	}
 
-	private List<Vector2> calculateAngles(int num) {
+	private List<Vector2> calculateAngles(int num, float distanceAway) {
 		if (num == 0) {
 			//return new List<Vector2>();
 			num = 3;
@@ -186,7 +186,7 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		List<Vector2> vecList = new List<Vector2>();
 		for (int i = 0; i < num; i++) {
 			vecList.Add((Vector2)gameObject.transform.position + 
-				new Vector2(Mathf.Cos(Mathf.Deg2Rad * curAngle), Mathf.Sin(Mathf.Deg2Rad * curAngle)));
+				new Vector2(Mathf.Cos(Mathf.Deg2Rad * curAngle), Mathf.Sin(Mathf.Deg2Rad * curAngle)).normalized * distanceAway);
 			curAngle += angleDisplacement;
 		}
 		return vecList;

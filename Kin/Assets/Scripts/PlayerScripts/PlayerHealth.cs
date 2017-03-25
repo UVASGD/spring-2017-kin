@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour {
     // public AudioClip damageClip;
     // public AudioClip deathClip;
     bool isDead = false;
+    public bool ixtabRune = false;
 
     AvatarMvmController playerMvmController;
     // Reference to animator for death animation
@@ -22,7 +23,7 @@ public class PlayerHealth : MonoBehaviour {
 
     void Awake()
     {
-        maxHealth = GetComponent<StatController>().getHealth(); 
+        maxHealth = GetComponent<StatController>().getHealth();
         /*if you want the ui controller to get this value, 
          * you need to set it here, not in start. 
          * Start is too late, and this is fine because start 
@@ -52,8 +53,15 @@ public class PlayerHealth : MonoBehaviour {
         }
         if (currentHealth <= 0 && !isDead)
         {
-            currentHealth = 0;
-            Death();
+			if (ixtabRune) {
+				currentHealth = maxHealth / 4;
+				Debug.Log ("Ixtab rune activated");
+                GetComponent<Runes>().ixtabRune = (int)Runes.runeModes.locked;
+                GetComponent<Runes>().setIxtabActive(false);
+			} else {
+				currentHealth = 0;
+				Death ();
+			}
         }
         else
         {
