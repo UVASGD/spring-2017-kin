@@ -14,7 +14,7 @@ public class ChacAI : BaseGodAI
 	public float maxRangedCd;
 	protected float rangedCurrCd;
 	protected bool rangedCd;
-    public float maxProjectileCd;
+    protected float maxProjectileCd;
     protected float projCurrCd;
     protected bool projCd;
 	float fireBoltCd = 0;
@@ -24,6 +24,7 @@ public class ChacAI : BaseGodAI
 	const float ANGLE_THRESHOLD = Mathf.PI/4;
     int maxHealth;
     int stage; //determines which invinsibility stages have already happened
+    SpriteRenderer render;
 
 	//Set of AI behavior states
 	protected enum AIStates
@@ -39,11 +40,13 @@ public class ChacAI : BaseGodAI
         invincCurrCd = maxInvincCd;
 
         maxHealth = gameObject.GetComponent<EnemyHealth>().maxHealth;
+        render = gameObject.GetComponent<SpriteRenderer>();
         stage = 0;
 
         meleeCd = false;
         projCd = false;
         maxInvincCd = 10;
+        maxProjectileCd = 1;
         invincCurrCd = maxInvincCd;
         projCurrCd = maxProjectileCd;
 
@@ -60,7 +63,9 @@ public class ChacAI : BaseGodAI
                     curState = AIStates.InvincibleState;
 			    break;
 		    case AIStates.InvincibleState:
-                if(projCd)
+                gameObject.GetComponent<EnemyHealth>().setInvinc(true);
+                gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                if (projCd)
                 {
                     if (stage == 2) //final invincible phase
                     {
@@ -137,6 +142,7 @@ public class ChacAI : BaseGodAI
                         meleeCd = true;
                         attackInRadius(targetObject.transform.position.x > rb.transform.position.x, meleeRange);
                         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                        render.material.SetColor("_Color", Color.red);
                         Debug.Log("CoolDown");
                     }
                 }
@@ -147,6 +153,7 @@ public class ChacAI : BaseGodAI
                     meleeCurrCd = maxMeleeCd;
                     meleeCd = false;
                     gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+                    render.material.SetColor("_Color", Color.white);
                 }
                 else
                 {
@@ -180,7 +187,7 @@ public class ChacAI : BaseGodAI
                 {
                     if(health <= 0)
                     {
-                        gameObject.GetComponent<MeleeMinionAnimationController>().dying = true; //use shaman to test, delete later
+                        gameObject.GetComponent<ChacAnimationController>().dying = true; //use shaman to test, delete later
                     }
                 }
 			    break;
@@ -325,7 +332,7 @@ public class ChacAI : BaseGodAI
             if (thingsToAttack[i].tag == "Player")
             {
                 Debug.Log("attacking");
-                gameObject.GetComponent<MeleeMinionAnimationController>().attacking = true; //using shaman to test, delete after
+                gameObject.GetComponent<ChacAnimationController>().attacking = true; //using shaman to test, delete after
                 targetObject.GetComponent<PlayerHealth>().TakeDamage(meleeDamage);
             }
         }
