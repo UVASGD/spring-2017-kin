@@ -94,6 +94,7 @@ public class MeleeMinion : BaseMinionAI
     }
 
 	public void PlaySoundPlz(){
+		
 		GetComponent<AudioSource>().Play();
 	}
 
