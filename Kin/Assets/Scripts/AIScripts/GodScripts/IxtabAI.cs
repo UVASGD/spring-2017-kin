@@ -222,5 +222,8 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 	void BaseAI.recoil(){
 		ixtabController.GetComponent<Animator>().SetBool("Recoiling", true);
 		anim.SetBool ("Recoiling", true);
+		anim.SetBool ("Attack1", false);
+		anim.SetBool ("Attack2", false);
+		anim.SetBool ("Attack3", false);
 	}
 }
