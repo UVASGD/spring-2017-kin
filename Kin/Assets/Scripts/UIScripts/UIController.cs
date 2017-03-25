@@ -123,21 +123,5 @@ public class UIController : MonoBehaviour {
 		}
     }
 
-    private void updateRunes()
-    {
-        Runes runes = player.GetComponent<Runes>();
-        //int ixtabRune; 
-        //int maizeRune;
-        //int moonRune; 
-        //int chacRune; 
-        //int huntRune;
-        //int mirrorRune; 
-        //int sunRune;
-        //int twinsRune;
-
-        if(runes.ixtabRune == 3)
-        {
-            
-        }
-}
+    
 }
