@@ -4,13 +4,15 @@ using System.Collections;
 
 public class ChacLocation : MonoBehaviour
 {
-	public float distanceFromPlayer;
+	public Vector3 distanceFromPlayer;
 	public float awakenDistance = 10.0f;
 	public GameObject player;
+	private Animator stateMachine;
 
 	// Use this for initialization
 	void Start ()
 	{
+		stateMachine = gameObject.GetComponent<Animator> ();
 		distanceFromPlayer = player.transform.position - gameObject.transform.position;
 	}
 	
@@ -19,9 +21,9 @@ public class ChacLocation : MonoBehaviour
 	{
 		distanceFromPlayer = player.transform.position - gameObject.transform.position;
 
-		if(distanceFromPlayer < awakenDistance) {
+		if(distanceFromPlayer.magnitude < awakenDistance) {
 			
-			stateMachine.SetTrigger ("closeEnough"); 
+			stateMachine.SetBool ("closeEnough", true); 
 		} 
 
 		// update postion?
