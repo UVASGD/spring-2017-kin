@@ -96,7 +96,7 @@ public class MusicController : MonoBehaviour {
 		timer += Time.deltaTime;
 
 		int index = Random.Range (0, dayTracks.Count);
-		//Debug.Log (index);
+		Debug.Log (index);
 
 		if (timer > timeLeft) {
 			isPlaying = false;
@@ -117,7 +117,6 @@ public class MusicController : MonoBehaviour {
 				}
 			} else if (state == MusicState.Boss) {
 				if (Bossname == "Chac") {
-					Debug.Log ("OH I AM CHAC");
 					aud.clip = chacjam;
 					aud.loop = true;
 				} else if (Bossname == "Ixtab") {
@@ -144,7 +143,13 @@ public class MusicController : MonoBehaviour {
 			if (aud != null && aud.clip != null) {
 				timeLeft = aud.clip.length;
 			} else {
-				timeLeft = 30.0f;
+				if (DNC.currentPhase == DayNightController.DayPhase.Day) {
+					aud.clip = (AudioClip)dayTracks [index];
+				} else if (DNC.currentPhase == DayNightController.DayPhase.Night) {
+					aud.clip = (AudioClip)nightTracks [index];
+				} else {
+					timeLeft = 20.0f;
+				}
 			}
 
 			aud.Play ();
