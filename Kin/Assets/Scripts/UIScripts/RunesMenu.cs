@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class RunesMenu : MonoBehaviour {
@@ -25,12 +26,12 @@ public class RunesMenu : MonoBehaviour {
         {
             Debug.Log("ON");
             Sprite hilt = hiltRune.GetComponent<Sprite>();
-            hilt = (Sprite)Resources.Load("Sprites/Runes/Rune (1).png");
+            hiltRune.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Runes/Rune (1)");
         }
         else
         {
             Debug.Log("OFF");
-            //hiltRune.GetComponent<Sprite>() = (Texture2D)Resources.Load("Sprites/Runes/Rune (2).png");
+            hiltRune.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Runes/Rune (2)");
         }
     }
 }
