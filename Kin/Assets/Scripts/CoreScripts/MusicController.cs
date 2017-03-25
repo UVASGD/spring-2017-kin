@@ -38,6 +38,7 @@ public class MusicController : MonoBehaviour {
 	DayNightController DNC;
 
 	public GameObject mona;
+	public GameObject chime;
 
 	public float timeLeft;
 	public float timer;
@@ -95,8 +96,10 @@ public class MusicController : MonoBehaviour {
 	void Update () {
 		timer += Time.deltaTime;
 
-		int index = Random.Range (0, dayTracks.Count);
-		Debug.Log (index);
+		int index = 0;
+
+		if(dayTracks != null)
+			index = Random.Range (0, dayTracks.Count);
 
 		if (timer > timeLeft) {
 			isPlaying = false;
@@ -110,9 +113,9 @@ public class MusicController : MonoBehaviour {
 				aud.loop = false;
 				//int index = Random.Range (0, dayTracks.Count - 1);
 				//Debug.Log (index);
-				if (DNC.currentPhase == DayNightController.DayPhase.Day) {
+				if (DNC.currentPhase == DayNightController.DayPhase.Day || DNC.currentPhase == DayNightController.DayPhase.Dawn) {
 					aud.clip = (AudioClip)dayTracks [index];
-				} else if (DNC.currentPhase == DayNightController.DayPhase.Night) {
+				} else if (DNC.currentPhase == DayNightController.DayPhase.Night || DNC.currentPhase == DayNightController.DayPhase.Dusk) {
 					aud.clip = (AudioClip)nightTracks [index];
 				}
 			} else if (state == MusicState.Boss) {
@@ -195,16 +198,20 @@ public class MusicController : MonoBehaviour {
 		up = false;
 		aud.volume = 1.00f;
 		mona.GetComponent<AudioSource> ().Play ();
+		chime.GetComponent<AudioSource> ().Play ();
 		state = MusicState.Monastery;
 		Bossname = "";
 	}
 
 	public void InterruptForWorld(){
 		mona.GetComponent<AudioSource> ().Stop ();
+		chime.GetComponent<AudioSource> ().Stop ();
 		isPlaying = false;
 		aud.volume = 1.00f;
 		up = false;
 		state = MusicState.World;
+		timeLeft = 0.0f;
+		introed = false;
 		Bossname = "";
 	}
 

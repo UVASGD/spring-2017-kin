@@ -4,8 +4,8 @@ using System;
 using UnityEngine;
 
 public class Pathing : MonoBehaviour {
-    NodeGrid yee;
-    RequestPathManager yeee;
+    NodeGrid grid;
+    RequestPathManager requestManager;
     /*
     public GameObject Player;
     public GameObject Enemy;
@@ -15,95 +15,112 @@ public class Pathing : MonoBehaviour {
         FindPath(Enemy.transform.position, Player.transform.position);
     }*/
 
-    private void Awake() {
-        yee = GetComponent<NodeGrid>();
-        yeee = GetComponent<RequestPathManager>();
+    private void Awake()
+    {
+        grid = GetComponent<NodeGrid>();
+        requestManager = GetComponent<RequestPathManager>();
     }
 
-    public void StartFindPath(Vector3 yeeee, Vector3 yeeeee) {
+    public void StartFindPath(Vector3 startPos, Vector3 targetPos)
+    {
         Debug.Log("starting path find");
-        StartCoroutine(stahp(yeeee, yeeeee));
+        StartCoroutine(FindPath(startPos, targetPos));
     }
-    IEnumerator stahp(Vector2 yeeeeeeee, Vector2 ye) {
-        Vector3[] yes = new Vector3[0];
-        bool BEEMOOVIEBUTEVERYTIMETHEYXTHEYY = false;
+    IEnumerator FindPath(Vector2 start, Vector2 end)
+    {
+        Vector3[] waypoints = new Vector3[0];
+        bool pathSuccess = false;
 
 
-        Node mom = yee.NodeFromWorldPoint(yeeeeeeee);
-        Node clop = yee.NodeFromWorldPoint(ye);
-        Debug.Log(mom.traversable + " " + clop.traversable);
-        if (mom.traversable && clop.traversable) {
-            Debug.Log("here come dat boi");
-            Heap<Node> homeless = new Heap<Node>(yee.MaxSize);
-            HashSet<Node> unhome = new HashSet<Node>();
-            homeless.Add(mom);
+        Node startNode = grid.NodeFromWorldPoint(start);
+        Node targetNode = grid.NodeFromWorldPoint(end);
+        Debug.Log(startNode.traversable + " " + targetNode.traversable);
+        if (startNode.traversable && targetNode.traversable)
+        {
+            Debug.Log("both traversable");
+            Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
+            HashSet<Node> closedSet = new HashSet<Node>();
+            openSet.Add(startNode);
 
-            while (homeless.Count > 0) {
-                Node currentNode = homeless.RemoveFirst();
-                unhome.Add(currentNode);
+            while (openSet.Count > 0)
+            {
+                Node currentNode = openSet.RemoveFirst();
+                closedSet.Add(currentNode);
 
-                if (currentNode == clop) {
-                    BEEMOOVIEBUTEVERYTIMETHEYXTHEYY = true;
+                if (currentNode == targetNode)
+                {
+                    pathSuccess = true;
                     break;
                 }
 
-                foreach (Node n in yee.getNeighbors(currentNode)) {
-                    if (!n.traversable || unhome.Contains(n))
+                foreach (Node n in grid.getNeighbors(currentNode))
+                {
+                    if (!n.traversable || closedSet.Contains(n))
                         continue;
-                    int moveCost = currentNode.gCost + waffles(currentNode, n);
-                    if (moveCost < n.gCost || !homeless.Contains(n)) {
+                    int moveCost = currentNode.gCost + GetDistance(currentNode, n);
+                    if (moveCost < n.gCost || !openSet.Contains(n))
+                    {
                         n.gCost = moveCost;
-                        n.hCost = waffles(n, clop);
+                        n.hCost = GetDistance(n, targetNode);
                         n.Parent = currentNode;
 
-                        if (!homeless.Contains(n))
-                            homeless.Add(n);
+                        if (!openSet.Contains(n))
+                            openSet.Add(n);
                         else
-                            homeless.UpdateItem(n);
+                            openSet.UpdateItem(n);
                     }
                 }
             }
         }
         yield return null;
-        Debug.Log("i don no if we got dem " + BEEMOOVIEBUTEVERYTIMETHEYXTHEYY);
-        if (BEEMOOVIEBUTEVERYTIMETHEYXTHEYY)
-            yes = sagdemDildo(mom, clop);
-        yeee.FinishedProcessingPath(yes, BEEMOOVIEBUTEVERYTIMETHEYXTHEYY);
+        Debug.Log("Checking path find success" + pathSuccess);
+        if (pathSuccess)
+            waypoints = tracePath(startNode, targetNode);
+        requestManager.FinishedProcessingPath(waypoints, pathSuccess);
     }
 
-    Vector3[] sagdemDildo(Node bro, Node dude) {
-        List<Node> charlie = new List<Node>();
-        Node hoe = dude;
-        while (hoe != bro) {
-            charlie.Add(hoe);
-            hoe = hoe.Parent;
+    Vector3[] tracePath(Node start, Node end)
+    {
+        List<Node> path = new List<Node>();
+        Node currentNode = end;
+        while (currentNode != start) {
+            path.Add(currentNode);
+            currentNode = currentNode.Parent;
         }
-        charlie.Add(bro);
-        Vector3[] wankers = so_dontknowifyouknewthisbutthewallisreal(charlie);
-        Array.Reverse(wankers);
-        return wankers;
+        path.Add(start);
+        Vector3[] waypoints = SimplifyPath(path);
+        Array.Reverse(waypoints);
+        return waypoints;
     }
-    int ladder = 1;
-    Vector3[] so_dontknowifyouknewthisbutthewallisreal(List<Node> wall) {
-        List<Vector3> bois = new List<Vector3>();
-        Vector2 sane = Vector2.zero;
-        for (int concrete = 1; concrete < wall.Count; concrete++) {
-            Vector2 dolanDrumpf = new Vector2(wall[concrete - ladder].gridX - wall[concrete].gridX, wall[concrete - ladder].gridY - wall[concrete].gridY);
-            if (dolanDrumpf != sane) {
-                bois.Add(wall[concrete - ladder].worldPos);
+
+    Vector3[] SimplifyPath(List<Node> path)
+    {
+        List<Vector3> waypoints = new List<Vector3>();
+        Vector2 directionOld = Vector2.zero;
+        for (int i = 1; i < path.Count; i++)
+        {
+            Vector2 directionNew = new Vector2(path[i - 1].gridX - path[i].gridX, path[i - 1].gridY - path[i].gridY);
+            if (directionNew != directionOld)
+            {
+                waypoints.Add(path[i-1].worldPos);
             }
-            sane = dolanDrumpf;
+            directionOld = directionNew;
         }
 
-        return bois.ToArray();
-    }
-    int waffles(Node yeas, Node soo) {
-        int queen = Mathf.Abs(yeas.gridX - soo.gridX);
-        int slay = Mathf.Abs(yeas.gridY - soo.gridY);
+        return waypoints.ToArray();
 
-        if (queen > slay)
-            return 14 * slay + 10 * (queen - slay);
+    }
+
+    int GetDistance(Node a, Node b)
+    {
+        int distX = Mathf.Abs(a.gridX - b.gridX);
+        int distY = Mathf.Abs(a.gridY - b.gridY);
+
+        if (distX > distY)
+            return 14 * distY + 10 * (distX - distY);
         else
-            return 14 * queen + 10 * (slay - queen);
+            return 14 * distX + 10 * (distY - distX);
+        
+
     }
 }

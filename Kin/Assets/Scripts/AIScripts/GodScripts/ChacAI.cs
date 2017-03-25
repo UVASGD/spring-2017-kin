@@ -62,7 +62,6 @@ public class ChacAI : BaseGodAI
 		if (timer <= 10.0f)
 			timer += 0.1f;
         int health = gameObject.GetComponent<EnemyHealth>().getHp();
-		Debug.Log (health);
         switch (curState)
 		{
 		    case AIStates.IdleState:
@@ -194,7 +193,12 @@ public class ChacAI : BaseGodAI
                 {
 				if(health <= 0 && timer > 10.0f)
                     {
-                        gameObject.GetComponent<ChacAnimationController>().dying = true; //use shaman to test, delete later
+                        if (gameObject.GetComponent<ChacAnimationController>() != null)
+                            gameObject.GetComponent<ChacAnimationController>().dying = true; //use shaman to test, delete later
+                        else
+                        {
+                            Destroy(gameObject);
+                        }
                     }
                 }
 			    break;

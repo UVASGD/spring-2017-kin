@@ -3,6 +3,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
+
+[RequireComponent(typeof(AudioSource))]
 public class MeleeMinion : BaseMinionAI
 {
     public int meleeDamage; //Melee attack damage
@@ -65,6 +67,7 @@ public class MeleeMinion : BaseMinionAI
 						}
 						if (meleeCurrCd <= 0.5f && !dealtDamage) {
 							if (distanceToPlayer < attackRange) {
+								
 								attackInRadius (targetObject.transform.position.x > rb.transform.position.x, attackRange);
 							}
 							dealtDamage = true;
@@ -89,6 +92,11 @@ public class MeleeMinion : BaseMinionAI
 				despawnTimer += Time.deltaTime;
 		}
     }
+
+	public void PlaySoundPlz(){
+		
+		GetComponent<AudioSource>().Play();
+	}
 
     private GameObject[] ObjectsInAttackArea(bool direction /* false==left, true==right */, float attackRadius)
     {
@@ -122,13 +130,13 @@ public class MeleeMinion : BaseMinionAI
         //Debug.Log("Attacking");
         GameObject[] thingsToAttack = ObjectsInAttackArea(direction,radius);
         //Attack Everything In This List
-        for(int i = 0; i < thingsToAttack.Length; i++){
-			if (thingsToAttack[i].tag == "Player")
+		if (thingsToAttack.Length > 0){
+			if (thingsToAttack[0].tag == "Player")
 			{
 				Debug.Log ("attacking");
 					targetObject.GetComponent<PlayerHealth> ().TakeDamage (meleeDamage);
 			}
-        }
+		}
     }
 
 	void death()

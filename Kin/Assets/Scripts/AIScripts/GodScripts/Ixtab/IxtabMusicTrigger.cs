@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerChacMusic : MonoBehaviour {
+public class IxtabMusicTrigger : MonoBehaviour {
 
 	public GameObject DNH;
 
@@ -18,12 +18,12 @@ public class TriggerChacMusic : MonoBehaviour {
 
 	public void OnTriggerEnter2D(Collider2D coll){
 		if (coll.tag == "Player" && DNH.GetComponent<MusicController>().state != MusicController.MusicState.Boss) {
-			DNH.GetComponent<MusicController> ().InterruptForBoss ("Chac");
+			DNH.GetComponent<MusicController> ().InterruptForBoss ("Ixtab");
 		}
 	}
 
-	public void OnTiggerExit2D(Collider2D coll){
-		if (coll.tag == "Player" && DNH.GetComponent<MusicController>().state != MusicController.MusicState.World) {
+	public void OnTriggerExit2D(Collider2D coll){
+		if (coll.tag == "Player") {
 			DNH.GetComponent<MusicController> ().InterruptForWorld ();
 		}
 	}
