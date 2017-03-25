@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Runes : MonoBehaviour
 {
 
@@ -31,7 +32,10 @@ public class Runes : MonoBehaviour
 
     public void setMaizeActive(bool active) { }
     public void setMoonActive(bool active) { }
-    public void setChacActive(bool active) { }
+    public void setChacActive(bool active)
+    {
+        GetComponent<PlayerMelee>().chacRuneActivated = active;
+    }
     public void setHuntActive(bool active) { }
     public void setMirrorActive(bool active) { }
     public void setSunActive(bool active) {
