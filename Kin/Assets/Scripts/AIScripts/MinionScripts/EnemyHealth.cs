@@ -23,7 +23,7 @@ public class EnemyHealth:MonoBehaviour
             currentHealth -= amount;
             recoil();
         }
-        //Debug.Log("Took Damage");
+        Debug.Log(currentHealth);
         // Play damage audio clip
        // if (currentHealth <= 0 && !isDead)
         //{

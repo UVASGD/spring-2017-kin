@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class ChacAI : BaseGodAI
 {
-	public float maxInvincCd;
+	protected float maxInvincCd;
 	protected float invincCurrCd;
 	public float meleeRange;
     public int meleeDamage;
@@ -42,7 +42,9 @@ public class ChacAI : BaseGodAI
         stage = 0;
 
         meleeCd = false;
-        projCd = true;
+        projCd = false;
+        maxInvincCd = 10;
+        invincCurrCd = maxInvincCd;
         projCurrCd = maxProjectileCd;
 
 		curState = AIStates.IdleState;
@@ -60,17 +62,21 @@ public class ChacAI : BaseGodAI
 		    case AIStates.InvincibleState:
                 if(projCd)
                 {
-                    if (stage == 1) //final invincible phase
+                    if (stage == 2) //final invincible phase
                     {
-                        //lightning and geysers
+                        //shoot lighning and geysers
+                        projectileOnPosition((Vector2)targetObject.transform.position, 1);
+                        projectileOnPosition((Vector2)targetObject.transform.position, 2);
                     }
-                    else if (stage == 0) //2nd invincible phase
+                    else if (stage == 1) //2nd invincible phase
                     {
-                       dropBoltOnPosition((Vector2)targetObject.transform.position);
+                        //shoot lightning
+                       projectileOnPosition((Vector2)targetObject.transform.position, 1);
                     }
                     else //first invincibility phase
                     {
-                        //geysers
+                        //shoot geysers
+                        projectileOnPosition((Vector2)targetObject.transform.position, 2);
                     }
                     projCd = false;
                     projCurrCd = maxProjectileCd;
@@ -79,7 +85,7 @@ public class ChacAI : BaseGodAI
                 
 			    if(invincCurrCd <= 0) //change to melee attacks after some time
 			    {
-				    //curState = AIStates.MeleeState;
+				    curState = AIStates.MeleeState;
 				    invincCurrCd = maxInvincCd;
                     gameObject.GetComponent<EnemyHealth>().setInvinc(false);
                     //come down and shockwave
@@ -150,19 +156,23 @@ public class ChacAI : BaseGodAI
 
                 if (stage == 0) //for reaching second invincibility state
                 {
-                    if (health < (2 / 3) * maxHealth) //activate 2nd invincible phase
+                    if (health < (2.0 / 3) * maxHealth) //activate 2nd invincible phase
                     {
                         gameObject.GetComponent<EnemyHealth>().setInvinc(true);
                         curState = AIStates.InvincibleState;
+                        projCurrCd = maxProjectileCd;
+                        invincCurrCd = maxInvincCd;
                         stage++;
                     }
                 }
                 else if (stage == 1) //for reaching third invincibility state
                 {
-                    if (health < (1 / 3) * maxHealth) //activate 3rd invincible phase
+                    if (health < (1.0 / 3) * maxHealth) //activate 3rd invincible phase
                     {
                         gameObject.GetComponent<EnemyHealth>().setInvinc(true);
                         curState = AIStates.InvincibleState;
+                        projCurrCd = maxProjectileCd;
+                        invincCurrCd = maxInvincCd;
                         stage++;
                     }
                 }
@@ -321,8 +331,21 @@ public class ChacAI : BaseGodAI
         }
     }
 
-    void dropBoltOnPosition(Vector3 pos)
+    void projectileOnPosition(Vector3 pos, int proj)
     {
-        GameObject newProj1 = (GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)), pos, Quaternion.identity);
+        GameObject newProj;
+        pos.y = pos.y + 0.3f;
+        switch(proj) {
+            case 1: //lightning
+                newProj = (GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)), pos, Quaternion.identity);
+                break;
+            case 2: //geyser
+                newProj = (GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/Geyser", typeof(GameObject)), pos, Quaternion.identity);
+                break;
+            default:
+                Debug.Log("Something not right");
+                break;
+
+        }
     }
 }
