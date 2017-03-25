@@ -26,16 +26,20 @@ public class ChacAI : BaseGodAI
     int stage; //determines which invinsibility stages have already happened
     SpriteRenderer render;
 
+	float timer;
+
 	//Set of AI behavior states
-	protected enum AIStates
+	public enum AIStates
 	{
 		InvincibleState, MeleeState, IdleState
 	}
-	protected AIStates curState; //Current AI behavior state
+	public AIStates curState; //Current AI behavior state
 
 	protected new void Start()
 	{
 		base.Start();
+
+		timer = 0.0f;
 
         invincCurrCd = maxInvincCd;
 
@@ -55,11 +59,14 @@ public class ChacAI : BaseGodAI
 
 	protected new void Update()
 	{
+		if (timer <= 10.0f)
+			timer += 0.1f;
         int health = gameObject.GetComponent<EnemyHealth>().getHp();
+		Debug.Log (health);
         switch (curState)
 		{
 		    case AIStates.IdleState:
-			    if (true /*some condition*/)
+			if (Vector2.Distance(this.gameObject.transform.position, targetObject.transform.position) < base.awarenessRadius)
                     curState = AIStates.InvincibleState;
 			    break;
 		    case AIStates.InvincibleState:
@@ -185,7 +192,7 @@ public class ChacAI : BaseGodAI
                 }
                 else
                 {
-                    if(health <= 0)
+				if(health <= 0 && timer > 10.0f)
                     {
                         gameObject.GetComponent<ChacAnimationController>().dying = true; //use shaman to test, delete later
                     }
