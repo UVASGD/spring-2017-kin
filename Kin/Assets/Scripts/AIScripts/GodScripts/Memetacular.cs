@@ -14,6 +14,8 @@ public class Memetacular : MonoBehaviour {
 	public float donutsPerSecond = 1;
 	bool dying;
 	float despawn = 0.0f;
+    public GameObject ixtabRune;
+
 
 	public enum Meme{
 		YOLO, oneDoesNot, pepe
@@ -33,10 +35,9 @@ public class Memetacular : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (gameObject.GetComponent<EnemyHealth>().getHp() <= 0) {
-			dying = true;
-
 			death ();
-		}
+            dying = true; 
+        }
 		//isDank ();
 		if (!dying) {
 			Vector2 weed = new Vector2 (player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
@@ -131,6 +132,7 @@ public class Memetacular : MonoBehaviour {
 	public void death()
 	{
 		squirrel.SetBool ("Dying",true);
+        if (!dying) Instantiate(ixtabRune, this.transform.position + new Vector3(0,0,0.01f), Quaternion.identity);
 		gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
 
 	}
