@@ -35,6 +35,7 @@ public class UIController : MonoBehaviour {
         {
             //updateRunes();
             runesMenu.GetComponent<Canvas>().enabled = !runesMenu.GetComponent<Canvas>().enabled;
+            runesMenu.GetComponent<RunesMenu>().updateRunes();
         }
     }
 		
