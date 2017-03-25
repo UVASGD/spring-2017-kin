@@ -14,7 +14,6 @@ public class Memetacular : MonoBehaviour {
 	public float donutsPerSecond = 1;
 	bool dying;
 	float despawn = 0.0f;
-    public GameObject ixtabRune;
 
 
 	public enum Meme{
@@ -132,7 +131,7 @@ public class Memetacular : MonoBehaviour {
 	public void death()
 	{
 		squirrel.SetBool ("Dying",true);
-        if (!dying) Instantiate(ixtabRune, this.transform.position + new Vector3(0,0,0.01f), Quaternion.identity);
+        if (!dying) GetComponent<DropRune>().dropRune(); 
 		gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
 
 	}
