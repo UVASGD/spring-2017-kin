@@ -23,7 +23,7 @@ public class DeathMenuController : MonoBehaviour {
 
 	public void ResumeGame() {
 		//sceneCont.GetComponent<SceneController>().FadeToMain();
-		SceneManager.LoadScene("Main");
+		SceneManager.LoadScene("Main_with_HLD");
 	}
 
 	public void MainMenu() {
