@@ -41,7 +41,8 @@ public class ChacAnimationController : MonoBehaviour
 			animator.SetTrigger ("Dying");
 			gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
 			dying = false;
-			Destroy(gameObject.GetComponent<MeleeMinionAnimationController>());
+            GetComponent<DropRune>().dropRune();
+            Destroy(gameObject.GetComponent<ChacAnimationController>());
 		} else if (animator.GetCurrentAnimatorStateInfo (0).IsTag ("Dying")) {
 			//animator.SetBool ("Dying", false);
 			Debug.Log("In dying");

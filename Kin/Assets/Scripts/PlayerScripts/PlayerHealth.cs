@@ -79,6 +79,7 @@ public class PlayerHealth : MonoBehaviour {
         anim.SetBool("Dying", true);
         // Play death audio clip
         playerMvmController.enabled = false;
+
         // Go to UI Screen
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition; // Make sure to unfreeze before undying...
 
@@ -110,10 +111,6 @@ public class PlayerHealth : MonoBehaviour {
         // For Testing
         //Debug.Log("Max: " + maxHealth + ", Current: " + currentHealth);
         //Debug.Log("Recoiling " + anim.GetBool("Recoiling"));
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            TakeDamage(60);
-        }
         // Timer set up so you can do something once they've been dead a certain amount of time
         if (isDead) {
             restartTimer += Time.deltaTime;
@@ -127,6 +124,16 @@ public class PlayerHealth : MonoBehaviour {
             // Go back to scene?
         }
     }
+
+	public void playDeathSound() {
+		Debug.Log("Death");
+		AudioSource aSource = GetComponent<AudioSource>();
+		string clipName = "Sounds/Player SFX/Death Sound Brian " + Random.Range(1, 3);
+		Debug.Log(clipName);
+		AudioClip c = Resources.Load(clipName) as AudioClip;
+		aSource.clip = c;
+		aSource.GetComponent<AudioSource>().Play();
+	}
 
 
 }
