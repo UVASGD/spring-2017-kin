@@ -133,8 +133,7 @@ public class MeleeMinion : BaseMinionAI
 		if (thingsToAttack.Length > 0){
 			if (thingsToAttack[0].tag == "Player")
 			{
-				Debug.Log ("attacking");
-					targetObject.GetComponent<PlayerHealth> ().TakeDamage (meleeDamage);
+				targetObject.GetComponent<PlayerHealth> ().TakeDamage (meleeDamage);
 			}
 		}
     }
