@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour {
     public GameObject bossHealth;
     public GameObject statsMenu;
 	public GameObject options;
+    public GameObject runesMenu;
 	public GameObject player;
     public Text bossName;
     // Add clock
@@ -30,6 +31,11 @@ public class UIController : MonoBehaviour {
 		if (Input.GetButtonDown ("Cancel")) {
 			options.GetComponent<Canvas> ().enabled = !options.GetComponent<Canvas> ().enabled;
 		}
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log("RUNES");
+            runesMenu.GetComponent<Canvas>().enabled = !runesMenu.GetComponent<Canvas>().enabled;
+        }
     }
 		
 
