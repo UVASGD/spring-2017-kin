@@ -193,7 +193,12 @@ public class ChacAI : BaseGodAI
                 {
 				if(health <= 0 && timer > 10.0f)
                     {
-                        gameObject.GetComponent<ChacAnimationController>().dying = true; //use shaman to test, delete later
+                        if (gameObject.GetComponent<ChacAnimationController>() != null)
+                            gameObject.GetComponent<ChacAnimationController>().dying = true; //use shaman to test, delete later
+                        else
+                        {
+                            Destroy(gameObject);
+                        }
                     }
                 }
 			    break;
