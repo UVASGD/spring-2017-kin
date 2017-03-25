@@ -173,7 +173,7 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 			player.GetComponent<PlayerHealth>().TakeDamage((int)damageDone);
 		}
 		foreach (Vector2 vec in calculateAngles(8, 0.5f)) {
-			Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)) as GameObject,
+			Instantiate(Resources.Load("Prefabs/Projectiles/Skullcandy", typeof(GameObject)) as GameObject,
 				vec, Quaternion.identity);
 		}
 	}
