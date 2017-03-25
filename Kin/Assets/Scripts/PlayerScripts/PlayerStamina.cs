@@ -5,11 +5,11 @@ public class PlayerStamina : MonoBehaviour {
 
 	public int maxStamina; 
 	private int currentStamina;
-    private int staminaRegen = 3;
+    private int staminaRegen = 4;
     public bool hasStamina;
     float resetLevel = 500;
     bool pauseRegen = false;
-    float pauseLength = 0.7f; // seconds it should pause for
+    float pauseLength = 0.6f; // seconds it should pause for
     float pauseTimer = 0;
     
     public int getMaxStamina()
