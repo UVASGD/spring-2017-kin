@@ -40,12 +40,68 @@ public class Runes : MonoBehaviour
     public void setMirrorActive(bool active) { }
     public void setSunActive(bool active) {
 		if (active) {
-			GetComponent<MeleeAttackHitBox> ().setDamage (30);
+            GetComponent<PlayerMelee>().setDamage(30);
 		} else {
-			GetComponent<MeleeAttackHitBox> ().setDamage (20);
+            GetComponent<PlayerMelee>().setDamage(20);
 		}
 	}
     public void setTwinsActive(bool active) { }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "rune") {
+            if (other.gameObject.name.Contains("ixtab"))
+            {
+                Debug.Log("Ixtab rune!");
+                ixtabRune = (int)runeModes.equipped; // eventually, just set to craftable
+                setIxtabActive(true);
+            }
+            else if (other.gameObject.name.Contains("maize"))
+            {
+                Debug.Log("Maize rune!");
+                maizeRune = (int)runeModes.equipped; // eventually, just set to craftable
+                setMaizeActive(true);
+            }
+            else if (other.gameObject.name.Contains("moon"))
+            {
+                Debug.Log("Moon rune!");
+                moonRune = (int)runeModes.equipped; // eventually, just set to craftable
+                setMoonActive(true);
+            }
+            else if (other.gameObject.name.Contains("chac"))
+            {
+                Debug.Log("Chac rune!");
+                chacRune = (int)runeModes.equipped; // eventually, just set to craftable
+                setChacActive(true);
+            }
+            else if (other.gameObject.name.Contains("hunt"))
+            {
+                Debug.Log("Hunt rune!");
+                huntRune = (int)runeModes.equipped; // eventually, just set to craftable
+                setHuntActive(true);
+            }
+            else if (other.gameObject.name.Contains("mirror"))
+            {
+                Debug.Log("Mirror rune!");
+                mirrorRune = (int)runeModes.equipped; // eventually, just set to craftable
+                setMirrorActive(true);
+            }
+            else if (other.gameObject.name.Contains("sun"))
+            {
+                Debug.Log("Sun rune!");
+                sunRune = (int)runeModes.equipped; // eventually, just set to craftable
+                setSunActive(true);
+            }
+            else if (other.gameObject.name.Contains("twin"))
+            {
+                Debug.Log("Twin rune!");
+                twinsRune = (int)runeModes.equipped; // eventually, just set to craftable
+                setTwinsActive(true);
+            }
+            Destroy(other.gameObject);
+        }
+    }
 
 }
+
+

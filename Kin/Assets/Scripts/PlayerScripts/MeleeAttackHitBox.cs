@@ -39,6 +39,11 @@ public class MeleeAttackHitBox:MonoBehaviour
         damage = d;
     }
 
+    public int getDamage()
+    {
+        return damage;
+    }
+
     public void setChacRune(bool r)
     {
         chackRuneActivated = r;
