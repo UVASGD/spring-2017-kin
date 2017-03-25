@@ -16,13 +16,14 @@ public class EnemyHealth:MonoBehaviour
     {
         currentHealth = maxHealth;
         isDead = false;
+		AIsrc = gameObject.GetComponent<BaseAI>();
     }
     public void takeDamage(int amount)
     {
         if(!isInvinc)
         {
             currentHealth -= amount;
-            recoil();
+            //recoil();
 			AIsrc.recoil ();
         }
         //Debug.Log("Took Damage");
