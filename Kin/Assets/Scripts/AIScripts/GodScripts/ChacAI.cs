@@ -70,6 +70,7 @@ public class ChacAI : BaseGodAI
 			    break;
 		    case AIStates.InvincibleState:
                 gameObject.GetComponent<EnemyHealth>().setInvinc(true);
+				gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
                 gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 if (projCd)
                 {
@@ -148,7 +149,8 @@ public class ChacAI : BaseGodAI
                         meleeCd = true;
                         attackInRadius(targetObject.transform.position.x > rb.transform.position.x, meleeRange);
                         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-                        render.material.SetColor("_Color", Color.red);
+						gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                        //render.material.SetColor("_Color", Color.red);
                         Debug.Log("CoolDown");
                     }
                 }
@@ -159,7 +161,8 @@ public class ChacAI : BaseGodAI
                     meleeCurrCd = maxMeleeCd;
                     meleeCd = false;
                     gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-                    render.material.SetColor("_Color", Color.white);
+                    //render.material.SetColor("_Color", Color.white);
+					gameObject.GetComponent<SpriteRenderer>().color = Color.white;
                 }
                 else
                 {
@@ -195,10 +198,6 @@ public class ChacAI : BaseGodAI
                     {
                         if (gameObject.GetComponent<ChacAnimationController>() != null)
                             gameObject.GetComponent<ChacAnimationController>().dying = true; //use shaman to test, delete later
-                        else
-                        {
-                            Destroy(gameObject);
-                        }
                     }
                 }
 			    break;
