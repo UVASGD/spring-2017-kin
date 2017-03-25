@@ -6,7 +6,7 @@ using UnityEngine;
 public class Runes : MonoBehaviour
 {
 
-    enum runeModes { locked, craftable, unequipped, equipped };
+    public enum runeModes { locked, craftable, unequipped, equipped };
 
     public int ixtabRune = (int)runeModes.locked;
     public int maizeRune = (int)runeModes.locked;
