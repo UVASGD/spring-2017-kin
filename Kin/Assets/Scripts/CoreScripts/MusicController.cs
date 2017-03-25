@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.Audio;
 
+[RequireComponent(typeof(DayNightController))]
 public class MusicController : MonoBehaviour {
 
 	AudioSource aud;
@@ -9,6 +10,9 @@ public class MusicController : MonoBehaviour {
 	public AudioSource getAudioSource(){
 		return aud;
 	}
+
+	string Bossname;
+	bool introed;
 
 	//day tracks
 	ArrayList dayTracks;
@@ -25,9 +29,15 @@ public class MusicController : MonoBehaviour {
 	//monastery
 	AudioClip monastery;
 
+	AudioClip chacjam;
+	AudioClip ixtabintro;
+	AudioClip ixtabjam;
+
 	public AudioMixerGroup AMG;
 
 	DayNightController DNC;
+
+	public GameObject mona;
 
 	public float timeLeft;
 	public float timer;
@@ -38,6 +48,9 @@ public class MusicController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Bossname = "";
+		introed = false;
+
 		state = MusicState.World;
 		dayTracks = new ArrayList ();
 		day1 = Resources.Load ("Sounds/Music/Day Music Brian 1") as AudioClip;
@@ -56,6 +69,10 @@ public class MusicController : MonoBehaviour {
 		nightTracks.Add (night3);
 
 		monastery = Resources.Load ("Sounds/Music/Monastary Background Music Christian 1") as AudioClip;
+
+		chacjam = Resources.Load ("Sounds/Music/Boss Music Chac Brian 1") as AudioClip;
+		ixtabintro = Resources.Load ("Sounds/Music/Boss Music Ixtab (Intro) Brian 1") as AudioClip;
+		ixtabjam = Resources.Load ("Sounds/Music/Boss Music Ixtab (Loop) Brian 1") as AudioClip;
 
 		if (gameObject.GetComponent<AudioSource> ()) {
 			aud = gameObject.GetComponent<AudioSource> ();
@@ -77,6 +94,7 @@ public class MusicController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
+
 		int index = Random.Range (0, dayTracks.Count);
 		//Debug.Log (index);
 
@@ -89,6 +107,7 @@ public class MusicController : MonoBehaviour {
 			up = true;
 			fading = true;
 			if (state == MusicState.World) {
+				aud.loop = false;
 				//int index = Random.Range (0, dayTracks.Count - 1);
 				//Debug.Log (index);
 				if (DNC.currentPhase == DayNightController.DayPhase.Day) {
@@ -97,9 +116,26 @@ public class MusicController : MonoBehaviour {
 					aud.clip = (AudioClip)nightTracks [index];
 				}
 			} else if (state == MusicState.Boss) {
-
-
-
+				if (Bossname == "Chac") {
+					Debug.Log ("OH I AM CHAC");
+					aud.clip = chacjam;
+					aud.loop = true;
+				} else if (Bossname == "Ixtab") {
+					//intro then loop
+					if (!introed) {
+						aud.clip = ixtabintro;
+						timeLeft = aud.clip.length;
+						timer = 0.0f;
+						introed = true;
+					}
+					if (introed && timeLeft != 10000000.0f && timer >= timeLeft) {
+						aud.clip = ixtabjam;
+						aud.loop = true;
+						timeLeft = 10000000.0f;
+					}
+				} else {
+					Debug.Log ("Invalid boss name in music controller");
+				}
 			} else if (state == MusicState.Monastery) {
 				aud.clip = monastery;
 				aud.loop = true;
@@ -141,16 +177,30 @@ public class MusicController : MonoBehaviour {
 		return aud;
 	}
 
-	public void InterruptForBoss(){
+	public void InterruptForBoss(string bossname){
 		isPlaying = false;
 		aud.volume = 1.00f;
+		up = false;
 		state = MusicState.Boss;
+		Bossname = bossname;
 	}
 
 	public void InteruptForMonastery(){
 		isPlaying = false;
+		up = false;
 		aud.volume = 1.00f;
+		mona.GetComponent<AudioSource> ().Play ();
 		state = MusicState.Monastery;
+		Bossname = "";
+	}
+
+	public void InterruptForWorld(){
+		mona.GetComponent<AudioSource> ().Stop ();
+		isPlaying = false;
+		aud.volume = 1.00f;
+		up = false;
+		state = MusicState.World;
+		Bossname = "";
 	}
 
 	public enum MusicState
