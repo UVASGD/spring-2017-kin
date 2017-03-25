@@ -14,10 +14,18 @@ public class RunesMenu : MonoBehaviour {
     private Image hiltImg;
     private Image bladeImg;
     private Image tipImg;
+    private Color chacColor;
+    private Color ixtabColor;
     
 
 	// Use this for initialization
 	void Start () {
+        //Initialize da Colorz
+        chacColor = new Color();
+        ColorUtility.TryParseHtmlString("#0059FF", out chacColor);
+        ixtabColor = new Color();
+        ColorUtility.TryParseHtmlString("#D10000", out ixtabColor);
+
         hiltImg = hiltRune.GetComponent<Image>();
         bladeImg = bladeRune.GetComponent<Image>();
         tipImg = tipRune.GetComponent<Image>();
@@ -32,7 +40,6 @@ public class RunesMenu : MonoBehaviour {
         Debug.Log("UPDATE");
         if (runes.ixtabRune == 3)
         {
-            hiltImg.color = Color.blue;
             hiltImg.sprite = Resources.Load<Sprite>("Sprites/Runes/Rune (1)");
         }
         else
@@ -42,7 +49,8 @@ public class RunesMenu : MonoBehaviour {
 
         if(runes.chacRune == 3)
         {
-
+            
+            tipImg.color = chacColor;
             tipImg.sprite = Resources.Load<Sprite>("Sprites/Runes/Rune (10)");
         }
         else
