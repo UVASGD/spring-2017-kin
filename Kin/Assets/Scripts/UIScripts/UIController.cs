@@ -27,8 +27,8 @@ public class UIController : MonoBehaviour {
         {
             toggleStatsMenu();
         }
-
-		if (Input.GetButtonDown ("Cancel")) {
+        //TODO Change Later, something that' not stats
+		if (Input.GetButtonDown ("Stats")) {
 			options.GetComponent<Canvas> ().enabled = !options.GetComponent<Canvas> ().enabled;
 		}
         if (Input.GetKeyDown(KeyCode.R))
