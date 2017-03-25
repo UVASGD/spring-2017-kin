@@ -33,7 +33,7 @@ public class UIController : MonoBehaviour {
 		}
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Debug.Log("RUNES");
+            //updateRunes();
             runesMenu.GetComponent<Canvas>().enabled = !runesMenu.GetComponent<Canvas>().enabled;
         }
     }
@@ -122,4 +122,22 @@ public class UIController : MonoBehaviour {
 			statsMenu.SetActive (!statsMenu.activeSelf);
 		}
     }
+
+    private void updateRunes()
+    {
+        Runes runes = player.GetComponent<Runes>();
+        //int ixtabRune; 
+        //int maizeRune;
+        //int moonRune; 
+        //int chacRune; 
+        //int huntRune;
+        //int mirrorRune; 
+        //int sunRune;
+        //int twinsRune;
+
+        if(runes.ixtabRune == 3)
+        {
+            
+        }
+}
 }
