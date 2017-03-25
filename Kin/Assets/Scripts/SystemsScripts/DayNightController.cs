@@ -113,7 +113,7 @@ public class DayNightController : MonoBehaviour
 	/// The specified intensity of the directional light, if one exists. This value will be  
 	/// faded to 0 during dusk, and faded from 0 back to this value during dawn.  
 	/// </summary>
-    private float lightIntensity;
+    public float lightIntensity;
 
     /// <summary>
 	/// Initializes working variables and performs starting calculations. 
