@@ -62,7 +62,6 @@ public class ChacAI : BaseGodAI
 		if (timer <= 10.0f)
 			timer += 0.1f;
         int health = gameObject.GetComponent<EnemyHealth>().getHp();
-		Debug.Log (health);
         switch (curState)
 		{
 		    case AIStates.IdleState:
