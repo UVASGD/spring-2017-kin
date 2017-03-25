@@ -43,6 +43,13 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 	private Color baseColor;
 	private Color invisColor;
 
+	private AudioClip BackHandSound;
+	private AudioClip ForwardHandSound;
+	private AudioClip SmashSound;
+	private AudioClip InChokeSound;
+	private AudioClip OutChokeSound;
+	private AudioClip SparkleSound;
+
 	// Use this for initialization
 	void Start () {
 		enemyHealth = this.gameObject.GetComponent<EnemyHealth> ();
@@ -58,6 +65,13 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		baseColor = gameObject.GetComponent<SpriteRenderer>().color;
 		invisColor = baseColor;
 		invisColor.a = 0.0f;
+
+		BackHandSound = Resources.Load("Sounds/Attack SFX/IxtabSwipBH") as AudioClip;
+		ForwardHandSound = Resources.Load("Sounds/Attack SFX/IxtabSwipFH") as AudioClip;
+		SmashSound = Resources.Load("Sounds/Attack SFX/IxtabBoomSlam") as AudioClip;
+		InChokeSound = Resources.Load("Sounds/Attack SFX/IxtabGaspChokeAppear") as AudioClip;
+		OutChokeSound = Resources.Load("Sounds/Attack SFX/IxtabGaspChokeDisappear") as AudioClip;
+		SparkleSound = Resources.Load("Sounds/Attack SFX/IxtabSparkle") as AudioClip;
 	}
 	
 	// Update is called once per frame
@@ -225,5 +239,35 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		anim.SetBool ("Attack1", false);
 		anim.SetBool ("Attack2", false);
 		anim.SetBool ("Attack3", false);
+	}
+
+	public void playBackHandSound(){
+		this.gameObject.GetComponent<AudioSource> ().clip = BackHandSound;
+		this.gameObject.GetComponent<AudioSource> ().Play ();
+	}
+
+	public void playFowardHandSound(){
+		this.gameObject.GetComponent<AudioSource> ().clip = ForwardHandSound;
+		this.gameObject.GetComponent<AudioSource> ().Play ();
+	}
+
+	public void playSmashSound(){
+		this.gameObject.GetComponent<AudioSource> ().clip = SmashSound;
+		this.gameObject.GetComponent<AudioSource> ().Play ();
+	}
+
+	public void playInChoke(){
+		this.gameObject.GetComponent<AudioSource> ().clip = InChokeSound;
+		this.gameObject.GetComponent<AudioSource> ().Play ();
+	}
+
+	public void playOutChoke(){
+		this.gameObject.GetComponent<AudioSource> ().clip = OutChokeSound;
+		this.gameObject.GetComponent<AudioSource> ().Play ();
+	}
+
+	public void playSparkle(){
+		this.gameObject.GetComponent<AudioSource> ().clip = SparkleSound;
+		this.gameObject.GetComponent<AudioSource> ().Play ();
 	}
 }
