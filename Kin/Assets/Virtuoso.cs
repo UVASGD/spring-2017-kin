@@ -16,9 +16,11 @@ public class Virtuoso : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		distance = Vector2.Distance (this.gameObject.transform.position, player.transform.position);
-		if (distance <= 10) 
-			this.GetComponent<AudioSource> ().volume = 1 - distance / 10;
-		else
-			this.GetComponent<AudioSource> ().volume = 0.0f;
+		if (this.gameObject.GetComponent<AudioSource> ().isPlaying) {
+			if (distance <= 10)
+				this.GetComponent<AudioSource> ().volume = 1 - distance / 10;
+			else
+				this.GetComponent<AudioSource> ().volume = 0.0f;
+		}
 	}
 }
