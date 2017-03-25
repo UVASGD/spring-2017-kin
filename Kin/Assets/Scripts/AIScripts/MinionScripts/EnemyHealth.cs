@@ -8,6 +8,7 @@ public class EnemyHealth:MonoBehaviour
     int currentHealth;
     bool isDead;
     bool isInvinc;
+    public BaseAI AIsrc;
     private bool alreadyArced;
     Animator animator;
 
@@ -18,6 +19,7 @@ public class EnemyHealth:MonoBehaviour
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         isDead = false;
+	AIsrc = gameObject.GetComponent<BaseAI>();
         alreadyArced = false;
     }
     public void takeDamage(int amount)
@@ -25,9 +27,9 @@ public class EnemyHealth:MonoBehaviour
         if(!isInvinc)
         {
             currentHealth -= amount;
-            recoil();
+            //recoil();
+	           AIsrc.recoil ();
         }
-        Debug.Log(currentHealth);
         // Play damage audio clip
        // if (currentHealth <= 0 && !isDead)
         //{
@@ -84,6 +86,6 @@ public class EnemyHealth:MonoBehaviour
                     nearestEnemy.GetComponent<EnemyHealth>().chainDamage(damage * 2 / 3, distance - 1);
                 }
             }
-            
+
     }
 }

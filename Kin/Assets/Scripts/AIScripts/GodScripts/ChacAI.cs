@@ -347,14 +347,13 @@ public class ChacAI : BaseGodAI
 
     void projectileOnPosition(Vector3 pos, int proj)
     {
-        GameObject newProj;
         pos.y = pos.y + 0.3f;
         switch(proj) {
             case 1: //lightning
-                newProj = (GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)), pos, Quaternion.identity);
+                Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)), pos, Quaternion.identity);
                 break;
             case 2: //geyser
-                newProj = (GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/Geyser", typeof(GameObject)), pos, Quaternion.identity);
+                Instantiate(Resources.Load("Prefabs/Projectiles/Geyser", typeof(GameObject)), pos, Quaternion.identity);
                 break;
             default:
                 Debug.Log("Something not right");
