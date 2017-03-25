@@ -22,7 +22,7 @@ public class TriggerChacMusic : MonoBehaviour {
 		}
 	}
 
-	public void OnTiggerExit2D(Collider2D coll){
+	public void OnTriggerExit2D(Collider2D coll){
 		if (coll.tag == "Player" && DNH.GetComponent<MusicController>().state != MusicController.MusicState.World) {
 			DNH.GetComponent<MusicController> ().InterruptForWorld ();
 		}

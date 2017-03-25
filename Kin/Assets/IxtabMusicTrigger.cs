@@ -22,8 +22,8 @@ public class IxtabMusicTrigger : MonoBehaviour {
 		}
 	}
 
-	public void OnTiggerExit2D(Collider2D coll){
-		if (coll.tag == "Player" && DNH.GetComponent<MusicController>().state != MusicController.MusicState.World) {
+	public void OnTriggerExit2D(Collider2D coll){
+		if (coll.tag == "Player") {
 			DNH.GetComponent<MusicController> ().InterruptForWorld ();
 		}
 	}
