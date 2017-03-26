@@ -1,4 +1,4 @@
-#License
+# License
 
 Under the current constitution of Student Game Developers at the University of Virginia and the insistance of our current Vice President, Jay Sebastian, the game scripts, scenes, assets, resources, documents and all other content in this repository not otherwise owned or liscened by another company or organization are intended for public use and consumption free of charge and are licensed under Creative Commons Attribution-ShareAlike 4.0. Creative Commons 
 
