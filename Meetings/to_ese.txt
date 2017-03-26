@@ -1,0 +1,32 @@
+Art
+- sun temple
+- some of the coast
+- village buildings/huts
+- wisdom and stamina portraits
+- 4 natives portraits
+- custom particles
+- custom button image
+
+Music
+- final boss music
+- one more boss track
+- sound effects for final boss
+- sound effects for one more boss
+- sound effects for smithing
+- button press sound
+
+World Building
+- calendar wheel
+- game over state when you run out of time
+- acquire more exp from bosses
+- spend exp on leveling up, have level up change stats
+- potions acquisition
+- potions UI element
+- potions effect
+
+Bosses
+- final boss
+- finish up chac state machine
+- finish up A* path finding
+- one more boss battle
+- flocking?
