@@ -9,9 +9,16 @@ public class Traps : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-//        collider = gameObject.GetComponent<BoxCollider2D>();
-//
-//		collider = gameObject.GetComponent<BoxCollider2D>();
+/**
+ * proposed change:
+ * 
+ * I feel like the glyph should be a solid color
+ * and when colided with should change colors,
+ * and then a second later the particles and damage should happen,
+ * that way the player has a second to get out of the way.
+ * 
+ * We should probably also have different types...
+ * **/
 
 	}
 	
@@ -36,7 +43,7 @@ public class Traps : MonoBehaviour {
 		}
 		GameObject part = (GameObject)(Resources.Load ("Prefabs/TrapParticles", typeof(GameObject)));
 		GameObject instPart = Instantiate (part, transform.position, Quaternion.Euler(-90,0,0));
-        instPart.GetComponent<ParticleSystem>().Emit(40);
+		instPart.GetComponent<ParticleSystem>().Emit(40);
         GetComponent<AudioSource>().Play();
         Destroy (gameObject);
 
