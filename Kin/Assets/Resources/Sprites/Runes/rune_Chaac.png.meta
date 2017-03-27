@@ -1,0 +1,688 @@
+fileFormatVersion: 2
+guid: 50e28a806e085294e9ea98ab35d4652d
+timeCreated: 1490606014
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: rune_Chaac_0
+    21300002: rune_Chaac_1
+    21300004: rune_Chaac_2
+    21300006: rune_Chaac_3
+    21300008: rune_Chaac_4
+    21300010: rune_Chaac_5
+    21300012: rune_Chaac_6
+    21300014: rune_Chaac_7
+    21300016: rune_Chaac_8
+    21300018: rune_Chaac_9
+    21300020: rune_Chaac_10
+    21300022: rune_Chaac_11
+    21300024: rune_Chaac_12
+    21300026: rune_Chaac_13
+    21300028: rune_Chaac_14
+    21300030: rune_Chaac_15
+    21300032: rune_Chaac_16
+    21300034: rune_Chaac_17
+    21300036: rune_Chaac_18
+    21300038: rune_Chaac_19
+    21300040: rune_Chaac_20
+    21300042: rune_Chaac_21
+    21300044: rune_Chaac_22
+    21300046: rune_Chaac_23
+    21300048: rune_Chaac_24
+    21300050: rune_Chaac_25
+    21300052: rune_Chaac_26
+    21300054: rune_Chaac_27
+    21300056: rune_Chaac_28
+    21300058: rune_Chaac_29
+    21300060: rune_Chaac_30
+    21300062: rune_Chaac_31
+    21300064: rune_Chaac_32
+    21300066: rune_Chaac_33
+    21300068: rune_Chaac_34
+    21300070: rune_Chaac_35
+    21300072: rune_Chaac_36
+    21300074: rune_Chaac_37
+    21300076: rune_Chaac_38
+    21300078: rune_Chaac_39
+    21300080: rune_Chaac_40
+    21300082: rune_Chaac_41
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rune_Chaac_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1856
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1856
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1856
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1856
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1856
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1856
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1856
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1856
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1664
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1664
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1664
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_11
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1664
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_12
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1664
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_13
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1664
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_14
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1664
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_15
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1664
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1472
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_17
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1472
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_18
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1472
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_19
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1472
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_20
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1472
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_21
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1472
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_22
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1472
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_23
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1472
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_25
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1280
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_26
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1280
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_27
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1280
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_28
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1280
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_29
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1280
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_30
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1280
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_31
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1280
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1088
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_33
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1088
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_34
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1088
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_35
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1088
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_36
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1088
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_37
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1088
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_38
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1088
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_39
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1088
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rune_Chaac_41
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 896
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

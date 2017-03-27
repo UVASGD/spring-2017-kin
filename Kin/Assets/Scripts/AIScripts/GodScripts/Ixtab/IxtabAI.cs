@@ -174,6 +174,25 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		}
 	}
 
+    // add pizzaz!!!
+    public void swipeEffect() {
+        GameObject go; Vector2 vec = (Vector2)gameObject.transform.position; int d = facing ? 1 : -1;
+        if (anim.GetBool("Attack1")) { //fronthand
+            vec.x += d * .363f; vec.y -= .383f;
+            go = Instantiate(Resources.Load("Prefabs/Projectiles/Ixfab Attack Effect", typeof(GameObject)) as GameObject, 
+                vec, Quaternion.identity);
+            go.GetComponent<Animator>().SetInteger("Dir", 1);
+        } else {
+            vec.x += d * .29f; vec.y -= .235f;
+            go = Instantiate(Resources.Load("Prefabs/Projectiles/Ixfab Attack Effect", typeof(GameObject)) as GameObject,
+                vec, Quaternion.identity);
+            go.GetComponent<Animator>().SetInteger("Dir", -1);
+
+        }
+        go.transform.parent = gameObject.transform;
+        go.GetComponent<SpriteRenderer>().flipX = !facing;
+    }
+
 	public void slam() {
 		if (distanceToPlayer() < attackRange) {
 			player.GetComponent<PlayerHealth>().TakeDamage((int)damageDone);
@@ -182,7 +201,6 @@ public class IxtabAI : MonoBehaviour, BaseAI {
             GameObject go = Instantiate(Resources.Load("Prefabs/Projectiles/Skullcandy", typeof(GameObject)) as GameObject,
 				vec, Quaternion.identity);
             go.GetComponent<SkullCandy>().setVelocity(gameObject.transform.position);
-
 		}
 	}
 

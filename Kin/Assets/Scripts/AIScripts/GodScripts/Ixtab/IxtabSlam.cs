@@ -21,7 +21,7 @@ public class IxtabSlam : StateMachineBehaviour {
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		ai.stopBoss();
 		if (curTimer > attackTime) {
-			ai.slam();
+			//ai.slam();
 			attackTime = float.MaxValue;
 		} else {
 			curTimer += Time.deltaTime;

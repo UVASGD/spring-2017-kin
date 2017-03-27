@@ -5,7 +5,8 @@ public class SkullCandy : MonoBehaviour {
     
     public int damage;
     public float duration, radiusOfEffect, damageCooldown, delay;
-
+    public float expansionSpeed=1, rotationSpeed=1;
+    private Vector2 center;
     private float age, currentCooldown;
     private bool killMePls = false;
     private Animator a;
@@ -29,6 +30,19 @@ public class SkullCandy : MonoBehaviour {
     void Update() {
         //Stuff we always gotta do
         age += Time.deltaTime;
+        
+        /* 
+        // rotate and expand from center
+        // delta = -e^(t-total)+speed
+        Vector2 pos = (Vector2)gameObject.transform.position;
+        float theta = StaticMethods.AngleBetweenVector2(pos, center);
+        float distance = StaticMethods.Distance(pos,center);
+        float dt = /*-Mathf.Exp(age - duration) + rotationSpeed;
+        float dd = -Mathf.Exp(age - duration) + expansionSpeed;
+        //distance += dd;
+        theta += dt;
+        gameObject.transform.position = (Vector3)StaticMethods.Vec2fromAngle(theta, distance);
+        */
 
         switch (currState) {
             case States.tell:
@@ -57,7 +71,6 @@ public class SkullCandy : MonoBehaviour {
                 }
                 break;
             case States.fade:
-                //Stuff we do while fading
                 killMePls = true;
                 break;
             default:
@@ -67,7 +80,8 @@ public class SkullCandy : MonoBehaviour {
 
     // set direction based off spawn point
     public void setVelocity(Vector3 ownPos) {
-        //gameObject.GetComponent<Rigidbody2D>().velocity = him8;
+        center = (Vector2)ownPos;
+        gameObject.GetComponent<Rigidbody2D>().velocity = (gameObject.transform.position - ownPos) * expansionSpeed;
     }
 
     void justkillmenowthisworldSUX() {
