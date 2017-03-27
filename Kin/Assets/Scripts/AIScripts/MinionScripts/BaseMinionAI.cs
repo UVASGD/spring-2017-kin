@@ -49,8 +49,8 @@ public class BaseMinionAI : MonoBehaviour, BaseAI {
         positions[0] = startPos;
         for (int x = 1; x < positions.Length; x++)
         {
-            //float theta = UnityEngine.Random.Range(0.0f, (float)(2 * Math.PI));
-            float theta = x * angleIncr;
+            float theta = UnityEngine.Random.Range(0.0f, (float)(2 * Mathf.PI));
+            //float theta = x * angleIncr;
             positions[x] = new Vector2(startPos.x + patrolRad * (float)Mathf.Cos(theta), startPos.y + patrolRad * (float)Mathf.Sin(theta));
             //Debug.Log(positions[x]);
         }
