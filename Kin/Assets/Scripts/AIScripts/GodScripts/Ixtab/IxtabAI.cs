@@ -157,10 +157,16 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		foreach(Vector2 vec in calculateAngles((int)(10 - (enemyHealth.getHp()/enemyHealth.maxHealth)/0.1), 1.0f)) {
 			Instantiate(Resources.Load("Prefabs/Entities/Kamikaze", typeof(GameObject)) as GameObject, 
 				vec, Quaternion.identity);
+            delaySpawn();
 		}
 	}
 
-	public void swipe() {
+            //wait .5 seconds
+    IEnumerator delaySpawn() {
+        yield return new WaitForSeconds(0.5f);
+    }
+
+    public void swipe() {
 		if (distanceToPlayer() < attackRange * 3/4) {
 			if (Mathf.Abs(player.transform.position.y - gameObject.transform.position.y) < attackRange / 2) {
 				player.GetComponent<PlayerHealth>().TakeDamage((int)damageDone);
@@ -173,8 +179,10 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 			player.GetComponent<PlayerHealth>().TakeDamage((int)damageDone);
 		}
 		foreach (Vector2 vec in calculateAngles(8, 0.5f)) {
-			Instantiate(Resources.Load("Prefabs/Projectiles/Skullcandy", typeof(GameObject)) as GameObject,
+            GameObject go = Instantiate(Resources.Load("Prefabs/Projectiles/Skullcandy", typeof(GameObject)) as GameObject,
 				vec, Quaternion.identity);
+            go.GetComponent<SkullCandy>().setVelocity(gameObject.transform.position);
+
 		}
 	}
 
@@ -241,7 +249,8 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		anim.SetBool ("Attack3", false);
 	}
 
-	public void playBackHandSound(){
+    #region sounds
+    public void playBackHandSound(){
 		this.gameObject.GetComponent<AudioSource> ().clip = BackHandSound;
 		this.gameObject.GetComponent<AudioSource> ().Play ();
 	}
@@ -270,4 +279,5 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		this.gameObject.GetComponent<AudioSource> ().clip = SparkleSound;
 		this.gameObject.GetComponent<AudioSource> ().Play ();
 	}
+    #endregion
 }

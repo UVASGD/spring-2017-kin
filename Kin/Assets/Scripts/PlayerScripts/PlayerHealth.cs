@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour {
     // public AudioClip deathClip;
     bool isDead = false;
     public bool ixtabRune = false;
+    public bool invincible = true; // for debug ONLY!!!
 
     AvatarMvmController playerMvmController;
     // Reference to animator for death animation
@@ -43,7 +44,7 @@ public class PlayerHealth : MonoBehaviour {
     {
         if (!anim.GetBool("Rolling") && !anim.GetBool("Recoiling"))
         {
-            currentHealth -= amount;
+            if(!invincible) currentHealth -= amount;
             anim.SetBool("Recoiling", true);
             // Play damage audio clip
         }

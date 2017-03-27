@@ -74,6 +74,10 @@ public class KamikazeAnimationController : MonoBehaviour {
 		
 	}
 
+    void endSpawn() {
+        animator.SetBool("Spawning", true);
+    }
+
 	/// <summary>
 	/// controls animation based off direction of last saved velocity
 	/// </summary>
