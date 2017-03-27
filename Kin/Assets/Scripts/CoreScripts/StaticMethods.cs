@@ -4,6 +4,11 @@ using System.Collections;
 public class StaticMethods {
 
     /// <summary>
+    /// Pixels Per Unity Unit
+    /// </summary>
+    public static int PPU = 100;
+
+    /// <summary>
     /// Returns a vector 3 of the supplied vector 2.
     /// </summary>
     /// <param name="v2"></param>

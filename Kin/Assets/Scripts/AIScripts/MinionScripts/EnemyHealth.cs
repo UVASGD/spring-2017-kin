@@ -55,16 +55,15 @@ public class EnemyHealth:MonoBehaviour
     }
 
     // For Lighting Chain Attack from Chac's Rune
-    public void chainDamage(int damage, int distance, Vector3 source)
+    public void chainDamage(int damage, int distance, GameObject source)
     {
 
         // draw arc from source to this enemy
         GameObject arc = Instantiate(Resources.Load("Prefabs/Projectiles/Chain Lightning", typeof(GameObject)) as GameObject,
-            source, Quaternion.identity);
-        arc.transform.rotation = Quaternion.Slerp(transform.rotation, 
-            Quaternion.LookRotation((source - transform.position).normalized), 1);
+            source.transform.position, Quaternion.identity);
         Chain chain =  arc.GetComponent<Chain>();
-        chain.source = source; chain.target = transform.position;
+        chain.source = source; chain.target = gameObject;
+        chain.forceStart();
 
         alreadyArced = true;
         takeDamage(damage);
@@ -92,7 +91,7 @@ public class EnemyHealth:MonoBehaviour
                 if (Vector2.Distance(nearestEnemy.transform.position, this.transform.position) < jumpDistance)
                 {
                     nearestEnemy.GetComponent<EnemyHealth>().chainDamage(damage * 2 / 3, distance - 1,
-                        gameObject.transform.position);
+                        gameObject);
                 }
             }
 

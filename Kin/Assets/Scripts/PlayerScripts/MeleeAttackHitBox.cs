@@ -28,8 +28,8 @@ public class MeleeAttackHitBox:MonoBehaviour
             //Debug.Log("Collided");
             if (chacRuneActivated) {
                 GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
-                Vector3 pos = player != null ? player.transform.position : transform.position;
-                col.gameObject.GetComponent<EnemyHealth>().chainDamage(damage, 4, pos);
+                GameObject target = player != null ? player : gameObject;
+                col.gameObject.GetComponent<EnemyHealth>().chainDamage(damage, 4, target);
             }
             else col.gameObject.GetComponent<EnemyHealth>().takeDamage(damage);
 			//Get the current enemy
