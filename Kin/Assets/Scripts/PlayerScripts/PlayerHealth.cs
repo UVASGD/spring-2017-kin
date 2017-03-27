@@ -55,20 +55,20 @@ public class PlayerHealth : MonoBehaviour {
         if (currentHealth <= 0 && !isDead)
         {
 			if (ixtabRune) {
-				currentHealth = maxHealth / 4;
+				setCurrentHealth(getMaxHealth() / 4);
 				Debug.Log ("Ixtab rune activated");
                 GetComponent<Runes>().ixtabRune = (int)Runes.runeModes.locked;
                 GetComponent<Runes>().setIxtabActive(false);
 			} else {
-				currentHealth = 0;
+				setCurrentHealth(0);
 				Death ();
 			}
         }
         else
         {
-            if (currentHealth < 0)
+			if (getCurrentHealth() < 0)
             {
-                currentHealth = 0;
+				setCurrentHealth(0);
             }
         }
 
