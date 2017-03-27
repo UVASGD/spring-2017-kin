@@ -5,7 +5,9 @@ using System.Collections;
 public class UIController : MonoBehaviour {
 
     public Slider health;
+	public Slider underHealth;
     public Slider stamina;
+	public Slider underStamina;
     private Slider bossHealthSlider;
     public GameObject bossHealth;
     public GameObject statsMenu;
@@ -14,16 +16,43 @@ public class UIController : MonoBehaviour {
 	public GameObject player;
     public Text bossName;
     // Add clock
+
+	private float healthlerpA;
+	private float healthlerpB;
+	private float healthlerpT;
+	private bool lerpingHealth;
+
+	private float staminalerpA;
+	private float staminalerpB;
+	private float staminalerpT;
+	private bool lerpingStamina;
 	
 	void Start () {
         bossHealthSlider = bossHealth.GetComponent<Slider>();
 		health.value = (player.GetComponent<PlayerHealth> () as PlayerHealth).maxHealth;
+		underHealth.value = (player.GetComponent<PlayerHealth> () as PlayerHealth).maxHealth;
 		stamina.value = (player.GetComponent<PlayerStamina> () as PlayerStamina).maxStamina;
+		underStamina.value = (player.GetComponent<PlayerStamina> () as PlayerStamina).maxStamina;
+		healthlerpT = 0;
+		lerpingHealth = false;
+		staminalerpT = 0;
+		lerpingStamina = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("Stats"))
+		if (healthlerpT < 0.5f)
+			healthlerpT += Time.deltaTime;
+		else
+			lerpingHealth = false;
+
+		if (staminalerpT < 0.5f)
+			staminalerpT += Time.deltaTime;
+		else
+			lerpingStamina = false;
+		Debug.Log (staminalerpT / 0.5);
+
+		if (Input.GetButtonDown("Stats") && statsMenu != null)
         {
             toggleStatsMenu();
         }
@@ -37,6 +66,10 @@ public class UIController : MonoBehaviour {
             runesMenu.GetComponent<Canvas>().enabled = !runesMenu.GetComponent<Canvas>().enabled;
             runesMenu.GetComponent<RunesMenu>().updateRunes();
         }
+		if(lerpingHealth)
+			health.value = Mathf.Lerp (healthlerpA, healthlerpB, healthlerpT/0.5f);
+		if(lerpingStamina)
+			stamina.value = Mathf.Lerp (staminalerpA, staminalerpB, staminalerpT/0.5f);
     }
 		
 
@@ -58,7 +91,11 @@ public class UIController : MonoBehaviour {
 
     public void setStamina(int val)
     {
-        stamina.value = val;
+		underStamina.value = val;
+		staminalerpA = health.value;
+		staminalerpB = val;
+		staminalerpT = 0;
+		lerpingStamina = true;
     }
 
     public int getStamina()
@@ -73,8 +110,11 @@ public class UIController : MonoBehaviour {
 
     public void setHealth(int val)
     {
-
-        health.value = val;
+		underHealth.value = val;
+		healthlerpA = health.value;
+		healthlerpB = val;
+		healthlerpT = 0;
+		lerpingHealth = true;
     }
 
     public void setBossName(string name)
