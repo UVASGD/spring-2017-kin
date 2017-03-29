@@ -1,6 +1,7 @@
 // Unity 2D Tile MapperCode by Kaisirak 
 // https://www.youtube.com/watch?v=_x0bMTxP7Yw
 // Modified to work for Unity 5.3.4f (April 11, 2016)
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
@@ -342,3 +343,4 @@ public class TileWindow : EditorWindow
 		SceneView.RepaintAll();
 	}
 }
+#endif
