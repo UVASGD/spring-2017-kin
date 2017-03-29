@@ -38,7 +38,7 @@ public class Dialogue : Action {
 
 	void InitializeDialogue() {
 		GameObject dialogue = (GameObject) Resources.Load("Prefabs/Dialogue Box", typeof(GameObject));
-		diaObj = GameObject.Instantiate(dialogue);
+		diaObj = GameObject.Instantiate(dialogue) as GameObject;
 		diaObj.SetActive(true);
 		diaObj.GetComponent<DialogueSpawnController>().UpdateDiaMan(diaStr);
 		diaObj.GetComponent<DialogueSpawnController>().UpdateNameMan(diaName);
