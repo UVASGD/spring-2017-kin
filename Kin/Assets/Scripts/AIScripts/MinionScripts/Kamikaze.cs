@@ -40,7 +40,7 @@ public class Kamikaze : BaseMinionAI
     }
 
     protected new void Update() {
-        if (!gameObject.GetComponent<Animator>().GetBool("Spawning")) return;
+        if (!gameObject.GetComponent<Animator>().GetBool("Spawned")) return;
         float distanceToPlayer = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
 
 		if (dying)

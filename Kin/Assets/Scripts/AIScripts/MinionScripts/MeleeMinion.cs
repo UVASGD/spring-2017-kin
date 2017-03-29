@@ -44,7 +44,7 @@ public class MeleeMinion : BaseMinionAI
     {
 
         float distanceToPlayer = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
-		if (!dying) {
+		if (!dying && GetComponent<Animator>().GetBool("Spawned")) {
 			if (curState == AIStates.DetectedState) {
                 if (distanceToPlayer >= awarenessRadius)
                 {
@@ -64,13 +64,6 @@ public class MeleeMinion : BaseMinionAI
 						if (meleeCurrCd <= 0.0f) {
 							meleeOnCd = false;
 							gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeRotation;
-						}
-						if (meleeCurrCd <= 0.5f && !dealtDamage) {
-							if (distanceToPlayer < attackRange) {
-								
-								attackInRadius (targetObject.transform.position.x > rb.transform.position.x, attackRange);
-							}
-							dealtDamage = true;
 						}
 					}
 
@@ -93,10 +86,15 @@ public class MeleeMinion : BaseMinionAI
 		}
     }
 
-	public void PlaySoundPlz(){
-		
-		GetComponent<AudioSource>().Play();
-	}
+    public override void applyDamage() {
+        float distanceToPlayer = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
+        if (!dealtDamage) {
+            if (distanceToPlayer < attackRange) {
+                attackInRadius(targetObject.transform.position.x > rb.transform.position.x, attackRange);
+            }
+            dealtDamage = true;
+        }
+    }
 
     private GameObject[] ObjectsInAttackArea(bool direction /* false==left, true==right */, float attackRadius)
     {
