@@ -60,7 +60,7 @@ public class EnemyHealth:MonoBehaviour
 
         // draw arc from source to this enemy
         GameObject arc = Instantiate(Resources.Load("Prefabs/Projectiles/Chain Lightning", typeof(GameObject)) as GameObject,
-            source.transform.position, Quaternion.identity);
+			source.transform.position, Quaternion.identity) as GameObject;
         Chain chain =  arc.GetComponent<Chain>();
         chain.source = source; chain.target = gameObject;
         chain.forceStart();
