@@ -154,7 +154,7 @@ public class BaseMinionAI : MonoBehaviour, BaseAI {
     {
         targetObject.GetComponent<PlayerExperience>().incrementExp(amount);
         GameObject part = (GameObject)(Resources.Load("Prefabs/XPParticles", typeof(GameObject)));
-        GameObject instPart = Instantiate(part, transform.position, Quaternion.identity);
+		GameObject instPart = Instantiate(part, transform.position, Quaternion.identity) as GameObject;
         instPart.GetComponent<ParticleEmit>().UpdateParticles();
         instPart.GetComponent<ParticleEmit>().target = targetObject;
         instPart.GetComponent<ParticleEmit>().XPEmit(30);

@@ -42,7 +42,7 @@ public class Traps : MonoBehaviour {
 			eHealth.takeDamage (damage);
 		}
 		GameObject part = (GameObject)(Resources.Load ("Prefabs/TrapParticles", typeof(GameObject)));
-		GameObject instPart = Instantiate (part, transform.position, Quaternion.Euler(-90,0,0));
+		GameObject instPart = Instantiate (part, transform.position, Quaternion.Euler(-90,0,0)) as GameObject;
 		instPart.GetComponent<ParticleSystem>().Emit(40);
         GetComponent<AudioSource>().Play();
         Destroy (gameObject);
