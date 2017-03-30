@@ -180,12 +180,12 @@ public class IxtabAI : MonoBehaviour, BaseAI {
         if (anim.GetBool("Attack1")) { //fronthand
             vec.x += d * .363f; vec.y -= .383f;
             go = Instantiate(Resources.Load("Prefabs/Projectiles/Ixfab Attack Effect", typeof(GameObject)) as GameObject, 
-                vec, Quaternion.identity);
+				vec, Quaternion.identity) as GameObject;
             go.GetComponent<Animator>().SetInteger("Dir", 1);
         } else {
             vec.x += d * .29f; vec.y -= .235f;
             go = Instantiate(Resources.Load("Prefabs/Projectiles/Ixfab Attack Effect", typeof(GameObject)) as GameObject,
-                vec, Quaternion.identity);
+				vec, Quaternion.identity) as GameObject;
             go.GetComponent<Animator>().SetInteger("Dir", -1);
 
         }
@@ -199,7 +199,7 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		}
 		foreach (Vector2 vec in calculateAngles(8, 0.5f)) {
             GameObject go = Instantiate(Resources.Load("Prefabs/Projectiles/Skullcandy", typeof(GameObject)) as GameObject,
-				vec, Quaternion.identity);
+				vec, Quaternion.identity) as GameObject;
             go.GetComponent<SkullCandy>().setVelocity(gameObject.transform.position);
 		}
 	}
