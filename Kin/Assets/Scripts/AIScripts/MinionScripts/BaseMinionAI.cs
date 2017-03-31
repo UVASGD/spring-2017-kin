@@ -61,6 +61,10 @@ public class BaseMinionAI : MonoBehaviour, BaseAI {
     public virtual void startAttackCoolDown() { }
 
     protected void Start () {
+        GameObject enemyGroup = GameObject.Find("Enemies");
+        if (enemyGroup == null) enemyGroup = new GameObject("Enemies");
+        transform.parent = enemyGroup.transform;
+
         targetObject = GameObject.Find("Player");
         anim = gameObject.GetComponent<Animator>();
         startPos = gameObject.transform.position;
