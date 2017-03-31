@@ -24,10 +24,9 @@ public class TSTCHAIN : MonoBehaviour {
 
     void spawn() {
         for(int i = 0; i<spawnCount; i++) {
-            System.Random rnd = new System.Random();
-            float d = rnd.Next((int)minRadius*100, (int)radius *100)/100f;
-            float a = rnd.Next(0, 360);
-            int t = rnd.Next(0, enemies.Count);
+            float d = new System.Random().Next((int)minRadius*100, (int)radius *100)/100f;
+            float a = new System.Random().Next(0, 360);
+            int t = new System.Random().Next(0, enemies.Count);
             GameObject en = Instantiate(enemies[t], transform.position + new Vector3(d * Mathf.Cos(a * Mathf.Deg2Rad),
                 d * Mathf.Sin(a * Mathf.Deg2Rad),0), Quaternion.identity) as GameObject;
         }

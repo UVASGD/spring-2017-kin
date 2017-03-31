@@ -7,22 +7,32 @@ using System.Linq;
 using System.IO;
 using System.Diagnostics;
 using LitJson;
+using System.Collections;
 
 public class Anim_Import : EditorWindow {
 
     string text = "hiya :3 i jus 8 a pair it was gud";
     public string asepriteLoc = "C:/Program Files (x86)/Aseprite/";
-    public string artFolder = "C:/Users/Jay/OneDrive/Documents/UVA/SGD/spring-2017-kin/Art/";
-    private string extractLoc =  "Temp/";
+    public static string artFolder = "";
+
+    /// <summary>
+    /// locates the art folder by assuming it is found in the same directory as the Unity project by the name "Art"
+    /// </summary>
+    void OnEnable() {
+        string s = Application.dataPath;
+        string key = s.Contains("/") ? "/" : "\\";
+        s = s.Replace(key + "Assets","");
+        artFolder = s.Substring(0, s.LastIndexOf(key)) + key + "Art" + key;
+    }
+
+    private string extractLoc =  "JSON/";
     private string[] options, files;
     private int index;
-
-    [IODescription("The object's whose animation should be modified")]
+    private Vector2 scroll;
     public GameObject go;
-    [IODescription("if true, the import function will modify existing animation loops. " +
-    "\notherwise, it will create new loops from the corresponding ase file")]
     public bool update = true;
     public bool directImport = false;
+    public bool showFrameData = true;
 
     public AseData animDat;
 
@@ -31,73 +41,74 @@ public class Anim_Import : EditorWindow {
         EditorWindow.GetWindow(typeof(Anim_Import));
     }
 
-    Vector2 scroll;
     void OnGUI() {
         #region extract
         GUILayout.Label("Ase Extract Settings", EditorStyles.boldLabel);
-        artFolder = EditorGUILayout.TextField("Art Folder", artFolder);
-        //if (!artFolder.EndsWith("/")) artFolder += "/";
-
-        files = Directory.GetFiles(artFolder, "*.ase");
-        options = new string[files.Length];
-        for (int i = 0; i < files.Length; i++)
-            options[i] = files[i].Replace(artFolder, "").Replace(".ase","");
-
-        GUILayout.BeginHorizontal();
-        EditorGUILayout.LabelField("Aseprite File");
-        index = EditorGUILayout.Popup(index, options);
-        GUILayout.EndHorizontal();
-
-        // extract data from ase file
-        if (GUILayout.Button("Extract from Ase File"))
-            extractAse(options[index]);
-        #endregion
-
-        #region import
-        GUILayout.Label("Import Settings", EditorStyles.boldLabel);
+        
         asepriteLoc = EditorGUILayout.TextField("aseprite.exe Location", asepriteLoc);
-        if (!asepriteLoc.EndsWith("/")) asepriteLoc += "/";
+        if (File.Exists(asepriteLoc + "aseprite.exe")) {
+            artFolder = EditorGUILayout.TextField("Art Folder", artFolder);
 
-        directImport = EditorGUILayout.BeginToggleGroup("Apply Directly to Object", directImport);
-        update = EditorGUILayout.BeginToggleGroup("Update Existing Clips", update);
-        EditorGUILayout.EndToggleGroup();
-        GUILayout.BeginHorizontal();
-        EditorGUILayout.LabelField("Gameobject");
-        go = EditorGUILayout.ObjectField(go, typeof(GameObject), true, null) as GameObject;
-        EditorGUILayout.EndToggleGroup();
+            if (Directory.Exists(artFolder)) {
+                files = Directory.GetFiles(artFolder, "*.ase");
+                options = new string[files.Length];
+                for (int i = 0; i < files.Length; i++)
+                    options[i] = files[i].Replace(artFolder, "").Replace(".ase", "");
 
-        if (GUILayout.Button("Import Animation Data"))
-            importAnims();
-        #endregion
+                GUILayout.BeginHorizontal();
+                EditorGUILayout.LabelField("Aseprite File");
+                index = EditorGUILayout.Popup(index, options);
+                GUILayout.EndHorizontal();
 
-        #region dat display
-        EditorGUILayout.BeginToggleGroup ("Anim Data", animDat != null);
-        if (animDat != null) {
-            scroll = EditorGUILayout.BeginScrollView(scroll);
-            text = EditorGUILayout.TextArea(text);
-            EditorGUILayout.EndScrollView();
+                // extract data from ase file
+                if (GUILayout.Button("Extract From .ase File"))
+                    extractAse(options[index]);
+                #endregion
+
+                #region import
+                GUILayout.Label("Import Settings", EditorStyles.boldLabel);
+                directImport = EditorGUILayout.BeginToggleGroup("Apply Directly to Object", directImport);
+                /*update = */ EditorGUILayout.Toggle("Update Existing Clips", update);
+                showFrameData = EditorGUILayout.Toggle("Show Frame Data ", showFrameData);
+                GUILayout.BeginHorizontal();
+                EditorGUILayout.LabelField("Gameobject");
+                go = EditorGUILayout.ObjectField(go, typeof(GameObject), true, null) as GameObject;
+                EditorGUILayout.EndToggleGroup();
+
+                if (GUILayout.Button("Import Animation Data"))
+                    importAnims();
+                #endregion
+
+                #region dat display
+                EditorGUILayout.BeginToggleGroup("Anim Data", animDat != null);
+                if (animDat != null) {
+                    scroll = EditorGUILayout.BeginScrollView(scroll);
+                    text = EditorGUILayout.TextArea(text);
+                    EditorGUILayout.EndScrollView();
+                }
+                EditorGUILayout.EndToggleGroup();
+                #endregion
+            } else {
+                GUILayout.Label("Cannot find specified folder.", EditorStyles.miniLabel);
+
+            }
+        } else {
+            GUILayout.Label("Could not find aseprite.exe at \"" + asepriteLoc + "\".", EditorStyles.miniLabel);
         }
-        EditorGUILayout.EndToggleGroup();
-        #endregion
     }
 
     /// <summary>
-    /// imports the sprites of a given animation with appropiate frame rates
+    /// imports the sprites of a given animation into each AnimationClip with appropiate frame rates
     /// </summary>
     /// <param name="anim"></param>
     public void importAnims() {
-        if (go != null) {
-            Animator anim = go.GetComponent<Animator>();
-            SpriteRenderer sr = go.GetComponent<SpriteRenderer>();
-        }
-
         string objName = options[index];
 
         // load file containing values for frame durations
         string filename = artFolder + "/" + extractLoc + options[index] + ".json";
         if (!File.Exists(filename)) {
-            UnityEngine.Debug.LogError("Please extract data from the ase files using Anim_Extractor.exe" +
-                "\nbefore attempting to import animation data.");
+            UnityEngine.Debug.LogError("Please extract from " + options[index] + ".ase first" +
+                "before attempting to import animation data.");
             return;
         }
 
@@ -106,19 +117,21 @@ public class Anim_Import : EditorWindow {
             UnityEngine.Debug.LogError("Error parsing \"" + filename + "\".");
             return;
         } else {
+            // update text area
             text = "index: sample\tSprite Name\n\n";
             foreach(AseData.Clip clip in animDat.clips) {
                 text += "Clip Name: " + clip.name;
-                text += "\ndynmaic rate: " + clip.dynamicRate;
+                //text += "\ndynmaic rate: " + clip.dynamicRate;
                 text += "\nsample rate: " + clip.sampleRate;
-                for (int j = 0; j < clip.samples.Length; j++)
-                    if (!clip.dynamicRate) {
-                        if (j < clip.samples.Length - 1)
-                            text += "\n[" + j + "]; " + clip.samples[j] + "\t" + options[index] + "_" + (clip.start + j);
-                    } else {
-                        int x = (j == clip.samples.Length - 1) ? 1 : 0;
-                        text += "\n[" + j + "]; " + clip.samples[j] + "\t" + options[index] + "_" + (clip.start + j - x);
-                    }
+                if (showFrameData)
+                    for (int j = 0; j <= clip.len; j++)
+                        if (!clip.dynamicRate) {
+                            if (j < clip.len)
+                                text += "\n[" + j + "]; " + clip[j] + "\t" + options[index] + "_" + (clip.start + j);
+                        } else {
+                            text += "\n[" + j + "]; " + clip[j] + "\t" + options[index] + "_" +
+                                (clip.start + j - ((j == clip.len) ? 1 : 0));
+                        }
                 text += "\n================================\n";
             }
         }
@@ -136,6 +149,13 @@ public class Anim_Import : EditorWindow {
         }
     }
     
+    /// <summary>
+    /// Updates AnimationClips attached to the GameObject go to reflect Sprite Animations from
+    /// the respective ase file. Note that if a loop with the name of the AnimationClip does not exist
+    /// in the ase file (case insensitive), the animation will not be updated. 
+    /// </summary>
+    /// <param name="objName"> name of the sprites to add references to </param>
+    /// <param name="sprites"> list of all sprites available in the project</param>
     public void updateClips(string objName, Sprite[] sprites) {
         // for each clip, adjust frames
         foreach (AnimationClip aC in AnimationUtility.GetAnimationClips(go)) {
@@ -145,85 +165,64 @@ public class Anim_Import : EditorWindow {
                     + "\nCannot import its animation data.");
                 continue;
             }
-
-            bool dynamicRate = false;
-            foreach (int i in clip.frames)
-                if (i != clip.frames[0]) {
-                    dynamicRate = true;
-                    break;
+            aC.frameRate = clip.sampleRate;
+            ObjectReferenceKeyframe[] k = new ObjectReferenceKeyframe[clip.len + 1];
+            Sprite sprite = null;
+            for (int j = 0; j <= clip.len; j++) {
+                if (!clip.dynamicRate) {
+                    if (j < clip.len)
+                        sprite = sprites[clip.start + j];
+                } else {
+                    sprite = sprites[clip.start + j - ((j == clip.len) ? 1 : 0)];
                 }
-
-            float l0 = dynamicRate ? GCD(clip.frames) : clip.frames[0], // sample duration
-            s0 = (int)Math.Round(1000f / l0); //sample rate
-            UnityEngine.Debug.Log(objName + ": " + clip.name + "\ts0: " + s0);
-
-            // for each frame, place event at sample index
-            int end = (dynamicRate) ? clip.len + 1 : clip.len;
-            for (int i0 = 0; i0 < end; i0++) {
-                int sample = i0;
-                if (dynamicRate) {
-                    sample = (int)(sum(clip.frames, i0) / l0);
-                    if ((i0 == clip.len)) sample--;
-                }
-
-                Sprite sprite = (dynamicRate && i0 == end - 1) ? sprites[clip.start + i0 - 1] :
-                    sprites[clip.start + i0];
-                UnityEngine.Debug.Log(sprite.name + ": " + sample);
+                
+                k[j] = new ObjectReferenceKeyframe();
+                k[j].time = clip[j]*(clip.l0 / 1000f); //time is in secs? WTF!!!
+                k[j].value = sprite;
             }
+            AnimationUtility.SetObjectReferenceCurve(aC, EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite"), k);
         }
     }
 
+    /// <summary>
+    /// This function has not been properly coded. It is supposed to create AnimationClips with proper references to objects and attach it to GameObject go
+    /// </summary>
+    /// <param name="objName"> name of the sprites to add references to </param>
+    /// <param name="sprites"> list of all sprites available in the project</param>
     public void createClips(string objName, Sprite[] sprites) {
+        //Sprite sprite = null;
+        //foreach (AseData.Clip clip in animDat.clips) {
+            //AnimationClip aC = new AnimationClip();
+            //aC.frameRate = clip.sampleRate;
+            //ObjectReferenceKeyframe[] k = new ObjectReferenceKeyframe[clip.len + 1];
 
+            //for (int j = 0; j <= clip.len; j++) {
+            //    if (!clip.dynamicRate) {
+            //        if (j < clip.len)
+            //            sprite = sprites[clip.start + j];
+            //    } else {
+            //        sprite = sprites[clip.start + j - ((j == clip.len) ? 1 : 0)];
+            //    }
+
+            //    k[j] = new ObjectReferenceKeyframe();
+            //    k[j].time = clip[j] * (clip.l0 / 1000f); //time is in secs? WTF!!!
+            //    k[j].value = sprite;
+            //}
+            //aC.SetCurve("", typeof(SpriteRenderer), "Sprite", null);
+            //AnimationUtility.SetObjectReferenceCurve(aC, EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite"), k);
+            //AssetDatabase.CreateAsset(aC, "Assets/Resources/Animations/TESTING/" + objName + "_" + clip.name + "_test.anim");
+            //aC.wrapMode = WrapMode.Loop;
+            //go.AddComponent<UnityEngine.Animation>();
+            //UnityEngine.Animation an = go.GetComponent<UnityEngine.Animation>();
+            //an.AddClip(aC, "TstCurve");
+        //}
     }
 
-    void getShit(FileInfo f) {
-        string filename = f.FullName;
-        Console.WriteLine("loading Clip data from: " + f.Name);
-
-        string[] lines = File.ReadAllLines(filename)[0].
-            Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-        int frameCount = lines.Length;
-        int[] frmDurs = new int[frameCount];
-        for (int i = 0; i < frameCount; i++)
-            frmDurs[i] = int.Parse(lines[i].Trim());
-
-        int start = 0, len = 4;
-        int[] frames = frmDurs.SubArray(start, len);
-
-        for (int i = 0; i < frames.Length; i++)
-            Console.WriteLine("frames[" + i + "]: " + frames[i]);
-
-        bool dynamicRate = false;
-        foreach (int i in frames)
-            if (i != frames[0]) {
-                dynamicRate = true;
-                break;
-            }
-
-        float l0 = dynamicRate ? GCD(frames) : frames[0],
-        s0 = (int)Math.Round(1000f / l0);
-        Console.WriteLine("l0: " + l0);
-
-        // for each frame, place event at sample index
-        int end = (dynamicRate) ? frames.Length + 1 : frames.Length;
-        for (int i0 = 0; i0 < end; i0++) {
-            int sample = i0;
-            if (dynamicRate) {
-                sample = (int)(sum(frames, i0) / l0);
-                if ((i0 == frames.Length)) sample--;
-            }
-
-            Console.WriteLine("f[" + i0 + "]: " + sample);
-        }
-    }
-
+    /// <summary>
+    /// Copies the .ase file into a readable .json at a temp folder in the Art directory 
+    /// </summary>
+    /// <param name="aseName"></param>
     void extractAse(string aseName) {
-        if (!File.Exists(asepriteLoc + "aseprite.exe")) {
-            UnityEngine.Debug.LogError("Could not find aseprite.exe at \"" + asepriteLoc + "\".");
-            return;
-        }
-
         string ae = artFolder + "/" + extractLoc;
         if (!Directory.Exists(ae))
             Directory.CreateDirectory(ae);
@@ -256,22 +255,37 @@ public class Anim_Import : EditorWindow {
         }
 
         // load loop names
-        for (int i = 0; i < tags.Count; i++) {
-            anim.clips.Add(new AseData.Clip(anim,
-                tags[i]["name"].ToString(),
-                int.Parse(tags[i]["from"].ToString()),
-                int.Parse(tags[i]["to"].ToString())));
+        if (tags.Count == 0) {
+            anim.clips.Add(new AseData.Clip(anim, "base", 0, frames.Count - 1));
+        } else {
+            for (int i = 0; i < tags.Count; i++) {
+                anim.clips.Add(new AseData.Clip(anim,
+                    tags[i]["name"].ToString(),
+                    int.Parse(tags[i]["from"].ToString()),
+                    int.Parse(tags[i]["to"].ToString())));
+            }
         }
         return anim;
     }
 
     #region math
+    /// <summary>
+    /// determines the max from a subset of a list of integers
+    /// </summary>
+    /// <param name="f"></param>
+    /// <param name="i0"></param>
+    /// <returns></returns>
     public static int sum(int[] f, int i0) {
         int sum = 0;
         for (int i = 0; i < i0; i++) sum += f[i];
         return sum;
     }
 
+    /// <summary>
+    /// Determines the Greatest Common Denominator from a list of integers
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
     public static int GCD(int[] numbers) { return numbers.Aggregate(GCD); }
     public static int GCD(int a, int b) { return b == 0 ? a : GCD(b, a % b); }
     #endregion
@@ -279,6 +293,14 @@ public class Anim_Import : EditorWindow {
 
 #region Extra Classes
 public static class LinqHelper {
+    /// <summary>
+    /// splits an array into a subset
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="data"> the original array</param>
+    /// <param name="index"> the start of the subset </param>
+    /// <param name="length"> the length of the subset </param>
+    /// <returns></returns>
     public static T[] SubArray<T>(this T[] data, int index, int length) {
         T[] result = new T[length];
         Array.Copy(data, index, result, 0, length);
@@ -286,6 +308,9 @@ public static class LinqHelper {
     }
 }
 
+/// <summary>
+/// A class containing data pulled from a .ase file
+/// </summary>
 public class AseData {
     public int[] durations;
     public List<Clip> clips;
@@ -299,6 +324,9 @@ public class AseData {
         }
     }
 
+    /// <summary>
+    /// A class containing data for an animation clip found in a .ase file
+    /// </summary>
     public class Clip {
         public string name;
         public int start, end, sampleRate;
@@ -306,6 +334,7 @@ public class AseData {
         private AseData owner;
 
         public int len { get { return end - start + 1; } }
+        public float l0;
         public int[] frames { get { return owner.durations.SubArray(start, len); } }
         public int[] samples;
 
@@ -319,6 +348,16 @@ public class AseData {
             init();
         }
 
+        /// <summary>
+        /// gets the sample index for the given frame
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        public int this[int i] { get { return samples[i]; } }
+
+        /// <summary>
+        /// calculates animation relavent data
+        /// </summary>
         public void init() {
             dynamicRate = false;
             foreach (int i in frames)
@@ -327,9 +366,8 @@ public class AseData {
                     break;
                 }
 
-            float l0 = dynamicRate ? Anim_Import.GCD(frames) : frames[0]; // sample duration
-            sampleRate = (int)Math.Round(1000f / l0); //sample rate
-            //UnityEngine.Debug.Log(name + "\ts0: " + sampleRate);
+             l0 = dynamicRate ? Anim_Import.GCD(frames) : frames[0]; // frame duration
+            sampleRate = (int)Math.Round(1000f / l0); 
 
             // for each frame, place event at sample index
             int end = (dynamicRate) ? len + 1 : len;
