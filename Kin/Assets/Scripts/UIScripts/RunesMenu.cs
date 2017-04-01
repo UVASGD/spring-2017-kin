@@ -37,7 +37,7 @@ public class RunesMenu : MonoBehaviour {
     // Update is called once per frame
     public void updateRunes()
     {
-        Debug.Log("UPDATE");
+        //Debug.Log("UPDATE");
         if (runes.ixtabRune == 3)
         {
             hiltImg.sprite = Resources.Load<Sprite>("Sprites/Runes/Rune (1)");
