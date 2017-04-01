@@ -20,6 +20,7 @@ public class CameraShake : MonoBehaviour {
     private GameObject cam;
     public bool smooth;//Smooth rotation?
     public float smoothAmount = 5f;//Amount to smooth
+    private float curAmnt, curTime;
 
     void Start() {
         cam = GameObject.Find("Main Camera");
@@ -34,7 +35,6 @@ public class CameraShake : MonoBehaviour {
         if (!isRunning) StartCoroutine(Shake());
     }
 
-    public float curAmnt, curTime;
     public void ShakeCamera(float amount, float duration) {
         shakeAmount = amount;//Add to the current amount.
         curAmnt += shakeAmount;//Reset the start amount, to determine percentage.
