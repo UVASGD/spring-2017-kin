@@ -29,7 +29,7 @@ public class Traps : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
 	{
-		Debug.Log ("Boom, Trap expoded.");
+		//Debug.Log ("Boom, Trap expoded.");
 
 		GameObject target = other.gameObject;
 		PlayerHealth pHealth;
