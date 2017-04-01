@@ -18,9 +18,9 @@ public class QuetzalcotlAI : MonoBehaviour {
 	private float curSnakeCD = 0.0f;
 	private float curMeteorCD = 0.0f;
 
-	public float attackDamage = 10.0f;
-	public float stalagDamage = 5.0f;
-	public float meteorDamage = 7.5f;
+	public int attackDamage = 10;
+	public int stalagDamage = 5;
+	public int meteorDamage = 8;
 
 	public float aggroRadius = 4.0f;
 
