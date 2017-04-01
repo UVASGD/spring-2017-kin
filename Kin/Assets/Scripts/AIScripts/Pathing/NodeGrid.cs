@@ -86,6 +86,7 @@ public class NodeGrid : MonoBehaviour {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x, gridSize.y, 1));
         if (grid != null)
         {
+            Debug.Log("drawing grid");
             Node playerNode = NodeFromWorldPoint(player.transform.position);
             if (!limitGizmos)
             {
