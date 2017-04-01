@@ -35,7 +35,7 @@ public class MeleeMinion : BaseMinionAI
 
         curState = AIStates.IdleState;
 		meleeOnCd = false;
-        awarenessRadius = 1.0f;
+        awarenessRadius = 3.0f;
 		dealtDamage = false;
 	
     }
@@ -49,7 +49,8 @@ public class MeleeMinion : BaseMinionAI
                 if (distanceToPlayer >= awarenessRadius)
                 {
                     curState = AIStates.IdleState;
-                    return;
+					StopCoroutine ("FollowPath");
+					return;
                 }
                 if (distanceToPlayer < attackRange || meleeOnCd) {
 					if (!meleeOnCd) {
@@ -68,7 +69,11 @@ public class MeleeMinion : BaseMinionAI
 					}
 
 				} else if (!meleeOnCd && curState == AIStates.DetectedState) {
-					MoveTowardsTarget ();
+					if (timeDelay > 1.0f)
+					{
+						RequestPathManager.Request(transform.position, targetObject.transform.position, OnPathFound);
+						timeDelay = 0;
+					}
 				}
 			} else {
 				Patrol ();
