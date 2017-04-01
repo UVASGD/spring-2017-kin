@@ -23,6 +23,8 @@ public class ChacAI : BaseGodAI
 	float boltSpeed = 2.0f;
 	const float ANGLE_THRESHOLD = Mathf.PI/4;
     int maxHealth;
+    float despawnTimer;
+    bool dying;
     int stage; //determines which invinsibility stages have already happened
     SpriteRenderer render;
 
@@ -45,10 +47,12 @@ public class ChacAI : BaseGodAI
 
         meleeCd = false;
         projCd = false;
+        dying = false;
         maxInvincCd = 10;
         maxProjectileCd = 1;
         invincCurrCd = maxInvincCd;
         projCurrCd = maxProjectileCd;
+        despawnTimer = 0.0f;
 
 		curState = AIStates.IdleState;
 	}
@@ -64,6 +68,7 @@ public class ChacAI : BaseGodAI
 			    break;
 		    case AIStates.InvincibleState:
                 gameObject.GetComponent<EnemyHealth>().setInvinc(true);
+                render.material.SetColor("_Color", Color.white);
                 gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 if (projCd)
                 {
@@ -110,6 +115,13 @@ public class ChacAI : BaseGodAI
                     
 			    break;
 		    case AIStates.MeleeState:
+                if(dying)
+                {
+                    if (despawnTimer >= 10.0f)
+                        Destroy(gameObject);
+                    else
+                        despawnTimer += Time.deltaTime;
+                }
 			    float distance = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
 			    if(distance > meleeRange) //if too far for melee, then ranged attack
 			    {
@@ -188,6 +200,7 @@ public class ChacAI : BaseGodAI
                     if(health <= 0)
                     {
                         gameObject.GetComponent<ChacAnimationController>().dying = true; //use shaman to test, delete later
+                        dying = true;
                     }
                 }
 			    break;
