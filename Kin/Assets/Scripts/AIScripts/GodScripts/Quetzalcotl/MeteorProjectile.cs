@@ -27,11 +27,20 @@ public class MeteorProjectile : MonoBehaviour {
 		rb.velocity = new Vector2(x, y);
 	}
 
-	public void OnTriggerEnter2D(Collider2D coll) {
+    public void ReverseVelocity()
+    {
+        rb.velocity = new Vector2(-1*rb.velocity.x, -1 * rb.velocity.y);
+    }
+
+    public void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.CompareTag("Player")) {
 			coll.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
 			// Create explody animation prefab here
 			Destroy(gameObject);
 		}
-	}
+        if (coll.gameObject.name == "rightAttackBox" || coll.gameObject.name == "leftAttackBox" || coll.gameObject.name == "upperAttackBox" || coll.gameObject.name == "lowerAttackBox")
+        {
+            ReverseVelocity();
+        }
+    }
 }
