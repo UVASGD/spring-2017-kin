@@ -33,7 +33,6 @@ public class EnemyHealth:MonoBehaviour
             cooldownLeft -= Time.deltaTime;
             if(cooldownLeft <= 0)
             {
-                Debug.Log("arc cooldown reset");
                 alreadyArced = false;
                 cooldownLeft = arcCoolDown;
             }
