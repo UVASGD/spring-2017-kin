@@ -69,7 +69,6 @@ public class PlayerStamina : MonoBehaviour {
         {
 			setCurrentStamina(getMaxStamina());
         } 
-
         if (currentStamina >= resetLevel)
         {
             hasStamina = true;

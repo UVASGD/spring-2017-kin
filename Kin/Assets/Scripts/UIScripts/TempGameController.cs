@@ -20,7 +20,7 @@ public class TempGameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		ui.setHealth(Player.GetComponent<PlayerHealth>().getCurrentHealth());
-		ui.setStamina((int)Player.GetComponent<PlayerStamina>().getCurrentStamina());
+		ui.setStamina(Player.GetComponent<PlayerStamina>().getCurrentStamina());
         bossCheck();
 	}
 

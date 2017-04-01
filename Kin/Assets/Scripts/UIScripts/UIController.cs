@@ -50,7 +50,7 @@ public class UIController : MonoBehaviour {
 			staminalerpT += Time.deltaTime;
 		else
 			lerpingStamina = false;
-		Debug.Log (staminalerpT / 0.5);
+		//Debug.Log (staminalerpT / 0.5);
 
 		if (Input.GetButtonDown("Stats") && statsMenu != null)
         {
@@ -92,7 +92,7 @@ public class UIController : MonoBehaviour {
     public void setStamina(int val)
     {
 		underStamina.value = val;
-		staminalerpA = health.value;
+		staminalerpA = stamina.value;
 		staminalerpB = val;
 		staminalerpT = 0;
 		lerpingStamina = true;
