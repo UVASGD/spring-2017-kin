@@ -116,6 +116,10 @@ public class Kamikaze : BaseMinionAI
 		dying = true;
         Experience(experience);
 	}
+
+	public bool getExploded() {
+		return exploded;
+	}
 		
 
 	public void makeNoise(/*string sound*/){
