@@ -67,9 +67,9 @@ public class Anim_Import : EditorWindow {
 
                 #region import
                 GUILayout.Label("Import Settings", EditorStyles.boldLabel);
+                showFrameData = EditorGUILayout.Toggle("Show Frame Data ", showFrameData);
                 directImport = EditorGUILayout.BeginToggleGroup("Apply Directly to Object", directImport);
                 /*update = */ EditorGUILayout.Toggle("Update Existing Clips", update);
-                showFrameData = EditorGUILayout.Toggle("Show Frame Data ", showFrameData);
                 GUILayout.BeginHorizontal();
                 EditorGUILayout.LabelField("Gameobject");
                 go = EditorGUILayout.ObjectField(go, typeof(GameObject), true, null) as GameObject;
