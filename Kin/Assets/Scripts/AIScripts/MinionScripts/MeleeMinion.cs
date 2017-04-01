@@ -3,6 +3,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
+
+[RequireComponent(typeof(AudioSource))]
 public class MeleeMinion : BaseMinionAI
 {
     public int meleeDamage; //Melee attack damage
@@ -42,7 +44,7 @@ public class MeleeMinion : BaseMinionAI
     {
 
         float distanceToPlayer = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
-		if (!dying) {
+		if (!dying && GetComponent<Animator>().GetBool("Spawned")) {
 			if (curState == AIStates.DetectedState) {
                 if (distanceToPlayer >= awarenessRadius)
                 {
@@ -63,12 +65,6 @@ public class MeleeMinion : BaseMinionAI
 							meleeOnCd = false;
 							gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeRotation;
 						}
-						if (meleeCurrCd <= 0.5f && !dealtDamage) {
-							if (distanceToPlayer < attackRange) {
-								attackInRadius (targetObject.transform.position.x > rb.transform.position.x, attackRange);
-							}
-							dealtDamage = true;
-						}
 					}
 
 				} else if (!meleeOnCd && curState == AIStates.DetectedState) {
@@ -88,6 +84,16 @@ public class MeleeMinion : BaseMinionAI
 			else
 				despawnTimer += Time.deltaTime;
 		}
+    }
+
+    public override void applyDamage() {
+        float distanceToPlayer = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
+        if (!dealtDamage) {
+            if (distanceToPlayer < attackRange) {
+                attackInRadius(targetObject.transform.position.x > rb.transform.position.x, attackRange);
+            }
+            dealtDamage = true;
+        }
     }
 
     private GameObject[] ObjectsInAttackArea(bool direction /* false==left, true==right */, float attackRadius)
@@ -122,13 +128,12 @@ public class MeleeMinion : BaseMinionAI
         //Debug.Log("Attacking");
         GameObject[] thingsToAttack = ObjectsInAttackArea(direction,radius);
         //Attack Everything In This List
-        for(int i = 0; i < thingsToAttack.Length; i++){
-			if (thingsToAttack[i].tag == "Player")
+		if (thingsToAttack.Length > 0){
+			if (thingsToAttack[0].tag == "Player")
 			{
-				Debug.Log ("attacking");
-					targetObject.GetComponent<PlayerHealth> ().TakeDamage (meleeDamage);
+				targetObject.GetComponent<PlayerHealth> ().TakeDamage (meleeDamage);
 			}
-        }
+		}
     }
 
 	void death()

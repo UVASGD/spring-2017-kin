@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿#if UNITY_EDITOR
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -17,7 +18,7 @@ public class MapImportEditor : EditorWindow {
     Vector2 mapSize = new Vector2(8000, 8000);
     Vector3 start = new Vector3(0, 0, 0);
 
-    [MenuItem("Window/Map Import")]
+    [MenuItem("Tools/Map Import")]
     private static void MapImport() {
         EditorWindow.GetWindow(typeof(MapImportEditor));
     }
@@ -128,3 +129,4 @@ public class MapImportEditor : EditorWindow {
     }
 }
 
+#endif

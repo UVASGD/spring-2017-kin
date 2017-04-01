@@ -4,6 +4,11 @@ using System.Collections;
 public class StaticMethods {
 
     /// <summary>
+    /// Pixels Per Unity Unit
+    /// </summary>
+    public static int PPU = 100;
+
+    /// <summary>
     /// Returns a vector 3 of the supplied vector 2.
     /// </summary>
     /// <param name="v2"></param>
@@ -56,5 +61,11 @@ public class StaticMethods {
 	{
 		return (v2 - v1).magnitude;
 	}
+
+    public static float AngleBetweenVec2(Vector2 a, Vector2 b) {
+        Vector2 diff = b - a;
+        float sign = (b.y < a.y) ? -1.0f : 1.0f;
+        return Vector2.Angle(Vector2.right, diff) * sign;
+    }
 
 }

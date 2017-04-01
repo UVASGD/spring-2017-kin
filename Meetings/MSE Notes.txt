@@ -1,0 +1,27 @@
+Game Feel and "Features":
+1) player should only collide w/ friendlies & bosses
+2) Boss recoil should not be a thing
+	- going into Recoil animation can sometimes break Ixtab's attacks, allowing the player to avoid 
+		taking ANY damage
+3) Ixtab can be forced into only spawning skull candy if the player is directly above her
+4) Ixtab spawns boios too rarely
+	- spawn more than just Kamis
+	- spawned boios need larger agro range
+*5) rolling and attacking only counts for one action on stamina
+6) Skullcandy should maybe revolve around Ixtab as well as speed away from
+	- perhaps increase the speed of both params as battle progresses
+7) when Ixtab is invisible she should not follow the player, but wander the arena
+	- Ixtab comes out of invisibility too quickly; maybe wait until all spawned boios have been killed
+		before coming back?
+*7) Might not be the cause, but pressing "E" a bunch while exploring possibly leads to crashes
+****9) DON"T SPAM THAT FUCKING BELL
+10) Crossfade between music tracks?
+11) World is too empty. Why do I have to keep killing bombs and naked wizards?
+	- MOAR VARIATION
+*12) things don't die when they are killed
+13) yes i would like to go up and down on sideways stairs
+14) Camera should briefly focus  on bosses to introduce them
+	- if artist(s) aren't already overencumbered, make them draw a cool intro animation
+15) game should pause when in options menu
+
+FIX YOUR SHIT GAME DEVS

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 165a2a412f5912d41b8a71e711ba1733
-timeCreated: 1480351102
+timeCreated: 1490717952
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -118,12 +118,21 @@ TextureImporter:
     21300222: Bone Shaman_54
     21300224: Bone Shaman_55
     21300226: Bone Shaman_56
-  serializedVersion: 2
+    21300228: Bone Shaman_57
+    21300230: Bone Shaman_58
+    21300232: Bone Shaman_59
+    21300234: Bone Shaman_60
+    21300236: Bone Shaman_61
+    21300238: Bone Shaman_62
+    21300240: Bone Shaman_63
+    21300242: Bone Shaman_64
+    21300244: Bone Shaman_65
+  serializedVersion: 4
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
     mipMapFadeDistanceStart: 1
@@ -135,10 +144,8 @@ TextureImporter:
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 2048
@@ -149,9 +156,7 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -159,15 +164,55 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings:
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
-    textureFormat: -3
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -177,7 +222,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 448
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -188,9 +233,9 @@ TextureImporter:
       name: Bone Shaman_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 96
         y: 448
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -201,9 +246,9 @@ TextureImporter:
       name: Bone Shaman_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 192
         y: 448
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -214,9 +259,9 @@ TextureImporter:
       name: Bone Shaman_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 288
         y: 448
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -227,9 +272,9 @@ TextureImporter:
       name: Bone Shaman_4
       rect:
         serializedVersion: 2
-        x: 256
+        x: 384
         y: 448
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -240,9 +285,9 @@ TextureImporter:
       name: Bone Shaman_5
       rect:
         serializedVersion: 2
-        x: 320
+        x: 480
         y: 448
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -253,9 +298,9 @@ TextureImporter:
       name: Bone Shaman_6
       rect:
         serializedVersion: 2
-        x: 384
+        x: 576
         y: 448
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -266,9 +311,9 @@ TextureImporter:
       name: Bone Shaman_7
       rect:
         serializedVersion: 2
-        x: 448
+        x: 672
         y: 448
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -279,9 +324,9 @@ TextureImporter:
       name: Bone Shaman_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
-        width: 64
+        x: 768
+        y: 448
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -292,9 +337,9 @@ TextureImporter:
       name: Bone Shaman_9
       rect:
         serializedVersion: 2
-        x: 64
-        y: 384
-        width: 64
+        x: 864
+        y: 448
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -305,9 +350,9 @@ TextureImporter:
       name: Bone Shaman_10
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 384
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -318,9 +363,9 @@ TextureImporter:
       name: Bone Shaman_11
       rect:
         serializedVersion: 2
-        x: 192
+        x: 96
         y: 384
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -331,9 +376,9 @@ TextureImporter:
       name: Bone Shaman_12
       rect:
         serializedVersion: 2
-        x: 256
+        x: 192
         y: 384
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -344,9 +389,9 @@ TextureImporter:
       name: Bone Shaman_13
       rect:
         serializedVersion: 2
-        x: 320
+        x: 288
         y: 384
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -359,7 +404,7 @@ TextureImporter:
         serializedVersion: 2
         x: 384
         y: 384
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -370,9 +415,9 @@ TextureImporter:
       name: Bone Shaman_15
       rect:
         serializedVersion: 2
-        x: 448
+        x: 480
         y: 384
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -383,9 +428,9 @@ TextureImporter:
       name: Bone Shaman_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 320
-        width: 64
+        x: 576
+        y: 384
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -396,9 +441,9 @@ TextureImporter:
       name: Bone Shaman_17
       rect:
         serializedVersion: 2
-        x: 64
-        y: 320
-        width: 64
+        x: 672
+        y: 384
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -409,9 +454,9 @@ TextureImporter:
       name: Bone Shaman_18
       rect:
         serializedVersion: 2
-        x: 128
-        y: 320
-        width: 64
+        x: 768
+        y: 384
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -422,9 +467,9 @@ TextureImporter:
       name: Bone Shaman_19
       rect:
         serializedVersion: 2
-        x: 192
-        y: 320
-        width: 64
+        x: 864
+        y: 384
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -435,9 +480,9 @@ TextureImporter:
       name: Bone Shaman_20
       rect:
         serializedVersion: 2
-        x: 256
+        x: 0
         y: 320
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -448,9 +493,9 @@ TextureImporter:
       name: Bone Shaman_21
       rect:
         serializedVersion: 2
-        x: 320
+        x: 96
         y: 320
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -461,9 +506,9 @@ TextureImporter:
       name: Bone Shaman_22
       rect:
         serializedVersion: 2
-        x: 384
+        x: 192
         y: 320
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -474,9 +519,9 @@ TextureImporter:
       name: Bone Shaman_23
       rect:
         serializedVersion: 2
-        x: 448
+        x: 288
         y: 320
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -487,9 +532,9 @@ TextureImporter:
       name: Bone Shaman_24
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
-        width: 64
+        x: 384
+        y: 320
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -500,9 +545,9 @@ TextureImporter:
       name: Bone Shaman_25
       rect:
         serializedVersion: 2
-        x: 64
-        y: 256
-        width: 64
+        x: 480
+        y: 320
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -513,9 +558,9 @@ TextureImporter:
       name: Bone Shaman_26
       rect:
         serializedVersion: 2
-        x: 128
-        y: 256
-        width: 64
+        x: 576
+        y: 320
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -526,9 +571,9 @@ TextureImporter:
       name: Bone Shaman_27
       rect:
         serializedVersion: 2
-        x: 192
-        y: 256
-        width: 64
+        x: 672
+        y: 320
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -539,9 +584,9 @@ TextureImporter:
       name: Bone Shaman_28
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
-        width: 64
+        x: 768
+        y: 320
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -552,9 +597,9 @@ TextureImporter:
       name: Bone Shaman_29
       rect:
         serializedVersion: 2
-        x: 320
-        y: 256
-        width: 64
+        x: 864
+        y: 320
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -565,9 +610,9 @@ TextureImporter:
       name: Bone Shaman_30
       rect:
         serializedVersion: 2
-        x: 384
+        x: 0
         y: 256
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -578,9 +623,9 @@ TextureImporter:
       name: Bone Shaman_31
       rect:
         serializedVersion: 2
-        x: 448
+        x: 96
         y: 256
-        width: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -591,9 +636,9 @@ TextureImporter:
       name: Bone Shaman_32
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
-        width: 64
+        x: 192
+        y: 256
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -604,9 +649,9 @@ TextureImporter:
       name: Bone Shaman_33
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
-        width: 64
+        x: 288
+        y: 256
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -617,9 +662,9 @@ TextureImporter:
       name: Bone Shaman_34
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
-        width: 64
+        x: 384
+        y: 256
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -630,9 +675,9 @@ TextureImporter:
       name: Bone Shaman_35
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
-        width: 64
+        x: 480
+        y: 256
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -643,9 +688,9 @@ TextureImporter:
       name: Bone Shaman_36
       rect:
         serializedVersion: 2
-        x: 256
-        y: 192
-        width: 64
+        x: 576
+        y: 256
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -656,9 +701,9 @@ TextureImporter:
       name: Bone Shaman_37
       rect:
         serializedVersion: 2
-        x: 320
-        y: 192
-        width: 64
+        x: 672
+        y: 256
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -669,9 +714,9 @@ TextureImporter:
       name: Bone Shaman_38
       rect:
         serializedVersion: 2
-        x: 384
-        y: 192
-        width: 64
+        x: 768
+        y: 256
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -682,9 +727,9 @@ TextureImporter:
       name: Bone Shaman_39
       rect:
         serializedVersion: 2
-        x: 448
-        y: 192
-        width: 64
+        x: 864
+        y: 256
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -696,8 +741,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
-        width: 64
+        y: 192
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -708,9 +753,9 @@ TextureImporter:
       name: Bone Shaman_41
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
+        x: 96
+        y: 192
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -721,9 +766,9 @@ TextureImporter:
       name: Bone Shaman_42
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
+        x: 192
+        y: 192
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -734,9 +779,9 @@ TextureImporter:
       name: Bone Shaman_43
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
-        width: 64
+        x: 288
+        y: 192
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -747,9 +792,9 @@ TextureImporter:
       name: Bone Shaman_44
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
-        width: 64
+        x: 384
+        y: 192
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -760,9 +805,9 @@ TextureImporter:
       name: Bone Shaman_45
       rect:
         serializedVersion: 2
-        x: 320
-        y: 128
-        width: 64
+        x: 480
+        y: 192
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -773,9 +818,9 @@ TextureImporter:
       name: Bone Shaman_46
       rect:
         serializedVersion: 2
-        x: 384
-        y: 128
-        width: 64
+        x: 576
+        y: 192
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -786,9 +831,9 @@ TextureImporter:
       name: Bone Shaman_47
       rect:
         serializedVersion: 2
-        x: 448
-        y: 128
-        width: 64
+        x: 672
+        y: 192
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -799,9 +844,9 @@ TextureImporter:
       name: Bone Shaman_48
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
+        x: 768
+        y: 192
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -812,9 +857,9 @@ TextureImporter:
       name: Bone Shaman_49
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
+        x: 864
+        y: 192
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -825,9 +870,9 @@ TextureImporter:
       name: Bone Shaman_50
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
+        x: 0
+        y: 128
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -838,9 +883,9 @@ TextureImporter:
       name: Bone Shaman_51
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
-        width: 64
+        x: 96
+        y: 128
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -851,9 +896,9 @@ TextureImporter:
       name: Bone Shaman_52
       rect:
         serializedVersion: 2
-        x: 256
-        y: 64
-        width: 64
+        x: 192
+        y: 128
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -864,9 +909,9 @@ TextureImporter:
       name: Bone Shaman_53
       rect:
         serializedVersion: 2
-        x: 320
-        y: 64
-        width: 64
+        x: 288
+        y: 128
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -878,8 +923,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 64
-        width: 64
+        y: 128
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -890,9 +935,9 @@ TextureImporter:
       name: Bone Shaman_55
       rect:
         serializedVersion: 2
-        x: 448
-        y: 64
-        width: 64
+        x: 480
+        y: 128
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -903,9 +948,126 @@ TextureImporter:
       name: Bone Shaman_56
       rect:
         serializedVersion: 2
+        x: 576
+        y: 128
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bone Shaman_57
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 128
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bone Shaman_58
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bone Shaman_59
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 128
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bone Shaman_60
+      rect:
+        serializedVersion: 2
         x: 0
-        y: 0
-        width: 64
+        y: 64
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bone Shaman_61
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bone Shaman_62
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bone Shaman_63
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 64
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bone Shaman_64
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bone Shaman_65
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 64
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
