@@ -16,11 +16,13 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 	private Rigidbody2D rb2;
 	private bool calm;
 
+	private List<GameObject> activeMinions;
+
 	public float attackRange = 1.0f;
 
 	public float maxAttackCooldown = 1.0f;
 	public float maxSpawnCooldown = 10.0f;
-	public float maxInvisCooldown = 15.0f;
+	public float maxInvisCooldown = 7.5f;
 	public float maxSlamCooldown = 5.0f;
 
 	private float slamCooldown;
@@ -56,6 +58,8 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		anim = this.gameObject.GetComponent<Animator> ();
 		rb2 = this.gameObject.GetComponent<Rigidbody2D> ();
 		calm = true;
+
+		activeMinions = new List<GameObject>();
 
 		slamCooldown = maxSlamCooldown;
 		swipeCooldown = maxAttackCooldown;
@@ -155,8 +159,10 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		// Spawn %hp/10% Kamikaze
 		//9 - ((((int)(enemyHealth.getHp()/enemyHealth.maxHealth)*100)) % 10)
 		foreach(Vector2 vec in calculateAngles((int)(10 - (enemyHealth.getHp()/enemyHealth.maxHealth)/0.1), 1.0f)) {
-			Instantiate(Resources.Load("Prefabs/Entities/Kamikaze", typeof(GameObject)) as GameObject, 
-				vec, Quaternion.identity);
+			GameObject kami = Instantiate(Resources.Load("Prefabs/Entities/Kamikaze", typeof(GameObject)) as GameObject, 
+				vec, Quaternion.identity) as GameObject;
+			kami.GetComponent<Kamikaze>().awarenessRadius = float.MaxValue;
+			activeMinions.Add(kami);
             delaySpawn();
 		}
 	}
@@ -172,6 +178,23 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 				player.GetComponent<PlayerHealth>().TakeDamage((int)damageDone);
 			}
 		}
+	}
+
+	public int GetNumActiveMinions() {
+		int numMinions = 0;
+		List<GameObject> toRemove = new List<GameObject>();
+		foreach (GameObject min in activeMinions) {
+			if (min.GetComponent<EnemyHealth>().getHp() <= 0 || min.GetComponent<Kamikaze>().getExploded()) {
+				toRemove.Add(min);
+			} else {
+				numMinions++;
+			}
+		}
+		foreach (GameObject rem in toRemove) {
+			activeMinions.Remove(rem);
+		}
+		toRemove.Clear();
+		return numMinions;
 	}
 
     // add pizzaz!!!
@@ -214,6 +237,10 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 
 	private float distanceToPlayer() {
 		return Vector2.Distance (player.transform.position, this.gameObject.transform.position);
+	}
+
+	public void Wander() {
+		rb2.velocity = new Vector2(Mathf.Max(Mathf.Min(Random.Range(-0.05f, 0.05f) + rb2.velocity.x, 1.0f) , -1.0f), Mathf.Max(Mathf.Min(Random.Range(-0.05f, 0.05f) + rb2.velocity.y, 1.0f), -1.0f));
 	}
 
 	private List<Vector2> calculateAngles(int num, float distanceAway) {
