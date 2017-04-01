@@ -10,6 +10,8 @@ public class EnemyHealth:MonoBehaviour
     bool isInvinc;
     public BaseAI AIsrc;
     private bool alreadyArced;
+    private float cooldownLeft;
+    public float arcCoolDown = 1;
     Animator animator;
 
     public float recoilDist;
@@ -21,6 +23,20 @@ public class EnemyHealth:MonoBehaviour
         isDead = false;
 		AIsrc = gameObject.GetComponent<BaseAI>();
         alreadyArced = false;
+        //If you change this, be sure to c
+        cooldownLeft = 1;
+    }
+    void Update()
+    {
+        if (alreadyArced && !isDead)
+        {
+            cooldownLeft -= Time.deltaTime;
+            if(cooldownLeft <= 0)
+            {
+                alreadyArced = false;
+                cooldownLeft = arcCoolDown;
+            }
+        }
     }
     public void takeDamage(int amount)
     {
@@ -67,7 +83,7 @@ public class EnemyHealth:MonoBehaviour
 
         alreadyArced = true;
         takeDamage(damage);
-        float jumpDistance = 3;
+        float jumpDistance = 1.5f;
         if (distance > 1)
         {
                 //chain damage nearby enemy
