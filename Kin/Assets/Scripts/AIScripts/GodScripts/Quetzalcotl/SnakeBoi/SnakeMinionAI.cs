@@ -13,4 +13,12 @@ public class SnakeMinionAI : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	public void SnakeShoot() {
+
+	}
+
+	public void SnakeBite() {
+
+	}
 }
