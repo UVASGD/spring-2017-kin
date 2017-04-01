@@ -23,7 +23,7 @@ public class RequestPathManager : MonoBehaviour {
         PathRequest newRequest = new PathRequest(pathStart, pathEnd, callback);
         instance.pathRequestQueue.Enqueue(newRequest);
         instance.TryProcessNext();
-        Debug.Log("Request Recieved");
+        //Debug.Log("Request Recieved");
 
     }
 
