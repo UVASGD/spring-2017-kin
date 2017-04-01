@@ -23,7 +23,7 @@ public class Pathing : MonoBehaviour {
 
     public void StartFindPath(Vector3 startPos, Vector3 targetPos)
     {
-        Debug.Log("starting path find");
+        //Debug.Log("starting path find");
         StartCoroutine(FindPath(startPos, targetPos));
     }
     IEnumerator FindPath(Vector2 start, Vector2 end)
@@ -34,7 +34,7 @@ public class Pathing : MonoBehaviour {
 
         Node startNode = grid.NodeFromWorldPoint(start);
         Node targetNode = grid.NodeFromWorldPoint(end);
-        Debug.Log(startNode.traversable + " " + targetNode.traversable);
+        //Debug.Log(startNode.traversable + " " + targetNode.traversable);
         if (startNode.traversable && targetNode.traversable)
         {
             Debug.Log("both traversable");
@@ -73,7 +73,7 @@ public class Pathing : MonoBehaviour {
             }
         }
         yield return null;
-        Debug.Log("Checking path find success" + pathSuccess);
+        //ebug.Log("Checking path find success" + pathSuccess);
         if (pathSuccess)
             waypoints = tracePath(startNode, targetNode);
         requestManager.FinishedProcessingPath(waypoints, pathSuccess);
