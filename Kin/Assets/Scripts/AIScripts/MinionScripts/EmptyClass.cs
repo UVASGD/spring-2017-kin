@@ -23,7 +23,6 @@ public class EmptyClass : Kamikaze
 		//this.isRanged = false;
 
 		curState = AIStates.IdleState;
-		float[] positions = new float[2];
 		//explodeRadius = .2f;
 		//timeToExplode = 0.0f;
 		//explodeDelay = .8f;

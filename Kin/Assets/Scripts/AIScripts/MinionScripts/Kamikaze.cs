@@ -22,13 +22,9 @@ public class Kamikaze : BaseMinionAI
         //Establish rigid body for minion
         rb = gameObject.GetComponent<Rigidbody2D>();
         if (rb == null)
-        {
             Debug.LogError("AI has no RigidBody. AI name is " + gameObject.name + "!");
-        }
         if (targetObject == null)
-        {
             Debug.LogError("AI has no target. AI name is " + gameObject.name + "!");
-        }
 
         curState = AIStates.PatrolState;
 
@@ -43,8 +39,8 @@ public class Kamikaze : BaseMinionAI
 		dying = false;
     }
 
-    protected new void Update()
-    {
+    protected new void Update() {
+        if (!gameObject.GetComponent<Animator>().GetBool("Spawned")) return;
         float distanceToPlayer = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
 
 		if (dying)
@@ -75,7 +71,7 @@ public class Kamikaze : BaseMinionAI
                     gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 }
                 else
-                    MoveTowardsTarget();
+                        MoveTowardsTarget();
             }
             else
             {

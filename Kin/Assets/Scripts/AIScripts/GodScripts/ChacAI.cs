@@ -26,16 +26,20 @@ public class ChacAI : BaseGodAI
     int stage; //determines which invinsibility stages have already happened
     SpriteRenderer render;
 
+	float timer;
+
 	//Set of AI behavior states
-	protected enum AIStates
+	public enum AIStates
 	{
 		InvincibleState, MeleeState, IdleState
 	}
-	protected AIStates curState; //Current AI behavior state
+	public AIStates curState; //Current AI behavior state
 
 	protected new void Start()
 	{
 		base.Start();
+
+		timer = 0.0f;
 
         invincCurrCd = maxInvincCd;
 
@@ -55,15 +59,18 @@ public class ChacAI : BaseGodAI
 
 	protected new void Update()
 	{
+		if (timer <= 10.0f)
+			timer += 0.1f;
         int health = gameObject.GetComponent<EnemyHealth>().getHp();
         switch (curState)
 		{
 		    case AIStates.IdleState:
-			    if (true /*some condition*/)
+			if (Vector2.Distance(this.gameObject.transform.position, targetObject.transform.position) < base.awarenessRadius)
                     curState = AIStates.InvincibleState;
 			    break;
 		    case AIStates.InvincibleState:
                 gameObject.GetComponent<EnemyHealth>().setInvinc(true);
+				gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
                 gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 if (projCd)
                 {
@@ -142,7 +149,8 @@ public class ChacAI : BaseGodAI
                         meleeCd = true;
                         attackInRadius(targetObject.transform.position.x > rb.transform.position.x, meleeRange);
                         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-                        render.material.SetColor("_Color", Color.red);
+						gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                        //render.material.SetColor("_Color", Color.red);
                         Debug.Log("CoolDown");
                     }
                 }
@@ -153,7 +161,8 @@ public class ChacAI : BaseGodAI
                     meleeCurrCd = maxMeleeCd;
                     meleeCd = false;
                     gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-                    render.material.SetColor("_Color", Color.white);
+                    //render.material.SetColor("_Color", Color.white);
+					gameObject.GetComponent<SpriteRenderer>().color = Color.white;
                 }
                 else
                 {
@@ -185,9 +194,10 @@ public class ChacAI : BaseGodAI
                 }
                 else
                 {
-                    if(health <= 0)
+				if(health <= 0 && timer > 10.0f)
                     {
-                        gameObject.GetComponent<ChacAnimationController>().dying = true; //use shaman to test, delete later
+                        if (gameObject.GetComponent<ChacAnimationController>() != null)
+                            gameObject.GetComponent<ChacAnimationController>().dying = true; //use shaman to test, delete later
                     }
                 }
 			    break;
@@ -340,14 +350,13 @@ public class ChacAI : BaseGodAI
 
     void projectileOnPosition(Vector3 pos, int proj)
     {
-        GameObject newProj;
         pos.y = pos.y + 0.3f;
         switch(proj) {
             case 1: //lightning
-                newProj = (GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)), pos, Quaternion.identity);
+                Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)), pos, Quaternion.identity);
                 break;
             case 2: //geyser
-                newProj = (GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/Geyser", typeof(GameObject)), pos, Quaternion.identity);
+                Instantiate(Resources.Load("Prefabs/Projectiles/Geyser", typeof(GameObject)), pos, Quaternion.identity);
                 break;
             default:
                 Debug.Log("Something not right");

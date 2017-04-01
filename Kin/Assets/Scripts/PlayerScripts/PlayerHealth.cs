@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour {
     // public AudioClip damageClip;
     // public AudioClip deathClip;
     bool isDead = false;
+    public bool ixtabRune = false;
+    public bool invincible = true; // for debug ONLY!!!
 
     AvatarMvmController playerMvmController;
     // Reference to animator for death animation
@@ -22,7 +24,7 @@ public class PlayerHealth : MonoBehaviour {
 
     void Awake()
     {
-        maxHealth = GetComponent<StatController>().getHealth(); 
+        maxHealth = GetComponent<StatController>().getHealth();
         /*if you want the ui controller to get this value, 
          * you need to set it here, not in start. 
          * Start is too late, and this is fine because start 
@@ -42,7 +44,7 @@ public class PlayerHealth : MonoBehaviour {
     {
         if (!anim.GetBool("Rolling") && !anim.GetBool("Recoiling"))
         {
-            currentHealth -= amount;
+            if(!invincible) currentHealth -= amount;
             anim.SetBool("Recoiling", true);
             // Play damage audio clip
         }
@@ -52,14 +54,21 @@ public class PlayerHealth : MonoBehaviour {
         }
         if (currentHealth <= 0 && !isDead)
         {
-            currentHealth = 0;
-            Death();
+			if (ixtabRune) {
+				setCurrentHealth(getMaxHealth() / 4);
+				Debug.Log ("Ixtab rune activated");
+                GetComponent<Runes>().ixtabRune = (int)Runes.runeModes.locked;
+                GetComponent<Runes>().setIxtabActive(false);
+			} else {
+				setCurrentHealth(0);
+				Death ();
+			}
         }
         else
         {
-            if (currentHealth < 0)
+			if (getCurrentHealth() < 0)
             {
-                currentHealth = 0;
+				setCurrentHealth(0);
             }
         }
 
@@ -71,6 +80,7 @@ public class PlayerHealth : MonoBehaviour {
         anim.SetBool("Dying", true);
         // Play death audio clip
         playerMvmController.enabled = false;
+
         // Go to UI Screen
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition; // Make sure to unfreeze before undying...
 
@@ -102,10 +112,6 @@ public class PlayerHealth : MonoBehaviour {
         // For Testing
         //Debug.Log("Max: " + maxHealth + ", Current: " + currentHealth);
         //Debug.Log("Recoiling " + anim.GetBool("Recoiling"));
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            TakeDamage(60);
-        }
         // Timer set up so you can do something once they've been dead a certain amount of time
         if (isDead) {
             restartTimer += Time.deltaTime;
@@ -119,6 +125,16 @@ public class PlayerHealth : MonoBehaviour {
             // Go back to scene?
         }
     }
+
+	public void playDeathSound() {
+		Debug.Log("Death");
+		AudioSource aSource = GetComponent<AudioSource>();
+		string clipName = "Sounds/Player SFX/Death Sound Brian " + Random.Range(1, 3);
+		Debug.Log(clipName);
+		AudioClip c = Resources.Load(clipName) as AudioClip;
+		aSource.clip = c;
+		aSource.GetComponent<AudioSource>().Play();
+	}
 
 
 }

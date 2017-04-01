@@ -75,4 +75,13 @@ public class LightningBoltScript : MonoBehaviour
                 break;
         }
     }
+
+    void OnDrawGizmos() {
+        // Detect Range
+        Gizmos.color = new Color(0.0f, 0.0f, 1.0f, 0.15f);
+        Gizmos.DrawSphere(gameObject.transform.position, radiusOfEffect);
+        Gizmos.color = new Color(0.0f, 0.0f, 1.0f, 0.10f);
+        Gizmos.DrawSphere(gameObject.transform.position, radiusOfEffect + 0.1f);
+    }
+
 }

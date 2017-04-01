@@ -82,8 +82,10 @@ public class PatrolMinion : Kamikaze
             MoveTowardsPosition(positions[currIndex]);
     }
 
+
     //Move linearly towards target
-    protected void MoveTowardsPosition(Vector2 pos)
+
+	new protected void MoveTowardsPosition(Vector2 pos)
     {
         rb.velocity = (pos - (Vector2) gameObject.transform.position).normalized * speed;
     }
