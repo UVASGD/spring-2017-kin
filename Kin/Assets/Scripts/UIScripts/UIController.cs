@@ -79,6 +79,11 @@ public class UIController : MonoBehaviour {
 			health.value = maxHealth;
 		}
 		health.maxValue = maxHealth;
+
+		if (underHealth.value > maxHealth) {
+			underHealth.value = maxHealth;
+		}
+		underHealth.maxValue = maxHealth;
     }
 
     public void setMaxStamina(int maxStam)
@@ -87,6 +92,11 @@ public class UIController : MonoBehaviour {
 			stamina.value = maxStam;
 		}
 		stamina.maxValue = maxStam;
+
+		if (underStamina.value > maxStam) {
+			underStamina.value = maxStam;
+		}
+		underStamina.maxValue = maxStam;
     }
 
     public void setStamina(int val)
