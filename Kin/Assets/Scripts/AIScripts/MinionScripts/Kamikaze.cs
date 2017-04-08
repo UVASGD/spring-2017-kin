@@ -32,7 +32,7 @@ public class Kamikaze : BaseMinionAI
         timeToExplode = 0.0f;
 		timeSinceDeath = 0.0f;
         explodeDelay = .9f;
-        awarenessRadius = 3.0f;
+		awarenessRadius = 1.0f; //3.0f;
 		decayTime = 10.0f;
 		exploded = false;
         speed = 1.0f;
@@ -60,7 +60,7 @@ public class Kamikaze : BaseMinionAI
         {
             if (distanceToPlayer >= awarenessRadius)
             {
-                StopCoroutine("FollowPath");
+                //StopCoroutine("FollowPath");
                 curState = AIStates.IdleState;
                 return;
             }
@@ -73,11 +73,12 @@ public class Kamikaze : BaseMinionAI
                     gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 }
                 else{
-                        if (timeDelay > 1.0f)
-                            {
-                                RequestPathManager.Request(transform.position, targetObject.transform.position, OnPathFound);
-                                timeDelay = 0;
-                             }
+                    /*if (timeDelay > 1.0f)
+                      {
+                          RequestPathManager.Request(transform.position, targetObject.transform.position, OnPathFound);
+                          timeDelay = 0;
+                      }*/
+					MoveTowardsTarget ();
                     }
             }
             else

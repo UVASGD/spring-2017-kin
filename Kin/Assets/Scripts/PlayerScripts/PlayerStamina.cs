@@ -7,10 +7,10 @@ public class PlayerStamina : MonoBehaviour {
 	public int currentStamina;
     private int staminaRegen = 5;
     public bool hasStamina;
-    float resetLevel = 500;
-    bool pauseRegen = false;
-    float pauseLength = 1.6f; // seconds it should pause for
-    float pauseTimer = 0;
+    public float resetLevel = 500;
+    public bool pauseRegen = false;
+    public float pauseLength = 1.6f; // seconds it should pause for
+    public float pauseTimer = 0;
     
     public int getMaxStamina()
     {
@@ -46,6 +46,7 @@ public class PlayerStamina : MonoBehaviour {
 	public void TakeDamage(int amount)
     {
 		setCurrentStamina(getCurrentStamina() - amount);
+		pauseTimer = 0;
 		if (getCurrentStamina() <= 0)
         {
 			setCurrentStamina(0);
