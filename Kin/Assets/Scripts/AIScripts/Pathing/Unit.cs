@@ -10,6 +10,8 @@ public class Unit : MonoBehaviour
     Vector3[] path;
     int targetIndex;
 
+    float timeDelay = 10.0f;
+
     void Start()
     {
         
@@ -17,7 +19,14 @@ public class Unit : MonoBehaviour
 
     void Update()
     {
-        RequestPathManager.Request(transform.position, target.position, OnPathFound);
+        if (timeDelay > 1.0f)
+        {
+            RequestPathManager.Request(transform.position, target.position, OnPathFound);
+            timeDelay = 0;
+        }
+        else {
+            timeDelay += Time.deltaTime;
+        }
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
