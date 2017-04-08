@@ -47,8 +47,12 @@ public class MusicController : MonoBehaviour {
 	public bool isPlaying; //use me instead of the other one...
 	public MusicState state;
 
+	public float buffer;
+	public const float bufferTime = 300;
+
 	// Use this for initialization
 	void Start () {
+		buffer = 0;
 		Bossname = "";
 		introed = false;
 
@@ -95,6 +99,9 @@ public class MusicController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
+		if (state == MusicState.World) {
+			buffer -= Time.deltaTime;
+		}
 
 		int index = 0;
 
@@ -198,7 +205,10 @@ public class MusicController : MonoBehaviour {
 		up = false;
 		aud.volume = 1.00f;
 		mona.GetComponent<AudioSource> ().Play ();
-		chime.GetComponent<AudioSource> ().Play ();
+		if (buffer < 0) {
+			chime.GetComponent<AudioSource> ().Play ();
+			buffer = bufferTime;
+		}
 		state = MusicState.Monastery;
 		Bossname = "";
 	}

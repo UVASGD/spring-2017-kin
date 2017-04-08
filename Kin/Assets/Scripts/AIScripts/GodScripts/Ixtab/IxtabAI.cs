@@ -159,7 +159,7 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		// Spawn %hp/10% Kamikaze
 		//9 - ((((int)(enemyHealth.getHp()/enemyHealth.maxHealth)*100)) % 10)
 		foreach(Vector2 vec in calculateAngles((int)(10 - (enemyHealth.getHp()/enemyHealth.maxHealth)/0.1), 1.0f)) {
-			GameObject kami = Instantiate(Resources.Load("Prefabs/Entities/Kamikaze", typeof(GameObject)) as GameObject, 
+			GameObject kami = Instantiate(Resources.Load("Prefabs/Entities/KamikazeIxtab", typeof(GameObject)) as GameObject, 
 				vec, Quaternion.identity) as GameObject;
 			kami.GetComponent<Kamikaze>().awarenessRadius = float.MaxValue;
 			activeMinions.Add(kami);
