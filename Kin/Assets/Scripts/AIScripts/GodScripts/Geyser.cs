@@ -52,11 +52,13 @@ public class Geyser : MonoBehaviour {
 						currentCooldown = damageCooldown;
 					}
 				}
-			}
+                currState = States.fade;
+            }
 			break;
 		case States.fade:
-			//Stuff we do while fading
-			//is there anything to do here? the world may never know
+                //Stuff we do while fading
+                //is there anything to do here? the world may never know
+                Destroy(gameObject);
 			break;
 		default:
 			break;

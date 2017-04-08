@@ -4,10 +4,13 @@ using System.Collections;
 public class PlayerStamina : MonoBehaviour {
 
 	public int maxStamina; 
-	private int currentStamina;
-    private int staminaRegen = 3;
+	public int currentStamina;
+    private int staminaRegen = 5;
     public bool hasStamina;
     float resetLevel = 500;
+    bool pauseRegen = false;
+    float pauseLength = 1.6f; // seconds it should pause for
+    float pauseTimer = 0;
     
     public int getMaxStamina()
     {
@@ -31,23 +34,24 @@ public class PlayerStamina : MonoBehaviour {
 
     void Awake()
     {
-        maxStamina = GetComponent<StatController>().getStamina();
+		setMaxStamina(GetComponent<StatController>().getStamina());
         hasStamina = true;
     }
 
 	void Start()
     {
-		currentStamina = maxStamina;
+		setCurrentStamina(getMaxStamina());
 	}
 
 	public void TakeDamage(int amount)
     {
-		currentStamina -= amount;
-        if (currentStamina <= 0)
+		setCurrentStamina(getCurrentStamina() - amount);
+		if (getCurrentStamina() <= 0)
         {
-            currentStamina = 0;
+			setCurrentStamina(0);
             hasStamina = false;
         }
+        pauseRegen = true;
 	}
 
     void NoStamina()
@@ -57,22 +61,26 @@ public class PlayerStamina : MonoBehaviour {
 
 	void Update()
 	{
-        if (currentStamina + staminaRegen <= maxStamina)
+        if (currentStamina + staminaRegen <= maxStamina && !pauseRegen)
         {
-            currentStamina += staminaRegen;
+			setCurrentStamina(getCurrentStamina() + staminaRegen);
         }
-        else
+        else if (!(currentStamina + staminaRegen <= maxStamina) && !pauseRegen)
         {
-            currentStamina = maxStamina;
-        }
-        //print("hasStamina: " + hasStamina + " Stamina: " + currentStamina);
-        //if (Input.GetKeyDown(KeyCode.Y))
-        //{
-        //    TakeDamage(300);
-        //}
+			setCurrentStamina(getMaxStamina());
+        } 
         if (currentStamina >= resetLevel)
         {
             hasStamina = true;
+        }
+        if (pauseRegen)
+        {
+            pauseTimer += Time.deltaTime;
+            if (pauseTimer > pauseLength)
+            {
+                pauseRegen = false;
+                pauseTimer = 0;
+            }
         }
     }
 }

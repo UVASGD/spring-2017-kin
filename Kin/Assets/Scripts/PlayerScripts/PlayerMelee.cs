@@ -22,6 +22,8 @@ public class PlayerMelee : MonoBehaviour {
 
     public int damage = 20;
 
+    public bool chacRuneActivated;
+
     void Awake()
     {
 		rightAttackBox.SetActive(false);
@@ -41,7 +43,7 @@ public class PlayerMelee : MonoBehaviour {
         facingDown = true;
 
     }
-    
+   
 	
 	// Update is called once per frame
 	void Update () {
@@ -88,25 +90,32 @@ public class PlayerMelee : MonoBehaviour {
             }
         }
 
+
+
         if (Input.GetButtonDown("Attack") && !attacking && GetComponent<PlayerStamina>().hasStamina)
         {
             attacking = true;
+			this.gameObject.GetComponent<FXHandler> ().playAtkLow ();
             attackTimer = attackCoolDown; // Start timer
             if (facingRight)
             {
 				rightAttackBox.SetActive (true);
+                rightAttackBox.GetComponent<MeleeAttackHitBox>().setChacRune(chacRuneActivated);
             }
             else if (facingLeft)
             {
 				leftAttackBox.SetActive (true);
+                leftAttackBox.GetComponent<MeleeAttackHitBox>().setChacRune(chacRuneActivated);
             }
             else if (facingUp)
             {
 				upperAttackBox.SetActive (true);
+                upperAttackBox.GetComponent<MeleeAttackHitBox>().setChacRune(chacRuneActivated);
             }
             else if (facingDown)
             {
 				lowerAttackBox.SetActive (true);
+                lowerAttackBox.GetComponent<MeleeAttackHitBox>().setChacRune(chacRuneActivated);
             }
         }
 
@@ -127,5 +136,13 @@ public class PlayerMelee : MonoBehaviour {
             }
         }
 
+    }
+
+    public void setDamage(int new_damage)
+    {
+        rightAttackBox.GetComponent<MeleeAttackHitBox>().setDamage(new_damage);
+        leftAttackBox.GetComponent<MeleeAttackHitBox>().setDamage(new_damage);
+        upperAttackBox.GetComponent<MeleeAttackHitBox>().setDamage(new_damage);
+        lowerAttackBox.GetComponent<MeleeAttackHitBox>().setDamage(new_damage);
     }
 }

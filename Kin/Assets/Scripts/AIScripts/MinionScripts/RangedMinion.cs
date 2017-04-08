@@ -69,7 +69,7 @@ public class RangedMinion : BaseMinionAI {
 	}
 
 	// Use this for initialization
-	void Start () {
+	new void Start () {
 		base.Start ();
 		fireRadius = .8f;
 		//Initialize melee/ranged attack timers

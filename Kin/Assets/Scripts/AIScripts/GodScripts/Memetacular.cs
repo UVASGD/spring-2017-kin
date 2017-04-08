@@ -15,6 +15,7 @@ public class Memetacular : MonoBehaviour {
 	bool dying;
 	float despawn = 0.0f;
 
+
 	public enum Meme{
 		YOLO, oneDoesNot, pepe
 	}
@@ -29,14 +30,13 @@ public class Memetacular : MonoBehaviour {
 		robotnik = GetComponent<Rigidbody2D>();
 		dying = false;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (gameObject.GetComponent<EnemyHealth>().getHp() <= 0) {
-			dying = true;
-
 			death ();
-		}
+            dying = true;
+        }
 		//isDank ();
 		if (!dying) {
 			Vector2 weed = new Vector2 (player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
@@ -65,8 +65,8 @@ public class Memetacular : MonoBehaviour {
 					if (lapidot <= 10) {
 						eatDelicious ();
 						squirrel.SetBool ("Attack1", true);
-					} else if (lapidot <= 20) {		
-						eatDelicious ();			
+					} else if (lapidot <= 20) {
+						eatDelicious ();
 						squirrel.SetBool ("Release", true);
 						squirrel.SetBool ("Invisible", true);
 						dank = Meme.pepe;
@@ -76,7 +76,7 @@ public class Memetacular : MonoBehaviour {
 					} else {
 						eatDelicious ();
 						squirrel.SetBool ("Attack3", true);
-					} 
+					}
 				}
 				break;
 			case Meme.pepe:
@@ -89,12 +89,12 @@ public class Memetacular : MonoBehaviour {
 					if (racistBassist <= 15) {
 						eatDelicious ();
 						squirrel.SetBool ("Attack1", true);
-					} else {		
-						eatDelicious ();			
+					} else {
+						eatDelicious ();
 						squirrel.SetBool ("Invisible", false);
 						squirrel.SetBool ("Choke", true);
 						dank = Meme.oneDoesNot;
-					} 
+					}
 				}
 				break;
 			}
@@ -131,8 +131,9 @@ public class Memetacular : MonoBehaviour {
 	public void death()
 	{
 		squirrel.SetBool ("Dying",true);
+        if (!dying) GetComponent<DropRune>().dropRune();
 		gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
 
 	}
-	
+
 }

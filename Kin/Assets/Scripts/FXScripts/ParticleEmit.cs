@@ -20,7 +20,12 @@ public class ParticleEmit : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		particles = GetComponent<ParticleSystem>();
+        GameObject enemyGroup = GameObject.Find("Particles");
+        if (enemyGroup == null) enemyGroup = new GameObject("Particles");
+        transform.parent = enemyGroup.transform;
+
+
+        particles = GetComponent<ParticleSystem>();
 	}
 	
 	// Update is called once per frame

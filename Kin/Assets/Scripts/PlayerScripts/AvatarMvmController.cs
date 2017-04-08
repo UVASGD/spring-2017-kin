@@ -32,14 +32,14 @@ public class AvatarMvmController : MonoBehaviour
             {
                 //right = up/right
                 //left = down/left
-                var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical") + Input.GetAxis("Horizontal"), 0);
+                var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Horizontal"), 0);
                 rb.velocity = ((Vector2)move.normalized) * speed;
             }
             else if (dr_stairs && !dl_stairs)
             {
                 //right = down/right
                 //left = up/left
-                var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical") - Input.GetAxis("Horizontal"), 0);
+                var move = new Vector3(Input.GetAxis("Horizontal"), -Input.GetAxis("Horizontal"), 0);
                 rb.velocity = ((Vector2)move.normalized) * speed;
             }
             else

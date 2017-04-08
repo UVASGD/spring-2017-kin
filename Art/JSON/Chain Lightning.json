@@ -1,0 +1,44 @@
+{ "frames": {
+   "Chain Lightning 0.ase": {
+    "frame": { "x": 0, "y": 0, "w": 64, "h": 112 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 112 },
+    "sourceSize": { "w": 64, "h": 112 },
+    "duration": 80
+   },
+   "Chain Lightning 1.ase": {
+    "frame": { "x": 64, "y": 0, "w": 64, "h": 112 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 112 },
+    "sourceSize": { "w": 64, "h": 112 },
+    "duration": 80
+   },
+   "Chain Lightning 2.ase": {
+    "frame": { "x": 128, "y": 0, "w": 64, "h": 112 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 112 },
+    "sourceSize": { "w": 64, "h": 112 },
+    "duration": 80
+   },
+   "Chain Lightning 3.ase": {
+    "frame": { "x": 192, "y": 0, "w": 64, "h": 112 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 112 },
+    "sourceSize": { "w": 64, "h": 112 },
+    "duration": 80
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.1.9",
+  "format": "RGBA8888",
+  "size": { "w": 256, "h": 112 },
+  "scale": "1",
+  "frameTags": [
+  ]
+ }
+}

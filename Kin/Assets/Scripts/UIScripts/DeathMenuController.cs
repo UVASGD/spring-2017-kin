@@ -9,6 +9,11 @@ public class DeathMenuController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		sceneCont.GetComponent<SceneController>().FadeFromDeath();
+		AudioSource aSource = Camera.main.GetComponent<AudioSource>();
+		string clipName = "Sounds/Player SFX/Death Sound Brian " + Random.Range(1, 3);
+		AudioClip c = Resources.Load(clipName) as AudioClip;
+		aSource.clip = c;
+		aSource.GetComponent<AudioSource>().Play();
 	}
 	
 	// Update is called once per frame
@@ -18,7 +23,7 @@ public class DeathMenuController : MonoBehaviour {
 
 	public void ResumeGame() {
 		//sceneCont.GetComponent<SceneController>().FadeToMain();
-		SceneManager.LoadScene("Main");
+		SceneManager.LoadScene("Main_with_HLD");
 	}
 
 	public void MainMenu() {
