@@ -61,8 +61,9 @@ public class Kamikaze : BaseMinionAI
             if (distanceToPlayer >= awarenessRadius)
             {
                 StopCoroutine("FollowPath");
+                rb.velocity = Vector2.zero;
                 curState = AIStates.IdleState;
-                //return;
+                return;
             }
             if (!isExploding)
             {
@@ -72,6 +73,7 @@ public class Kamikaze : BaseMinionAI
 					gameObject.GetComponent<KamikazeAnimationController> ().charging = true;
                     gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                     StopCoroutine("FollowPath");
+                    rb.velocity = Vector2.zero;
                 }
                 else{
                     if (timeDelay > 1.0f)
@@ -108,7 +110,10 @@ public class Kamikaze : BaseMinionAI
         {
             Patrol();
             if (distanceToPlayer < awarenessRadius)
+            {
                 curState = AIStates.DetectedState;
+                isWaiting = false;
+            }
         }
     }
 

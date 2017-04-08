@@ -17,7 +17,7 @@ public class BaseMinionAI : MonoBehaviour, BaseAI {
     Vector2[] positions; //set of points to patrol
     bool onWay; //whether the minion is currently moving
     float timePause, currWait; //to have the minion pause at the point before going to the next one
-    bool isWaiting; //whether the minion is currently waiting
+    protected bool isWaiting; //whether the minion is currently waiting
     private Animator anim;
     protected bool idleBreak;
 
@@ -203,7 +203,8 @@ public class BaseMinionAI : MonoBehaviour, BaseAI {
                 currentWaypoint = path[targetIndex];
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
+            //transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
+            rb.velocity = ((Vector2)(currentWaypoint - gameObject.transform.position)).normalized * speed;
             yield return null;
 
         }
