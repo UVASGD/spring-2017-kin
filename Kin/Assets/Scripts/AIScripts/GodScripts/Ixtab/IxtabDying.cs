@@ -14,12 +14,13 @@ public class IxtabDying : StateMachineBehaviour {
 	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-	//override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-	//
-	//}
+	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+		ai.XPEmit(2);
+	}
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+		Debug.Log("Dead.");
 		ai.GetComponent<Animator>().SetBool("Dying", false);
 		ai.GetComponent<Animator>().SetBool("Dead", true);
 		ai.GetComponent<DropRune>().dropRune();
