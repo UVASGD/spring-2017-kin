@@ -33,7 +33,7 @@ public class PlayerExperience : MonoBehaviour
     public void setCurrentExp(long exp)
     {
         this.currentExp = exp;
-		Debug.Log (this.currentExp);
+		//Debug.Log (this.currentExp);
     }
 
     public long getCurrentExp()

@@ -37,7 +37,7 @@ public class Pathing : MonoBehaviour {
         //Debug.Log(startNode.traversable + " " + targetNode.traversable);
         if (startNode.traversable && targetNode.traversable)
         {
-            Debug.Log("both traversable");
+            //Debug.Log("both traversable");
             Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
             HashSet<Node> closedSet = new HashSet<Node>();
             openSet.Add(startNode);
