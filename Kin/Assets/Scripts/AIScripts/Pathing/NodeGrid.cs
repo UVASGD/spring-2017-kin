@@ -7,7 +7,7 @@ public class NodeGrid : MonoBehaviour {
     Node[,] grid;
     public Vector2 gridSize;
     public float nodeRadius;
-    public LayerMask untraversableMask;
+    //public LayerMask untraversableMask;
     public GameObject player;
     public bool limitGizmos;
 
@@ -37,7 +37,12 @@ public class NodeGrid : MonoBehaviour {
             for (int j = 0; j < gridSizeY; j++)
             {
                 Vector3 worldPoint = bottomLeft + (Vector3.right * (2 * nodeRadius * i + nodeRadius)) + (Vector3.up * (2 * nodeRadius * j + nodeRadius));
-                bool traversable = !Physics2D.OverlapCircle(worldPoint, nodeRadius,untraversableMask);
+                bool traversable = true;
+                Collider2D[] collidersInNode = Physics2D.OverlapCircleAll(worldPoint, nodeRadius);
+                foreach (Collider2D current in collidersInNode)
+                {
+                    traversable = !(!traversable || current.gameObject.tag == "Untraversable");
+                }
                 grid[i, j] = new Node(traversable, worldPoint,i,j);
             }
         }
@@ -81,6 +86,7 @@ public class NodeGrid : MonoBehaviour {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x, gridSize.y, 1));
         if (grid != null)
         {
+            Debug.Log("drawing grid");
             Node playerNode = NodeFromWorldPoint(player.transform.position);
             if (!limitGizmos)
             {
