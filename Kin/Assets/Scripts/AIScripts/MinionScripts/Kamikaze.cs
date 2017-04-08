@@ -32,7 +32,7 @@ public class Kamikaze : BaseMinionAI
         timeToExplode = 0.0f;
 		timeSinceDeath = 0.0f;
         explodeDelay = .9f;
-		awarenessRadius = 1.0f; //3.0f;
+		if(awarenessRadius == 0.0f) awarenessRadius = 1.0f; //3.0f;
 		decayTime = 10.0f;
 		exploded = false;
         speed = 1.0f;
