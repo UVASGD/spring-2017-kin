@@ -40,7 +40,7 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 	public float damageDone = 10.0f;
 
 	private float alphaLerp = 0.0f;
-	private const float ALPHA_LERP_TIME = 1.5f;
+	private const float ALPHA_LERP_TIME = 6.0f;
 
 	private Color baseColor;
 	private Color invisColor;
@@ -284,6 +284,16 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		Gizmos.DrawLine(gameObject.transform.position + new Vector3(0.0f, attackRange / 2), attackUpBound);
 		Gizmos.DrawLine(gameObject.transform.position - new Vector3(0.0f, attackRange / 2), attackLowBound);
 		Gizmos.DrawLine(attackUpBound, attackLowBound);
+	}
+
+	public void XPEmit(int amount)
+	{
+		player.GetComponent<PlayerExperience>().incrementExp(amount*100);
+		GameObject part = (GameObject)(Resources.Load("Prefabs/Particles/IxtabXPParticles", typeof(GameObject)));
+		GameObject instPart = Instantiate(part, transform.position, Quaternion.identity) as GameObject;
+		instPart.GetComponent<ParticleEmit>().UpdateParticles();
+		instPart.GetComponent<ParticleEmit>().target = player;
+		instPart.GetComponent<ParticleEmit>().XPEmit(amount);
 	}
 
 	void BaseAI.recoil(){

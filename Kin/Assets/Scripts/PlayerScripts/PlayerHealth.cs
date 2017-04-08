@@ -13,6 +13,9 @@ public class PlayerHealth : MonoBehaviour {
     bool isDead = false;
     public bool ixtabRune = false;
     public bool invincible = true; // for debug ONLY!!!
+    public int numPotions = 5;
+    public int healTime = 50; // in frames
+    public int potionHealAmount = 100;
 
     AvatarMvmController playerMvmController;
     // Reference to animator for death animation
@@ -124,6 +127,10 @@ public class PlayerHealth : MonoBehaviour {
             // Move character?
             // Go back to scene?
         }
+        if (Input.GetKeyDown("y")) {
+            print("POTION");
+            StartCoroutine("drinkPotion");
+        }
     }
 
 	public void playDeathSound() {
@@ -135,6 +142,29 @@ public class PlayerHealth : MonoBehaviour {
 		aSource.clip = c;
 		aSource.GetComponent<AudioSource>().Play();
 	}
+
+    IEnumerator drinkPotion() {
+        if (numPotions > 0)
+        {
+            numPotions--;
+            int healAmount = potionHealAmount;
+            int amountPerFrame = healAmount / healTime;
+            while (healAmount > 0)
+            {
+                incrementCurrentHealth(amountPerFrame);
+                healAmount--;
+                yield return null;
+            }
+        }
+    }
+
+    void incrementCurrentHealth(int amount) {
+        if (currentHealth < maxHealth)
+        {
+            currentHealth += amount;
+        }
+        else currentHealth = maxHealth;
+    }
 
 
 }
