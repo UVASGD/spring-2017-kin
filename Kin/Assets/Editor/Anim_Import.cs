@@ -26,8 +26,9 @@ public class Anim_Import : EditorWindow {
     }
 
     private string extractLoc =  "JSON/";
+    public string objName;
     private string[] options, files;
-    private int index;
+    private int index=-1;
     private Vector2 scroll;
     public GameObject go;
     public bool update = true;
@@ -57,7 +58,9 @@ public class Anim_Import : EditorWindow {
 
                 GUILayout.BeginHorizontal();
                 EditorGUILayout.LabelField("Aseprite File");
-                index = EditorGUILayout.Popup(index, options);
+                int s = EditorGUILayout.Popup(index<0?0:index, options);
+                if(s!=index) objName = options[s];
+                index = s;
                 GUILayout.EndHorizontal();
 
                 // extract data from ase file
@@ -73,6 +76,8 @@ public class Anim_Import : EditorWindow {
                 GUILayout.BeginHorizontal();
                 EditorGUILayout.LabelField("Gameobject");
                 go = EditorGUILayout.ObjectField(go, typeof(GameObject), true, null) as GameObject;
+                EditorGUILayout.EndHorizontal();
+                objName = EditorGUILayout.TextField("Sprite Name", objName);
                 EditorGUILayout.EndToggleGroup();
 
                 if (GUILayout.Button("Import Animation Data"))
@@ -102,12 +107,11 @@ public class Anim_Import : EditorWindow {
     /// </summary>
     /// <param name="anim"></param>
     public void importAnims() {
-        string objName = options[index];
 
         // load file containing values for frame durations
         string filename = artFolder + "/" + extractLoc + options[index] + ".json";
         if (!File.Exists(filename)) {
-            UnityEngine.Debug.LogError("Please extract from " + options[index] + ".ase first" +
+            UnityEngine.Debug.LogError("Please extract from " + options[index] + ".ase first " +
                 "before attempting to import animation data.");
             return;
         }
