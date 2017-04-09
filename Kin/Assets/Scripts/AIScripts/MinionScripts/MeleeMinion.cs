@@ -50,6 +50,7 @@ public class MeleeMinion : BaseMinionAI
                 {
                     curState = AIStates.IdleState;
 					StopCoroutine ("FollowPath");
+                    rb.velocity = Vector2.zero;
 					return;
                 }
                 if (distanceToPlayer < attackRange || meleeOnCd) {
@@ -74,11 +75,16 @@ public class MeleeMinion : BaseMinionAI
 						RequestPathManager.Request(transform.position, targetObject.transform.position, OnPathFound);
 						timeDelay = 0;
 					}
+                    else
+                        timeDelay += Time.deltaTime;
 				}
 			} else {
 				Patrol ();
 				if (distanceToPlayer < awarenessRadius)
+                {
 					curState = AIStates.DetectedState;
+                    isWaiting = false;
+                }
 			}
 			if (gameObject.GetComponent<EnemyHealth> ().getHp () <= 0)
 				death ();

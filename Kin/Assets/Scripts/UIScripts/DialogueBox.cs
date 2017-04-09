@@ -93,6 +93,7 @@ public class DialogueBox : MonoBehaviour {
 					}
 					dialogue.SetActive(true);
 					indicator.SetActive(false);
+					diaType = DiaType.Greetings;
 				}
 			}
 		}
