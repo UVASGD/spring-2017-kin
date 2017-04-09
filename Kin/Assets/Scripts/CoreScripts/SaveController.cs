@@ -14,6 +14,11 @@ public class SaveController : MonoBehaviour {
 	public GameObject Stamina;
 	public GameObject DNH;
 
+	public GameObject healthtrainer;
+	public GameObject staminatrainer;
+	public GameObject strengthtrainer;
+	public GameObject wisdomtrainer;
+
     // Use this for initialization
     void Awake()
     {
@@ -91,6 +96,15 @@ public class SaveController : MonoBehaviour {
 		DNH.GetComponent<TimeController>().kin = data.day;
 		DNH.GetComponent<DayNightController>().worldTimeHour = data.hour;
 		DNH.GetComponent<DayNightController>().minutes = data.minute;
+
+		if (healthtrainer && healthtrainer.GetComponent<DialogueBox> ())
+			healthtrainer.GetComponent<DialogueBox> ().diaType = (data.healthtrainerd == 0) ? DialogueBox.DiaType.Init : DialogueBox.DiaType.Greetings;
+		if(staminatrainer && staminatrainer.GetComponent<DialogueBox> ())
+			staminatrainer.GetComponent<DialogueBox> ().diaType = (data.staminatrainerd == 0) ? DialogueBox.DiaType.Init : DialogueBox.DiaType.Greetings;
+		if(strengthtrainer && strengthtrainer.GetComponent<DialogueBox> ())
+			strengthtrainer.GetComponent<DialogueBox> ().diaType = (data.strengthtrainerd == 0) ? DialogueBox.DiaType.Init : DialogueBox.DiaType.Greetings;
+		if(wisdomtrainer && wisdomtrainer.GetComponent<DialogueBox> ())
+			wisdomtrainer.GetComponent<DialogueBox> ().diaType = (data.wisdomtrainerd == 0) ? DialogueBox.DiaType.Init : DialogueBox.DiaType.Greetings;
 	}
 
     private SaveData WriteToData ()
@@ -100,9 +114,12 @@ public class SaveController : MonoBehaviour {
 		data.healthval = Player.GetComponent<PlayerHealth> ().getCurrentHealth ();
 		data.stamina = Stamina.GetComponent<Slider>().value;
 		data.stamval = Player.GetComponent<PlayerStamina> ().getCurrentStamina ();
+
 		data.x = Player.transform.position.x;
 		data.y = Player.transform.position.y;
+
 		data.exp = Player.GetComponent<PlayerExperience> ().getCurrentExp ();
+
 		data.healthLvlP = Player.GetComponent<StatController>().getHealth();
 		data.healthLvlO = Player.GetComponent<StatController>().getHealthOrder();
 		data.stamLvlP = Player.GetComponent<StatController>().getStamina();
@@ -111,9 +128,27 @@ public class SaveController : MonoBehaviour {
 		data.strLvlO = Player.GetComponent<StatController>().getStrengthOrder();
 		data.wisLvlP = Player.GetComponent<StatController>().getWisdom();
 		data.wisLvlO = Player.GetComponent<StatController>().getWisdomOrder();
+
 		data.day = DNH.GetComponent<TimeController>().kin;
 		data.hour = DNH.GetComponent<DayNightController>().worldTimeHour;
 		data.minute = DNH.GetComponent<DayNightController>().minutes;
+
+		data.healthtrainerd = (healthtrainer && 
+			healthtrainer.GetComponent<DialogueBox> () && 
+			healthtrainer.GetComponent<DialogueBox> ().diaType == DialogueBox.DiaType.Init) ? 0 : 1;
+		data.staminatrainerd = (staminatrainer && 
+			staminatrainer.GetComponent<DialogueBox> () && 
+			staminatrainer.GetComponent<DialogueBox> ().diaType == DialogueBox.DiaType.Init) ? 0 : 1;;
+		data.strengthtrainerd = (strengthtrainer && 
+			strengthtrainer.GetComponent<DialogueBox> () && 
+			strengthtrainer.GetComponent<DialogueBox> ().diaType == DialogueBox.DiaType.Init) ? 0 : 1;;
+		data.wisdomtrainerd = (wisdomtrainer && 
+			wisdomtrainer.GetComponent<DialogueBox> () && 
+			wisdomtrainer.GetComponent<DialogueBox> ().diaType == DialogueBox.DiaType.Init) ? 0 : 1;;
+		data.savage1d = 0;
+		data.savage2d = 0;
+		data.savage3d = 0;
+		data.savage4d = 0;
 
         return data;
     }
@@ -124,7 +159,6 @@ class SaveData
 {
     public float health;
     public float stamina;
-
 	public int healthval;
 	public int stamval;
 
@@ -145,4 +179,13 @@ class SaveData
     public int day;
     public int hour;
 	public int minute;
+
+	public int healthtrainerd;
+	public int staminatrainerd;
+	public int strengthtrainerd;
+	public int wisdomtrainerd;
+	public int savage1d;
+	public int savage2d;
+	public int savage3d;
+	public int savage4d;
 }
