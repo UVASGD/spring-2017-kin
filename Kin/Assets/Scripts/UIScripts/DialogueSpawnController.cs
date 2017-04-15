@@ -10,8 +10,10 @@ public class DialogueSpawnController : MonoBehaviour {
 	public GameObject diaNameBox;
 	public GameObject diaTextBox;
 	public GameObject soundCreator;
+    public GameObject response_1;
+    public GameObject response_2;
 
-	float writeTimer;
+    float writeTimer;
 	int curLength = 0;
 
 	string dialogueString;
@@ -25,7 +27,9 @@ public class DialogueSpawnController : MonoBehaviour {
 	bool initialized = false;
 	bool finished = true;
 
-	public GameObject speaker;
+    bool responses = false;
+
+    public GameObject speaker;
 
 	// Use this for initialization
 	void Start () {
@@ -47,7 +51,12 @@ public class DialogueSpawnController : MonoBehaviour {
 				}
 				finished = false;
 			} else {
-				finished = true;
+                if (responses)
+                {
+                    response_1.SetActive(true);
+                    response_2.SetActive(true);
+                }
+                finished = true;
 			}
 			if (Input.GetKeyDown(KeyCode.Space)) {
 				curLength = dialogueString.Length;
@@ -82,8 +91,14 @@ public class DialogueSpawnController : MonoBehaviour {
 		}
 		Debug.Log (index);
 
-		dialogueString = parser.RequestDialogue(person, label, index);
-		curLength = 0;
+        List<string> textList = parser.RequestDialogue(person, label, index);
+        if (textList.Count > 1)
+        {
+            responses = true;
+            response_1.GetComponent<Text>().text = textList[1];
+            response_2.GetComponent<Text>().text = textList[2];
+        }
+        curLength = 0;
 	}
 
 	public void UpdateWithNewName(string person, string label) {
