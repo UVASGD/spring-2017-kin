@@ -93,7 +93,8 @@ public class SaveController : MonoBehaviour {
 		Player.GetComponent<StatController>().setStrengthOrder(data.strLvlO);
 		Player.GetComponent<StatController>().setWisdom(data.wisLvlP);
 		Player.GetComponent<StatController>().setWisdomOrder(data.wisLvlO);
-		DNH.GetComponent<TimeController>().kin = data.day;
+		//DNH.GetComponent<TimeController>().kin = data.day;
+		TimeController.kin = data.day;
 		DNH.GetComponent<DayNightController>().worldTimeHour = data.hour;
 		DNH.GetComponent<DayNightController>().minutes = data.minute;
 
@@ -129,7 +130,8 @@ public class SaveController : MonoBehaviour {
 		data.wisLvlP = Player.GetComponent<StatController>().getWisdom();
 		data.wisLvlO = Player.GetComponent<StatController>().getWisdomOrder();
 
-		data.day = DNH.GetComponent<TimeController>().kin;
+		//data.day = DNH.GetComponent<TimeController>().kin;
+		data.day = TimeController.kin;
 		data.hour = DNH.GetComponent<DayNightController>().worldTimeHour;
 		data.minute = DNH.GetComponent<DayNightController>().minutes;
 

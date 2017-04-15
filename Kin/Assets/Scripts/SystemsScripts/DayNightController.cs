@@ -198,7 +198,8 @@ public class DayNightController : MonoBehaviour
         }
         else if (currentCycleTime > dayTime && currentPhase == DayPhase.Dawn)
         {
-			this.gameObject.GetComponent<TimeController> ().kin += 1;
+			//this.gameObject.GetComponent<TimeController> ().kin += 1;
+			TimeController.kin += 1;
             SetDay();
         }
         else if (currentCycleTime > dawnTime && currentCycleTime < dayTime && currentPhase == DayPhase.Night)
