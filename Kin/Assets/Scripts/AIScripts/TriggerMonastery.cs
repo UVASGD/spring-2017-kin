@@ -5,6 +5,7 @@ using UnityEngine;
 public class TriggerMonastery : MonoBehaviour {
 
 	public GameObject DNH;
+	public GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +20,9 @@ public class TriggerMonastery : MonoBehaviour {
 	public void OnTriggerEnter2D(Collider2D coll){
 		if (coll.tag == "Player" && DNH.GetComponent<MusicController>().state != MusicController.MusicState.Monastery) {
 			DNH.GetComponent<MusicController> ().InteruptForMonastery ();
+			player.GetComponent<PlayerHealth> ().numPotions = player.GetComponent<PlayerHealth> ().maxNumPotions;
 		}
+
 	}
 
 	public void OnTriggerExit2D(Collider2D coll){

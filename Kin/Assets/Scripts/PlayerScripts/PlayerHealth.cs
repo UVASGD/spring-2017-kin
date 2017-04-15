@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour {
     public bool ixtabRune = false;
     public bool invincible = true; // for debug ONLY!!!
     public int numPotions = 5;
+	public int maxNumPotions = 5;
     public int healTime = 50; // in frames
     public int potionHealAmount = 100;
 
