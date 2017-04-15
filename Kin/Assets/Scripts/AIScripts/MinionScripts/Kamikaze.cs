@@ -120,6 +120,7 @@ public class Kamikaze : BaseMinionAI
 	void killed()
 	{
 		gameObject.GetComponent < KamikazeAnimationController>().killed = true;
+		GetComponent<Collider2D>().enabled = false;
 		dying = true;
         Experience(experience);
 	}
