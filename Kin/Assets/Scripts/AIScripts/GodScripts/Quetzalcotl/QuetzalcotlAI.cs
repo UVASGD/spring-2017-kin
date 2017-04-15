@@ -5,8 +5,8 @@ using UnityEngine;
 public class QuetzalcotlAI : MonoBehaviour {
 
 	public const float MAX_ATTACK_CD = 5.0f;
-	public const float MAX_STALAG_CD = 5.0f;
-	public const float MAX_SNAKE_CD = 15.0f;
+	public const float MAX_STALAG_CD = 10.0f;
+    public const float MAX_SNAKE_CD = 5.0f; //15.0f;
 	public const float MAX_METEOR_CD = 2.5f;
 
 	public const float ANGERY_ACTIVATE = 60.0f;
@@ -54,13 +54,13 @@ public class QuetzalcotlAI : MonoBehaviour {
 	void Update ()
     {
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-        if (curStalagCD <= 0.0f)
+        if (curSnakeCD <= 0.0f)
         {
-            SpawnStalagtites();
-            curStalagCD = MAX_STALAG_CD;
+            SpawnSnakes();
+            curSnakeCD = MAX_SNAKE_CD;
         }
         else
-            curStalagCD -= Time.deltaTime;
+            curSnakeCD -= Time.deltaTime;
 	}
 
 	public void CloseArena()
@@ -146,9 +146,8 @@ public class QuetzalcotlAI : MonoBehaviour {
     {
         foreach (Vector2 vec in calculateAngles(8, 0.5f))
         {
-            GameObject go = Instantiate(Resources.Load("Prefabs/Projectiles/Skullcandy", typeof(GameObject)) as GameObject,
+            GameObject go = Instantiate(Resources.Load("Prefabs/Brain the Hotdog", typeof(GameObject)) as GameObject,
                 vec, Quaternion.identity) as GameObject;
-            go.GetComponent<SkullCandy>().setVelocity(gameObject.transform.position);
         }
     }
 
