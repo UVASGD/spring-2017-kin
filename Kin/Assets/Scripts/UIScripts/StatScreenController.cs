@@ -5,6 +5,13 @@ using System.Collections;
 public class StatScreenController : MonoBehaviour {
 
     public Slider pStrength, pStamina, pHealth, pWisdom, oStrength, oStamina, oHealth, oWisdom;
+    public Text pExp, oExp;
+
+    public string PlayerExp
+    {
+        get { return (string)pExp.text; }
+        set { pExp.text = value; }
+    }
 
     public int PlayerStrength
     {
@@ -28,6 +35,13 @@ public class StatScreenController : MonoBehaviour {
     {
         get { return (int)pWisdom.value; }
         set { pStrength.value = value; }
+    }
+
+
+    public string OrderExp
+    {
+        get { return (string)oExp.text; }
+        set { oExp.text = value; }
     }
 
     public int OrderStrength

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class ChacAI : BaseGodAI
 {
-	public float maxInvincCd;
+	protected float maxInvincCd;
 	protected float invincCurrCd;
-	float meleeRange;
+	public float meleeRange;
     public int meleeDamage;
 	public float maxMeleeCd;
 	protected float meleeCurrCd;
@@ -14,67 +14,91 @@ public class ChacAI : BaseGodAI
 	public float maxRangedCd;
 	protected float rangedCurrCd;
 	protected bool rangedCd;
+    protected float maxProjectileCd;
+    protected float projCurrCd;
+    protected bool projCd;
 	float fireBoltCd = 0;
 	bool boltOnCd = false;
 	float accuracy = 100;
 	float boltSpeed = 2.0f;
 	const float ANGLE_THRESHOLD = Mathf.PI/4;
     int maxHealth;
+    float despawnTimer;
+    bool dying;
     int stage; //determines which invinsibility stages have already happened
+    SpriteRenderer render;
+
+	float timer;
 
 	//Set of AI behavior states
-	protected enum AIStates
+	public enum AIStates
 	{
 		InvincibleState, MeleeState, IdleState
 	}
-	protected AIStates curState; //Current AI behavior state
+	public AIStates curState; //Current AI behavior state
 
 	protected new void Start()
 	{
 		base.Start();
 
-        //Establish rigid body for minion
-        rb = gameObject.GetComponent<Rigidbody2D>();
-        if (rb == null)
-        {
-            Debug.LogError("AI has no RigidBody. AI name is " + gameObject.name + "!");
-        }
-        if (targetObject == null)
-        {
-            Debug.LogError("AI has no target. AI name is " + gameObject.name + "!");
-        }
+		timer = 0.0f;
 
         invincCurrCd = maxInvincCd;
 
         maxHealth = gameObject.GetComponent<EnemyHealth>().maxHealth;
+        render = gameObject.GetComponent<SpriteRenderer>();
         stage = 0;
+
+        meleeCd = false;
+        projCd = false;
+        dying = false;
+        maxInvincCd = 10;
+        maxProjectileCd = 1;
+        invincCurrCd = maxInvincCd;
+        projCurrCd = maxProjectileCd;
+        despawnTimer = 0.0f;
 
 		curState = AIStates.IdleState;
 	}
 
 	protected new void Update()
 	{
+		if (timer <= 10.0f)
+			timer += 0.1f;
         int health = gameObject.GetComponent<EnemyHealth>().getHp();
         switch (curState)
 		{
 		    case AIStates.IdleState:
-			    if (true /*some condition*/)
+			if (Vector2.Distance(this.gameObject.transform.position, targetObject.transform.position) < base.awarenessRadius)
                     curState = AIStates.InvincibleState;
 			    break;
 		    case AIStates.InvincibleState:
-			    if(stage == 1) //final invincible phase
-			    {
-				    //lightning and geysers
-			    }
-			    else if(stage == 0) //2nd invincible phase
-			    {
-				    //lightning
-			    }
-			    else //first invincibility phase
-			    {
-				    //geysers
-			    }
-
+                gameObject.GetComponent<EnemyHealth>().setInvinc(true);
+				gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+                gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                if (projCd)
+                {
+                    if (stage == 2) //final invincible phase
+                    {
+                        //shoot lighning and geysers
+                        projectileOnPosition((Vector2)targetObject.transform.position, 1);
+                        projectileOnPosition((Vector2)targetObject.transform.position, 2);
+                    }
+                    else if (stage == 1) //2nd invincible phase
+                    {
+                        //shoot lightning
+                       projectileOnPosition((Vector2)targetObject.transform.position, 1);
+                    }
+                    else //first invincibility phase
+                    {
+                        //shoot geysers
+                        projectileOnPosition((Vector2)targetObject.transform.position, 2);
+                    }
+                    projCd = false;
+                    projCurrCd = maxProjectileCd;
+                }
+			    
+                
 			    if(invincCurrCd <= 0) //change to melee attacks after some time
 			    {
 				    curState = AIStates.MeleeState;
@@ -83,12 +107,31 @@ public class ChacAI : BaseGodAI
                     //come down and shockwave
                 }
 			    else
-				    invincCurrCd -= Time.deltaTime;
+                {
+                    invincCurrCd -= Time.deltaTime;
+                    if(!projCd)
+                    {
+                        if (projCurrCd <= 0)
+                            projCd = true;
+                        else
+                            projCurrCd -= Time.deltaTime;
+                    }
+                }
+				    
+                    
 			    break;
 		    case AIStates.MeleeState:
+                if(dying)
+                {
+                    if (despawnTimer >= 10.0f)
+                        Destroy(gameObject);
+                    else
+                        despawnTimer += Time.deltaTime;
+                }
 			    float distance = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
 			    if(distance > meleeRange) //if too far for melee, then ranged attack
 			    {
+                    /*
 				    if (!rangedCd) //attack ranged
                     {
                         int rand = Random.Range(1, 4);
@@ -105,51 +148,67 @@ public class ChacAI : BaseGodAI
 					    else
 						    rangedCurrCd -= Time.deltaTime;
 				    }
-                    MoveTowardsTarget();
+                    */
+                    if(!meleeCd)
+                        MoveTowardsTarget();
 			    }
 			    else
 			    {
-				    if(!meleeCd)
-				    {
+                    if (!meleeCd)
+                    {
                         //fix timing as animation comes in
+                        meleeCd = true;
                         attackInRadius(targetObject.transform.position.x > rb.transform.position.x, meleeRange);
-                        //gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+						gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                        //render.material.SetColor("_Color", Color.red);
+                        Debug.Log("CoolDown");
                     }
-				    else //when pulling out axe
-				    {
-					    if (meleeCurrCd <= 0)
-					    {
-						    meleeCurrCd = maxMeleeCd;
-						    meleeCd = false;
-					    }
-					    else
-						    meleeCurrCd -= Time.deltaTime;
-				    }
-			    }
+                }
+
+                
+                if (meleeCurrCd <= 0.0)
+                {
+                    meleeCurrCd = maxMeleeCd;
+                    meleeCd = false;
+                    gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+                    //render.material.SetColor("_Color", Color.white);
+					gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+                else
+                {
+                    meleeCurrCd -= Time.deltaTime;
+                }
+                    
 
                 if (stage == 0) //for reaching second invincibility state
                 {
-                    if (health < (2 / 3) * maxHealth) //activate 2nd invincible phase
+                    if (health < (2.0 / 3) * maxHealth) //activate 2nd invincible phase
                     {
                         gameObject.GetComponent<EnemyHealth>().setInvinc(true);
                         curState = AIStates.InvincibleState;
+                        projCurrCd = maxProjectileCd;
+                        invincCurrCd = maxInvincCd;
                         stage++;
                     }
                 }
                 else if (stage == 1) //for reaching third invincibility state
                 {
-                    if (health < (1 / 3) * maxHealth) //activate 3rd invincible phase
+                    if (health < (1.0 / 3) * maxHealth) //activate 3rd invincible phase
                     {
                         gameObject.GetComponent<EnemyHealth>().setInvinc(true);
                         curState = AIStates.InvincibleState;
+                        projCurrCd = maxProjectileCd;
+                        invincCurrCd = maxInvincCd;
                         stage++;
                     }
                 }
                 else
                 {
-                    if(health <= 0)
+				if(health <= 0 && timer > 10.0f)
                     {
-                        //Chac be ded
+                        gameObject.GetComponent<ChacAnimationController>().dying = true; //use shaman to test, delete later
+                        dying = true;
                     }
                 }
 			    break;
@@ -254,21 +313,25 @@ public class ChacAI : BaseGodAI
     {
         Collider2D[] allCollidersInRadius = Physics2D.OverlapCircleAll(rb.transform.position, attackRadius * 1.2f);
         List<GameObject> matches = new List<GameObject>();
+        float xLoc = rb.transform.position.x;
         for (int i = 0; i < allCollidersInRadius.Length; i++)
         {
-            float xDifference = allCollidersInRadius[i].attachedRigidbody.transform.position.x - rb.transform.position.x;
-            if (direction)
-            { //Right Side
-                if (xDifference >= 0)
-                {
-                    matches.Add(allCollidersInRadius[i].gameObject);
+            if (allCollidersInRadius[i].GetComponent<Rigidbody2D>() != null) //check if object has a rigid body
+            {
+                float xDifference = allCollidersInRadius[i].attachedRigidbody.transform.position.x - xLoc;
+                if (direction)
+                { //Right Side
+                    if (xDifference >= 0)
+                    {
+                        matches.Add(allCollidersInRadius[i].gameObject);
+                    }
                 }
-            }
-            else
-            { //Left Side
-                if (xDifference <= 0)
-                {
-                    matches.Add(allCollidersInRadius[i].gameObject);
+                else
+                { //Left Side
+                    if (xDifference <= 0)
+                    {
+                        matches.Add(allCollidersInRadius[i].gameObject);
+                    }
                 }
             }
         }
@@ -290,13 +353,26 @@ public class ChacAI : BaseGodAI
             if (thingsToAttack[i].tag == "Player")
             {
                 Debug.Log("attacking");
+                gameObject.GetComponent<ChacAnimationController>().attacking = true; //using shaman to test, delete after
                 targetObject.GetComponent<PlayerHealth>().TakeDamage(meleeDamage);
             }
         }
     }
 
-    void dropBoltOnPosition(Vector3 pos)
+    void projectileOnPosition(Vector3 pos, int proj)
     {
-        GameObject newProj1 = (GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)), pos, Quaternion.identity);
+        pos.y = pos.y + 0.3f;
+        switch(proj) {
+            case 1: //lightning
+                Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)), pos, Quaternion.identity);
+                break;
+            case 2: //geyser
+                Instantiate(Resources.Load("Prefabs/Projectiles/Geyser", typeof(GameObject)), pos, Quaternion.identity);
+                break;
+            default:
+                Debug.Log("Something not right");
+                break;
+
+        }
     }
 }

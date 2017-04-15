@@ -16,19 +16,19 @@ public class LayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		playerY = player.transform.position.y;
-		foreach (LayerParameter lay in layeringObjectList) {
-			GameObject obj = lay.gameObject;
-            if (obj)
-            {
-                if (obj.transform.position.y + lay.yOffset < playerY)
-                {
-                    obj.GetComponent<SpriteRenderer>().sortingLayerName = "Front_Player";
-                }
-                else {
-                    obj.GetComponent<SpriteRenderer>().sortingLayerName = "Behind_Player";
-                }
-            }
+		if (player != null) {
+			playerY = player.transform.position.y;
+			UpdateList();
+			foreach (LayerParameter lay in layeringObjectList) {
+				GameObject obj = lay.gameObject;
+				if (obj) {
+					if (obj.transform.position.y + lay.yOffset < playerY) {
+						obj.GetComponent<SpriteRenderer> ().sortingLayerName = "Front_Player";
+					} else {
+						obj.GetComponent<SpriteRenderer> ().sortingLayerName = "Behind_Player";
+					}
+				}
+			}
 		}
 	}
 

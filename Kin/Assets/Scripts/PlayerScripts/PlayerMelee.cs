@@ -43,7 +43,7 @@ public class PlayerMelee : MonoBehaviour {
         facingDown = true;
 
     }
-    
+   
 	
 	// Update is called once per frame
 	void Update () {
@@ -90,9 +90,12 @@ public class PlayerMelee : MonoBehaviour {
             }
         }
 
+
+
         if (Input.GetButtonDown("Attack") && !attacking && GetComponent<PlayerStamina>().hasStamina)
         {
             attacking = true;
+			this.gameObject.GetComponent<FXHandler> ().playAtkLow ();
             attackTimer = attackCoolDown; // Start timer
             if (facingRight)
             {
@@ -133,5 +136,13 @@ public class PlayerMelee : MonoBehaviour {
             }
         }
 
+    }
+
+    public void setDamage(int new_damage)
+    {
+        rightAttackBox.GetComponent<MeleeAttackHitBox>().setDamage(new_damage);
+        leftAttackBox.GetComponent<MeleeAttackHitBox>().setDamage(new_damage);
+        upperAttackBox.GetComponent<MeleeAttackHitBox>().setDamage(new_damage);
+        lowerAttackBox.GetComponent<MeleeAttackHitBox>().setDamage(new_damage);
     }
 }

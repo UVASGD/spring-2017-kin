@@ -24,7 +24,7 @@ public class SceneController : MonoBehaviour {
 	public IEnumerator Fade2Main() {
 		float fadeTime = gameObject.GetComponent<Faded>().BeginFade(1);
 		yield return new WaitForSeconds(1.5f);
-		SceneManager.LoadScene("Main");
+		SceneManager.LoadScene("Main_with_HLD");
 	}
 
 	public IEnumerator MainFade() {

@@ -2,7 +2,7 @@
 //using UnityEditor;
 using System.Collections;
 
-public class BaseMinionAI : MonoBehaviour {
+public class BaseMinionAI : MonoBehaviour, BaseAI {
 
 	public float awarenessRadius; //Range to change idle->detected
 	public GameObject targetObject; //Player target
@@ -17,7 +17,16 @@ public class BaseMinionAI : MonoBehaviour {
     Vector2[] positions; //set of points to patrol
     bool onWay; //whether the minion is currently moving
     float timePause, currWait; //to have the minion pause at the point before going to the next one
-    bool isWaiting; //whether the minion is currently waiting
+    protected bool isWaiting; //whether the minion is currently waiting
+    private Animator anim;
+    protected bool idleBreak;
+
+    //public Transform target;
+    //float speed = .2f;
+    Vector3[] path;
+    int targetIndex;
+
+    protected float timeDelay = 10.0f;
    
     //Set of AI behavior states
     protected enum AIStates {
@@ -26,10 +35,45 @@ public class BaseMinionAI : MonoBehaviour {
 		PatrolState
 	}
 	protected AIStates curState; //Current AI behavior state
+    
+    // theses methods are called by animation clips
+    #region Anim Events
+    public void endSpawn() {
+        anim.SetBool("Spawned", true);
+    }
+    public void endIdleBreak() {
+        //Debug.Log(gameObject.name + ": Break's over.");
+        idleBreak = false;
+    }
+    
+    public void detBreak() {
+        if (new System.Random().Next(0, 5) < 1 && curState!=AIStates.DetectedState) {
+            //Debug.LogError(name + ": I need a break.");
+            anim.SetTrigger("IdleBreak"); // 20 or so % chance to break idle
+            idleBreak = true;
+        }
+    }
 
+    // this is called during the minion's attack animation to apply
+    // damage to the target
+    public virtual void applyDamage() { }
+    #endregion
 
-	protected void Start () {
+    public void PlaySoundPlz() {
+        GetComponent<AudioSource>().Play();
+    }
+
+    // this is called when the attack animation is finished and should start
+    // the cooldown timer until
+    public virtual void startAttackCoolDown() { }
+
+    protected void Start () {
+        GameObject enemyGroup = GameObject.Find("Enemies");
+        if (enemyGroup == null) enemyGroup = new GameObject("Enemies");
+        transform.parent = enemyGroup.transform;
+
         targetObject = GameObject.Find("Player");
+        anim = gameObject.GetComponent<Animator>();
         startPos = gameObject.transform.position;
         //Establish rigid body for minion
         rb = gameObject.GetComponent<Rigidbody2D>(); 
@@ -49,8 +93,8 @@ public class BaseMinionAI : MonoBehaviour {
         positions[0] = startPos;
         for (int x = 1; x < positions.Length; x++)
         {
-            //float theta = UnityEngine.Random.Range(0.0f, (float)(2 * Math.PI));
-            float theta = x * angleIncr;
+            float theta = UnityEngine.Random.Range(0.0f, (float)(2 * Mathf.PI));
+            //float theta = x * angleIncr;
             positions[x] = new Vector2(startPos.x + patrolRad * (float)Mathf.Cos(theta), startPos.y + patrolRad * (float)Mathf.Sin(theta));
             //Debug.Log(positions[x]);
         }
@@ -72,19 +116,9 @@ public class BaseMinionAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	protected virtual void Update () {
-
-
+        timeDelay += Time.deltaTime;
 	}
-	//Move linearly towards target
-	protected void MoveTowardsTarget() {
-		rb.velocity = ((Vector2)(targetObject.transform.position - gameObject.transform.position)).normalized * speed;
-	}
-
-	protected void  MoveAwayFromTarget(){
-		//Debug.Log ("in moveaway");
-		rb.velocity = ((Vector2)(gameObject.transform.position - targetObject.transform.position)).normalized * speed;
-	}
-
+    
     protected void Patrol()
     {
         Vector2 pos = (Vector2)gameObject.transform.position;
@@ -112,18 +146,88 @@ public class BaseMinionAI : MonoBehaviour {
     }
 
     //Move linearly towards target
-    protected void MoveTowardsPosition(Vector2 pos)
-    {
+    protected void MoveTowardsPosition(Vector2 pos) 
+    { 
         rb.velocity = (pos - (Vector2)gameObject.transform.position).normalized * patrolSpeed;
+    }
+    //Move linearly towards target
+    protected void MoveTowardsTarget() {
+        rb.velocity = ((Vector2)(targetObject.transform.position - gameObject.transform.position)).normalized * speed;
+    }
+
+    protected void MoveAwayFromTarget() {
+        //Debug.Log ("in moveaway");
+        rb.velocity = ((Vector2)(gameObject.transform.position - targetObject.transform.position)).normalized * speed;
     }
 
     protected void Experience(int amount)
     {
         targetObject.GetComponent<PlayerExperience>().incrementExp(amount);
-        GameObject part = (GameObject)(Resources.Load("Prefabs/XPParticles", typeof(GameObject)));
-        GameObject instPart = Instantiate(part, transform.position, Quaternion.identity);
+        GameObject part = (GameObject)(Resources.Load("Prefabs/Particles/XPParticles", typeof(GameObject)));
+		GameObject instPart = Instantiate(part, transform.position, Quaternion.identity) as GameObject;
         instPart.GetComponent<ParticleEmit>().UpdateParticles();
         instPart.GetComponent<ParticleEmit>().target = targetObject;
         instPart.GetComponent<ParticleEmit>().XPEmit(30);
+    }
+
+	void BaseAI.recoil(){
+		
+	}
+
+    public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
+    {
+        if (pathSuccessful)
+        {
+            //Debug.Log("Path found");
+            path = newPath;
+            targetIndex = 0;
+            StopCoroutine("FollowPath");
+            StartCoroutine("FollowPath");
+        }
+    }
+
+    IEnumerator FollowPath()
+    {
+        Vector3 currentWaypoint = path[0];
+        while (true)
+        {
+            if (transform.position == currentWaypoint)
+            {
+                targetIndex++;
+                if (targetIndex >= path.Length)
+                {
+                    targetIndex = 0;
+                    path = new Vector3[0];
+                    yield break;
+                }
+                currentWaypoint = path[targetIndex];
+            }
+
+            //transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
+            rb.velocity = ((Vector2)(currentWaypoint - gameObject.transform.position)).normalized * speed;
+            yield return null;
+
+        }
+    }
+
+    public void OnDrawGizmos()
+    {
+        if (path != null)
+        {
+            for (int i = targetIndex; i < path.Length; i++)
+            {
+                Gizmos.color = Color.black;
+                Gizmos.DrawCube(path[i], Vector3.one * (2 * .1f - .1f));
+
+                if (i == targetIndex)
+                {
+                    Gizmos.DrawLine(transform.position, path[i]);
+                }
+                else
+                {
+                    Gizmos.DrawLine(path[i - 1], path[i]);
+                }
+            }
+        }
     }
 }

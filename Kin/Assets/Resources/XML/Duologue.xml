@@ -8,7 +8,7 @@
 					<response a="Yes" b="Not today"/>
 				</one>
 			</Init>
-			<Greetings>
+			<Greetings flag="random">
 				<one dialogue="You awoke me from a dream; I had been reincarnated into the very tree I am sleeping upon. How quaint! Sorry, are you here for training?">
 					<response a="Yes" b="Not today"/>
 				</one>
@@ -42,7 +42,7 @@
 					<response a="Yes" b="Not today"/>
 				</one>
 			</Init>
-			<Greetings>
+			<Greetings flag="random">
 				<one dialogue="To one who has faith, no explanation is necessary. To one without faith, no explanation is possible. Would you like training?">
 					<response a="Yes" b="Not today"/>
 				</one>
@@ -70,14 +70,14 @@
 					<response a="Yes" b="Not today"/>
 				</one>
 			</Init>
-			<Greetings>
-				<one dialogue="In the Old Testament, God drowned the entire world because humans were so...wretched! Now that’s my kind of God. Anyway, you need some training?">
+			<Greetings flag="random">
+				<one dialogue="In the Testaments, God drowned the entire world because humans were so...wretched! Now that’s my kind of God. Anyway, you need some training?">
 					<response a="Yes" b="Not today" />
 				</one>
 				<two dialogue= "You here for some training? You better be, I don’t have time for lollygaggers." >
 					<response a="Yes" b="Not today"/>
 				</two>
-				<three dialogue= "I won't abide loitering. Either get some training or get lost!">
+				<three dialogue= "I won't abide loitering. Either train with me or get lost!">
 					<response a="Yes" b="Not today"/>
 				</three>
 			</Greetings>
@@ -95,7 +95,7 @@
 					<response a="Yes" b="Not today"/>
 				</one>
 			</Init>
-			<Greetings>
+			<Greetings flag="random" >
 				<one dialogue="I advise you against eating any of the plants in these godforsaken lands. They’re poisonous and will kill you. I do, however, advise you train with me.">
 					<response a="Yes" b="Not today"/>
 				</one>
@@ -131,7 +131,7 @@
 				<two dialogue= "With every pagan demon you strike down we grow more powerful. Our victory is assured, good will be brought to this land." />
 				<three dialogue= "Deus Vult!" />
 			</ChacDeath>
-			<Greeting>
+			<Greeting flag="random">
 				<one dialogue="When you choose to train, you may increase your own skills or that of your lineage."/>
 				<two dialogue="To train is like planting a tiny mustard seed which shall grow into a mighty plant."/>
 				<three dialogue="In the name of God, we must cleanse this pagan soil!"/>
