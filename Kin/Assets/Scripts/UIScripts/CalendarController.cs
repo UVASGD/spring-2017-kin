@@ -43,10 +43,10 @@ public class CalendarController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		/*bigBoiRotation = Quaternion.identity;
+		bigBoiRotation = Quaternion.identity;
 		mediumBoiRotation = Quaternion.identity;
 		smallBoiRotation = Quaternion.identity;
-		miniBoiRotation = Quaternion.identity;*/
+		miniBoiRotation = Quaternion.identity;
 
 		source = GetComponent<AudioSource>();
 	}
