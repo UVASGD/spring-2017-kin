@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: c320d29b9667e47e9bab8c9dd606cf93
-timeCreated: 1492274615
+timeCreated: 1492275214
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: full+shrek_0
+    21300002: full+shrek_1
+    21300004: full+shrek_2
+    21300006: full+shrek_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -74,10 +77,49 @@ TextureImporter:
       name: full+shrek_0
       rect:
         serializedVersion: 2
-        x: 338
-        y: 149
+        x: 219
+        y: 16
         width: 85
         height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: full+shrek_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 17
+        width: 84
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: full+shrek_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 14
+        width: 84
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: full+shrek_3
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 218
+        width: 76
+        height: 68
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
