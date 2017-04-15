@@ -4,35 +4,35 @@ using System.Collections;
 public class TimeController : MonoBehaviour {
 	public float dayLength = 330.0f;
 
-	private int hour;
-	private int minute;
+	private static int hour;
+	private static int minute;
 
-	private DayNightController DNC;
+	private static DayNightController DNC;
 
-	private CalendarController calendar;
+	private static CalendarController calendar;
 
-	private bool calendarActive = false;
+	private static bool calendarActive = false;
 
 	/// <summary>
 	/// The day.
 	/// </summary>
-	public int kin;
+	public static int kin;
 	/// <summary>
 	/// 20 kin.
 	/// </summary>
-	private int uinal;
+	private static int uinal;
 	/// <summary>
 	/// 18 uinal.
 	/// </summary>
-	private int tun;
+	private static int tun;
 	/// <summary>
 	/// 20 tun.
 	/// </summary>
-	private int katun;
+	private static int katun;
 	/// <summary>
 	/// 20 katun; at 13 the game ends
 	/// </summary>
-	private int baktun;
+	private static int baktun;
 
 	// Use this for initialization
 	void Start () {
@@ -40,7 +40,8 @@ public class TimeController : MonoBehaviour {
 
 		CalculateCalendar ();
 		DNC = this.gameObject.GetComponent<DayNightController> ();
-		calendar = GameObject.Find("Calendar").GetComponent<CalendarController>();
+		DontDestroyOnLoad (this.gameObject);
+		if (GameObject.Find("Calendar")) calendar = GameObject.Find("Calendar").GetComponent<CalendarController>();
 		calendarActive = calendar != null;
 	}
 
@@ -61,15 +62,16 @@ public class TimeController : MonoBehaviour {
 	/// Progresses the day.
 	/// </summary>
 	/// <param name="byNum">By number.</param>
-	private void ProgressDay(int byNum) {
+	public static void ProgressDay(int byNum) {
 		kin += Mathf.Abs(byNum);
 		CalculateCalendar ();
+		Debug.Log(kin);
 	}
 
 	/// <summary>
 	/// Calculates the calendar.
 	/// </summary>
-	private void CalculateCalendar(){
+	private static void CalculateCalendar(){
 		if (calendarActive) {
 			calendar.CalendarSet(kin);
 		}
