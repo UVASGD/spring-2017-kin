@@ -9,6 +9,10 @@ public class TimeController : MonoBehaviour {
 
 	private DayNightController DNC;
 
+	private CalendarController calendar;
+
+	private bool calendarActive = false;
+
 	/// <summary>
 	/// The day.
 	/// </summary>
@@ -36,6 +40,8 @@ public class TimeController : MonoBehaviour {
 
 		CalculateCalendar ();
 		DNC = this.gameObject.GetComponent<DayNightController> ();
+		calendar = GameObject.Find("Calendar").GetComponent<CalendarController>();
+		calendarActive = calendar != null;
 	}
 
 	void Update(){
@@ -64,6 +70,9 @@ public class TimeController : MonoBehaviour {
 	/// Calculates the calendar.
 	/// </summary>
 	private void CalculateCalendar(){
+		if (calendarActive) {
+			calendar.CalendarSet(kin);
+		}
 		uinal = kin % 20;
 		tun = uinal % 18;
 		katun = tun % 20;

@@ -32,6 +32,7 @@ public class DialogueXMLParser : MonoBehaviour {
 					} else {
 						num = 0;
 					}
+					XmlNode diaNode = childNode.ChildNodes[num];
 					return childNode.ChildNodes[num].Attributes["dialogue"].Value;
 				}
 			}
