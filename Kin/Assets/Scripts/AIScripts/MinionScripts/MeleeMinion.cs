@@ -150,6 +150,7 @@ public class MeleeMinion : BaseMinionAI
 	void death()
 	{
 		gameObject.GetComponent<MeleeMinionAnimationController> ().dying = true;
+		GetComponent<Collider2D>().enabled = false;
 		dying = true;
         Experience(experience);
 	}
