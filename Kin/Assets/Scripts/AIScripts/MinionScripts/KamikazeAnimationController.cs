@@ -10,9 +10,9 @@ public class KamikazeAnimationController : MonoBehaviour {
 	public Vector2 lastMove;
 	Animator animator;
 
-	public bool recoiling;
-	public bool charging;
-	public bool killed;
+	public bool recoiling = false;
+	public bool charging = false;
+	public bool killed = false;
 
 	void Start () {
 		animator = gameObject.GetComponent<Animator> ();

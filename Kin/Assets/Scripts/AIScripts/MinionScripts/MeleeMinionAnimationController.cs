@@ -47,7 +47,7 @@ public class MeleeMinionAnimationController : MonoBehaviour
 
 	void updateDirection(){
 		bool facingRight = true;
-		if (lastMove.x <= 0)
+		if (lastMove.x < 0)
 			facingRight = false;  
 
 		sr.flipX = !facingRight;

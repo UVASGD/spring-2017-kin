@@ -26,9 +26,14 @@ public class PlayerExperience : MonoBehaviour
         }
     }
 
+	void OnGUI(){
+		GUI.Button(new Rect (Screen.width - 120, 50, 100, 26), ("EXP: "+currentExp.ToString()));
+	}
+
     public void setCurrentExp(long exp)
     {
         this.currentExp = exp;
+		//Debug.Log (this.currentExp);
     }
 
     public long getCurrentExp()

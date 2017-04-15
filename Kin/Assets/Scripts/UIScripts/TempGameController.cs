@@ -20,7 +20,7 @@ public class TempGameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		ui.setHealth(Player.GetComponent<PlayerHealth>().getCurrentHealth());
-		ui.setStamina((int)Player.GetComponent<PlayerStamina>().getCurrentStamina());
+		ui.setStamina(Player.GetComponent<PlayerStamina>().getCurrentStamina());
         bossCheck();
 	}
 
@@ -30,7 +30,7 @@ public class TempGameController : MonoBehaviour {
         bosses = GameObject.FindGameObjectsWithTag("Boss");
         GameObject nearestBoss = null;
         planes = GeometryUtility.CalculateFrustumPlanes(cam);
-        BoxCollider2D collider;
+        Collider2D collider;
         float minDist = Mathf.Infinity;
         float dist;
         bool bossNearby = false;
@@ -51,7 +51,7 @@ public class TempGameController : MonoBehaviour {
                     nearestBoss = boss;
                 }
             }
-            collider = nearestBoss.GetComponent<BoxCollider2D>();
+            collider = nearestBoss.GetComponent<Collider2D>();
             bossNearby = GeometryUtility.TestPlanesAABB(planes, collider.bounds);
         }
         ui.bossHealth.SetActive(bossNearby);

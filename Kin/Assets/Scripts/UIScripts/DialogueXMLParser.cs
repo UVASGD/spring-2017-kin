@@ -25,11 +25,10 @@ public class DialogueXMLParser : MonoBehaviour {
 			foreach (XmlNode childNode in diaList) {
 				if (childNode.Name == label) {
 					int num = 0;
-					if (childNode.Attributes["flag"] != null && childNode.Attributes["flag"].Value == "random")
-						num = Random.Range(0, childNode.ChildNodes.Count);
-					else if (childNode.Attributes["flag"] != null && childNode.Attributes["flag"].Value == "ordered"){
+					if (childNode.Attributes ["flag"] != null && childNode.Attributes ["flag"].Value == "random") {
+						num = Random.Range (0, childNode.ChildNodes.Count);
+					}else if (childNode.Attributes["flag"] != null && childNode.Attributes["flag"].Value == "ordered"){
 						num = index; // TODO: Figure this out later.
-						Debug.Log(num);
 					} else {
 						num = 0;
 					}

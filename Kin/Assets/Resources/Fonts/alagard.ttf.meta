@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 2c34626faad6a44b581a35ce43c2f9fb
+timeCreated: 1490408404
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Alagard
+  fontNames:
+  - Alagard
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
