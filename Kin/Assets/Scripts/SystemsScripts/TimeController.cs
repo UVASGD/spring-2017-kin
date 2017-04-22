@@ -62,11 +62,7 @@ public class TimeController : MonoBehaviour {
 	/// Progresses the day.
 	/// </summary>
 	/// <param name="byNum">By number.</param>
-<<<<<<< HEAD
-	public void ProgressDay(int byNum) {
-=======
 	public static void ProgressDay(int byNum) {
->>>>>>> refs/remotes/origin/master
 		kin += Mathf.Abs(byNum);
 		CalculateCalendar ();
 		Debug.Log(kin);
