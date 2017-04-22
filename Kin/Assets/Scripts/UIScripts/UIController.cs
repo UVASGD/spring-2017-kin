@@ -171,7 +171,28 @@ public class UIController : MonoBehaviour {
     {
 		if (statsMenu) {
 			statsMenu.SetActive (!statsMenu.activeSelf);
-		}
+            print("-----------------------------------------------------------------");
+            print(player.GetComponent<StatController>().getStrengthLvl());
+            print(player.GetComponent<StatController>().getStaminaLvl());
+            print(player.GetComponent<StatController>().getHealthLvl());
+            print(player.GetComponent<StatController>().getWisdomLvl());
+
+            print(player.GetComponent<StatController>().getStrengthOrder());
+            print(player.GetComponent<StatController>().getStaminaOrder());
+            print(player.GetComponent<StatController>().getHealthOrder());
+            print(player.GetComponent<StatController>().getWisdomOrder());
+            print("----------------------------------------------------------------");
+
+            statsMenu.GetComponent<StatScreenController>().PlayerStrength = player.GetComponent<StatController>().getStrengthLvl();
+            statsMenu.GetComponent<StatScreenController>().PlayerStamina = player.GetComponent<StatController>().getStaminaLvl();
+            statsMenu.GetComponent<StatScreenController>().PlayerHealth = player.GetComponent<StatController>().getHealthLvl();
+            statsMenu.GetComponent<StatScreenController>().PlayerWisdom = player.GetComponent<StatController>().getWisdomLvl();
+
+            statsMenu.GetComponent<StatScreenController>().OrderStrength = player.GetComponent<StatController>().getStrengthOrder();
+            statsMenu.GetComponent<StatScreenController>().OrderStamina = player.GetComponent<StatController>().getStaminaOrder();
+            statsMenu.GetComponent<StatScreenController>().OrderHealth = player.GetComponent<StatController>().getHealthOrder();
+            statsMenu.GetComponent<StatScreenController>().OrderWisdom = player.GetComponent<StatController>().getWisdomOrder();
+        }
     }
 
     
