@@ -6,7 +6,7 @@ public class QuetzalcotlAI : MonoBehaviour {
 
 	public const float MAX_ATTACK_CD = 5.0f;
 	public const float MAX_STALAG_CD = 10.0f;
-    public const float MAX_SNAKE_CD = 15.0f; //15.0f;
+    public const float MAX_SNAKE_CD = 5.0f; //15.0f;
 	public const float MAX_METEOR_CD = 2.5f;
 
 	public const float ANGERY_ACTIVATE = 60.0f;
@@ -138,13 +138,15 @@ public class QuetzalcotlAI : MonoBehaviour {
                     new Vector3(centerX + rad * Mathf.Cos(ang), gameObject.transform.position.y + rad * Mathf.Sin(ang)), Quaternion.identity);
             }
         }
+        
+        
     }
 
     public void SpawnSnakes()
     {
-        foreach (Vector2 vec in calculateAngles(4, 0.5f))
+        foreach (Vector2 vec in calculateAngles(8, 0.5f))
         {
-            GameObject go = Instantiate(Resources.Load("Prefabs/Snake", typeof(GameObject)) as GameObject,
+            GameObject go = Instantiate(Resources.Load("Prefabs/Brain the Hotdog", typeof(GameObject)) as GameObject,
                 vec, Quaternion.identity) as GameObject;
         }
     }
@@ -156,8 +158,8 @@ public class QuetzalcotlAI : MonoBehaviour {
             //return new List<Vector2>();
             num = 3;
         }
-        int angleDisplacement = 120 / num;
-        int curAngle = -60;
+        int angleDisplacement = 360 / num;
+        int curAngle = 0;
         List<Vector2> vecList = new List<Vector2>();
         for (int i = 0; i < num; i++)
         {
