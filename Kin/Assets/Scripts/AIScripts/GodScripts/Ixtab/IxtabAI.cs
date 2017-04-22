@@ -262,6 +262,7 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 	private void checkDeath() {
 		if (enemyHealth.getHp() <= 0) {
 			ixtabController.GetComponent<Animator>().SetBool("Dying", true);
+			gameObject.GetComponent<Collider2D>().enabled = false;
 		}
 	}
 

@@ -66,6 +66,6 @@ public class CameraShake : MonoBehaviour {
 
         transform.localRotation = Quaternion.identity;//Set the local rotation to 0 when done, just to get rid of any fudging stuff.
         isRunning = false;
-        Debug.Log("we have a winner folks");    
+        //Debug.Log("we have a winner folks");    
     }
 }

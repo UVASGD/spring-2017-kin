@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
@@ -13,7 +14,8 @@ public class PlayerHealth : MonoBehaviour {
     bool isDead = false;
     public bool ixtabRune = false;
     public bool invincible = true; // for debug ONLY!!!
-    public int numPotions = 5;
+	private int numPotions = 0;
+	public int maxNumPotions = 5;
     public int healTime = 50; // in frames
     public int potionHealAmount = 100;
 
@@ -24,6 +26,7 @@ public class PlayerHealth : MonoBehaviour {
     AudioSource playerAudio;
 
 	public GameObject sceneCont;
+	public Text potcounttext;
 
     void Awake()
     {
@@ -41,6 +44,7 @@ public class PlayerHealth : MonoBehaviour {
         playerAudio = GetComponent<AudioSource>();
         playerMvmController = GetComponent<AvatarMvmController>();
         currentHealth = maxHealth;
+		setNumPotions (maxNumPotions);
     }
 
     public void TakeDamage(int amount)
@@ -146,7 +150,7 @@ public class PlayerHealth : MonoBehaviour {
     IEnumerator drinkPotion() {
         if (numPotions > 0)
         {
-            numPotions--;
+			setNumPotions(numPotions - 1);
             int healAmount = potionHealAmount;
             int amountPerFrame = healAmount / healTime;
             while (healAmount > 0)
@@ -157,6 +161,11 @@ public class PlayerHealth : MonoBehaviour {
             }
         }
     }
+
+	public void setNumPotions(int val){
+		numPotions = val;
+		potcounttext.text = numPotions.ToString ();;
+	}
 
     void incrementCurrentHealth(int amount) {
         if (currentHealth < maxHealth)
