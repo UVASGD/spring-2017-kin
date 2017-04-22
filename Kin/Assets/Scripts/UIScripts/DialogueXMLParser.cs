@@ -19,7 +19,7 @@ public class DialogueXMLParser : MonoBehaviour {
 
 	}
 
-	public string RequestDialogue(string person, string label, int index) {
+	public List<string> RequestDialogue(string person, string label, int index) {
 		XmlNodeList personList = xmlDoc.GetElementsByTagName(person);
 		List<string> list = new List<string>();
 		foreach (XmlNode node in personList) {
