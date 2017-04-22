@@ -44,11 +44,11 @@ public class SaveController : MonoBehaviour {
 	
     void OnGUI()
     {
-        if(GUI.Button(new Rect(10, 60, 100, 30), "Save"))
+        if(GUI.Button(new Rect(10, 100, 100, 30), "Save"))
         {
             Save("1");
         }
-        if(GUI.Button(new Rect(10, 90, 100, 30), "Load"))
+        if(GUI.Button(new Rect(10, 130, 100, 30), "Load"))
         {
             Load("1");
         }
@@ -93,7 +93,8 @@ public class SaveController : MonoBehaviour {
 		Player.GetComponent<StatController>().setStrengthOrder(data.strLvlO);
 		Player.GetComponent<StatController>().setWisdom(data.wisLvlP);
 		Player.GetComponent<StatController>().setWisdomOrder(data.wisLvlO);
-		DNH.GetComponent<TimeController>().kin = data.day;
+		//DNH.GetComponent<TimeController>().kin = data.day;
+		TimeController.kin = data.day;
 		DNH.GetComponent<DayNightController>().worldTimeHour = data.hour;
 		DNH.GetComponent<DayNightController>().minutes = data.minute;
 
@@ -129,7 +130,8 @@ public class SaveController : MonoBehaviour {
 		data.wisLvlP = Player.GetComponent<StatController>().getWisdom();
 		data.wisLvlO = Player.GetComponent<StatController>().getWisdomOrder();
 
-		data.day = DNH.GetComponent<TimeController>().kin;
+		//data.day = DNH.GetComponent<TimeController>().kin;
+		data.day = TimeController.kin;
 		data.hour = DNH.GetComponent<DayNightController>().worldTimeHour;
 		data.minute = DNH.GetComponent<DayNightController>().minutes;
 
