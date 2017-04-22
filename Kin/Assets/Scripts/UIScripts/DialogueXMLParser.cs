@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.Xml;
 
 public class DialogueXMLParser : MonoBehaviour {
@@ -20,6 +21,7 @@ public class DialogueXMLParser : MonoBehaviour {
 
 	public string RequestDialogue(string person, string label, int index) {
 		XmlNodeList personList = xmlDoc.GetElementsByTagName(person);
+		List<string> list = new List<string>();
 		foreach (XmlNode node in personList) {
 			XmlNodeList diaList = node.ChildNodes;
 			foreach (XmlNode childNode in diaList) {
@@ -33,7 +35,12 @@ public class DialogueXMLParser : MonoBehaviour {
 						num = 0;
 					}
 					XmlNode diaNode = childNode.ChildNodes[num];
-					return childNode.ChildNodes[num].Attributes["dialogue"].Value;
+					list.Add(childNode.ChildNodes[num].Attributes["dialogue"].Value);
+					if (diaNode.ChildNodes.Count > 0) {
+						list.Add(childNode.ChildNodes[num].ChildNodes[0].Attributes["a"].Value);
+						list.Add(childNode.ChildNodes[num].ChildNodes[1].Attributes["b"].Value);
+					}
+					return list;
 				}
 			}
 		}
