@@ -54,7 +54,7 @@ public class UIController : MonoBehaviour {
 
 		if (Input.GetButtonDown("Stats") && statsMenu != null)
         {
-            toggleStatsMenu(2);
+            toggleStatsMenu(1); // 1=strength 2=stamina 3=health 4=wisdom
         }
         //TODO Change Later, something that' not stats
 		if (Input.GetButtonDown ("Menu")) {
@@ -201,17 +201,6 @@ public class UIController : MonoBehaviour {
                     }
                     break;
             }
-            print("-----------------------------------------------------------------");
-            print(player.GetComponent<StatController>().getStrengthLvl());
-            print(player.GetComponent<StatController>().getStaminaLvl());
-            print(player.GetComponent<StatController>().getHealthLvl());
-            print(player.GetComponent<StatController>().getWisdomLvl());
-
-            print(player.GetComponent<StatController>().getStrengthOrder());
-            print(player.GetComponent<StatController>().getStaminaOrder());
-            print(player.GetComponent<StatController>().getHealthOrder());
-            print(player.GetComponent<StatController>().getWisdomOrder());
-            print("----------------------------------------------------------------");
         }
         updateStatsSliders();
     }
