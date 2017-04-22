@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class DialogueSpawnController : MonoBehaviour {
@@ -82,7 +82,9 @@ public class DialogueSpawnController : MonoBehaviour {
 		}
 		Debug.Log (index);
 
-		dialogueString = parser.RequestDialogue(person, label, index);
+		List<string> dialogueList = parser.RequestDialogue(person, label, index);
+
+		dialogueString = dialogueList[0];
 		curLength = 0;
 	}
 
