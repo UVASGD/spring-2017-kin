@@ -5,10 +5,12 @@ using UnityEngine;
 public class SnakeMinionAI : BaseMinionAI {
 
     public float biteRange;
+    public float tooCloseRange;
     public int biteDamage;
     public float maxBiteCd;
     protected float biteCurrCd;
     protected bool biteCd;
+    protected float despawnTimer;
 
     public float maxRangedCd;
     protected float rangedCurrCd;
@@ -23,67 +25,48 @@ public class SnakeMinionAI : BaseMinionAI {
     new void Start () {
         base.Start();
         fireRadius = .8f;
+        tooCloseRange = biteRange / 2;
         //Initialize bite/ranged attack timers
         rangedCd = false;
         rangedCurrCd = 0.0f;
         maxRangedCd = 10.0f;
+        despawnTimer = 0.0f;
         biteCd = false;
         biteCurrCd = 0.0f;
-        maxBiteCd = 10.0f;
+        maxBiteCd = 1.0f;
         projectileRange = 2.0f;
         projectileSpeed = 2.0f;
+        targetObject = GameObject.Find("Player");
         Debug.Log("Sub start");
     }
 
     // Update is called once per frame
     protected override void Update()
     {
-        /*int health = gameObject.GetComponent<EnemyHealth>().getHp();
-        if (dying)
+        int health = gameObject.GetComponent<EnemyHealth>().getHp();
+        if (health <= 0)
         {
-            if (despawnTimer >= 10.0f)
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            if (despawnTimer >= 2.0f)
                 Destroy(gameObject);
             else
                 despawnTimer += Time.deltaTime;
-        }*/
+        }
         float distance = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
-        if(distance < projectileRange){
-            if (distance > biteRange) //if too far for bite, then ranged attack
+        if(distance < biteRange)
+        {
+            if(distance < tooCloseRange)
             {
-
-                if (!rangedCd) //attack ranged
-                {
-                    SnakeShoot();
-                    rangedCd = true;
-                }
-                else //cooldown after shooting
-                {
-                    if (rangedCurrCd <= 0)
-                    {
-                        rangedCurrCd = maxRangedCd;
-                        rangedCd = false;
-                    }
-                    else
-                        rangedCurrCd -= Time.deltaTime;
-                }
-
-                if (!biteCd)
-                {
-                    MoveTowardsTarget();
-                }
+                MoveAwayFromTarget();
+                return;
             }
-            else
+            if (!biteCd)
             {
-                if (!biteCd)
-                {
-                    //fix timing as animation comes in
-                    biteCd = true;
-                    SnakeBite();
-                    Debug.Log("CoolDown");
-                }
+                //fix timing as animation comes in
+                biteCd = true;
+                SnakeBite();
+                Debug.Log("CoolDown");
             }
-
-
             if (biteCurrCd <= 0.0)
             {
                 biteCurrCd = maxBiteCd;
@@ -100,10 +83,10 @@ public class SnakeMinionAI : BaseMinionAI {
         }
     }
 
-	public void SnakeShoot() {
+	/*public void SnakeShoot() {
         GameObject newProj = (GameObject)GameObject.Instantiate(Resources.Load("Prefabs/MinionProj", typeof(GameObject)), gameObject.transform.position, Quaternion.identity);
         newProj.GetComponent<Rigidbody2D>().velocity = ((Vector2)(targetObject.transform.position - gameObject.transform.position)).normalized * projectileSpeed;
-    }
+    }*/
 
 	public void SnakeBite() {
         //Debug.Log("Attacking");
