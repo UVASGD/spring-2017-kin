@@ -54,7 +54,7 @@ public class UIController : MonoBehaviour {
 
 		if (Input.GetButtonDown("Stats") && statsMenu != null)
         {
-            toggleStatsMenu();
+            toggleStatsMenu(2);
         }
         //TODO Change Later, something that' not stats
 		if (Input.GetButtonDown ("Menu")) {
@@ -167,10 +167,40 @@ public class UIController : MonoBehaviour {
         return (int)bossHealthSlider.maxValue;
     }
 
-    public void toggleStatsMenu()
+    public void toggleStatsMenu(int trainer)
     {
 		if (statsMenu) {
 			statsMenu.SetActive (!statsMenu.activeSelf);
+            Selectable[] buttons = statsMenu.GetComponentsInChildren<Selectable>();
+            foreach (Selectable button in buttons) {
+                button.interactable = false;
+                print(button.name);
+            }
+            switch (trainer) {
+                case 1:
+                    foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>()) {
+                        if (button.name.Contains("Str")) button.interactable = true;
+                    }
+                    break;
+                case 2:
+                    foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
+                    {
+                        if (button.name.Contains("Sta")) button.interactable = true;
+                    }
+                    break;
+                case 3:
+                    foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
+                    {
+                        if (button.name.Contains("Hea")) button.interactable = true;
+                    }
+                    break;
+                case 4:
+                    foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
+                    {
+                        if (button.name.Contains("Wis")) button.interactable = true;
+                    }
+                    break;
+            }
             print("-----------------------------------------------------------------");
             print(player.GetComponent<StatController>().getStrengthLvl());
             print(player.GetComponent<StatController>().getStaminaLvl());
@@ -182,17 +212,20 @@ public class UIController : MonoBehaviour {
             print(player.GetComponent<StatController>().getHealthOrder());
             print(player.GetComponent<StatController>().getWisdomOrder());
             print("----------------------------------------------------------------");
-
-            statsMenu.GetComponent<StatScreenController>().PlayerStrength = player.GetComponent<StatController>().getStrengthLvl();
-            statsMenu.GetComponent<StatScreenController>().PlayerStamina = player.GetComponent<StatController>().getStaminaLvl();
-            statsMenu.GetComponent<StatScreenController>().PlayerHealth = player.GetComponent<StatController>().getHealthLvl();
-            statsMenu.GetComponent<StatScreenController>().PlayerWisdom = player.GetComponent<StatController>().getWisdomLvl();
-
-            statsMenu.GetComponent<StatScreenController>().OrderStrength = player.GetComponent<StatController>().getStrengthOrder();
-            statsMenu.GetComponent<StatScreenController>().OrderStamina = player.GetComponent<StatController>().getStaminaOrder();
-            statsMenu.GetComponent<StatScreenController>().OrderHealth = player.GetComponent<StatController>().getHealthOrder();
-            statsMenu.GetComponent<StatScreenController>().OrderWisdom = player.GetComponent<StatController>().getWisdomOrder();
         }
+        updateStatsSliders();
+    }
+
+    public void updateStatsSliders() {
+        statsMenu.GetComponent<StatScreenController>().PlayerStrength = player.GetComponent<StatController>().getStrengthLvl();
+        statsMenu.GetComponent<StatScreenController>().PlayerStamina = player.GetComponent<StatController>().getStaminaLvl();
+        statsMenu.GetComponent<StatScreenController>().PlayerHealth = player.GetComponent<StatController>().getHealthLvl();
+        statsMenu.GetComponent<StatScreenController>().PlayerWisdom = player.GetComponent<StatController>().getWisdomLvl();
+
+        statsMenu.GetComponent<StatScreenController>().OrderStrength = player.GetComponent<StatController>().getStrengthOrder();
+        statsMenu.GetComponent<StatScreenController>().OrderStamina = player.GetComponent<StatController>().getStaminaOrder();
+        statsMenu.GetComponent<StatScreenController>().OrderHealth = player.GetComponent<StatController>().getHealthOrder();
+        statsMenu.GetComponent<StatScreenController>().OrderWisdom = player.GetComponent<StatController>().getWisdomOrder();
     }
 
     
