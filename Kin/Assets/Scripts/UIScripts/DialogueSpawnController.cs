@@ -63,6 +63,12 @@ public class DialogueSpawnController : MonoBehaviour {
 				curDiaStr = dialogueString.Substring(0, curLength);
 				diaTextBox.GetComponent<Text>().text = curDiaStr;
 				writeTimer = writeSpeed;
+				if (responses)
+				{
+					response_1.SetActive(true);
+					response_2.SetActive(true);
+				}
+				finished = true;
 			}
 		}
 	}
@@ -89,14 +95,15 @@ public class DialogueSpawnController : MonoBehaviour {
 		if (parser == null) {
 			Debug.Log("Parser is null");
 		}
-		Debug.Log (index);
 
         List<string> textList = parser.RequestDialogue(person, label, index);
+		Debug.Log(textList.Count);
+		dialogueString = textList[0];
         if (textList.Count > 1)
         {
             responses = true;
-            response_1.GetComponent<Text>().text = textList[1];
-            response_2.GetComponent<Text>().text = textList[2];
+			response_1.GetComponentInChildren<Text>().text = textList[1];
+            response_2.GetComponentInChildren<Text>().text = textList[2];
         }
         curLength = 0;
 	}
@@ -117,5 +124,17 @@ public class DialogueSpawnController : MonoBehaviour {
 		curDiaStr = dialogueString;
 		curLength = dialogueString.Length;
 		finished = true;
+	}
+
+	public void Disable() {
+		if (responses) {
+			response_1.SetActive(false);
+			response_2.SetActive(false);
+			responses = false;
+		}
+	}
+
+	public bool areResponsesActive() {
+		return responses;
 	}
 }
