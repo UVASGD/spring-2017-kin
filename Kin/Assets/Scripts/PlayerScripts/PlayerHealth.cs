@@ -69,7 +69,6 @@ public class PlayerHealth : MonoBehaviour {
 			} else {
 				setCurrentHealth(0);
 				Death ();
-				isDead = true;
 			}
         }
         else
@@ -93,9 +92,6 @@ public class PlayerHealth : MonoBehaviour {
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition; // Make sure to unfreeze before undying...
 
 		sceneCont.GetComponent<SceneController>().FadeToDeath();
-		Debug.Log ("Kin Before Death: " + TimeController.kin);
-		TimeController.ProgressDay (100);
-		Debug.Log ("Kin After Death: " + TimeController.kin);
     }
 
     public void setMaxHealth(int max)
