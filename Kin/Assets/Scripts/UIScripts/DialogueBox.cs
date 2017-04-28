@@ -80,7 +80,12 @@ public class DialogueBox : MonoBehaviour {
 				dialogue.SetActive(false);
 				spawnCont.Disable();
 			} else if (Input.GetButtonDown("Interact")) {
-				if ((bool)GetComponent<ObjectLinker>().Run()) {
+				object objectLinkerObj = GetComponent<ObjectLinker>().Run();
+				if (objectLinkerObj is bool && (bool)objectLinkerObj) {
+					dialogue.SetActive(false);
+					spawnCont.Disable();
+				} else if (!(objectLinkerObj is bool)) {
+					Debug.LogError("Object Linker object is not a boolean, but it should be!");
 					dialogue.SetActive(false);
 					spawnCont.Disable();
 				}
