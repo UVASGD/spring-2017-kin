@@ -16,7 +16,7 @@ public class TimeController : MonoBehaviour {
 	/// <summary>
 	/// The day.
 	/// </summary>
-	public static int kin;
+	public static int kin = 0;
 	/// <summary>
 	/// 20 kin.
 	/// </summary>
@@ -36,8 +36,6 @@ public class TimeController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		kin = 0;
-
 		CalculateCalendar ();
 		DNC = this.gameObject.GetComponent<DayNightController> ();
 		DontDestroyOnLoad (this.gameObject);
@@ -65,7 +63,6 @@ public class TimeController : MonoBehaviour {
 	public static void ProgressDay(int byNum) {
 		kin += Mathf.Abs(byNum);
 		CalculateCalendar ();
-		Debug.Log(kin);
 	}
 
 	/// <summary>
