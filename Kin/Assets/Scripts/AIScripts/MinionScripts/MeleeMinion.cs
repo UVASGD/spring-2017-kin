@@ -15,7 +15,7 @@ public class MeleeMinion : BaseMinionAI
     float meleeCurrCd; //Remaining cooldown for melee attack
 	float despawnTimer;
 	bool dying;
-    
+
 
     protected new void Start()
     {
@@ -37,7 +37,7 @@ public class MeleeMinion : BaseMinionAI
 		meleeOnCd = false;
         awarenessRadius = 3.0f;
 		dealtDamage = false;
-	
+
     }
 
     protected new void Update()

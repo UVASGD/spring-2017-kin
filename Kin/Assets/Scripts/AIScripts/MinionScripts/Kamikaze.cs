@@ -128,7 +128,7 @@ public class Kamikaze : BaseMinionAI
 	public bool getExploded() {
 		return exploded;
 	}
-		
+
 
 	public void makeNoise(/*string sound*/){
 		//AudioClip clip = Resources.Load ("Sounds/Attack SFX/"+sound) as AudioClip;
