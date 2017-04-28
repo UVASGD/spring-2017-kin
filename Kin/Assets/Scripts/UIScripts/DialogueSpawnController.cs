@@ -35,7 +35,7 @@ public class DialogueSpawnController : MonoBehaviour {
 	void Start () {
 		diaNameBox.GetComponent<Text>().text = dialogueName;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (dialogueString != null && dialogueString.Length > 0) {
@@ -97,13 +97,12 @@ public class DialogueSpawnController : MonoBehaviour {
 		}
 
         List<string> textList = parser.RequestDialogue(person, label, index);
-		Debug.Log(textList.Count);
-		dialogueString = textList[0];
+	dialogueString = textList[0];
         if (textList.Count > 1)
         {
-            responses = true;
-			response_1.GetComponentInChildren<Text>().text = textList[1];
-            response_2.GetComponentInChildren<Text>().text = textList[2];
+            	responses = true;
+		response_1.GetComponentInChildren<Text>().text = textList[1];
+            	response_2.GetComponentInChildren<Text>().text = textList[2];
         }
         curLength = 0;
 	}
