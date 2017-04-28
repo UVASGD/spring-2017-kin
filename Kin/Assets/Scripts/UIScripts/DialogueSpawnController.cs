@@ -10,8 +10,10 @@ public class DialogueSpawnController : MonoBehaviour {
 	public GameObject diaNameBox;
 	public GameObject diaTextBox;
 	public GameObject soundCreator;
+    public GameObject response_1;
+    public GameObject response_2;
 
-	float writeTimer;
+    float writeTimer;
 	int curLength = 0;
 
 	string dialogueString;
@@ -25,13 +27,15 @@ public class DialogueSpawnController : MonoBehaviour {
 	bool initialized = false;
 	bool finished = true;
 
-	public GameObject speaker;
+    bool responses = false;
+
+    public GameObject speaker;
 
 	// Use this for initialization
 	void Start () {
 		diaNameBox.GetComponent<Text>().text = dialogueName;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (dialogueString != null && dialogueString.Length > 0) {
@@ -47,13 +51,24 @@ public class DialogueSpawnController : MonoBehaviour {
 				}
 				finished = false;
 			} else {
-				finished = true;
+                if (responses)
+                {
+                    response_1.SetActive(true);
+                    response_2.SetActive(true);
+                }
+                finished = true;
 			}
 			if (Input.GetKeyDown(KeyCode.Space)) {
 				curLength = dialogueString.Length;
 				curDiaStr = dialogueString.Substring(0, curLength);
 				diaTextBox.GetComponent<Text>().text = curDiaStr;
 				writeTimer = writeSpeed;
+				if (responses)
+				{
+					response_1.SetActive(true);
+					response_2.SetActive(true);
+				}
+				finished = true;
 			}
 		}
 	}
@@ -80,12 +95,16 @@ public class DialogueSpawnController : MonoBehaviour {
 		if (parser == null) {
 			Debug.Log("Parser is null");
 		}
-		Debug.Log (index);
 
-		List<string> dialogueList = parser.RequestDialogue(person, label, index);
-
-		dialogueString = dialogueList[0];
-		curLength = 0;
+        List<string> textList = parser.RequestDialogue(person, label, index);
+	dialogueString = textList[0];
+        if (textList.Count > 1)
+        {
+            	responses = true;
+		response_1.GetComponentInChildren<Text>().text = textList[1];
+            	response_2.GetComponentInChildren<Text>().text = textList[2];
+        }
+        curLength = 0;
 	}
 
 	public void UpdateWithNewName(string person, string label) {
@@ -104,5 +123,17 @@ public class DialogueSpawnController : MonoBehaviour {
 		curDiaStr = dialogueString;
 		curLength = dialogueString.Length;
 		finished = true;
+	}
+
+	public void Disable() {
+		if (responses) {
+			response_1.SetActive(false);
+			response_2.SetActive(false);
+			responses = false;
+		}
+	}
+
+	public bool areResponsesActive() {
+		return responses;
 	}
 }

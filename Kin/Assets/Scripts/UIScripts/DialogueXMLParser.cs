@@ -30,7 +30,7 @@ public class DialogueXMLParser : MonoBehaviour {
 					if (childNode.Attributes ["flag"] != null && childNode.Attributes ["flag"].Value == "random") {
 						num = Random.Range (0, childNode.ChildNodes.Count);
 					}else if (childNode.Attributes["flag"] != null && childNode.Attributes["flag"].Value == "ordered"){
-						num = index; // TODO: Figure this out later.
+						num = index;
 					} else {
 						num = 0;
 					}
@@ -38,7 +38,7 @@ public class DialogueXMLParser : MonoBehaviour {
 					list.Add(childNode.ChildNodes[num].Attributes["dialogue"].Value);
 					if (diaNode.ChildNodes.Count > 0) {
 						list.Add(childNode.ChildNodes[num].ChildNodes[0].Attributes["a"].Value);
-						list.Add(childNode.ChildNodes[num].ChildNodes[1].Attributes["b"].Value);
+						list.Add(childNode.ChildNodes[num].ChildNodes[0].Attributes["b"].Value);
 					}
 					return list;
 				}

@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
+
+[RequireComponent(typeof(ObjectLinker))]
 public class DialogueBox : MonoBehaviour {
 
 	/// <summary>
@@ -31,6 +33,8 @@ public class DialogueBox : MonoBehaviour {
 	/// The player.
 	/// </summary>
 	public GameObject player;
+
+
 
 	/*public enum PersonType {
 		Trainer,
@@ -72,10 +76,19 @@ public class DialogueBox : MonoBehaviour {
 	void Update () {
         if (dialogue == null) return;
 		if (dialogue.activeInHierarchy) {
-			if (Input.GetButtonDown("Interact")) 
+			if (Input.GetButtonDown("Interact") && !spawnCont.areResponsesActive()) {
 				dialogue.SetActive(false);
-			if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) > decayRange) 
+				spawnCont.Disable();
+			} else if (Input.GetButtonDown("Interact")) {
+				if ((bool)GetComponent<ObjectLinker>().Run()) {
+					dialogue.SetActive(false);
+					spawnCont.Disable();
+				}
+			}
+			if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) > decayRange) { 
+				spawnCont.Disable();
 				dialogue.SetActive(false);
+			}
 		}
 		else {
 			if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) < detectRange)
