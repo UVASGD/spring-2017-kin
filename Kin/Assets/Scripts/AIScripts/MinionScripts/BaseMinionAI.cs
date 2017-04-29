@@ -183,6 +183,9 @@ public class BaseMinionAI : MonoBehaviour, BaseAI {
             targetIndex = 0;
             StopCoroutine("FollowPath");
             StartCoroutine("FollowPath");
+        } else
+        {
+            Patrol();
         }
     }
 
