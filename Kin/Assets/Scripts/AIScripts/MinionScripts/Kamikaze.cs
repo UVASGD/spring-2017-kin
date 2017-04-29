@@ -126,6 +126,8 @@ public class Kamikaze : BaseMinionAI
 	{
 		gameObject.GetComponent < KamikazeAnimationController>().killed = true;
 		gameObject.GetComponent<Collider2D>().enabled = false;
+        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		dying = true;
         Experience(experience);
 	}
