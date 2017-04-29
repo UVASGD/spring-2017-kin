@@ -2,9 +2,14 @@
 using System.Reflection;
 using System;
 
-public class ObjectLinker : MonoBehaviour { 
+public class ObjectLinker : MonoBehaviour {
 
-	public string methodToCall;
+    UIController ui;
+    public string methodToCall;
+
+    void Start() {
+        ui = FindObjectOfType<UIController>();
+    }
 
 	public object Run () 
 	{
@@ -24,22 +29,22 @@ public class ObjectLinker : MonoBehaviour {
 	}
 
 	public bool WisdomLevel() {
-
+        ui.toggleStatsMenu((int)DialogueBox.TrainerType.WisdomTrainer);
 		return true;
 	}
 
 	public bool HealthLevel() {
-
+        ui.toggleStatsMenu((int)DialogueBox.TrainerType.HealthTrainer);
 		return true;
 	}
 
 	public bool StaminaLevel() {
-
+        ui.toggleStatsMenu((int)DialogueBox.TrainerType.StaminaTrainer);
 		return true;
 	}
 
 	public bool StrengthLevel() {
-
+        ui.toggleStatsMenu((int)DialogueBox.TrainerType.StaminaTrainer);
 		return true;
 	}
 

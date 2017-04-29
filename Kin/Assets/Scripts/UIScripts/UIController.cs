@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour {
     private Slider bossHealthSlider;
     public GameObject bossHealth;
     public GameObject statsMenu;
+    public int statsMenuTrainer;
 	public GameObject options;
     public GameObject runesMenu;
 	public GameObject player;
@@ -51,11 +52,7 @@ public class UIController : MonoBehaviour {
 		else
 			lerpingStamina = false;
 		//Debug.Log (staminalerpT / 0.5);
-
-		if (Input.GetButtonDown("Stats") && statsMenu != null)
-        {
-            toggleStatsMenu();
-        }
+        
         //TODO Change Later, something that' not stats
 		if (Input.GetButtonDown ("Menu")) {
 			options.GetComponent<Canvas> ().enabled = !options.GetComponent<Canvas> ().enabled;
@@ -167,11 +164,55 @@ public class UIController : MonoBehaviour {
         return (int)bossHealthSlider.maxValue;
     }
 
-    public void toggleStatsMenu()
+    public void toggleStatsMenu(int trainer)
     {
 		if (statsMenu) {
 			statsMenu.SetActive (!statsMenu.activeSelf);
-		}
+            statsMenuTrainer = trainer;
+            Selectable[] buttons = statsMenu.GetComponentsInChildren<Selectable>();
+            foreach (Selectable button in buttons) {
+                button.interactable = false;
+                print(button.name);
+            }
+            switch (trainer) {
+                case (int)DialogueBox.TrainerType.StrengthTrainer:
+                    foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>()) {
+                        if (button.name.Contains("Str")) button.interactable = true;
+                    }
+                    break;
+                case (int)DialogueBox.TrainerType.StaminaTrainer:
+                    foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
+                    {
+                        if (button.name.Contains("Sta")) button.interactable = true;
+                    }
+                    break;
+                case (int)DialogueBox.TrainerType.HealthTrainer:
+                    foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
+                    {
+                        if (button.name.Contains("Hea")) button.interactable = true;
+                    }
+                    break;
+                case (int)DialogueBox.TrainerType.WisdomTrainer:
+                    foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
+                    {
+                        if (button.name.Contains("Wis")) button.interactable = true;
+                    }
+                    break;
+            }
+        }
+        updateStatsSliders();
+    }
+
+    public void updateStatsSliders() {
+        statsMenu.GetComponent<StatScreenController>().PlayerStrength = player.GetComponent<StatController>().getStrengthLvl();
+        statsMenu.GetComponent<StatScreenController>().PlayerStamina = player.GetComponent<StatController>().getStaminaLvl();
+        statsMenu.GetComponent<StatScreenController>().PlayerHealth = player.GetComponent<StatController>().getHealthLvl();
+        statsMenu.GetComponent<StatScreenController>().PlayerWisdom = player.GetComponent<StatController>().getWisdomLvl();
+
+        statsMenu.GetComponent<StatScreenController>().OrderStrength = player.GetComponent<StatController>().getStrengthOrder();
+        statsMenu.GetComponent<StatScreenController>().OrderStamina = player.GetComponent<StatController>().getStaminaOrder();
+        statsMenu.GetComponent<StatScreenController>().OrderHealth = player.GetComponent<StatController>().getHealthOrder();
+        statsMenu.GetComponent<StatScreenController>().OrderWisdom = player.GetComponent<StatController>().getWisdomOrder();
     }
 
     
