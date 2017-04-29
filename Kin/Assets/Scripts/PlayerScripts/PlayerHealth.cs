@@ -95,6 +95,7 @@ public class PlayerHealth : MonoBehaviour {
 		sceneCont.GetComponent<SceneController>().FadeToDeath();
 		Debug.Log ("Kin Before Death: " + TimeController.kin);
 		TimeController.ProgressDay (100);
+		SaveController.s_instance.Save();
 		Debug.Log ("Kin After Death: " + TimeController.kin);
     }
 
