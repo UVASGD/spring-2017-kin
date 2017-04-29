@@ -15,11 +15,13 @@ public class IxtabInvisible : StateMachineBehaviour {
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-		ai.Wander();
 		if (stateInfo.IsName("Invisible_2")) {
 			if (ai.GetNumActiveMinions() == 0) {
 				animator.SetTrigger("Choke");
 			}
+		}
+		if (Random.Range(0.0f, 1.0f) > 0.9f) {
+			ai.Wander();
 		}
 	}
 
