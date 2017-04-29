@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour {
     private Slider bossHealthSlider;
     public GameObject bossHealth;
     public GameObject statsMenu;
+    public int statsMenuTrainer;
 	public GameObject options;
     public GameObject runesMenu;
 	public GameObject player;
@@ -51,11 +52,7 @@ public class UIController : MonoBehaviour {
 		else
 			lerpingStamina = false;
 		//Debug.Log (staminalerpT / 0.5);
-
-		if (Input.GetButtonDown("Stats") && statsMenu != null)
-        {
-            toggleStatsMenu(1); // 1=strength 2=stamina 3=health 4=wisdom
-        }
+        
         //TODO Change Later, something that' not stats
 		if (Input.GetButtonDown ("Menu")) {
 			options.GetComponent<Canvas> ().enabled = !options.GetComponent<Canvas> ().enabled;
@@ -171,30 +168,31 @@ public class UIController : MonoBehaviour {
     {
 		if (statsMenu) {
 			statsMenu.SetActive (!statsMenu.activeSelf);
+            statsMenuTrainer = trainer;
             Selectable[] buttons = statsMenu.GetComponentsInChildren<Selectable>();
             foreach (Selectable button in buttons) {
                 button.interactable = false;
                 print(button.name);
             }
             switch (trainer) {
-                case 1:
+                case (int)DialogueBox.TrainerType.StrengthTrainer:
                     foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>()) {
                         if (button.name.Contains("Str")) button.interactable = true;
                     }
                     break;
-                case 2:
+                case (int)DialogueBox.TrainerType.StaminaTrainer:
                     foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
                     {
                         if (button.name.Contains("Sta")) button.interactable = true;
                     }
                     break;
-                case 3:
+                case (int)DialogueBox.TrainerType.HealthTrainer:
                     foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
                     {
                         if (button.name.Contains("Hea")) button.interactable = true;
                     }
                     break;
-                case 4:
+                case (int)DialogueBox.TrainerType.WisdomTrainer:
                     foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
                     {
                         if (button.name.Contains("Wis")) button.interactable = true;
