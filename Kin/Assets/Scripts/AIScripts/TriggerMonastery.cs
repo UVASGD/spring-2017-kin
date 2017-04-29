@@ -22,12 +22,18 @@ public class TriggerMonastery : MonoBehaviour {
 			DNH.GetComponent<MusicController> ().InteruptForMonastery ();
 			player.GetComponent<PlayerHealth> ().setNumPotions(player.GetComponent<PlayerHealth> ().maxNumPotions);
 		}
+		if (coll.tag == "Player") {
+			SaveController.s_instance.Save();
+		}
 
 	}
 
 	public void OnTriggerExit2D(Collider2D coll){
 		if (coll.tag == "Player" && DNH.GetComponent<MusicController>().state != MusicController.MusicState.World) {
 			DNH.GetComponent<MusicController> ().InterruptForWorld ();
+		}
+		if (coll.tag == "Player") {
+			SaveController.s_instance.Save();
 		}
 	}
 }
