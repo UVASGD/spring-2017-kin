@@ -95,6 +95,7 @@ public class SaveController : MonoBehaviour {
 		Player.GetComponent<StatController>().setWisdomOrder(data.wisLvlO);
 		//DNH.GetComponent<TimeController>().kin = data.day;
 		TimeController.kin = data.day;
+		TimeController.CalculateCalendar();
 		DNH.GetComponent<DayNightController>().worldTimeHour = data.hour;
 		DNH.GetComponent<DayNightController>().minutes = data.minute;
 

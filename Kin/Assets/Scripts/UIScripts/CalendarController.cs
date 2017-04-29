@@ -3,19 +3,19 @@ using System.Collections;
 
 public class CalendarController : MonoBehaviour {
 
-	int bigBoiCount = 0;
+	float bigBoiCount = 0f;
 	//20
 	public GameObject bigBoi;
 
-	int mediumBoiCount = 0;
+	float mediumBoiCount = 0f;
 	//18
 	public GameObject mediumBoi;
 
-	int smallBoiCount = 0;
+	float smallBoiCount = 0f;
 	//13
 	public GameObject smallBoi;
 
-	int miniBoiCount = 0;
+	float miniBoiCount = 0f;
 	//9
 	public GameObject miniBoi;
     
@@ -30,11 +30,6 @@ public class CalendarController : MonoBehaviour {
 	Quaternion smallBoiInit;
 	Quaternion miniBoiInit;
 
-	Quaternion bigBoiRotation;
-	Quaternion mediumBoiRotation;
-	Quaternion smallBoiRotation;
-	Quaternion miniBoiRotation;
-
 	Quaternion bigBoiFinalRot;
 	Quaternion mediumBoiFinalRot;
 	Quaternion smallBoiFinalRot;
@@ -43,10 +38,10 @@ public class CalendarController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		bigBoiRotation = Quaternion.identity;
-		mediumBoiRotation = Quaternion.identity;
-		smallBoiRotation = Quaternion.identity;
-		miniBoiRotation = Quaternion.identity;
+		bigBoi.transform.localRotation = Quaternion.identity;
+		mediumBoi.transform.localRotation = Quaternion.identity;
+		smallBoi.transform.localRotation = Quaternion.identity;
+		miniBoi.transform.localRotation = Quaternion.identity;
 
 		source = GetComponent<AudioSource>();
 	}
@@ -68,24 +63,34 @@ public class CalendarController : MonoBehaviour {
 			mediumBoiInit = mediumBoi.transform.localRotation;
 			smallBoiInit = smallBoi.transform.localRotation;
 			miniBoiInit = miniBoi.transform.localRotation;
+		} else {
+			bigBoi = transform.GetChild(0).gameObject;
+			mediumBoi = transform.GetChild(1).gameObject;
+			smallBoi = transform.GetChild(2).gameObject;
+			miniBoi = transform.GetChild(3).gameObject;
+			bigBoiInit = bigBoi.transform.localRotation;
+			mediumBoiInit = mediumBoi.transform.localRotation;
+			smallBoiInit = smallBoi.transform.localRotation;
+			miniBoiInit = miniBoi.transform.localRotation;
 		}
 
 		transTime = 0.0f;
-
-		source.Play();
+		if (source != null) {
+			source.Play();
+		}
 
 		lerping = true;
 	}
 
 	public void CalendarSet(int kin) {
 		bigBoiCount = miniBoiCount = kin;
-		mediumBoiCount = smallBoiCount = kin / 20;
+		mediumBoiCount = smallBoiCount = kin / 20.0f;
 		//Debug.Log("Big Boi Count: " + bigBoiCount + ", Medium Boi Count: " + mediumBoiCount +
 			//", Small Boi Count: " + smallBoiCount + ", Mini Boi Count: " + miniBoiCount);
-		bigBoiFinalRot = Quaternion.Euler(0.0f, 0.0f, (360/20) * bigBoiCount);
-		mediumBoiFinalRot = Quaternion.Euler(0.0f, 0.0f, (-360/18) * mediumBoiCount);
-		smallBoiFinalRot = Quaternion.Euler(0.0f, 0.0f, (360/13) * smallBoiCount);
-		miniBoiFinalRot = Quaternion.Euler(0.0f, 0.0f, (-360/9) * miniBoiCount);
+		bigBoiFinalRot = Quaternion.Euler(0.0f, 0.0f, (360.0f/20.0f) * bigBoiCount);
+		mediumBoiFinalRot = Quaternion.Euler(0.0f, 0.0f, (-360.0f/18.0f) * mediumBoiCount);
+		smallBoiFinalRot = Quaternion.Euler(0.0f, 0.0f, (360.0f/13.0f) * smallBoiCount);
+		miniBoiFinalRot = Quaternion.Euler(0.0f, 0.0f, (-360.0f/9.0f) * miniBoiCount);
 		CalendarUpdate();
 	}
 
