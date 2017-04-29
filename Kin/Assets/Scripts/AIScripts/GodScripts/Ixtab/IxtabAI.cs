@@ -25,8 +25,8 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 	public float maxInvisCooldown = 7.5f;
 	public float maxSlamCooldown = 5.0f;
 
-	public float xBound = 10.0f;
-	public float yBound = 10.0f;
+	public float xBound = 1.5f;
+	public float yBound = 1.5f;
 
 	private float trueXMin;
 	private float trueYMin;
