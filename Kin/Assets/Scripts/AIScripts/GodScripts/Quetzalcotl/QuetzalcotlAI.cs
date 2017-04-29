@@ -7,7 +7,7 @@ public class QuetzalcotlAI : MonoBehaviour {
 	public const float MAX_ATTACK_CD = 5.0f;
 	public const float MAX_STALAG_CD = 10.0f;
     public const float MAX_SNAKE_CD = 15.0f; //15.0f;
-	public const float MAX_METEOR_CD = 2.5f;
+	public const float MAX_METEOR_CD = 6.0f;
 
 	public const float ANGERY_ACTIVATE = 60.0f;
 
@@ -26,7 +26,6 @@ public class QuetzalcotlAI : MonoBehaviour {
 
     public float stageRadius = 4.0f;
     private float offset = 0.3f;
-    private float stalagSpeed = 5.0f;
     public GameObject targetObject;
     private float baseX;
     private float changeX;
@@ -54,13 +53,13 @@ public class QuetzalcotlAI : MonoBehaviour {
 	void Update ()
     {
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-        if (curSnakeCD <= 0.0f)
+        if (curMeteorCD <= 0.0f)
         {
-            SpawnSnakes();
-            curSnakeCD = MAX_SNAKE_CD;
+            ShootMeteor();
+            curMeteorCD = MAX_METEOR_CD;
         }
         else
-            curSnakeCD -= Time.deltaTime;
+            curMeteorCD -= Time.deltaTime;
 	}
 
 	public void CloseArena()
@@ -171,10 +170,12 @@ public class QuetzalcotlAI : MonoBehaviour {
     public void ShootMeteor()
     {
         float angle = Mathf.Atan2(targetObject.transform.position.y - gameObject.transform.position.y, targetObject.transform.position.x - gameObject.transform.position.x);
-        GameObject proj = (GameObject)GameObject.Instantiate(Resources.Load("Prefabs/Brain the Hotdog", typeof(GameObject)),
+        GameObject proj = (GameObject)GameObject.Instantiate(Resources.Load("Prefabs/Projectiles/Meteor", typeof(GameObject)),
             new Vector3(gameObject.transform.position.x + 0.1f * Mathf.Cos(angle), gameObject.transform.position.y + 0.1f * Mathf.Sin(angle)), Quaternion.identity);
-        proj.AddComponent<Stalagtites>(); //delete once made prefab
-        proj.GetComponent<Rigidbody2D>().velocity = new Vector2(stalagSpeed * Mathf.Cos(angle), stalagSpeed * Mathf.Sin(angle));
+        float speed = proj.GetComponent<MeteorProjectile>().speed;
+        proj.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(angle), speed * Mathf.Sin(angle));
+
+        //proj.GetComponent<MeteorProjectile>().SetVelocity(angle);
     }
 
 	public void SwipeFist() {

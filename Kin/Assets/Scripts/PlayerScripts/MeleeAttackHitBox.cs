@@ -8,8 +8,6 @@ public class MeleeAttackHitBox:MonoBehaviour
     private bool chacRuneActivated;
     void OnTriggerEnter2D(Collider2D col)
     {
-
-
 		Vector3 direction = col.transform.position - transform.position;
 		//Debug.Log ("direction" + direction);
 		//Debug.Log ("direction for " + Vector3.Dot(transform.forward, direction));

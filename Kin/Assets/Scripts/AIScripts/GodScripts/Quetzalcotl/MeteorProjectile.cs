@@ -6,25 +6,31 @@ using UnityEngine;
 [RequireComponent (typeof(Rigidbody2D))]
 public class MeteorProjectile : MonoBehaviour {
 
-	public float speed = 2.0f;
+	public float speed = 10.0f;
 
 	public int damage = 10;
+
+    public float despawnTimer = 5.0f;
 
 	private Rigidbody2D rb;
 
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody2D>();
-		rb.drag = 0.5f;
+		rb = gameObject.GetComponent<Rigidbody2D>();
+		//rb.drag = 0.5f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (despawnTimer <= 0.0f)
+            Destroy(gameObject);
+        else
+            despawnTimer -= Time.deltaTime;
 		
 	}
 
-	public void SetVelocity(float x, float y) {
-		rb.velocity = new Vector2(x, y);
+	public void SetVelocity(float angle) {
+		rb.velocity = new Vector2(speed * Mathf.Cos(angle), speed * Mathf.Sin(angle));
 	}
 
     public void ReverseVelocity()
@@ -33,14 +39,31 @@ public class MeteorProjectile : MonoBehaviour {
     }
 
     public void OnTriggerEnter2D(Collider2D coll) {
-		if (coll.CompareTag("Player")) {
+        Debug.Log("Collide");
+        if (coll.gameObject.tag == "Boss")
+        {
+            coll.gameObject.GetComponent<EnemyHealth>().takeDamage(damage);
+            // Create explody animation prefab here
+            Destroy(gameObject);
+        }
+        if (coll.gameObject.name == "RightAttackBox" || coll.gameObject.name == "LeftAttackBox" || coll.gameObject.name == "UpperAttackBox" || coll.gameObject.name == "LowerAttackBox")
+        {
+            ReverseVelocity();
+        }
+        if (coll.CompareTag("Player")) {
 			coll.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
 			// Create explody animation prefab here
 			Destroy(gameObject);
 		}
-        if (coll.gameObject.name == "rightAttackBox" || coll.gameObject.name == "leftAttackBox" || coll.gameObject.name == "upperAttackBox" || coll.gameObject.name == "lowerAttackBox")
+    }
+
+    public void onCollisionEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Boss")
         {
-            ReverseVelocity();
+            col.gameObject.GetComponent<EnemyHealth>().takeDamage(damage);
+            // Create explody animation prefab here
+            Destroy(gameObject);
         }
     }
 }
