@@ -93,10 +93,8 @@ public class PlayerHealth : MonoBehaviour {
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition; // Make sure to unfreeze before undying...
 
 		sceneCont.GetComponent<SceneController>().FadeToDeath();
-		Debug.Log ("Kin Before Death: " + TimeController.kin);
-		TimeController.ProgressDay (100);
+		TimeController.ProgressDay (5479);
 		SaveController.s_instance.Save();
-		Debug.Log ("Kin After Death: " + TimeController.kin);
     }
 
     public void setMaxHealth(int max)
