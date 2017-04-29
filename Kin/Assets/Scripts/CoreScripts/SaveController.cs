@@ -41,6 +41,13 @@ public class SaveController : MonoBehaviour {
 			}
 		}
     }
+
+	public static SaveController GetInstance(){
+		if (s_instance == null) {
+			s_instance = new SaveController ();
+		}
+		return s_instance;
+	}
 	
     void OnGUI()
     {
