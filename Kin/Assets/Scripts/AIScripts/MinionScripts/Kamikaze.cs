@@ -32,15 +32,18 @@ public class Kamikaze : BaseMinionAI
         timeToExplode = 0.0f;
 		timeSinceDeath = 0.0f;
         explodeDelay = .9f;
-		if(awarenessRadius == 0.0f) awarenessRadius = 2.0f; //3.0f;
+		if(awarenessRadius == 0.0f) awarenessRadius = 3.0f; //3.0f;
 		decayTime = 10.0f;
 		exploded = false;
-        speed = 1.0f;
+        speed = .9f;
 		dying = false;
     }
 
     protected new void Update() {
         base.Update();
+
+
+
         if (!gameObject.GetComponent<Animator>().GetBool("Spawned")) return;
         float distanceToPlayer = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
 
@@ -58,13 +61,13 @@ public class Kamikaze : BaseMinionAI
 
         if (curState == AIStates.DetectedState)
         {
-            if (distanceToPlayer >= awarenessRadius)
+            if (distanceToPlayer > awarenessRadius)
             {
-                StopCoroutine("FollowPath");
+                StopPathFollow();
                 rb.velocity = Vector2.zero;
                 curState = AIStates.IdleState;
                 return;
-            }
+            } 
             if (!isExploding)
             {
                 if (distanceToPlayer < explodeRadius)
@@ -72,13 +75,15 @@ public class Kamikaze : BaseMinionAI
                     isExploding = true;
 					gameObject.GetComponent<KamikazeAnimationController> ().charging = true;
                     gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-                    StopCoroutine("FollowPath");
+                    StopPathFollow();
                     rb.velocity = Vector2.zero;
                 }
                 else{
                     if (timeDelay > 1.0f)
                       {
+                          //Debug.Log("Requesting Path");
                           RequestPathManager.Request(transform.position, targetObject.transform.position, OnPathFound);
+                          //Debug.Log("Path Found");
                           timeDelay = 0;
                       }
 					//MoveTowardsTarget ();
