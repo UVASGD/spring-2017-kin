@@ -38,7 +38,7 @@ public class ScrollCredits : MonoBehaviour {
         if (rTrans.anchoredPosition.y < endPos) {
 			rTrans.anchoredPosition = new Vector3 (0.0f, (float)(Mathf.Lerp ((float)beginPos,(float)endPos,(float)(timer/length))), 0.0f);
         }
-		if(notDone && timer + 20.0f >= length) 
+		if(notDone && timer + 20.0f >= length) {
 			Title.SetActive(true);
             exitButton.SetActive(true); 
             notDone = false; 
