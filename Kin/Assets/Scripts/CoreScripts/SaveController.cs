@@ -37,7 +37,7 @@ public class SaveController : MonoBehaviour {
     {
 		if (PreLoader.Instance != null) {
 			if (PreLoader.Instance.resume) {
-				Load (PreLoader.Instance.fileNumber);
+				Load ();
 			}
 		}
     }
@@ -46,29 +46,29 @@ public class SaveController : MonoBehaviour {
     {
         if(GUI.Button(new Rect(10, 100, 100, 30), "Save"))
         {
-            Save("1");
+            Save();
         }
         if(GUI.Button(new Rect(10, 130, 100, 30), "Load"))
         {
-            Load("1");
+            Load();
         }
     }
 
-	public void Save(String fileNumber)
+	public void Save()
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/saveInfo" + fileNumber + ".dat");
+        FileStream file = File.Create(Application.persistentDataPath + "/saveInfo.dat");
         SaveData data = WriteToData();
         bf.Serialize(file, data);
         file.Close();
     }
 
-	public void Load(String fileNumber)
+	public void Load()
     {
-		if(File.Exists(Application.persistentDataPath + "/saveInfo" + fileNumber + ".dat"))
+		if(File.Exists(Application.persistentDataPath + "/saveInfo" + ".dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-			FileStream file = File.Open(Application.persistentDataPath + "/saveInfo" + fileNumber + ".dat",
+			FileStream file = File.Open(Application.persistentDataPath + "/saveInfo.dat",
                 FileMode.Open);
             SaveData data = (SaveData) bf.Deserialize(file);
             file.Close();

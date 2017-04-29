@@ -22,4 +22,34 @@ public class ObjectLinker : MonoBehaviour {
 		Debug.Log("Testing with boolean!");
 		return true;
 	}
+
+	public bool WisdomLevel() {
+
+		return true;
+	}
+
+	public bool HealthLevel() {
+
+		return true;
+	}
+
+	public bool StaminaLevel() {
+
+		return true;
+	}
+
+	public bool StrengthLevel() {
+
+		return true;
+	}
+
+	public bool SmithLevel() {
+
+		return true;
+	}
+
+	public bool NoneLevel() {
+
+		return true;
+	}
 }

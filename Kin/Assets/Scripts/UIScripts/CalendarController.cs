@@ -63,10 +63,12 @@ public class CalendarController : MonoBehaviour {
 	}
 
 	public void CalendarUpdate() {
-		bigBoiInit = bigBoi.transform.localRotation;
-		mediumBoiInit = mediumBoi.transform.localRotation;
-		smallBoiInit = smallBoi.transform.localRotation;
-		miniBoiInit = miniBoi.transform.localRotation;
+		if (bigBoi != null && mediumBoi != null && smallBoi != null && miniBoi != null) {
+			bigBoiInit = bigBoi.transform.localRotation;
+			mediumBoiInit = mediumBoi.transform.localRotation;
+			smallBoiInit = smallBoi.transform.localRotation;
+			miniBoiInit = miniBoi.transform.localRotation;
+		}
 
 		transTime = 0.0f;
 
