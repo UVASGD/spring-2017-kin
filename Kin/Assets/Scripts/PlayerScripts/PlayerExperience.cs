@@ -17,13 +17,15 @@ public class PlayerExperience : MonoBehaviour
         // Play audio clip?
     }
 
-    public void decrementExp(long amount)
+    public bool decrementExp(long amount)
     {
         if(currentExp-amount >= 0)
         {
             currentExp -= amount;
             //Play audio clip?
+            return true;
         }
+        return false;
     }
 
 	void OnGUI(){
