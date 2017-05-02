@@ -55,7 +55,7 @@ public class QuetzalcotlAI : MonoBehaviour {
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         if (curMeteorCD <= 0.0f)
         {
-            ShootMeteor();
+            SpawnSnakes();
             curMeteorCD = MAX_METEOR_CD;
         }
         else
@@ -171,11 +171,9 @@ public class QuetzalcotlAI : MonoBehaviour {
     {
         float angle = Mathf.Atan2(targetObject.transform.position.y - gameObject.transform.position.y, targetObject.transform.position.x - gameObject.transform.position.x);
         GameObject proj = (GameObject)GameObject.Instantiate(Resources.Load("Prefabs/Projectiles/Meteor", typeof(GameObject)),
-            new Vector3(gameObject.transform.position.x + 0.1f * Mathf.Cos(angle), gameObject.transform.position.y + 0.1f * Mathf.Sin(angle)), Quaternion.identity);
+            new Vector3(gameObject.transform.position.x + 0.5f * Mathf.Cos(angle), gameObject.transform.position.y + 0.5f * Mathf.Sin(angle)), Quaternion.identity);
         float speed = proj.GetComponent<MeteorProjectile>().speed;
         proj.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(angle), speed * Mathf.Sin(angle));
-
-        //proj.GetComponent<MeteorProjectile>().SetVelocity(angle);
     }
 
 	public void SwipeFist() {

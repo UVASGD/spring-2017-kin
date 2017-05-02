@@ -59,6 +59,7 @@ public class MeteorProjectile : MonoBehaviour {
 
     public void onCollisionEnter2D(Collider2D col)
     {
+        Debug.Log("Hit");
         if (col.gameObject.tag == "Boss")
         {
             col.gameObject.GetComponent<EnemyHealth>().takeDamage(damage);
