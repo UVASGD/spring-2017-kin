@@ -24,7 +24,7 @@ public class Dialogue : Action {
 			InitializeDialogue();
 		} else {
 			if (diaObj.activeInHierarchy) {
-				if (Input.GetButtonDown("Interact")) {
+				if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown("Interact")) {
 					if (diaObj.GetComponent<DialogueSpawnController>().GetFinished()) {
 						diaObj.SetActive(false);
 						inProgress = false;

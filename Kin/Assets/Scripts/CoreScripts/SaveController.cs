@@ -84,6 +84,19 @@ public class SaveController : MonoBehaviour {
         }
     }
 
+	public void LoadStats(){
+		if(File.Exists(Application.persistentDataPath + "/saveInfo" + ".dat"))
+		{
+			BinaryFormatter bf = new BinaryFormatter();
+			FileStream file = File.Open(Application.persistentDataPath + "/saveInfo.dat",
+				FileMode.Open);
+			SaveData data = (SaveData) bf.Deserialize(file);
+			file.Close();
+
+			WriteStatsFromData (data);
+		}
+	}
+
 	private void WriteFromData(SaveData data)
 	{
 		Health.GetComponent<Slider>().value = data.health;
@@ -114,6 +127,19 @@ public class SaveController : MonoBehaviour {
 			strengthtrainer.GetComponent<DialogueBox> ().diaType = (data.strengthtrainerd == 0) ? DialogueBox.DiaType.Init : DialogueBox.DiaType.Greetings;
 		if(wisdomtrainer && wisdomtrainer.GetComponent<DialogueBox> ())
 			wisdomtrainer.GetComponent<DialogueBox> ().diaType = (data.wisdomtrainerd == 0) ? DialogueBox.DiaType.Init : DialogueBox.DiaType.Greetings;
+	}
+
+	private void WriteStatsFromData(SaveData data)
+	{
+
+		Player.GetComponent<StatController>().setHealth(data.healthLvlP);
+		Player.GetComponent<StatController>().setHealthOrder(data.healthLvlO);
+		Player.GetComponent<StatController>().setStamina(data.stamLvlP);
+		Player.GetComponent<StatController>().setStaminaOrder(data.stamLvlO);
+		Player.GetComponent<StatController>().setStrength(data.strLvlP);
+		Player.GetComponent<StatController>().setStrengthOrder(data.strLvlO);
+		Player.GetComponent<StatController>().setWisdom(data.wisLvlP);
+		Player.GetComponent<StatController>().setWisdomOrder(data.wisLvlO);
 	}
 
     private SaveData WriteToData ()
