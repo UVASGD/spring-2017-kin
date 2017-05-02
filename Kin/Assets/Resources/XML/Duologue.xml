@@ -5,27 +5,27 @@
 		<StaminaTrainer name="Luther">
 			<Init>
 				<one dialogue="Welcome, I am Luther, the Trainer of Stamina. Should you hone your Stamina, you will become capable of achieving more with your body and blade. Shall we work together?">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</one>
 			</Init>
 			<Greetings flag="random">
 				<one dialogue="You awoke me from a dream; I had been reincarnated into the very tree I am sleeping upon. How quaint! Sorry, are you here for training?">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</one>
 				<two dialogue="I thought I saw Jesus in my toast once. Turned out it was Jim Caviezel! Anyway, do you want to train?">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</two>
 				<three dialogue="Last night I dreamt I was flying through the clouds. Look at them, you’d think they taste good! Let me tell you, they don’t. Regardless, do you require training?">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</three>
 				<four dialogue="I was thinking the other day, if the Earth is a sphere, are people on the bottom upside down? Checkmate, round-Earthers. Do you need some training this day?">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</four>
 				<five dialogue="Here for training? Or perhaps something more… conversational...">
-					<response a="Yes" b="Not Today"/>
+					<response a="Yes/X" b="No/B"/>
 				</five>
 				<six dialogue="Do you require training on this excellent day?">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</six>
 			</Greetings>
 			<Train flag="random" >
@@ -39,21 +39,21 @@
 		<WisdomTrainer name="Thomas">
 			<Init>
 				<one dialogue="Welcome, I am Thomas, the Trainer of Wisdom. Increasing your Wisdom enhances your perceptions, translation skills, and your understanding of the world. Of course, Wisdom can be its own reward.  Shall we work together?">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</one>
 			</Init>
 			<Greetings flag="random">
 				<one dialogue="To one who has faith, no explanation is necessary. To one without faith, no explanation is possible. Would you like training?">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</one>
 				<two dialogue="What it must be like to be a caterpillar. A perfect symbol of our savior and the promise of eternal life. They must die, but they rise again in glory as a butterfly. In a way, training is like a metamorphosis. Would you like some?">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</two>
 				<three dialogue="Don’t pay heed to that...insane trainer. The plants here are useful and can heal you. You can also craft them into potions, which are much more potent. Anyway, do you require training?">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</three>
 				<four dialogue="More training is always beneficial, my child. Do you desire some?">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</four>
 			</Greetings>
 			<Train flag="random">
@@ -67,18 +67,18 @@
 		<StrengthTrainer name="Adelito">
 			<Init>
 				<one dialogue="Hello, I’m Adelito, the Strength Trainer. Your Strength determines how hard you hit! The more you train, the easier it will be to strike down our enemies in battle. Let's train together!">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</one>
 			</Init>
 			<Greetings flag="random">
 				<one dialogue="In the Testaments, God drowned the entire world because humans were so...wretched! Now that’s my kind of God. Anyway, you need some training?">
-					<response a="Yes" b="Not today" />
+					<response a="Yes/X" b="No/B" />
 				</one>
 				<two dialogue= "You here for some training? You better be, I don’t have time for lollygaggers." >
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</two>
 				<three dialogue= "I won't abide loitering. Either train with me or get lost!">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</three>
 			</Greetings>
 			<Train flag="random">
@@ -92,27 +92,27 @@
 		<HealthTrainer name="Valerio">
 			<Init>
 				<one dialogue="Hello, I am Valerio, the Health Trainer. A deep pool of Health is beneficial as you face trials in these foreign lands. Let's meditate together.">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</one>
 			</Init>
 			<Greetings flag="random" >
 				<one dialogue="I advise you against eating any of the plants in these godforsaken lands. They’re poisonous and will kill you. I do, however, advise you train with me.">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</one>
 				<two dialogue="You must go and purge this land of its demonic forces in the name of the Savior! Training with me will assist you in doing so.">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</two>
 				<three dialogue="This new music they have here in this land...safeguard your ears. It is of the Devil’s will! Train some with me to resist its siren call!">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</three>
 				<four dialogue="Some training, perhaps? Quite important.">
-					<response a="Yes" b="Not today"/>
+					<response a="Yes/X" b="No/B"/>
 				</four>
 			</Greetings>
 			<Train flag="random">
 				<one dialoue="Oh good! Its very important that you train with me!" />
 				<two dialogue= "Hallelujah!"/>
-				<three dialogue= "Oh yes very good! Very good!"/>
+				<three dialogue= "Oh Yes/X very good! Very good!"/>
 				<four dialogue= "Let's get started shall we?"/>
 				<five/>
 			</Train>
