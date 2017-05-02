@@ -133,7 +133,7 @@ public class PlayerHealth : MonoBehaviour {
             // Move character?
             // Go back to scene?
         }
-        if (Input.GetKeyDown("y")) {
+		if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetKeyDown("y")) {
             print("POTION");
             StartCoroutine("drinkPotion");
         }

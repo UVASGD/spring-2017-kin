@@ -48,7 +48,7 @@ public class CalendarController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.B)) {
+		if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetKeyDown(KeyCode.B)) {
 			CalendarIncrement();
 		}
 		if (lerping) {

@@ -102,7 +102,7 @@ public class AnimationControl : MonoBehaviour {
 	/// Updates the roll.
 	/// </summary>
 	public void updateRoll(){
-		if (Input.GetButtonDown ("Roll") && !isRolling && rb.velocity != Vector2.zero) {
+		if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown ("Roll") && !isRolling && rb.velocity != Vector2.zero) {
             if (canRoll()) 
             {
                 animator.SetBool("Rolling", true);
@@ -116,7 +116,7 @@ public class AnimationControl : MonoBehaviour {
 	/// Updates the attack.
 	/// </summary>
 	public void updateAttack(){
-		if (Input.GetButtonDown ("Attack") && !isAttacking) {
+		if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown ("Attack") && !isAttacking) {
             if (canAttack())
             {
                 animator.SetBool("Attacking", true);

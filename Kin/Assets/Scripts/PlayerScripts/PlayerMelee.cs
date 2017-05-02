@@ -92,7 +92,7 @@ public class PlayerMelee : MonoBehaviour {
 
 
 
-        if (Input.GetButtonDown("Attack") && !attacking && GetComponent<PlayerStamina>().hasStamina)
+		if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown("Attack") && !attacking && GetComponent<PlayerStamina>().hasStamina)
         {
             attacking = true;
 			this.gameObject.GetComponent<FXHandler> ().playAtkLow ();

@@ -21,7 +21,7 @@ public class AvatarMvmController : MonoBehaviour
     {
         Animator animator = gameObject.GetComponent<Animator>();
         
-        if (!animator.GetBool("Dead"))
+		if (!animator.GetBool("Dead") && GameObject.FindObjectOfType<InputOverrideController>().IsNormal())
         {
             if (!dr_stairs && !dl_stairs)
             {
