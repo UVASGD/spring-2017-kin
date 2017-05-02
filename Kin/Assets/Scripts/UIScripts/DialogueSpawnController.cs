@@ -58,7 +58,7 @@ public class DialogueSpawnController : MonoBehaviour {
                 }
                 finished = true;
 			}
-			if (Input.GetKeyDown(KeyCode.Space)) {
+			if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetKeyDown(KeyCode.Space)) {
 				curLength = dialogueString.Length;
 				curDiaStr = dialogueString.Substring(0, curLength);
 				diaTextBox.GetComponent<Text>().text = curDiaStr;
