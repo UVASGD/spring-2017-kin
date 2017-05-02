@@ -35,6 +35,8 @@ public class CalendarController : MonoBehaviour {
 	Quaternion smallBoiFinalRot;
 	Quaternion miniBoiFinalRot;
 
+	bool testmode = false;
+
 
 	// Use this for initialization
 	void Start () {
@@ -48,7 +50,7 @@ public class CalendarController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.B)) {
+		if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && testmode && Input.GetKeyDown(KeyCode.B)) {
 			CalendarIncrement();
 		}
 		if (lerping) {

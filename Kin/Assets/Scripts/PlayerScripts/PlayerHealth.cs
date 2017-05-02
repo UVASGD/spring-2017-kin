@@ -134,7 +134,8 @@ public class PlayerHealth : MonoBehaviour {
             // Move character?
             // Go back to scene?
         }
-        if (Input.GetButtonDown("UseConsumable")) {
+
+			if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown("UseConsumable")) {
             print("POTION");
             StartCoroutine("drinkPotion");
         }
