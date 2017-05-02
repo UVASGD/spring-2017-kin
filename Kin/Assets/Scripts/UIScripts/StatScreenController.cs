@@ -67,4 +67,12 @@ public class StatScreenController : MonoBehaviour {
         get { return (int)oWisdom.value; }
         set { oWisdom.value = value; }
     }
+
+	void OnEnable(){
+		GameObject.FindObjectOfType<InputOverrideController> ().NormalOff ();
+	}
+
+	void OnDisable(){
+		GameObject.FindObjectOfType<InputOverrideController> ().NormalOn ();
+	}
 }
