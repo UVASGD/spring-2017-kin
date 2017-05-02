@@ -78,10 +78,10 @@ public class DialogueBox : MonoBehaviour {
 	void Update () {
         if (dialogue == null) return;
 		if (dialogue.activeInHierarchy) {
-			if (Input.GetButtonDown("Interact") && !spawnCont.areResponsesActive()) {
+			if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown("Interact") && !spawnCont.areResponsesActive()) {
 				dialogue.SetActive(false);
 				spawnCont.Disable();
-			} else if (Input.GetButtonDown("Interact")) {
+			} else if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown("Interact")) {
 				object objectLinkerObj = GetComponent<ObjectLinker>().Run();
 				if (objectLinkerObj is bool && (bool)objectLinkerObj) {
 					dialogue.SetActive(false);
@@ -104,7 +104,7 @@ public class DialogueBox : MonoBehaviour {
 				indicator.SetActive(false);
 
 			if (indicator.activeInHierarchy) {
-				if (Input.GetButtonDown("Interact")) {
+				if (Input.GetButtonDown("Interact") && GameObject.FindObjectOfType<InputOverrideController>().IsNormal()) {
                     if (uicontroller.statsMenu.activeInHierarchy) {
                         uicontroller.toggleStatsMenu(0);
                     }
