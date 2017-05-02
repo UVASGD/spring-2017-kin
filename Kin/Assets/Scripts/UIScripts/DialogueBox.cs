@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-
 [RequireComponent(typeof(ObjectLinker))]
 public class DialogueBox : MonoBehaviour {
 
@@ -33,6 +32,8 @@ public class DialogueBox : MonoBehaviour {
 	/// The player.
 	/// </summary>
 	public GameObject player;
+
+    UIController uicontroller;
 
 
 
@@ -70,6 +71,7 @@ public class DialogueBox : MonoBehaviour {
 		diaList = new string[personList.Length + typeList.Length];
 		personList.CopyTo(diaList, 0);
 		typeList.CopyTo(diaList, personList.Length);
+        uicontroller = FindObjectOfType<UIController>();
 	}
 	
 	// Update is called once per frame
@@ -93,16 +95,19 @@ public class DialogueBox : MonoBehaviour {
 			if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) > decayRange) { 
 				spawnCont.Disable();
 				dialogue.SetActive(false);
-			}
+            }
 		}
 		else {
-			if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) < detectRange)
+            if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) < detectRange)
 				indicator.SetActive(true);
 			else if (indicator.activeInHierarchy)
 				indicator.SetActive(false);
 
 			if (indicator.activeInHierarchy) {
 				if (Input.GetButtonDown("Interact")) {
+                    if (uicontroller.statsMenu.activeInHierarchy) {
+                        uicontroller.toggleStatsMenu(0);
+                    }
 					if (!spawnCont.GetInit())
 						spawnCont.Initialize();
 					if (spawnCont.GetFinished()){
@@ -114,6 +119,15 @@ public class DialogueBox : MonoBehaviour {
 					diaType = DiaType.Greetings;
 				}
 			}
-		}
+            if (uicontroller.statsMenu.activeInHierarchy)
+            {
+                if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) > decayRange && 
+                    (int)persType == uicontroller.statsMenuTrainer)
+                {
+                    uicontroller.toggleStatsMenu(0);
+                }
+            }
+        }
+
 	}
 }

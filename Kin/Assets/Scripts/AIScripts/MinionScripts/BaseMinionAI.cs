@@ -6,7 +6,7 @@ public class BaseMinionAI : MonoBehaviour, BaseAI {
 
 	public float awarenessRadius; //Range to change idle->detected
 	public GameObject targetObject; //Player target
-	public float speed = 1.0f; //Movement speed
+	public float speed = .5f; //Movement speed
     public float patrolSpeed = 0.5f; //Patroling Speed
 	protected Rigidbody2D rb; //Minion Rigidbody
 
@@ -183,15 +183,22 @@ public class BaseMinionAI : MonoBehaviour, BaseAI {
             targetIndex = 0;
             StopCoroutine("FollowPath");
             StartCoroutine("FollowPath");
+        } else
+        {
+            Patrol();
         }
     }
 
     IEnumerator FollowPath()
     {
+        //Debug.Log(path[0]);
         Vector3 currentWaypoint = path[0];
         while (true)
         {
-            if (transform.position == currentWaypoint)
+            // Debug.Log(((Vector2)(transform.position-currentWaypoint)).magnitude);
+            // Debug.Log(transform.position);
+            // Debug.Log(currentWaypoint);
+            if (((Vector2) (transform.position - currentWaypoint)).magnitude <= .5f)
             {
                 targetIndex++;
                 if (targetIndex >= path.Length)
@@ -203,11 +210,19 @@ public class BaseMinionAI : MonoBehaviour, BaseAI {
                 currentWaypoint = path[targetIndex];
             }
 
-            //transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
-            rb.velocity = ((Vector2)(currentWaypoint - gameObject.transform.position)).normalized * speed;
+            if (((Vector2) (currentWaypoint - gameObject.transform.position)).magnitude > 0.1f) rb.velocity = ((Vector2)(currentWaypoint - gameObject.transform.position)).normalized * speed;
+            else 
+            {
+                rb.velocity = Vector2.zero;
+                transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
+            }
             yield return null;
 
         }
+    }
+
+    protected void StopPathFollow(){
+        StopCoroutine("FollowPath");
     }
 
     public void OnDrawGizmos()

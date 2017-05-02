@@ -25,6 +25,17 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 	public float maxInvisCooldown = 7.5f;
 	public float maxSlamCooldown = 5.0f;
 
+	public float xBound = 1.5f;
+	public float yBound = 1.5f;
+
+	private float trueXMin;
+	private float trueYMin;
+	private float trueXMax;
+	private float trueYMax;
+
+	private bool lerpOutBool = false;
+	private bool lerpInBool = false;
+
 	private float slamCooldown;
 	private float swipeCooldown;
 	private float invisCooldown;
@@ -76,6 +87,11 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		InChokeSound = Resources.Load("Sounds/Attack SFX/IxtabGaspChokeAppear") as AudioClip;
 		OutChokeSound = Resources.Load("Sounds/Attack SFX/IxtabGaspChokeDisappear") as AudioClip;
 		SparkleSound = Resources.Load("Sounds/Attack SFX/IxtabSparkle") as AudioClip;
+
+		trueXMax = transform.position.x + xBound;
+		trueXMin = transform.position.x - xBound;
+		trueYMax = transform.position.y + yBound;
+		trueYMin = transform.position.y - yBound;
 	}
 
 	// Update is called once per frame
@@ -240,7 +256,46 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 	}
 
 	public void Wander() {
-		rb2.velocity = new Vector2(Mathf.Max(Mathf.Min(Random.Range(-0.05f, 0.05f) + rb2.velocity.x, 1.0f) , -1.0f), Mathf.Max(Mathf.Min(Random.Range(-0.05f, 0.05f) + rb2.velocity.y, 1.0f), -1.0f));
+		if (!lerpOutBool && !lerpInBool) {
+			StartCoroutine(lerpOut());
+		}
+	}
+
+	public void Teleport() {
+		float randX = Random.Range(trueXMin, trueXMax);
+		float randY = Random.Range(trueYMin, trueYMax);
+		while (!GameObject.FindObjectOfType<NodeGrid>().NodeFromWorldPoint(new Vector3(randX, randY, transform.position.z)).traversable) {
+			randX = Random.Range(trueXMin, trueXMax);
+			randY = Random.Range(trueYMin, trueYMax);
+		}
+
+
+		transform.position = new Vector3(randX, randY, transform.position.z);
+
+		StartCoroutine(lerpIn());
+	}
+
+	IEnumerator lerpOut() {
+		lerpOutBool = true;
+		for (float t = 1.0f; t > 0.0f; t -= Time.deltaTime) {
+			GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, 
+				GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 
+				t);
+			yield return null;
+		}
+		lerpOutBool = false;
+		Teleport();
+	}
+
+	IEnumerator lerpIn() {
+		lerpInBool = true;
+		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime) {
+			GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, 
+				GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 
+				t);
+			yield return null;
+		}
+		lerpInBool = false;
 	}
 
 	private List<Vector2> calculateAngles(int num, float distanceAway) {

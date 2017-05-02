@@ -22,19 +22,19 @@ public class StatScreenController : MonoBehaviour {
     public int PlayerStamina
     {
         get { return (int)pStamina.value; }
-        set { pStrength.value = value; }
+        set { pStamina.value = value; }
     }
 
     public int PlayerHealth
     {
         get { return (int)pHealth.value; }
-        set { pStrength.value = value; }
+        set { pHealth.value = value; }
     }
 
     public int PlayerWisdom
     {
         get { return (int)pWisdom.value; }
-        set { pStrength.value = value; }
+        set { pWisdom.value = value; }
     }
 
 

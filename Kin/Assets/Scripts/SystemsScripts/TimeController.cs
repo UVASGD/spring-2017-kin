@@ -35,17 +35,22 @@ public class TimeController : MonoBehaviour {
 	private static int baktun;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
+		if (GameObject.Find("Calendar")) calendar = GameObject.Find("Calendar").GetComponent<CalendarController>();
+		calendarActive = calendar != null;
 		CalculateCalendar ();
 		DNC = this.gameObject.GetComponent<DayNightController> ();
 		DontDestroyOnLoad (this.gameObject);
-		if (GameObject.Find("Calendar")) calendar = GameObject.Find("Calendar").GetComponent<CalendarController>();
-		calendarActive = calendar != null;
 	}
 
 	void Update(){
 		hour = DNC.worldTimeHour;
 		minute = DNC.minutes;
+
+		//CalculateCalendar();
+		if (calendar == null) {
+			calendar = GameObject.FindObjectOfType<CalendarController>();
+		}
 
 		if (kin >= 1872000 || baktun >= 13) {
 			//game ends
@@ -68,7 +73,7 @@ public class TimeController : MonoBehaviour {
 	/// <summary>
 	/// Calculates the calendar.
 	/// </summary>
-	private static void CalculateCalendar(){
+	public static void CalculateCalendar(){
 		if (calendarActive) {
 			calendar.CalendarSet(kin);
 		}
