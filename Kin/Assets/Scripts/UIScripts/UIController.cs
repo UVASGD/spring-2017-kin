@@ -54,10 +54,10 @@ public class UIController : MonoBehaviour {
 		//Debug.Log (staminalerpT / 0.5);
         
         //TODO Change Later, something that' not stats
-		if (Input.GetButtonDown ("Menu")) {
+		if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown ("Menu")) {
 			options.GetComponent<Canvas> ().enabled = !options.GetComponent<Canvas> ().enabled;
 		}
-        if (Input.GetKeyDown(KeyCode.P))
+		if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetKeyDown(KeyCode.P))
         {
             //updateRunes();
             runesMenu.GetComponent<Canvas>().enabled = !runesMenu.GetComponent<Canvas>().enabled;
