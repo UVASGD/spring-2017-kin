@@ -37,38 +37,45 @@ public class SaveController : MonoBehaviour {
     {
 		if (PreLoader.Instance != null) {
 			if (PreLoader.Instance.resume) {
-				Load (PreLoader.Instance.fileNumber);
+				Load ();
 			}
 		}
     }
+
+	public static SaveController GetInstance(){
+		if (s_instance == null) {
+			s_instance = new SaveController ();
+		}
+		return s_instance;
+	}
 	
     void OnGUI()
     {
         if(GUI.Button(new Rect(10, 100, 100, 30), "Save"))
         {
-            Save("1");
+            Save();
         }
         if(GUI.Button(new Rect(10, 130, 100, 30), "Load"))
         {
-            Load("1");
+            Load();
         }
     }
 
-	public void Save(String fileNumber)
+	public void Save()
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/saveInfo" + fileNumber + ".dat");
+        FileStream file = File.Create(Application.persistentDataPath + "/saveInfo.dat");
         SaveData data = WriteToData();
         bf.Serialize(file, data);
         file.Close();
     }
 
-	public void Load(String fileNumber)
+	public void Load()
     {
-		if(File.Exists(Application.persistentDataPath + "/saveInfo" + fileNumber + ".dat"))
+		if(File.Exists(Application.persistentDataPath + "/saveInfo" + ".dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-			FileStream file = File.Open(Application.persistentDataPath + "/saveInfo" + fileNumber + ".dat",
+			FileStream file = File.Open(Application.persistentDataPath + "/saveInfo.dat",
                 FileMode.Open);
             SaveData data = (SaveData) bf.Deserialize(file);
             file.Close();
@@ -76,6 +83,19 @@ public class SaveController : MonoBehaviour {
 			WriteFromData (data);
         }
     }
+
+	public void LoadStats(){
+		if(File.Exists(Application.persistentDataPath + "/saveInfo" + ".dat"))
+		{
+			BinaryFormatter bf = new BinaryFormatter();
+			FileStream file = File.Open(Application.persistentDataPath + "/saveInfo.dat",
+				FileMode.Open);
+			SaveData data = (SaveData) bf.Deserialize(file);
+			file.Close();
+
+			WriteStatsFromData (data);
+		}
+	}
 
 	private void WriteFromData(SaveData data)
 	{
@@ -95,6 +115,7 @@ public class SaveController : MonoBehaviour {
 		Player.GetComponent<StatController>().setWisdomOrder(data.wisLvlO);
 		//DNH.GetComponent<TimeController>().kin = data.day;
 		TimeController.kin = data.day;
+		TimeController.CalculateCalendar();
 		DNH.GetComponent<DayNightController>().worldTimeHour = data.hour;
 		DNH.GetComponent<DayNightController>().minutes = data.minute;
 
@@ -106,6 +127,19 @@ public class SaveController : MonoBehaviour {
 			strengthtrainer.GetComponent<DialogueBox> ().diaType = (data.strengthtrainerd == 0) ? DialogueBox.DiaType.Init : DialogueBox.DiaType.Greetings;
 		if(wisdomtrainer && wisdomtrainer.GetComponent<DialogueBox> ())
 			wisdomtrainer.GetComponent<DialogueBox> ().diaType = (data.wisdomtrainerd == 0) ? DialogueBox.DiaType.Init : DialogueBox.DiaType.Greetings;
+	}
+
+	private void WriteStatsFromData(SaveData data)
+	{
+
+		Player.GetComponent<StatController>().setHealth(data.healthLvlP);
+		Player.GetComponent<StatController>().setHealthOrder(data.healthLvlO);
+		Player.GetComponent<StatController>().setStamina(data.stamLvlP);
+		Player.GetComponent<StatController>().setStaminaOrder(data.stamLvlO);
+		Player.GetComponent<StatController>().setStrength(data.strLvlP);
+		Player.GetComponent<StatController>().setStrengthOrder(data.strLvlO);
+		Player.GetComponent<StatController>().setWisdom(data.wisLvlP);
+		Player.GetComponent<StatController>().setWisdomOrder(data.wisLvlO);
 	}
 
     private SaveData WriteToData ()

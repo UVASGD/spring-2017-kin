@@ -4,7 +4,7 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
     // Main Health Controller
-    public int maxHealth; 
+    public int maxHealth;
     private int currentHealth;
     public float restartDelay = 5f;
 	float restartTimer;
@@ -31,10 +31,10 @@ public class PlayerHealth : MonoBehaviour {
     void Awake()
     {
         maxHealth = GetComponent<StatController>().getHealth();
-        /*if you want the ui controller to get this value, 
-         * you need to set it here, not in start. 
-         * Start is too late, and this is fine because start 
-         * will only ever get called once whereas we will wnat 
+        /*if you want the ui controller to get this value,
+         * you need to set it here, not in start.
+         * Start is too late, and this is fine because start
+         * will only ever get called once whereas we will wnat
          * max health to change as level increases*/
     }
 
@@ -92,6 +92,8 @@ public class PlayerHealth : MonoBehaviour {
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition; // Make sure to unfreeze before undying...
 
 		sceneCont.GetComponent<SceneController>().FadeToDeath();
+		TimeController.ProgressDay (5479);
+		SaveController.s_instance.Save();
     }
 
     public void setMaxHealth(int max)
