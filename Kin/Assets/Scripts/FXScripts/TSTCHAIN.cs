@@ -17,7 +17,7 @@ public class TSTCHAIN : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("Interact")/* && target != null*/)
+		if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown("Interact")/* && target != null*/)
             spawn();
             //shoot(gameObject.transform.position);
 	}
