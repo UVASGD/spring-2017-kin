@@ -29,22 +29,22 @@ public class ObjectLinker : MonoBehaviour {
 	}
 
 	public bool WisdomLevel() {
-        ui.toggleStatsMenu((int)DialogueBox.TrainerType.WisdomTrainer);
+		ui.turnOnStatsMenu((int)DialogueBox.TrainerType.WisdomTrainer);
 		return true;
 	}
 
 	public bool HealthLevel() {
-        ui.toggleStatsMenu((int)DialogueBox.TrainerType.HealthTrainer);
+		ui.turnOnStatsMenu((int)DialogueBox.TrainerType.HealthTrainer);
 		return true;
 	}
 
 	public bool StaminaLevel() {
-        ui.toggleStatsMenu((int)DialogueBox.TrainerType.StaminaTrainer);
+		ui.turnOnStatsMenu((int)DialogueBox.TrainerType.StaminaTrainer);
 		return true;
 	}
 
 	public bool StrengthLevel() {
-        ui.toggleStatsMenu((int)DialogueBox.TrainerType.StaminaTrainer);
+		ui.turnOnStatsMenu((int)DialogueBox.TrainerType.StaminaTrainer);
 		return true;
 	}
 
