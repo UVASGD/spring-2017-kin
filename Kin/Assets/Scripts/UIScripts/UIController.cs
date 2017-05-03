@@ -213,6 +213,8 @@ public class UIController : MonoBehaviour {
         statsMenu.GetComponent<StatScreenController>().OrderStamina = player.GetComponent<StatController>().getStaminaOrder();
         statsMenu.GetComponent<StatScreenController>().OrderHealth = player.GetComponent<StatController>().getHealthOrder();
         statsMenu.GetComponent<StatScreenController>().OrderWisdom = player.GetComponent<StatController>().getWisdomOrder();
+
+        statsMenu.GetComponent<StatScreenController>().PlayerExp = player.GetComponent<PlayerExperience>().getCurrentExp().ToString();
     }
 
     
