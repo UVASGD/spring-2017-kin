@@ -50,9 +50,9 @@ public class QuetzalcotlAI : MonoBehaviour {
 
         changeX = 2.0f;
         changeY = 2.0f;
-        //CloseArena();		
+        //CloseArena();
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -200,16 +200,13 @@ public class QuetzalcotlAI : MonoBehaviour {
         }
         return vecList;
     }
-
-	public void ShootMeteor() {
-	    float angle = Mathf.Atan2(targetObject.transform.position.y - gameObject.transform.position.y, targetObject.transform.position.x - gameObject.transform.position.x);
-	    GameObject proj = (GameObject)GameObject.Instantiate(Resources.Load("Prefabs/Projectiles/Meteor", typeof(GameObject)),
-	        new Vector3(gameObject.transform.position.x + 0.1f * Mathf.Cos(angle), gameObject.transform.position.y + 0.1f * Mathf.Sin(angle)), Quaternion.identity);
-	    float speed = proj.GetComponent<MeteorProjectile>().speed;
-		proj.GetComponent<MeteorProjectile>().damage = angery ? meteorDamage * 2 : meteorDamage;
-	    proj.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(angle), speed * Mathf.Sin(angle));
-
-        //proj.GetComponent<MeteorProjectile>().SetVelocity(angle);
+    public void ShootMeteor()
+    {
+        float angle = Mathf.Atan2(targetObject.transform.position.y - gameObject.transform.position.y, targetObject.transform.position.x - gameObject.transform.position.x);
+        GameObject proj = (GameObject)GameObject.Instantiate(Resources.Load("Prefabs/Projectiles/Meteor", typeof(GameObject)),
+            new Vector3(gameObject.transform.position.x + 0.5f * Mathf.Cos(angle), gameObject.transform.position.y + 0.5f * Mathf.Sin(angle)), Quaternion.identity);
+        float speed = proj.GetComponent<MeteorProjectile>().speed;
+        proj.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(angle), speed * Mathf.Sin(angle));
     }
 
 	public void resetMeteorCD() {
