@@ -40,6 +40,7 @@ public class SaveController : MonoBehaviour {
 				Load ();
 			}
 		}
+		Debug.Log (Application.persistentDataPath);
     }
 
 	public static SaveController GetInstance(){
@@ -79,8 +80,9 @@ public class SaveController : MonoBehaviour {
                 FileMode.Open);
             SaveData data = (SaveData) bf.Deserialize(file);
             file.Close();
-
-			WriteFromData (data);
+			if (data != null) {
+				StartCoroutine(WriteFromData (data));
+			}
         }
     }
 
@@ -92,16 +94,25 @@ public class SaveController : MonoBehaviour {
 				FileMode.Open);
 			SaveData data = (SaveData) bf.Deserialize(file);
 			file.Close();
-
-			WriteStatsFromData (data);
+			if (data != null) {
+				WriteStatsFromData (data);
+			}
 		}
 	}
 
-	private void WriteFromData(SaveData data)
+	private IEnumerator WriteFromData(SaveData data)
 	{
-		Health.GetComponent<Slider>().value = data.health;
+		while (Player == null) {
+			try{
+				Player = GameObject.FindObjectOfType<AvatarMvmController>().gameObject;
+			} catch (Exception){
+				Debug.Log ("another happy landing");
+			}
+			yield return null;
+		}
+		//Health.GetComponent<Slider>().value = data.health;
 		Player.GetComponent<PlayerHealth> ().setCurrentHealth(data.healthval);
-		Stamina.GetComponent<Slider>().value = data.stamina;
+		//Stamina.GetComponent<Slider>().value = data.stamina;
 		Player.GetComponent<PlayerStamina> ().setCurrentStamina(data.stamval);
 		Player.transform.position = new Vector3 (data.x, data.y, Player.transform.position.z);
 		Player.GetComponent<PlayerExperience> ().setCurrentExp (data.exp);
