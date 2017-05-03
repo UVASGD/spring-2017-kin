@@ -93,9 +93,13 @@ public class PlayerHealth : MonoBehaviour {
         // Go to UI Screen
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition; // Make sure to unfreeze before undying...
 
+		if (sceneCont == null) {
+			sceneCont = GameObject.FindObjectOfType<SceneController> ().gameObject;
+		}
+
 		sceneCont.GetComponent<SceneController>().FadeToDeath();
 		TimeController.ProgressDay (5479);
-		SaveController.s_instance.Save();
+		SaveController.s_instance.SaveDay();
     }
 
     public void setMaxHealth(int max)

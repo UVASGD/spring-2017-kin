@@ -32,6 +32,7 @@ public class MusicController : MonoBehaviour {
 	AudioClip chacjam;
 	AudioClip ixtabintro;
 	AudioClip ixtabjam;
+	AudioClip quatljam;
 
 	public AudioMixerGroup AMG;
 
@@ -78,6 +79,7 @@ public class MusicController : MonoBehaviour {
 		chacjam = Resources.Load ("Sounds/Music/Boss Music Chac Brian 1") as AudioClip;
 		ixtabintro = Resources.Load ("Sounds/Music/Boss Music Ixtab (Intro) Brian 1") as AudioClip;
 		ixtabjam = Resources.Load ("Sounds/Music/Boss Music Ixtab (Loop) Brian 1") as AudioClip;
+		quatljam = Resources.Load ("Sounds/Music/We Are Number One") as AudioClip;
 
 		if (gameObject.GetComponent<AudioSource> ()) {
 			aud = gameObject.GetComponent<AudioSource> ();
@@ -142,6 +144,9 @@ public class MusicController : MonoBehaviour {
 						aud.loop = true;
 						timeLeft = 10000000.0f;
 					}
+				} else if (Bossname == "Quatl") {
+					aud.clip = quatljam;
+					aud.loop = true;
 				} else {
 					Debug.Log ("Invalid boss name in music controller");
 				}
