@@ -4,7 +4,7 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
     // Main Health Controller
-    public int maxHealth; 
+    public int maxHealth;
     private int currentHealth;
     public float restartDelay = 5f;
 	float restartTimer;
@@ -30,11 +30,10 @@ public class PlayerHealth : MonoBehaviour {
 
     void Awake()
     {
-        
-        /*if you want the ui controller to get this value, 
-         * you need to set it here, not in start. 
-         * Start is too late, and this is fine because start 
-         * will only ever get called once whereas we will wnat 
+        /*if you want the ui controller to get this value,
+         * you need to set it here, not in start.
+         * Start is too late, and this is fine because start
+         * will only ever get called once whereas we will wnat
          * max health to change as level increases*/
     }
 
@@ -70,7 +69,6 @@ public class PlayerHealth : MonoBehaviour {
 			} else {
 				setCurrentHealth(0);
 				Death ();
-				isDead = true;
 			}
         }
         else

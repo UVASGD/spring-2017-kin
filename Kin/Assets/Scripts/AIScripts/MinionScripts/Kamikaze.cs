@@ -67,7 +67,7 @@ public class Kamikaze : BaseMinionAI
                 rb.velocity = Vector2.zero;
                 curState = AIStates.IdleState;
                 return;
-            } 
+            }
             if (!isExploding)
             {
                 if (distanceToPlayer < explodeRadius)
@@ -128,14 +128,13 @@ public class Kamikaze : BaseMinionAI
 		gameObject.GetComponent<Collider2D>().enabled = false;
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-		dying = true;
         Experience(experience);
 	}
 
 	public bool getExploded() {
 		return exploded;
 	}
-		
+
 
 	public void makeNoise(/*string sound*/){
 		//AudioClip clip = Resources.Load ("Sounds/Attack SFX/"+sound) as AudioClip;
