@@ -37,7 +37,6 @@ public class SnakeMinionAI : BaseMinionAI {
         projectileRange = 2.0f;
         projectileSpeed = 2.0f;
         targetObject = GameObject.Find("Player");
-        Debug.Log("Sub start");
     }
 
     // Update is called once per frame
@@ -65,7 +64,6 @@ public class SnakeMinionAI : BaseMinionAI {
                 //fix timing as animation comes in
                 biteCd = true;
                 SnakeBite();
-                Debug.Log("CoolDown");
             }
             if (biteCurrCd <= 0.0)
             {

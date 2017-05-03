@@ -52,7 +52,9 @@ public class TempGameController : MonoBehaviour {
                 }
             }
             collider = nearestBoss.GetComponent<Collider2D>();
-            bossNearby = GeometryUtility.TestPlanesAABB(planes, collider.bounds);
+			if (nearestBoss.GetComponent<Collider2D>() != null) {
+            	bossNearby = GeometryUtility.TestPlanesAABB(planes, collider.bounds);
+			}
         }
         ui.bossHealth.SetActive(bossNearby);
         ui.bossName.enabled = bossNearby;

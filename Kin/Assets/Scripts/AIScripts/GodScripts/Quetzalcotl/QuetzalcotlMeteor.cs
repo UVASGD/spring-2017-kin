@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class QuetzalcotlMeteor : StateMachineBehaviour {
 
-	QuetzalcotlAI ai;
-
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-		ai = animator.transform.parent.gameObject.GetComponent<QuetzalcotlAI>();
-		ai.ShootMeteor();
+		animator.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("MeteorChoose");
+		animator.SetBool("MeteorCD", false);
+		GameObject.FindObjectOfType<QuetzalcotlAI>().resetMeteorCD();
 	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

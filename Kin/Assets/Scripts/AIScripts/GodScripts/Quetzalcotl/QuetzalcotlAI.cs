@@ -1,14 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuetzalcotlAI : MonoBehaviour {
 
-	public const float MAX_ATTACK_CD = 5.0f;
-	public const float MAX_STALAG_CD = 10.0f;
-    public const float MAX_SNAKE_CD = 15.0f; //15.0f;
-	public const float MAX_METEOR_CD = 6.0f;
+	GameObject player;
 
+	public float MAX_ATTACK_CD = 2.0f;
+	public float MAX_STALAG_CD = 10.0f;
+    public float MAX_SNAKE_CD = 15.0f; //15.0f;
+	public float MAX_METEOR_CD = 6.0f;
+
+	public ParticleSystem deathParticles;
+
+	public Slider UIHealth;
+	public Text UIName;
+
+	private float curAngery = 0.0f;
 	public const float ANGERY_ACTIVATE = 60.0f;
 	private bool angery = false;
 
@@ -41,12 +50,16 @@ public class QuetzalcotlAI : MonoBehaviour {
 
 	public GameObject wallCreator;
 
+	bool calm = true;
+
 
 	// Use this for initialization
-	void Start ()
-    {
+	void Start () {
         baseX = gameObject.transform.position.x;
         baseY = gameObject.transform.position.y;
+
+		player = GameObject.FindGameObjectWithTag("Player");
+		targetObject = player;
 
         changeX = 2.0f;
         changeY = 2.0f;
@@ -54,32 +67,42 @@ public class QuetzalcotlAI : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update ()
-    {
-        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-
-		if (curMeteorCD > MAX_METEOR_CD) {
-			GetComponent<Animator>().SetBool("MeteorCD", true);
-		} else {
-			curMeteorCD += Time.deltaTime;
+	void Update () {
+		if (Vector2.Distance((Vector2)gameObject.transform.position, (Vector2)player.transform.position) < aggroRadius) {
+			calm = false;
+			GetComponent<Animator>().SetBool("Aggro", true);
 		}
+		checkDeath();
+		if (!calm) {
+			if (curMeteorCD > MAX_METEOR_CD) {
+				GetComponent<Animator>().SetBool("MeteorCD", true);
+			} else {
+				curMeteorCD += Time.deltaTime;
+			}
 
-		if (curSnakeCD > MAX_SNAKE_CD) {
-			GetComponent<Animator>().SetBool("SnakeCD", true);
-		} else {
-			curSnakeCD += Time.deltaTime;
-		}
+			if (curSnakeCD > MAX_SNAKE_CD) {
+				GetComponent<Animator>().SetBool("SnakeCD", true);
+			} else {
+				curSnakeCD += Time.deltaTime;
+			}
 
-		if (curStalagCD > MAX_STALAG_CD) {
-			GetComponent<Animator>().SetBool("StalagCD", true);
-		} else {
-			curStalagCD += Time.deltaTime;
-		}
+			if (curStalagCD > MAX_STALAG_CD) {
+				GetComponent<Animator>().SetBool("StalagCD", true);
+			} else {
+				curStalagCD += Time.deltaTime;
+			}
 
-		if (curAttackCD > MAX_ATTACK_CD) {
-			GetComponent<Animator>().SetBool("AttackCD", true);
-		} else {
-			curStalagCD += Time.deltaTime;
+			if (curAttackCD > MAX_ATTACK_CD) {
+				GetComponent<Animator>().SetBool("AttackCD", true);
+			} else {
+				curAttackCD += Time.deltaTime;
+			}
+			
+			if (curAngery > ANGERY_ACTIVATE && !angery) {
+				GetComponent<Animator>().SetTrigger("Angery!");
+			} else {
+				curAngery += Time.deltaTime;
+			}
 		}
 
 //        if (curMeteorCD <= 0.0f)
@@ -89,6 +112,34 @@ public class QuetzalcotlAI : MonoBehaviour {
 //        }
 //        else
 //            curMeteorCD -= Time.deltaTime;
+	}
+
+	public string RequestAttackDecision() {
+		if (Mathf.Abs(player.transform.position.x - transform.position.x) < 0.2f) {
+			if (transform.position.y - player.transform.position.y > 1.5f) {
+				return "Bite";
+			}
+			return "Slam";
+		}
+		return "Swipe";
+	}
+
+	public void XPEmit(int amount)
+	{
+		player.GetComponent<PlayerExperience>().incrementExp(amount*100);
+		GameObject part = (GameObject)(Resources.Load("Prefabs/Particles/IxtabXPParticles", typeof(GameObject)));
+		GameObject instPart = Instantiate(part, transform.position, Quaternion.identity) as GameObject;
+		instPart.GetComponent<ParticleEmit>().UpdateParticles();
+		instPart.GetComponent<ParticleEmit>().target = player;
+		instPart.GetComponent<ParticleEmit>().XPEmit(amount);
+	}
+
+	private void checkDeath() {
+		if (GetComponent<EnemyHealth>().getHp() <= 0) {
+			GetComponent<Animator>().SetBool("Dying", true);
+			var em = deathParticles.emission;
+			em.enabled = true;
+		}
 	}
 
 	public void CloseArena()
@@ -175,7 +226,7 @@ public class QuetzalcotlAI : MonoBehaviour {
 
     public void SpawnSnakes()
     {
-        foreach (Vector2 vec in calculateAngles(4, 0.5f))
+        foreach (Vector2 vec in calculateAngles(4, 1.5f))
         {
             GameObject go = Instantiate(Resources.Load("Prefabs/Snake", typeof(GameObject)) as GameObject,
                 vec, Quaternion.identity) as GameObject;
@@ -194,7 +245,7 @@ public class QuetzalcotlAI : MonoBehaviour {
         List<Vector2> vecList = new List<Vector2>();
         for (int i = 0; i < num; i++)
         {
-            vecList.Add((Vector2)gameObject.transform.position +
+			vecList.Add((Vector2)targetObject.transform.position +
                 new Vector2(Mathf.Cos(Mathf.Deg2Rad * curAngle), Mathf.Sin(Mathf.Deg2Rad * curAngle)).normalized * distanceAway);
             curAngle += angleDisplacement;
         }
