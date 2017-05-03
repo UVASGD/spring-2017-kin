@@ -186,6 +186,7 @@ public class UIController : MonoBehaviour {
 
     public void toggleStatsMenu(int trainer)
     {
+		print ("toggle!");
 		if (statsMenu) {
 			statsMenu.SetActive (!statsMenu.activeSelf);
             statsMenuTrainer = trainer;
@@ -193,7 +194,6 @@ public class UIController : MonoBehaviour {
             foreach (Selectable button in buttons) {
 				if (button.gameObject.name != "Cancel") {
 					button.interactable = false;
-					print (button.name);
 				}
             }
             switch (trainer) {
@@ -250,6 +250,7 @@ public class UIController : MonoBehaviour {
     }
 
 	public void turnOnStatsMenu(int trainer){
+		print ("turn on!");
 		if (statsMenu) {
 			statsMenu.SetActive (true);
 			statsMenuTrainer = trainer;
@@ -257,7 +258,6 @@ public class UIController : MonoBehaviour {
 			foreach (Selectable button in buttons) {
 				if (button.gameObject.name != "Cancel") {
 					button.interactable = false;
-					print (button.name);
 				}
 			}
 			switch (trainer) {
