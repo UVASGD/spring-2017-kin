@@ -10,9 +10,11 @@ public class MeteorProjectile : MonoBehaviour {
 
 	public int damage = 10;
 
-    public float despawnTimer = 5.0f;
+    public float despawnTimer = 2.0f;
 
 	private Rigidbody2D rb;
+
+	bool reversed = false;
 
 	// Use this for initialization
 	void Start () {
@@ -31,17 +33,20 @@ public class MeteorProjectile : MonoBehaviour {
 
 	public void SetVelocity(float angle) {
 		rb.velocity = new Vector2(speed * Mathf.Cos(angle), speed * Mathf.Sin(angle));
+		GetComponent<SpriteRenderer>().flipX = rb.velocity.x > 0;
 	}
 
     public void ReverseVelocity()
     {
         rb.velocity = new Vector2(-1*rb.velocity.x, -1 * rb.velocity.y);
+		GetComponent<SpriteRenderer>().flipY = true;
+		reversed = true;
     }
 
     public void OnTriggerEnter2D(Collider2D coll) {
-        if (coll.gameObject.tag == "Boss")
+		if (coll.gameObject.tag == "Boss" && reversed)
         {
-            coll.gameObject.GetComponent<EnemyHealth>().takeDamage(damage);
+            coll.gameObject.GetComponent<EnemyHealth>().takeDamage(damage * 10);
             // Create explody animation prefab here
             Destroy(gameObject);
         }
@@ -51,6 +56,11 @@ public class MeteorProjectile : MonoBehaviour {
         }
         if (coll.CompareTag("Player")) {
 			coll.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+			// Create explody animation prefab here
+			Destroy(gameObject);
+		}
+		if (coll.gameObject.CompareTag("enemy")) {
+			coll.gameObject.GetComponent<EnemyHealth>().takeDamage(damage);
 			// Create explody animation prefab here
 			Destroy(gameObject);
 		}
