@@ -81,7 +81,7 @@ public class DialogueBox : MonoBehaviour {
 			if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown("Interact") && !spawnCont.areResponsesActive()) {
 				dialogue.SetActive(false);
 				spawnCont.Disable();
-			} else if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown("Interact")) {
+			} else if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown("Roll")) {
 				object objectLinkerObj = GetComponent<ObjectLinker>().Run();
 				if (objectLinkerObj is bool && (bool)objectLinkerObj) {
 					dialogue.SetActive(false);

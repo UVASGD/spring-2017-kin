@@ -79,7 +79,7 @@ public class Kamikaze : BaseMinionAI
                     rb.velocity = Vector2.zero;
                 }
                 else{
-                    if (timeDelay > 1.0f)
+                    if (timeDelay > .5f)
                       {
                           //Debug.Log("Requesting Path");
                           RequestPathManager.Request(transform.position, targetObject.transform.position, OnPathFound);

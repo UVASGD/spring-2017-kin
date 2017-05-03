@@ -17,7 +17,7 @@ public class PlayerMelee : MonoBehaviour {
     private bool attacking = false;
     private float attackTimer = 0;
     // How long hitbox is enabled
-    public float attackCoolDown = 0.2f;
+    public float attackCoolDown = 0.3f;
     public KeyCode attackKey;
 
     public int damage = 20;
