@@ -4,7 +4,27 @@ using UnityEngine.SceneManagement;
 
 public class DeathMenuController : MonoBehaviour {
 
+	private static DeathMenuController s_instance;
+
 	public GameObject sceneCont;
+
+	void Awake()
+	{
+		if (s_instance == null)
+		{
+			DontDestroyOnLoad(gameObject); // save object on scene mvm
+			s_instance = this;
+		}
+		else if (s_instance != this)
+		{
+			Destroy(gameObject);
+		}
+	}
+
+	public static DeathMenuController Instance
+	{
+		get { return s_instance; }
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -22,10 +42,8 @@ public class DeathMenuController : MonoBehaviour {
 	}
 
 	public void ResumeGame() {
-		DontDestroyOnLoad (this.gameObject);
 		//sceneCont.GetComponent<SceneController>().FadeToMain();
 		SceneManager.LoadScene("Main_with_HLD");
-		SaveController.GetInstance ().Load ();
 	}
 
 	public void MainMenu() {
