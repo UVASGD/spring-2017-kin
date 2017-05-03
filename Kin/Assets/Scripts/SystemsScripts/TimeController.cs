@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class TimeController : MonoBehaviour {
 	public float dayLength = 330.0f;
@@ -54,6 +55,7 @@ public class TimeController : MonoBehaviour {
 
 		if (kin >= 1872000 || baktun >= 13) {
 			//game ends
+			SceneManager.LoadScene("END");
 		}
 	}
 

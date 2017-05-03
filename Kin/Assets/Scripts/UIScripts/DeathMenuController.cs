@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DeathMenuController : MonoBehaviour {
 
 	private static DeathMenuController s_instance;
 
 	public GameObject sceneCont;
+
+	public Text quote;
+
+
 
 	void Awake()
 	{
@@ -34,6 +39,21 @@ public class DeathMenuController : MonoBehaviour {
 		AudioClip c = Resources.Load(clipName) as AudioClip;
 		aSource.clip = c;
 		aSource.GetComponent<AudioSource>().Play();
+
+		List<string> deathQuotes = new List<string>();
+		deathQuotes.Add("\"Where men can't live, gods fare no better.\"");
+		deathQuotes.Add("\"A person has learned much who has learned how to die.\"");
+		deathQuotes.Add("\"Death keeps no calendar.\"");
+		deathQuotes.Add("\"Six feet of earth makes us all equal.\"");
+		deathQuotes.Add("\"Death is nothing, but to live defeated and inglorious is to die daily.\"");
+		deathQuotes.Add("\"Knowledge forbidden?\nSuspicious, reasonless. Why should their Lord\nEnvy them that \nCan it be a sin to know?\nCan it be death?”\"");
+		deathQuotes.Add("\"Freely they stood who stood, and fell who fell.\"");
+		deathQuotes.Add("\"There is no God and we are his prophets.\"");
+		deathQuotes.Add("\"To die will be an awfully big adventure.\"");
+		deathQuotes.Add("\"Death\nAs a dark\nShadow\nBeckons his prey\nInto the unknown\nBy a soft whisper\nIn the soul\"");
+		deathQuotes.Add("\"Death is when the monsters get you.\"");
+
+		quote.text = deathQuotes[Random.Range(0, deathQuotes.Count)];
 	}
 	
 	// Update is called once per frame
