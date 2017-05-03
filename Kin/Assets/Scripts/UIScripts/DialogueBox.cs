@@ -124,14 +124,6 @@ public class DialogueBox : MonoBehaviour {
 					diaType = DiaType.Greetings;
 				}
 			} 
-            if (uicontroller.statsMenu.activeInHierarchy)
-            {
-                if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) > decayRange && 
-                    (int)persType == uicontroller.statsMenuTrainer)
-                {
-					uicontroller.turnOnStatsMenu((int)persType);
-                }
-            }
         }
 
 	}
