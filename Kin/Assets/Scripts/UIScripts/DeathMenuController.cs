@@ -22,8 +22,10 @@ public class DeathMenuController : MonoBehaviour {
 	}
 
 	public void ResumeGame() {
+		DontDestroyOnLoad (this.gameObject);
 		//sceneCont.GetComponent<SceneController>().FadeToMain();
 		SceneManager.LoadScene("Main_with_HLD");
+		SaveController.GetInstance ().Load ();
 	}
 
 	public void MainMenu() {
