@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class QuetzalcotlAI : MonoBehaviour {
 
-	public const float MAX_ATTACK_CD = 5.0f;
+    public GameObject player;
+
+    public const float MAX_ATTACK_CD = 5.0f;
 	public const float MAX_STALAG_CD = 10.0f;
     public const float MAX_SNAKE_CD = 15.0f; //15.0f;
 	public const float MAX_METEOR_CD = 6.0f;
@@ -27,6 +29,7 @@ public class QuetzalcotlAI : MonoBehaviour {
 	public int meteorDamage = 8;
 
 	public float aggroRadius = 4.0f;
+    public float attackRange = 1.0f;
 
     public float stageRadius = 4.0f;
     private float offset = 0.3f;
@@ -225,15 +228,41 @@ public class QuetzalcotlAI : MonoBehaviour {
 		curStalagCD = 0.0f;
 	}
 
-	public void SwipeFist() {
+    private float armDistanceToPlayer()
+    {
+        //edit
+        return Vector2.Distance(player.transform.position, this.gameObject.transform.position);
+    }
 
-	}
+    private float headDistanceToPlayer()
+    {
+        //edit
+        return Vector2.Distance(player.transform.position, this.gameObject.transform.position);
+    }
 
-	public void SlamFist() {
+    public void SwipeFist()
+    {
+        if (armDistanceToPlayer() < attackRange * 3 / 4)
+        {
+            if (Mathf.Abs(player.transform.position.y - gameObject.transform.position.y) < attackRange / 2)
+            {
+                player.GetComponent<PlayerHealth>().TakeDamage((int)attackDamage);
+            }
+        }
+        //figure out how to incorporate the arm in this; FIX
+    }
 
-	}
+    public void SlamFist()
+    {
+        if (armDistanceToPlayer() < attackRange)
+        {
+            player.GetComponent<PlayerHealth>().TakeDamage((int)attackDamage);
+        }
+        //waiting on animations to test WOOO
+    }
 
-	public void BiteHead() {
+    public void BiteHead()
+    {
 
-	}
+    }
 }
