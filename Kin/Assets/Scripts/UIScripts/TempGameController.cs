@@ -24,7 +24,11 @@ public class TempGameController : MonoBehaviour {
         bossCheck();
 	}
 
-
+    public void updateHealthStamSliders()
+    {
+        ui.setMaxHealth(Player.GetComponent<PlayerHealth>().getMaxHealth());
+        ui.setMaxStamina((int)Player.GetComponent<PlayerStamina>().getMaxStamina());
+    }
 
     public void bossCheck() {
         bosses = GameObject.FindGameObjectsWithTag("Boss");

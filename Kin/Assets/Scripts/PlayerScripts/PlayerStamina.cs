@@ -34,13 +34,14 @@ public class PlayerStamina : MonoBehaviour {
 
     void Awake()
     {
-		setMaxStamina(GetComponent<StatController>().getStamina());
-        hasStamina = true;
+		
     }
 
 	void Start()
     {
-		setCurrentStamina(getMaxStamina());
+        setMaxStamina(GetComponent<StatController>().getStamina());
+        hasStamina = true;
+        setCurrentStamina(getMaxStamina());
 	}
 
 	public void TakeDamage(int amount)
