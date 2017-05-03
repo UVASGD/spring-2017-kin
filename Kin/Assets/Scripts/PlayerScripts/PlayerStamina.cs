@@ -84,6 +84,5 @@ public class PlayerStamina : MonoBehaviour {
                 pauseTimer = 0;
             }
         }
-        setMaxStamina(GetComponent<StatController>().getStamina());
     }
 }

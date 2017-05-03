@@ -141,7 +141,6 @@ public class PlayerHealth : MonoBehaviour {
             StartCoroutine("drinkPotion");
         }
 
-        maxHealth = GetComponent<StatController>().getHealth();
     }
 
     public void playDeathSound() {
@@ -174,7 +173,7 @@ public class PlayerHealth : MonoBehaviour {
 		potcounttext.text = numPotions.ToString ();;
 	}
 
-    void incrementCurrentHealth(int amount) {
+    public void incrementCurrentHealth(int amount) {
         if (currentHealth < maxHealth)
         {
             currentHealth += amount;
