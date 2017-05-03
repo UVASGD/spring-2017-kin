@@ -111,7 +111,7 @@ public class DialogueBox : MonoBehaviour {
 			if (indicator.activeInHierarchy) {
 				if (Input.GetButtonDown("Interact") && GameObject.FindObjectOfType<InputOverrideController>().IsNormal()) {
                     if (uicontroller.statsMenu.activeInHierarchy) {
-                        uicontroller.toggleStatsMenu(0);
+						uicontroller.toggleStatsMenu((int)persType);
                     }
 					if (!spawnCont.GetInit())
 						spawnCont.Initialize();
@@ -129,7 +129,7 @@ public class DialogueBox : MonoBehaviour {
                 if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) > decayRange && 
                     (int)persType == uicontroller.statsMenuTrainer)
                 {
-                    uicontroller.toggleStatsMenu(0);
+					uicontroller.toggleStatsMenu((int)persType);
                 }
             }
         }
