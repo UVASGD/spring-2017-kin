@@ -70,7 +70,7 @@ public class MeleeMinion : BaseMinionAI
 					}
 
 				} else if (!meleeOnCd && curState == AIStates.DetectedState) {
-					if (timeDelay > 1.0f)
+					if (timeDelay > .5f)
 					{
 						RequestPathManager.Request(transform.position, targetObject.transform.position, OnPathFound);
 						timeDelay = 0;
