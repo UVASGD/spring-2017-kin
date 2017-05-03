@@ -98,7 +98,7 @@ public class WeatherController : MonoBehaviour {
 
     void OnGUI()
     {
-        GUI.Button(new Rect(Screen.width - 100, 20, 100, 26), randomWeather.ToString() + timeOfDay.ToString());
+        //GUI.Button(new Rect(Screen.width - 100, 20, 100, 26), randomWeather.ToString() + timeOfDay.ToString());
     }
 
     //deciding which time of day

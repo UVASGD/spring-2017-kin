@@ -38,11 +38,14 @@ public class SaveController : MonoBehaviour {
 		if (PreLoader.Instance != null) {
 			if (PreLoader.Instance.resume) {
 				Load ();
+				Destroy (PreLoader.Instance.gameObject);
 			}
 		}
 		if (DeathMenuController.Instance != null) {
 			if (Player != null) {
+				
 				Load ();
+				Destroy (DeathMenuController.Instance.gameObject);
 			}
 		}
     }
@@ -56,42 +59,52 @@ public class SaveController : MonoBehaviour {
 	
     void OnGUI()
     {
-        if(GUI.Button(new Rect(10, 100, 100, 30), "Save"))
+        /*if(GUI.Button(new Rect(10, 100, 100, 30), "Save"))
         {
             Save();
         }
         if(GUI.Button(new Rect(10, 130, 100, 30), "Load"))
         {
             Load();
-        }
+        }*/
     }
 
 	public void Save()
     {
+		Debug.Log ("Saving");
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/saveInfo.dat");
+        FileStream file = File.Create(Application.persistentDataPath + "/saveInfo1.dat");
         SaveData data = WriteToData();
         bf.Serialize(file, data);
         file.Close();
     }
 
+	public void SaveDay(){
+
+	}
+
 	public void Load()
     {
-		if(File.Exists(Application.persistentDataPath + "/saveInfo" + ".dat"))
+		Debug.Log ("Loading");
+		if(File.Exists(Application.persistentDataPath + "/saveInfo1" + ".dat"))
         {
+			Debug.Log ("Exists");
             BinaryFormatter bf = new BinaryFormatter();
-			FileStream file = File.Open(Application.persistentDataPath + "/saveInfo.dat",
+			FileStream file = File.Open(Application.persistentDataPath + "/saveInfo1.dat",
                 FileMode.Open);
             SaveData data = (SaveData) bf.Deserialize(file);
             file.Close();
+			if (data != null) {
+				WriteFromData (data);
+			}
         }
     }
 
 	public void LoadStats(){
-		if(File.Exists(Application.persistentDataPath + "/saveInfo" + ".dat"))
+		if(File.Exists(Application.persistentDataPath + "/saveInfo1" + ".dat"))
 		{
 			BinaryFormatter bf = new BinaryFormatter();
-			FileStream file = File.Open(Application.persistentDataPath + "/saveInfo.dat",
+			FileStream file = File.Open(Application.persistentDataPath + "/saveInfo1.dat",
 				FileMode.Open);
 			SaveData data = (SaveData) bf.Deserialize(file);
 			file.Close();
@@ -103,10 +116,11 @@ public class SaveController : MonoBehaviour {
 
 	private void WriteFromData(SaveData data)
 	{
+		Debug.Log ("Writing From Data: " + data.healthval);
 		//Health.GetComponent<Slider>().value = data.health;
-		Player.GetComponent<PlayerHealth> ().setCurrentHealth(data.healthval);
+		Player.GetComponent<PlayerHealth> ().setCurrentHealth(Math.Max(data.healthval, 400));
 		//Stamina.GetComponent<Slider>().value = data.stamina;
-		Player.GetComponent<PlayerStamina> ().setCurrentStamina(data.stamval);
+		Player.GetComponent<PlayerStamina> ().setCurrentStamina(Math.Max(data.stamval, 1500));
 		Player.transform.position = new Vector3 (data.x, data.y, Player.transform.position.z);
 		Player.GetComponent<PlayerExperience> ().setCurrentExp (data.exp);
 		Player.GetComponent<StatController>().setHealth(data.healthLvlP);
@@ -148,19 +162,15 @@ public class SaveController : MonoBehaviour {
 
     private SaveData WriteToData ()
     {
+		Debug.Log ("Writing to Data: " + Player.GetComponent<PlayerHealth> ().getMaxHealth ());
         SaveData data = new SaveData();
 		data.health = Health.GetComponent<Slider>().value;
-		data.healthval = Player.GetComponent<PlayerHealth> ().getCurrentHealth ();
+		data.healthval = Math.Max(Player.GetComponent<PlayerHealth> ().getMaxHealth (), 400);
 		data.stamina = Stamina.GetComponent<Slider>().value;
-		data.stamval = Player.GetComponent<PlayerStamina> ().getCurrentStamina ();
+		data.stamval = Math.Max(Player.GetComponent<PlayerStamina> ().getMaxStamina (), 1500);
 
-		if (Player.transform.position.x == 0 && Player.transform.position.y == 0) {
-			data.x = 50;
-			data.y = -63;
-		} else {
-			data.x = Player.transform.position.x;
-			data.y = Player.transform.position.y;
-		}
+		data.x = Player.transform.position.x;
+		data.y = Player.transform.position.y;
 
 		data.exp = Player.GetComponent<PlayerExperience> ().getCurrentExp ();
 
@@ -197,7 +207,9 @@ public class SaveController : MonoBehaviour {
 
         return data;
     }
+
 }
+
 
 [Serializable]
 class SaveData 

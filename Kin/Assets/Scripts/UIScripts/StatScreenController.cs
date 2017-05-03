@@ -70,6 +70,7 @@ public class StatScreenController : MonoBehaviour {
 
 	void OnEnable(){
 		GameObject.FindObjectOfType<InputOverrideController> ().NormalOff ();
+		(this.gameObject.transform.FindChild ("Cancel").GetComponent<Button> () as Button).interactable = true;
 	}
 
 	void OnDisable(){

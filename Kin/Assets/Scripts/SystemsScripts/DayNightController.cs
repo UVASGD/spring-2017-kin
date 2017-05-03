@@ -166,7 +166,7 @@ public class DayNightController : MonoBehaviour
 	/// </summary>
     void OnGUI()
     {
-        string jam = worldTimeHour.ToString();
+        /*string jam = worldTimeHour.ToString();
         string menit = minutes.ToString();
         if (worldTimeHour < 10)
         {
@@ -176,7 +176,7 @@ public class DayNightController : MonoBehaviour
         {
             menit = "0" + minutes;
         }
-        GUI.Button(new Rect(Screen.width - 120, 20, 100, 26), currentPhase.ToString() + " : " + jam + ":" + menit);
+        GUI.Button(new Rect(Screen.width - 120, 20, 100, 26), currentPhase.ToString() + " : " + jam + ":" + menit);*/
     }
 
     /// <summary>

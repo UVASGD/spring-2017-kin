@@ -191,8 +191,10 @@ public class UIController : MonoBehaviour {
             statsMenuTrainer = trainer;
             Selectable[] buttons = statsMenu.GetComponentsInChildren<Selectable>();
             foreach (Selectable button in buttons) {
-                button.interactable = false;
-                print(button.name);
+				if (button.gameObject.name != "Cancel") {
+					button.interactable = false;
+					print (button.name);
+				}
             }
             switch (trainer) {
                 case (int)DialogueBox.TrainerType.StrengthTrainer:
@@ -286,6 +288,7 @@ public class UIController : MonoBehaviour {
 	}
 
 	public void turnOffStatsMenu(){
+		Debug.Log ("I am being turned off, Batman!");
 		statsMenu.SetActive (false);
 	}
 
