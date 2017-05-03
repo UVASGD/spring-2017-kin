@@ -8,5 +8,8 @@ public class QuetzalcotlHand : MonoBehaviour {
 		if (coll.gameObject.CompareTag("Player")) {
 			coll.gameObject.GetComponent<PlayerHealth>().TakeDamage(FindObjectOfType<QuetzalcotlAI>().attackDamage);
 		}
+		if (coll.gameObject.CompareTag("enemy")) {
+			coll.gameObject.GetComponent<EnemyHealth>().takeDamage(FindObjectOfType<QuetzalcotlAI>().attackDamage);
+		}
 	}
 }

@@ -43,6 +43,7 @@ public class SnakeMinionAI : BaseMinionAI {
     protected override void Update()
     {
         int health = gameObject.GetComponent<EnemyHealth>().getHp();
+		GetComponent<SpriteRenderer>().flipX = rb.velocity.x < 0;
         if (health <= 0)
         {
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;

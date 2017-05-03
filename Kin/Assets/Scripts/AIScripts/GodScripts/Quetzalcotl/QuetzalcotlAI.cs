@@ -255,9 +255,10 @@ public class QuetzalcotlAI : MonoBehaviour {
     {
         float angle = Mathf.Atan2(targetObject.transform.position.y - gameObject.transform.position.y, targetObject.transform.position.x - gameObject.transform.position.x);
         GameObject proj = (GameObject)GameObject.Instantiate(Resources.Load("Prefabs/Projectiles/Meteor", typeof(GameObject)),
-            new Vector3(gameObject.transform.position.x + 0.5f * Mathf.Cos(angle), gameObject.transform.position.y + 0.5f * Mathf.Sin(angle)), Quaternion.identity);
+			new Vector3(gameObject.transform.position.x + 0.5f * Mathf.Cos(angle), gameObject.transform.position.y + 0.5f * Mathf.Sin(angle)), Quaternion.identity);
         float speed = proj.GetComponent<MeteorProjectile>().speed;
         proj.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(angle), speed * Mathf.Sin(angle));
+		proj.GetComponent<SpriteRenderer>().flipX = speed * Mathf.Cos(angle) < 0;
     }
 
 	public void resetMeteorCD() {
