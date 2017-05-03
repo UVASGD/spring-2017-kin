@@ -255,31 +255,57 @@ public class UIController : MonoBehaviour {
 			statsMenuTrainer = trainer;
 			Selectable[] buttons = statsMenu.GetComponentsInChildren<Selectable>();
 			foreach (Selectable button in buttons) {
-				button.interactable = false;
-				print(button.name);
+				if (button.gameObject.name != "Cancel") {
+					button.interactable = false;
+					print (button.name);
+				}
 			}
 			switch (trainer) {
 			case (int)DialogueBox.TrainerType.StrengthTrainer:
 				foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>()) {
-					if (button.name.Contains("Str")) button.interactable = true;
+					if (button.name.Contains ("Str")) {
+						button.interactable = true;
+						if (button.name.Contains ("PStr"))
+							leftButton = button;
+						else
+							rightButton = button;
+					}
 				}
 				break;
 			case (int)DialogueBox.TrainerType.StaminaTrainer:
 				foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
 				{
-					if (button.name.Contains("Sta")) button.interactable = true;
+					if (button.name.Contains("Sta")) {
+						button.interactable = true;
+						if (button.name.Contains ("PSta"))
+							leftButton = button;
+						else
+							rightButton = button;
+					}
 				}
 				break;
 			case (int)DialogueBox.TrainerType.HealthTrainer:
 				foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
 				{
-					if (button.name.Contains("Hea")) button.interactable = true;
+					if (button.name.Contains("Hea")) {
+						button.interactable = true;
+						if (button.name.Contains ("PHea"))
+							leftButton = button;
+						else
+							rightButton = button;
+					}
 				}
 				break;
 			case (int)DialogueBox.TrainerType.WisdomTrainer:
 				foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
 				{
-					if (button.name.Contains("Wis")) button.interactable = true;
+					if (button.name.Contains("Wis")) {
+						button.interactable = true;
+						if (button.name.Contains ("PWis"))
+							leftButton = button;
+						else
+							rightButton = button;
+					}
 				}
 				break;
 			}
