@@ -78,29 +78,29 @@ public class DialogueBox : MonoBehaviour {
 	void Update () {
         if (dialogue == null) return;
 		if (dialogue.activeInHierarchy) {
-			if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown("Interact") && !spawnCont.areResponsesActive()) {
-				dialogue.SetActive(false);
-				spawnCont.Disable();
-			} else if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown("Roll")) {
-				object objectLinkerObj = GetComponent<ObjectLinker>().Run();
-				if (objectLinkerObj is bool && (bool)objectLinkerObj) {
-					dialogue.SetActive(false);
-					spawnCont.Disable();
-				} else if (!(objectLinkerObj is bool)) {
-					Debug.LogError("Object Linker object is not a boolean, but it should be!");
-					dialogue.SetActive(false);
-					spawnCont.Disable();
+			if (GameObject.FindObjectOfType<InputOverrideController> ().IsNormal () && Input.GetButtonDown ("Interact") && !spawnCont.areResponsesActive ()) {
+				dialogue.SetActive (false);
+				spawnCont.Disable ();
+			} else if (GameObject.FindObjectOfType<InputOverrideController> ().IsNormal () && spawnCont.GetFinished ()) {
+				if (Input.GetButtonDown ("Interact")) {
+					object objectLinkerObj = GetComponent<ObjectLinker> ().Run ();
+					if (objectLinkerObj is bool && (bool)objectLinkerObj) {
+						dialogue.SetActive (false);
+						spawnCont.Disable ();
+					} else if (!(objectLinkerObj is bool)) {
+						Debug.LogError ("Object Linker object is not a boolean, but it should be!");
+						dialogue.SetActive (false);
+						spawnCont.Disable ();
+					}
+				} else if (Input.GetButtonDown ("Roll")) {
+					dialogue.SetActive (false);
+					spawnCont.Disable ();
 				}
 			}
 			if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) > decayRange) { 
 				spawnCont.Disable();
 				dialogue.SetActive(false);
             }
-			if (spawnCont.GetFinished ()) {
-				if (Input.GetButtonDown ("Interact") && GameObject.FindObjectOfType<InputOverrideController> ().IsNormal ()) {
-					uicontroller.toggleStatsMenu (0);
-				}
-			}
 		}
 		else {
             if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) < detectRange)
