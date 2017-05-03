@@ -47,10 +47,7 @@ public class SnakeMinionAI : BaseMinionAI {
         if (health <= 0)
         {
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            if (despawnTimer >= 2.0f)
-                Destroy(gameObject);
-            else
-                despawnTimer += Time.deltaTime;
+			Destroy(this.gameObject);
         }
         float distance = Vector2.Distance((Vector2)targetObject.transform.position, (Vector2)gameObject.transform.position);
         if(distance < biteRange)
