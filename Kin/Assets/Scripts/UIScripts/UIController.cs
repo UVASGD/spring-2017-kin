@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class UIController : MonoBehaviour {
 
@@ -17,6 +18,10 @@ public class UIController : MonoBehaviour {
 	public GameObject player;
     public Text bossName;
     // Add clock
+
+	bool leftButtonActive = true;
+	Selectable leftButton;
+	Selectable rightButton;
 
 	private float healthlerpA;
 	private float healthlerpB;
@@ -67,6 +72,18 @@ public class UIController : MonoBehaviour {
 			health.value = Mathf.Lerp (healthlerpA, healthlerpB, healthlerpT/0.5f);
 		if(lerpingStamina)
 			stamina.value = Mathf.Lerp (staminalerpA, staminalerpB, staminalerpT/0.5f);
+		if (statsMenu.activeInHierarchy) {
+			if (Input.GetAxis ("Horizontal") < 0) {
+				print ("LEFT!");
+				leftButtonActive = true;
+				leftButton.Select ();
+			}
+			else if (Input.GetAxis("Horizontal") > 0) {
+				print("RIGHT!");
+				leftButtonActive = false;
+				rightButton.Select ();
+			}
+		}
     }
 		
 
@@ -177,25 +194,49 @@ public class UIController : MonoBehaviour {
             switch (trainer) {
                 case (int)DialogueBox.TrainerType.StrengthTrainer:
                     foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>()) {
-                        if (button.name.Contains("Str")) button.interactable = true;
+					if (button.name.Contains ("StrB")) {
+						button.interactable = true;
+						if (button.name.Contains ("PStr"))
+							leftButton = button;
+						else
+							rightButton = button;
+					}
                     }
                     break;
                 case (int)DialogueBox.TrainerType.StaminaTrainer:
                     foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
                     {
-                        if (button.name.Contains("Sta")) button.interactable = true;
+					if (button.name.Contains("StaB")) {
+						button.interactable = true;
+						if (button.name.Contains ("PSta"))
+							leftButton = button;
+						else
+							rightButton = button;
+					}
                     }
                     break;
                 case (int)DialogueBox.TrainerType.HealthTrainer:
                     foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
                     {
-                        if (button.name.Contains("Hea")) button.interactable = true;
+					if (button.name.Contains("HeaB")) {
+						button.interactable = true;
+						if (button.name.Contains ("PHea"))
+							leftButton = button;
+						else
+							rightButton = button;
+					}
                     }
                     break;
                 case (int)DialogueBox.TrainerType.WisdomTrainer:
                     foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
                     {
-                        if (button.name.Contains("Wis")) button.interactable = true;
+					if (button.name.Contains("WisB")) {
+						button.interactable = true;
+						if (button.name.Contains ("PWis"))
+							leftButton = button;
+						else
+							rightButton = button;
+					}
                     }
                     break;
             }
