@@ -78,10 +78,10 @@ public class DialogueBox : MonoBehaviour {
 	void Update () {
         if (dialogue == null) return;
 		if (dialogue.activeInHierarchy) {
-			if (Input.GetButtonDown("Interact") && !spawnCont.areResponsesActive()) {
+			if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown("Interact") && !spawnCont.areResponsesActive()) {
 				dialogue.SetActive(false);
 				spawnCont.Disable();
-			} else if (Input.GetButtonDown("Interact")) {
+			} else if (GameObject.FindObjectOfType<InputOverrideController>().IsNormal() && Input.GetButtonDown("Roll")) {
 				object objectLinkerObj = GetComponent<ObjectLinker>().Run();
 				if (objectLinkerObj is bool && (bool)objectLinkerObj) {
 					dialogue.SetActive(false);
@@ -96,6 +96,11 @@ public class DialogueBox : MonoBehaviour {
 				spawnCont.Disable();
 				dialogue.SetActive(false);
             }
+			if (spawnCont.GetFinished ()) {
+				if (Input.GetButtonDown ("Interact") && GameObject.FindObjectOfType<InputOverrideController> ().IsNormal ()) {
+					uicontroller.toggleStatsMenu (0);
+				}
+			}
 		}
 		else {
             if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) < detectRange)
@@ -104,7 +109,7 @@ public class DialogueBox : MonoBehaviour {
 				indicator.SetActive(false);
 
 			if (indicator.activeInHierarchy) {
-				if (Input.GetButtonDown("Interact")) {
+				if (Input.GetButtonDown("Interact") && GameObject.FindObjectOfType<InputOverrideController>().IsNormal()) {
                     if (uicontroller.statsMenu.activeInHierarchy) {
                         uicontroller.toggleStatsMenu(0);
                     }
@@ -118,7 +123,7 @@ public class DialogueBox : MonoBehaviour {
 					indicator.SetActive(false);
 					diaType = DiaType.Greetings;
 				}
-			}
+			} 
             if (uicontroller.statsMenu.activeInHierarchy)
             {
                 if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) > decayRange && 
