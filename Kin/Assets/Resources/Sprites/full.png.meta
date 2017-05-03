@@ -1,9 +1,15 @@
 fileFormatVersion: 2
-guid: 04373168f96d548f3906ced90ea64f9f
-timeCreated: 1491675124
+guid: 4b66f94b5f52f482a939891c6cdac8d7
+timeCreated: 1491759821
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: full_0
+    21300002: full_1
+    21300004: full_2
+    21300006: full_3
+    21300008: full_4
+    21300010: full_5
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -27,14 +33,14 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,11 +64,97 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: full_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 36
+        width: 333
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: full_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 75
+        width: 33
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: full_2
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 0
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: full_3
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 44
+        width: 41
+        height: 59
+      alignment: 9
+      pivot: {x: 0.61081827, y: 0.7599067}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: full_4
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 125
+        width: 39
+        height: 51
+      alignment: 9
+      pivot: {x: 0.2087465, y: 0.165916}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: full_5
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 62
+        width: 71
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
-  spritePackingTag: 
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  spritePackingTag:
+  userData:
+  assetBundleName:
+  assetBundleVariant:

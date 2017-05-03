@@ -44,7 +44,7 @@ public class EnemyHealth:MonoBehaviour
         {
             currentHealth -= amount;
             //recoil();
-	           AIsrc.recoil ();
+	           //AIsrc.recoil ();
         }
         // Play damage audio clip
        // if (currentHealth <= 0 && !isDead)

@@ -25,12 +25,12 @@ public class IxtabAttack : StateMachineBehaviour {
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		ai.stopBoss();
-		if (curTimer > attackTime) {
-			ai.swipe();
-			attackTime = float.MaxValue;
-		} else {
-			curTimer += Time.deltaTime;
-		}
+//		if (curTimer > attackTime) {
+//			ai.swipe();
+//			attackTime = float.MaxValue;
+//		} else {
+//			curTimer += Time.deltaTime;
+//		}
 	}
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state

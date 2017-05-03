@@ -93,7 +93,7 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		trueYMax = transform.position.y + yBound;
 		trueYMin = transform.position.y - yBound;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		ixtabController.GetComponent<Animator>().SetFloat("DistanceToPlayer", distanceToPlayer());
@@ -175,7 +175,7 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		// Spawn %hp/10% Kamikaze
 		//9 - ((((int)(enemyHealth.getHp()/enemyHealth.maxHealth)*100)) % 10)
 		foreach(Vector2 vec in calculateAngles((int)(10 - (enemyHealth.getHp()/enemyHealth.maxHealth)/0.1), 1.0f)) {
-			GameObject kami = Instantiate(Resources.Load("Prefabs/Entities/KamikazeIxtab", typeof(GameObject)) as GameObject, 
+			GameObject kami = Instantiate(Resources.Load("Prefabs/Entities/KamikazeIxtab", typeof(GameObject)) as GameObject,
 				vec, Quaternion.identity) as GameObject;
 			kami.GetComponent<Kamikaze>().awarenessRadius = float.MaxValue;
 			activeMinions.Add(kami);
@@ -218,7 +218,7 @@ public class IxtabAI : MonoBehaviour, BaseAI {
         GameObject go; Vector2 vec = (Vector2)gameObject.transform.position; int d = facing ? 1 : -1;
         if (anim.GetBool("Attack1")) { //fronthand
             vec.x += d * .363f; vec.y -= .383f;
-            go = Instantiate(Resources.Load("Prefabs/Projectiles/Ixfab Attack Effect", typeof(GameObject)) as GameObject, 
+            go = Instantiate(Resources.Load("Prefabs/Projectiles/Ixfab Attack Effect", typeof(GameObject)) as GameObject,
 				vec, Quaternion.identity) as GameObject;
             go.GetComponent<Animator>().SetInteger("Dir", 1);
         } else {
@@ -307,7 +307,7 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		int curAngle = 0;
 		List<Vector2> vecList = new List<Vector2>();
 		for (int i = 0; i < num; i++) {
-			vecList.Add((Vector2)gameObject.transform.position + 
+			vecList.Add((Vector2)gameObject.transform.position +
 				new Vector2(Mathf.Cos(Mathf.Deg2Rad * curAngle), Mathf.Sin(Mathf.Deg2Rad * curAngle)).normalized * distanceAway);
 			curAngle += angleDisplacement;
 		}
@@ -317,7 +317,7 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 	private void checkDeath() {
 		if (enemyHealth.getHp() <= 0) {
 			ixtabController.GetComponent<Animator>().SetBool("Dying", true);
-			gameObject.GetComponent<Collider2D>().enabled = false;
+			GetComponent<Collider2D>().enabled = false;
 		}
 	}
 
@@ -331,7 +331,7 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 
 
 		// Swipe Range
-		Vector3 attackUpBound = new Vector3(gameObject.transform.position.x + (facing ? attackRange * 3/4 : -attackRange * 3/4), 
+		Vector3 attackUpBound = new Vector3(gameObject.transform.position.x + (facing ? attackRange * 3/4 : -attackRange * 3/4),
 			gameObject.transform.position.y + (attackRange / 2));
 		Vector3 attackLowBound = new Vector3(gameObject.transform.position.x + (facing ? attackRange * 3/4 : -attackRange * 3/4),
 			gameObject.transform.position.y - (attackRange / 2));
@@ -366,7 +366,7 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		this.gameObject.GetComponent<AudioSource> ().Play ();
 	}
 
-	public void playFowardHandSound(){
+	public void playForwardHandSound(){
 		this.gameObject.GetComponent<AudioSource> ().clip = ForwardHandSound;
 		this.gameObject.GetComponent<AudioSource> ().Play ();
 	}
