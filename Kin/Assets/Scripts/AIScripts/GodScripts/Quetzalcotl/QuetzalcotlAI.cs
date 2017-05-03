@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class QuetzalcotlAI : MonoBehaviour {
-
 	GameObject player;
 
 	public float MAX_ATTACK_CD = 2.0f;
@@ -36,6 +35,7 @@ public class QuetzalcotlAI : MonoBehaviour {
 	public int meteorDamage = 8;
 
 	public float aggroRadius = 4.0f;
+    public float attackRange = 1.0f;
 
     public float stageRadius = 4.0f;
     private float offset = 0.3f;
@@ -97,7 +97,7 @@ public class QuetzalcotlAI : MonoBehaviour {
 			} else {
 				curAttackCD += Time.deltaTime;
 			}
-			
+
 			if (curAngery > ANGERY_ACTIVATE && !angery) {
 				GetComponent<Animator>().SetTrigger("Angery!");
 			} else {
@@ -274,17 +274,5 @@ public class QuetzalcotlAI : MonoBehaviour {
 
 	public void resetStalagCD() {
 		curStalagCD = 0.0f;
-	}
-
-	public void SwipeFist() {
-
-	}
-
-	public void SlamFist() {
-
-	}
-
-	public void BiteHead() {
-
 	}
 }
