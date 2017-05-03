@@ -8,6 +8,8 @@ public class QuetzalcotlSwipeFist : StateMachineBehaviour {
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		int randNum = Random.Range(0, 2);
 		animator.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Swipe" + (randNum + 1) + "Choose");
+		animator.SetBool("AttackCD", false);
+		animator.GetComponent<QuetzalcotlAI>().resetAttackCD();
 	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

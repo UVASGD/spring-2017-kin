@@ -5,9 +5,23 @@ using UnityEngine;
 public class QuetzalcotlAttChoose : StateMachineBehaviour {
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-	//override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-	//
-	//}
+	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+		string request = GameObject.FindObjectOfType<QuetzalcotlAI>().RequestAttackDecision();
+		switch (request) {
+		case "Slam":
+			animator.SetTrigger("SlamFist");
+			break;
+		case "Swipe":
+			animator.SetTrigger("SwipeFist");
+			break;
+		case "Bite":
+			animator.SetTrigger("BiteHead");
+			break;
+		default:
+			Debug.LogError("REQUEST NOT IDENTIFIED. HOW DID THIS HAPPEN?");
+			break;
+		}
+	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	//override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {

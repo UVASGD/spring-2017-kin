@@ -5,9 +5,11 @@ using UnityEngine;
 public class QuetzalcotlBiteHead : StateMachineBehaviour {
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-	//override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-	//
-	//}
+	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+		animator.transform.parent.GetComponent<Animator>().SetTrigger("HeadbuttChoose");
+		animator.SetBool("AttackCD", false);
+		animator.GetComponent<QuetzalcotlAI>().resetAttackCD();
+	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	//override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
