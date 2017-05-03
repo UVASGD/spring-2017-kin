@@ -192,33 +192,35 @@ public class BaseMinionAI : MonoBehaviour, BaseAI {
     IEnumerator FollowPath()
     {
         //Debug.Log(path[0]);
-        Vector3 currentWaypoint = path[0];
-        while (true)
-        {
-            // Debug.Log(((Vector2)(transform.position-currentWaypoint)).magnitude);
-            // Debug.Log(transform.position);
-            // Debug.Log(currentWaypoint);
-            if (((Vector2) (transform.position - currentWaypoint)).magnitude <= .5f)
-            {
-                targetIndex++;
-                if (targetIndex >= path.Length)
-                {
-                    targetIndex = 0;
-                    path = new Vector3[0];
-                    yield break;
-                }
-                currentWaypoint = path[targetIndex];
-            }
+		if (path.Length > 0) {
+	        Vector3 currentWaypoint = path[0];
+	        while (true)
+	        {
+	            // Debug.Log(((Vector2)(transform.position-currentWaypoint)).magnitude);
+	            // Debug.Log(transform.position);
+	            // Debug.Log(currentWaypoint);
+	            if (((Vector2) (transform.position - currentWaypoint)).magnitude <= .5f)
+	            {
+	                targetIndex++;
+	                if (targetIndex >= path.Length)
+	                {
+	                    targetIndex = 0;
+	                    path = new Vector3[0];
+	                    yield break;
+	                }
+	                currentWaypoint = path[targetIndex];
+	            }
 
-            if (((Vector2) (currentWaypoint - gameObject.transform.position)).magnitude > 0.1f) rb.velocity = ((Vector2)(currentWaypoint - gameObject.transform.position)).normalized * speed;
-            else 
-            {
-                rb.velocity = Vector2.zero;
-                transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
-            }
-            yield return null;
+	            if (((Vector2) (currentWaypoint - gameObject.transform.position)).magnitude > 0.1f) rb.velocity = ((Vector2)(currentWaypoint - gameObject.transform.position)).normalized * speed;
+	            else 
+	            {
+	                rb.velocity = Vector2.zero;
+	                transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
+	            }
+	            yield return null;
 
-        }
+	        }
+		}
     }
 
     protected void StopPathFollow(){

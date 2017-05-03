@@ -123,7 +123,7 @@ public class ChacAI : BaseGodAI
 		    case AIStates.MeleeState:
                 if(dying)
                 {
-                    if (despawnTimer >= 10.0f)
+                    if (despawnTimer >= 2.0f)
                         Destroy(gameObject);
                     else
                         despawnTimer += Time.deltaTime;
@@ -207,7 +207,9 @@ public class ChacAI : BaseGodAI
                 {
 				if(health <= 0 && timer > 10.0f)
                     {
-                        gameObject.GetComponent<ChacAnimationController>().dying = true; //use shaman to test, delete later
+						if ( gameObject.GetComponent<ChacAnimationController>() != null){
+	                        gameObject.GetComponent<ChacAnimationController>().dying = true; //use shaman to test, delete later
+						}
                         dying = true;
                     }
                 }
