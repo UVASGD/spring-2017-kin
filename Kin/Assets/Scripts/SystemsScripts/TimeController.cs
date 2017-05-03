@@ -53,7 +53,7 @@ public class TimeController : MonoBehaviour {
 			calendar = GameObject.FindObjectOfType<CalendarController>();
 		}
 
-		if (kin >= 1872000 || baktun >= 13) {
+		if (kin >= 1872000) {
 			//game ends
 			SceneManager.LoadScene("END");
 		}
@@ -69,6 +69,7 @@ public class TimeController : MonoBehaviour {
 	/// <param name="byNum">By number.</param>
 	public static void ProgressDay(int byNum) {
 		kin += Mathf.Abs(byNum);
+		Debug.Log ("Day: "+kin);
 		CalculateCalendar ();
 	}
 

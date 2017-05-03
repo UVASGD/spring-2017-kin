@@ -38,8 +38,8 @@ public class SaveController : MonoBehaviour {
 		if (PreLoader.Instance != null) {
 			if (PreLoader.Instance.resume) {
 				Load ();
-				Destroy (PreLoader.Instance.gameObject);
 			}
+			Destroy (PreLoader.Instance.gameObject);
 		}
 		if (DeathMenuController.Instance != null) {
 			if (Player != null) {
@@ -80,7 +80,18 @@ public class SaveController : MonoBehaviour {
     }
 
 	public void SaveDay(){
-
+		if(File.Exists(Application.persistentDataPath + "/saveInfo1" + ".dat"))
+		{
+			Debug.Log ("Exists");
+			BinaryFormatter bf = new BinaryFormatter();
+			FileStream file = File.Open(Application.persistentDataPath + "/saveInfo1.dat",
+				FileMode.Open);
+			SaveData data = (SaveData) bf.Deserialize(file);
+			Debug.Log ("Saving a New Day");
+			data.day = TimeController.kin;
+			bf.Serialize(file, data);
+			file.Close();
+		}
 	}
 
 	public void Load()
@@ -132,7 +143,7 @@ public class SaveController : MonoBehaviour {
 		Player.GetComponent<StatController>().setWisdom(data.wisLvlP);
 		Player.GetComponent<StatController>().setWisdomOrder(data.wisLvlO);
 		//DNH.GetComponent<TimeController>().kin = data.day;
-		TimeController.kin = data.day;
+		TimeController.ProgressDay(data.day);
 		TimeController.CalculateCalendar();
 		DNH.GetComponent<DayNightController>().worldTimeHour = data.hour;
 		DNH.GetComponent<DayNightController>().minutes = data.minute;

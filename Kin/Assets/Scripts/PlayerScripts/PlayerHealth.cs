@@ -86,6 +86,10 @@ public class PlayerHealth : MonoBehaviour {
         //isDead = true;
         anim.SetBool("Dying", true);
         // Play death audio clip
+		if (playerMvmController.enabled) {
+			TimeController.ProgressDay (5479);
+			SaveController.s_instance.SaveDay();
+		}
         playerMvmController.enabled = false;
 
         // Go to UI Screen
@@ -96,8 +100,6 @@ public class PlayerHealth : MonoBehaviour {
 		}
 
 		sceneCont.GetComponent<SceneController>().FadeToDeath();
-		TimeController.ProgressDay (5479);
-		SaveController.s_instance.SaveDay();
     }
 
     public void setMaxHealth(int max)
