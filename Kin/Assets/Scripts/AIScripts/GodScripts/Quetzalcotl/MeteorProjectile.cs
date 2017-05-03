@@ -46,7 +46,7 @@ public class MeteorProjectile : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.gameObject.tag == "Boss" && reversed)
         {
-            coll.gameObject.GetComponent<EnemyHealth>().takeDamage(damage * 10);
+            coll.gameObject.GetComponent<EnemyHealth>().takeDamage(damage * 5);
             // Create explody animation prefab here
             Destroy(gameObject);
         }

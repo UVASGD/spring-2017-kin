@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class QuetzalcotlAI : MonoBehaviour {
 	GameObject player;
 
+	public GameObject head;
+	public Sprite angerySprite;
+
 	public float MAX_ATTACK_CD = 2.0f;
 	public float MAX_STALAG_CD = 10.0f;
     public float MAX_SNAKE_CD = 15.0f; //15.0f;
@@ -17,10 +20,8 @@ public class QuetzalcotlAI : MonoBehaviour {
 	public Text UIName;
 
 	private float curAngery = 0.0f;
-	public const float ANGERY_ACTIVATE = 60.0f;
+	public float ANGERY_ACTIVATE = 360.0f;
 	private bool angery = false;
-
-	public int numMeteorsShot = 3;
 
 	private bool dead = false;
 
@@ -45,8 +46,8 @@ public class QuetzalcotlAI : MonoBehaviour {
     private float baseY;
     private float changeY;
     private float radius = 1.0f;
-    private int numStalagSpots = 3;
-    private int numStalag = 4;
+    public int numStalagSpots = 3;
+    public int numStalag = 4;
 
 	public GameObject wallCreator;
 
@@ -62,7 +63,7 @@ public class QuetzalcotlAI : MonoBehaviour {
 		targetObject = player;
 
         changeX = 2.0f;
-        changeY = 2.0f;
+        changeY = 3.0f;
         //CloseArena();
 	}
 
@@ -204,6 +205,8 @@ public class QuetzalcotlAI : MonoBehaviour {
 
 	public void BecomeAngery() {
 		this.angery = true;
+		head.GetComponent<SpriteRenderer>().sprite = angerySprite;
+		attackDamage *= 3;
 	}
 
 	public void SpawnStalagtites()
@@ -211,14 +214,14 @@ public class QuetzalcotlAI : MonoBehaviour {
         for(int x = 0; x < numStalagSpots; x++)
         {
             float centerX = Random.Range(gameObject.transform.position.x - changeX, gameObject.transform.position.x + changeX);
-            float centerY = Random.Range(gameObject.transform.position.y, gameObject.transform.position.y + changeY);
+			float centerY = Random.Range(gameObject.transform.position.y - changeY, gameObject.transform.position.y);
 
             for(int y = 0; y < numStalag; y++)
             {
                 float ang = Random.Range(0, 2*Mathf.PI);
                 float rad = Random.Range(0, radius);
                 GameObject proj = (GameObject)GameObject.Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)),
-                    new Vector3(centerX + rad * Mathf.Cos(ang), gameObject.transform.position.y + rad * Mathf.Sin(ang)), Quaternion.identity);
+                    new Vector3(centerX + rad * Mathf.Cos(ang), centerY + rad * Mathf.Sin(ang)), Quaternion.identity);
 				proj.GetComponent<LightningBoltScript>().damage = angery ? stalagDamage*2 : stalagDamage;
             }
         }
@@ -258,6 +261,7 @@ public class QuetzalcotlAI : MonoBehaviour {
 			new Vector3(gameObject.transform.position.x + 0.5f * Mathf.Cos(angle), gameObject.transform.position.y + 0.5f * Mathf.Sin(angle)), Quaternion.identity);
         float speed = proj.GetComponent<MeteorProjectile>().speed;
         proj.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(angle), speed * Mathf.Sin(angle));
+		proj.GetComponent<MeteorProjectile>().damage = angery ? meteorDamage * 3 : meteorDamage;
 		proj.GetComponent<SpriteRenderer>().flipX = speed * Mathf.Cos(angle) < 0;
     }
 
