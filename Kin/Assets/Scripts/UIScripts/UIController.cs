@@ -83,6 +83,9 @@ public class UIController : MonoBehaviour {
 				leftButtonActive = false;
 				rightButton.Select ();
 			}
+			if (Input.GetButton ("Cancel")) {
+				turnOffStatsMenu ();
+			}
 		}
     }
 		

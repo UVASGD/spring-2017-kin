@@ -40,6 +40,11 @@ public class SaveController : MonoBehaviour {
 				Load ();
 			}
 		}
+		if (DeathMenuController.Instance != null) {
+			if (Player != null) {
+				Load ();
+			}
+		}
     }
 
 	public static SaveController GetInstance(){
@@ -79,8 +84,6 @@ public class SaveController : MonoBehaviour {
                 FileMode.Open);
             SaveData data = (SaveData) bf.Deserialize(file);
             file.Close();
-
-			WriteFromData (data);
         }
     }
 
@@ -92,16 +95,17 @@ public class SaveController : MonoBehaviour {
 				FileMode.Open);
 			SaveData data = (SaveData) bf.Deserialize(file);
 			file.Close();
-
-			WriteStatsFromData (data);
+			if (data != null) {
+				WriteStatsFromData (data);
+			}
 		}
 	}
 
 	private void WriteFromData(SaveData data)
 	{
-		Health.GetComponent<Slider>().value = data.health;
+		//Health.GetComponent<Slider>().value = data.health;
 		Player.GetComponent<PlayerHealth> ().setCurrentHealth(data.healthval);
-		Stamina.GetComponent<Slider>().value = data.stamina;
+		//Stamina.GetComponent<Slider>().value = data.stamina;
 		Player.GetComponent<PlayerStamina> ().setCurrentStamina(data.stamval);
 		Player.transform.position = new Vector3 (data.x, data.y, Player.transform.position.z);
 		Player.GetComponent<PlayerExperience> ().setCurrentExp (data.exp);
