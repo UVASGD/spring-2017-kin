@@ -203,6 +203,48 @@ public class UIController : MonoBehaviour {
         updateStatsSliders();
     }
 
+	public void turnOnStatsMenu(int trainer){
+		if (statsMenu) {
+			statsMenu.SetActive (true);
+			statsMenuTrainer = trainer;
+			Selectable[] buttons = statsMenu.GetComponentsInChildren<Selectable>();
+			foreach (Selectable button in buttons) {
+				button.interactable = false;
+				print(button.name);
+			}
+			switch (trainer) {
+			case (int)DialogueBox.TrainerType.StrengthTrainer:
+				foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>()) {
+					if (button.name.Contains("Str")) button.interactable = true;
+				}
+				break;
+			case (int)DialogueBox.TrainerType.StaminaTrainer:
+				foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
+				{
+					if (button.name.Contains("Sta")) button.interactable = true;
+				}
+				break;
+			case (int)DialogueBox.TrainerType.HealthTrainer:
+				foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
+				{
+					if (button.name.Contains("Hea")) button.interactable = true;
+				}
+				break;
+			case (int)DialogueBox.TrainerType.WisdomTrainer:
+				foreach (Selectable button in statsMenu.GetComponentsInChildren<Selectable>())
+				{
+					if (button.name.Contains("Wis")) button.interactable = true;
+				}
+				break;
+			}
+		}
+		updateStatsSliders();
+	}
+
+	public void turnOffStatsMenu(){
+		statsMenu.SetActive (false);
+	}
+
     public void updateStatsSliders() {
         statsMenu.GetComponent<StatScreenController>().PlayerStrength = player.GetComponent<StatController>().getStrengthLvl();
         statsMenu.GetComponent<StatScreenController>().PlayerStamina = player.GetComponent<StatController>().getStaminaLvl();
