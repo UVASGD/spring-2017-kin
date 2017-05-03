@@ -74,14 +74,15 @@ public class UIController : MonoBehaviour {
 			stamina.value = Mathf.Lerp (staminalerpA, staminalerpB, staminalerpT/0.5f);
 		if (statsMenu.activeInHierarchy) {
 			if (Input.GetAxis ("Horizontal") < 0) {
-				print ("LEFT!");
 				leftButtonActive = true;
 				leftButton.Select ();
 			}
 			else if (Input.GetAxis("Horizontal") > 0) {
-				print("RIGHT!");
 				leftButtonActive = false;
 				rightButton.Select ();
+			}
+			if (Input.GetButtonDown ("Cancel")) {
+				turnOffStatsMenu ();
 			}
 		}
     }
