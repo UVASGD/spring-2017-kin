@@ -96,6 +96,11 @@ public class DialogueBox : MonoBehaviour {
 				spawnCont.Disable();
 				dialogue.SetActive(false);
             }
+			if (spawnCont.GetFinished ()) {
+				if (Input.GetButtonDown ("Interact") && GameObject.FindObjectOfType<InputOverrideController> ().IsNormal ()) {
+					uicontroller.toggleStatsMenu (0);
+				}
+			}
 		}
 		else {
             if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) < detectRange)
@@ -118,7 +123,7 @@ public class DialogueBox : MonoBehaviour {
 					indicator.SetActive(false);
 					diaType = DiaType.Greetings;
 				}
-			}
+			} 
             if (uicontroller.statsMenu.activeInHierarchy)
             {
                 if (StaticMethods.Distance((Vector2)player.transform.position, (Vector2)gameObject.transform.position) > decayRange && 
