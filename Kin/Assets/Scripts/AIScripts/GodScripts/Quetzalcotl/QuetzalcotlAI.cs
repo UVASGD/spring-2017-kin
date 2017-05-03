@@ -10,6 +10,9 @@ public class QuetzalcotlAI : MonoBehaviour {
 	public const float MAX_METEOR_CD = 6.0f;
 
 	public const float ANGERY_ACTIVATE = 60.0f;
+	private bool angery = false;
+
+	public int numMeteorsShot = 3;
 
 	private bool dead = false;
 
@@ -19,6 +22,7 @@ public class QuetzalcotlAI : MonoBehaviour {
 	private float curMeteorCD = 0.0f;
 
 	public int attackDamage = 10;
+	public int snakeDamage = 5;
 	public int stalagDamage = 5;
 	public int meteorDamage = 8;
 
@@ -53,13 +57,38 @@ public class QuetzalcotlAI : MonoBehaviour {
 	void Update ()
     {
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-        if (curMeteorCD <= 0.0f)
-        {
-            ShootMeteor();
-            curMeteorCD = MAX_METEOR_CD;
-        }
-        else
-            curMeteorCD -= Time.deltaTime;
+
+		if (curMeteorCD > MAX_METEOR_CD) {
+			GetComponent<Animator>().SetBool("MeteorCD", true);
+		} else {
+			curMeteorCD += Time.deltaTime;
+		}
+
+		if (curSnakeCD > MAX_SNAKE_CD) {
+			GetComponent<Animator>().SetBool("SnakeCD", true);
+		} else {
+			curSnakeCD += Time.deltaTime;
+		}
+
+		if (curStalagCD > MAX_STALAG_CD) {
+			GetComponent<Animator>().SetBool("StalagCD", true);
+		} else {
+			curStalagCD += Time.deltaTime;
+		}
+
+		if (curAttackCD > MAX_ATTACK_CD) {
+			GetComponent<Animator>().SetBool("AttackCD", true);
+		} else {
+			curStalagCD += Time.deltaTime;
+		}
+
+//        if (curMeteorCD <= 0.0f)
+//        {
+//            ShootMeteor();
+//            curMeteorCD = MAX_METEOR_CD;
+//        }
+//        else
+//            curMeteorCD -= Time.deltaTime;
 	}
 
 	public void CloseArena()
@@ -122,6 +151,10 @@ public class QuetzalcotlAI : MonoBehaviour {
         }
     }
 
+	public void BecomeAngery() {
+		this.angery = true;
+	}
+
 	public void SpawnStalagtites()
     {
         for(int x = 0; x < numStalagSpots; x++)
@@ -135,6 +168,7 @@ public class QuetzalcotlAI : MonoBehaviour {
                 float rad = Random.Range(0, radius);
                 GameObject proj = (GameObject)GameObject.Instantiate(Resources.Load("Prefabs/Projectiles/LightningBolt", typeof(GameObject)),
                     new Vector3(centerX + rad * Mathf.Cos(ang), gameObject.transform.position.y + rad * Mathf.Sin(ang)), Quaternion.identity);
+				proj.GetComponent<LightningBoltScript>().damage = angery ? stalagDamage*2 : stalagDamage;
             }
         }
     }
@@ -145,6 +179,7 @@ public class QuetzalcotlAI : MonoBehaviour {
         {
             GameObject go = Instantiate(Resources.Load("Prefabs/Snake", typeof(GameObject)) as GameObject,
                 vec, Quaternion.identity) as GameObject;
+			go.GetComponent<SnakeMinionAI>().biteDamage = angery ? snakeDamage*3 : snakeDamage;
         }
     }
 
@@ -152,7 +187,6 @@ public class QuetzalcotlAI : MonoBehaviour {
     {
         if (num == 0)
         {
-            //return new List<Vector2>();
             num = 3;
         }
         int angleDisplacement = 120 / num;
@@ -167,16 +201,32 @@ public class QuetzalcotlAI : MonoBehaviour {
         return vecList;
     }
 
-    public void ShootMeteor()
-    {
-        float angle = Mathf.Atan2(targetObject.transform.position.y - gameObject.transform.position.y, targetObject.transform.position.x - gameObject.transform.position.x);
-        GameObject proj = (GameObject)GameObject.Instantiate(Resources.Load("Prefabs/Projectiles/Meteor", typeof(GameObject)),
-            new Vector3(gameObject.transform.position.x + 0.1f * Mathf.Cos(angle), gameObject.transform.position.y + 0.1f * Mathf.Sin(angle)), Quaternion.identity);
-        float speed = proj.GetComponent<MeteorProjectile>().speed;
-        proj.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(angle), speed * Mathf.Sin(angle));
+	public void ShootMeteor() {
+	    float angle = Mathf.Atan2(targetObject.transform.position.y - gameObject.transform.position.y, targetObject.transform.position.x - gameObject.transform.position.x);
+	    GameObject proj = (GameObject)GameObject.Instantiate(Resources.Load("Prefabs/Projectiles/Meteor", typeof(GameObject)),
+	        new Vector3(gameObject.transform.position.x + 0.1f * Mathf.Cos(angle), gameObject.transform.position.y + 0.1f * Mathf.Sin(angle)), Quaternion.identity);
+	    float speed = proj.GetComponent<MeteorProjectile>().speed;
+		proj.GetComponent<MeteorProjectile>().damage = angery ? meteorDamage * 2 : meteorDamage;
+	    proj.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(angle), speed * Mathf.Sin(angle));
 
         //proj.GetComponent<MeteorProjectile>().SetVelocity(angle);
     }
+
+	public void resetMeteorCD() {
+		curMeteorCD = 0.0f;
+	}
+
+	public void resetSnakeCD() {
+		curSnakeCD = 0.0f;
+	}
+
+	public void resetAttackCD() {
+		curAttackCD = 0.0f;
+	}
+
+	public void resetStalagCD() {
+		curStalagCD = 0.0f;
+	}
 
 	public void SwipeFist() {
 

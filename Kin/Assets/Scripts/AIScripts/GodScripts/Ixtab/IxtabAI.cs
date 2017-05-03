@@ -366,7 +366,7 @@ public class IxtabAI : MonoBehaviour, BaseAI {
 		this.gameObject.GetComponent<AudioSource> ().Play ();
 	}
 
-	public void playFowardHandSound(){
+	public void playForwardHandSound(){
 		this.gameObject.GetComponent<AudioSource> ().clip = ForwardHandSound;
 		this.gameObject.GetComponent<AudioSource> ().Play ();
 	}
