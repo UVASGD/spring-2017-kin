@@ -40,7 +40,11 @@ public class SaveController : MonoBehaviour {
 				Load ();
 			}
 		}
-		Debug.Log (Application.persistentDataPath);
+		if (DeathMenuController.Instance != null) {
+			if (Player != null) {
+				Load ();
+			}
+		}
     }
 
 	public static SaveController GetInstance(){
@@ -80,9 +84,6 @@ public class SaveController : MonoBehaviour {
                 FileMode.Open);
             SaveData data = (SaveData) bf.Deserialize(file);
             file.Close();
-			if (data != null) {
-				StartCoroutine(WriteFromData (data));
-			}
         }
     }
 
@@ -100,16 +101,8 @@ public class SaveController : MonoBehaviour {
 		}
 	}
 
-	private IEnumerator WriteFromData(SaveData data)
+	private void WriteFromData(SaveData data)
 	{
-		while (Player == null) {
-			try{
-				Player = GameObject.FindObjectOfType<AvatarMvmController>().gameObject;
-			} catch (Exception){
-				Debug.Log ("another happy landing");
-			}
-			yield return null;
-		}
 		//Health.GetComponent<Slider>().value = data.health;
 		Player.GetComponent<PlayerHealth> ().setCurrentHealth(data.healthval);
 		//Stamina.GetComponent<Slider>().value = data.stamina;
