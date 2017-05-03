@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour {
 
     void Awake()
     {
-        maxHealth = GetComponent<StatController>().getHealth();
+        
         /*if you want the ui controller to get this value, 
          * you need to set it here, not in start. 
          * Start is too late, and this is fine because start 
@@ -40,6 +40,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	void Start()
     {
+        maxHealth = GetComponent<StatController>().getHealth();
         anim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         playerMvmController = GetComponent<AvatarMvmController>();
@@ -139,9 +140,11 @@ public class PlayerHealth : MonoBehaviour {
             print("POTION");
             StartCoroutine("drinkPotion");
         }
+
+        maxHealth = GetComponent<StatController>().getHealth();
     }
 
-	public void playDeathSound() {
+    public void playDeathSound() {
 		Debug.Log("Death");
 		AudioSource aSource = GetComponent<AudioSource>();
 		string clipName = "Sounds/Player SFX/Death Sound Brian " + Random.Range(1, 3);
@@ -178,6 +181,5 @@ public class PlayerHealth : MonoBehaviour {
         }
         else currentHealth = maxHealth;
     }
-
 
 }
