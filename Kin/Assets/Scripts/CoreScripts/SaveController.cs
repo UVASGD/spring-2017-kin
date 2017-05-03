@@ -150,22 +150,27 @@ public class SaveController : MonoBehaviour {
 		data.stamina = Stamina.GetComponent<Slider>().value;
 		data.stamval = Player.GetComponent<PlayerStamina> ().getCurrentStamina ();
 
-		data.x = Player.transform.position.x;
-		data.y = Player.transform.position.y;
+		if (Player.transform.position.x == 0 && Player.transform.position.y == 0) {
+			data.x = 50;
+			data.y = -63;
+		} else {
+			data.x = Player.transform.position.x;
+			data.y = Player.transform.position.y;
+		}
 
 		data.exp = Player.GetComponent<PlayerExperience> ().getCurrentExp ();
 
-		data.healthLvlP = Player.GetComponent<StatController>().getHealth();
-		data.healthLvlO = Player.GetComponent<StatController>().getHealthOrder();
-		data.stamLvlP = Player.GetComponent<StatController>().getStamina();
-		data.stamLvlO = Player.GetComponent<StatController>().getStaminaOrder();
-		data.strLvlP = Player.GetComponent<StatController>().getStrength();
-		data.strLvlO = Player.GetComponent<StatController>().getStrengthOrder();
-		data.wisLvlP = Player.GetComponent<StatController>().getWisdom();
-		data.wisLvlO = Player.GetComponent<StatController>().getWisdomOrder();
+		data.healthLvlP = Math.Max(Player.GetComponent<StatController>().getHealth(), 1);
+		data.healthLvlO = Math.Max(Player.GetComponent<StatController>().getHealthOrder(), 1);
+		data.stamLvlP = Math.Max(Player.GetComponent<StatController>().getStamina(), 1);
+		data.stamLvlO = Math.Max(Player.GetComponent<StatController>().getStaminaOrder(), 1);
+		data.strLvlP = Math.Max(Player.GetComponent<StatController>().getStrength(), 1);
+		data.strLvlO = Math.Max(Player.GetComponent<StatController>().getStrengthOrder(), 1);
+		data.wisLvlP = Math.Max(Player.GetComponent<StatController>().getWisdom(), 1);
+		data.wisLvlO = Math.Max(Player.GetComponent<StatController>().getWisdomOrder(), 1);
 
 		//data.day = DNH.GetComponent<TimeController>().kin;
-		data.day = TimeController.kin;
+		data.day = Math.Max(TimeController.kin, 1);
 		data.hour = DNH.GetComponent<DayNightController>().worldTimeHour;
 		data.minute = DNH.GetComponent<DayNightController>().minutes;
 
