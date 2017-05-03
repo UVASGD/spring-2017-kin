@@ -8,7 +8,7 @@ public class InputOverrideController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		normalControl = true;;
+		normalControl = true;
 	}
 	
 	// Update is called once per frame
