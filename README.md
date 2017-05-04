@@ -5,6 +5,10 @@ Under the current constitution of Student Game Developers at the University of V
 [![Creative Commons](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ...
+
+## About
+
+Kin is a 2D open-world, action-adventure role-playing game where players explore a fictional New World as an order of European monks. Players can befriend the natives, discover terrible and primordial secrets, collect resources for the order, build structures, craft runes to augment their blade, and slay ancient gods. Time is ticking and if it should run out before the player defeats the pantheon, everything will be for naught! 
 	
 ## Controls
 
