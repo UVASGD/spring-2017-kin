@@ -8,16 +8,30 @@ Under the current constitution of Student Game Developers at the University of V
 	
 ## Controls
 
-Arrow = Movement
+##### Mouse and Keyboard
 
-X = Attack
+WASD / Arrows = Movement
 
-Circle = Roll
+Space = Attack/Select Menu
 
-Square = Interact
+E = Interact/Talk/Select Level Up
 
-Triangle = Use
+R = Roll/Close Menu
+
+Y = Drink Potion
 
 Start/Middle = Pause
 
-R1/L1 = switch through consumables
+##### XBOX 360 Controller
+
+Arrow/Left Stick = Movement
+
+A = Attack/Select Menu
+
+X = Interact/Talk/Select Level Up
+
+B = Roll/Close Menu
+
+Y = Drink Potion
+
+Start/Middle = Pause
