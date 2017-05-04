@@ -6,18 +6,24 @@ public class IxtabInvisible : StateMachineBehaviour {
 
 	IxtabAI ai;
 
+	float invisTimer = 0.0f;
+	float maxTimer = 10.0f;
+
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		ai = animator.transform.parent.GetComponent<IxtabAI>();
 		ai.GetComponent<Animator>().SetBool("Invisible", true);
 		ai.setInvisible(true);
+		invisTimer = 0.0f;
 	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		if (stateInfo.IsName("Invisible_2")) {
-			if (ai.GetNumActiveMinions() == 0) {
+			if (invisTimer > maxTimer) {
 				animator.SetTrigger("Choke");
+			} else {
+				invisTimer += Time.deltaTime;
 			}
 		}
 		if (Random.Range(0.0f, 1.0f) > 0.9f) {
